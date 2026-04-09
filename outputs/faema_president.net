@@ -1,0 +1,2259 @@
+(export 
+  (version "D")
+  (design
+    (source "faema_president.py")
+    (date "04/09/2026 08:24 PM")
+    (tool "SKiDL (2.2.3)")
+    (sheet
+      (number 1)
+      (name "/block_ui1/")
+      (tstamps "/28ec3827-a82c-5118-ad83-f300eecd606d/")
+      (title_block
+        (title)
+        (company)
+        (rev)
+        (date)
+        (source "../faema_president.py")
+        (comment
+          (number "1")
+          (value ""))
+        (comment
+          (number "2")
+          (value ""))
+        (comment
+          (number "3")
+          (value ""))
+        (comment
+          (number "4")
+          (value ""))
+        (comment
+          (number "5")
+          (value ""))
+        (comment
+          (number "6")
+          (value ""))
+        (comment
+          (number "7")
+          (value ""))
+        (comment
+          (number "8")
+          (value ""))
+        (comment
+          (number "9")
+          (value ""))))
+    (sheet
+      (number 2)
+      (name "/block_ac_power1/")
+      (tstamps "/2dd22cd8-b0af-5f77-b03d-57f427b4dab0/")
+      (title_block
+        (title)
+        (company)
+        (rev)
+        (date)
+        (source "../faema_president.py")
+        (comment
+          (number "1")
+          (value ""))
+        (comment
+          (number "2")
+          (value ""))
+        (comment
+          (number "3")
+          (value ""))
+        (comment
+          (number "4")
+          (value ""))
+        (comment
+          (number "5")
+          (value ""))
+        (comment
+          (number "6")
+          (value ""))
+        (comment
+          (number "7")
+          (value ""))
+        (comment
+          (number "8")
+          (value ""))
+        (comment
+          (number "9")
+          (value ""))))
+    (sheet
+      (number 3)
+      (name "/block_level_sense1/")
+      (tstamps "/c39e6bcd-c25f-5b79-b6e4-02688556d8ac/")
+      (title_block
+        (title)
+        (company)
+        (rev)
+        (date)
+        (source "../faema_president.py")
+        (comment
+          (number "1")
+          (value ""))
+        (comment
+          (number "2")
+          (value ""))
+        (comment
+          (number "3")
+          (value ""))
+        (comment
+          (number "4")
+          (value ""))
+        (comment
+          (number "5")
+          (value ""))
+        (comment
+          (number "6")
+          (value ""))
+        (comment
+          (number "7")
+          (value ""))
+        (comment
+          (number "8")
+          (value ""))
+        (comment
+          (number "9")
+          (value ""))))
+    (sheet
+      (number 4)
+      (name "/block_rtd_group1/")
+      (tstamps "/d51b9acd-b194-5d50-a99c-84beba4cdf7a/")
+      (title_block
+        (title)
+        (company)
+        (rev)
+        (date)
+        (source "../faema_president.py")
+        (comment
+          (number "1")
+          (value ""))
+        (comment
+          (number "2")
+          (value ""))
+        (comment
+          (number "3")
+          (value ""))
+        (comment
+          (number "4")
+          (value ""))
+        (comment
+          (number "5")
+          (value ""))
+        (comment
+          (number "6")
+          (value ""))
+        (comment
+          (number "7")
+          (value ""))
+        (comment
+          (number "8")
+          (value ""))
+        (comment
+          (number "9")
+          (value ""))))
+    (sheet
+      (number 5)
+      (name "/block_rtc1/")
+      (tstamps "/33316cec-f19d-5033-a65a-4e36c7a41d16/")
+      (title_block
+        (title)
+        (company)
+        (rev)
+        (date)
+        (source "../faema_president.py")
+        (comment
+          (number "1")
+          (value ""))
+        (comment
+          (number "2")
+          (value ""))
+        (comment
+          (number "3")
+          (value ""))
+        (comment
+          (number "4")
+          (value ""))
+        (comment
+          (number "5")
+          (value ""))
+        (comment
+          (number "6")
+          (value ""))
+        (comment
+          (number "7")
+          (value ""))
+        (comment
+          (number "8")
+          (value ""))
+        (comment
+          (number "9")
+          (value ""))))
+    (sheet
+      (number 6)
+      (name "/block_mcu1/")
+      (tstamps "/2020ce5b-6346-5cbb-9f57-b7aeea600868/")
+      (title_block
+        (title)
+        (company)
+        (rev)
+        (date)
+        (source "../faema_president.py")
+        (comment
+          (number "1")
+          (value ""))
+        (comment
+          (number "2")
+          (value ""))
+        (comment
+          (number "3")
+          (value ""))
+        (comment
+          (number "4")
+          (value ""))
+        (comment
+          (number "5")
+          (value ""))
+        (comment
+          (number "6")
+          (value ""))
+        (comment
+          (number "7")
+          (value ""))
+        (comment
+          (number "8")
+          (value ""))
+        (comment
+          (number "9")
+          (value ""))))
+    (sheet
+      (number 7)
+      (name "/block_ssr_drive1/")
+      (tstamps "/2cf831f8-312a-53e9-b06e-a74fe933eab9/")
+      (title_block
+        (title)
+        (company)
+        (rev)
+        (date)
+        (source "../faema_president.py")
+        (comment
+          (number "1")
+          (value ""))
+        (comment
+          (number "2")
+          (value ""))
+        (comment
+          (number "3")
+          (value ""))
+        (comment
+          (number "4")
+          (value ""))
+        (comment
+          (number "5")
+          (value ""))
+        (comment
+          (number "6")
+          (value ""))
+        (comment
+          (number "7")
+          (value ""))
+        (comment
+          (number "8")
+          (value ""))
+        (comment
+          (number "9")
+          (value ""))))
+    (sheet
+      (number 8)
+      (name "/")
+      (tstamps "/")
+      (title_block
+        (title)
+        (company)
+        (rev)
+        (date)
+        (source "../faema_president.py")
+        (comment
+          (number "1")
+          (value ""))
+        (comment
+          (number "2")
+          (value ""))
+        (comment
+          (number "3")
+          (value ""))
+        (comment
+          (number "4")
+          (value ""))
+        (comment
+          (number "5")
+          (value ""))
+        (comment
+          (number "6")
+          (value ""))
+        (comment
+          (number "7")
+          (value ""))
+        (comment
+          (number "8")
+          (value ""))
+        (comment
+          (number "9")
+          (value ""))))
+    (sheet
+      (number 9)
+      (name "/block_rtd_boiler1/")
+      (tstamps "/1b0256b3-0650-5635-8f7a-77673c9bd46c/")
+      (title_block
+        (title)
+        (company)
+        (rev)
+        (date)
+        (source "../faema_president.py")
+        (comment
+          (number "1")
+          (value ""))
+        (comment
+          (number "2")
+          (value ""))
+        (comment
+          (number "3")
+          (value ""))
+        (comment
+          (number "4")
+          (value ""))
+        (comment
+          (number "5")
+          (value ""))
+        (comment
+          (number "6")
+          (value ""))
+        (comment
+          (number "7")
+          (value ""))
+        (comment
+          (number "8")
+          (value ""))
+        (comment
+          (number "9")
+          (value ""))))
+    (sheet
+      (number 10)
+      (name "/block_display1/")
+      (tstamps "/9abce63c-0c2f-557f-840d-1c2be00b11af/")
+      (title_block
+        (title)
+        (company)
+        (rev)
+        (date)
+        (source "../faema_president.py")
+        (comment
+          (number "1")
+          (value ""))
+        (comment
+          (number "2")
+          (value ""))
+        (comment
+          (number "3")
+          (value ""))
+        (comment
+          (number "4")
+          (value ""))
+        (comment
+          (number "5")
+          (value ""))
+        (comment
+          (number "6")
+          (value ""))
+        (comment
+          (number "7")
+          (value ""))
+        (comment
+          (number "8")
+          (value ""))
+        (comment
+          (number "9")
+          (value ""))))
+    (sheet
+      (number 11)
+      (name "/block_dc_regulation1/")
+      (tstamps "/01c1d1c2-47b2-5e8f-a08a-452300949070/")
+      (title_block
+        (title)
+        (company)
+        (rev)
+        (date)
+        (source "../faema_president.py")
+        (comment
+          (number "1")
+          (value ""))
+        (comment
+          (number "2")
+          (value ""))
+        (comment
+          (number "3")
+          (value ""))
+        (comment
+          (number "4")
+          (value ""))
+        (comment
+          (number "5")
+          (value ""))
+        (comment
+          (number "6")
+          (value ""))
+        (comment
+          (number "7")
+          (value ""))
+        (comment
+          (number "8")
+          (value ""))
+        (comment
+          (number "9")
+          (value "")))))
+  (components
+    (comp
+      (ref "BT1")
+      (value "CR2032")
+      (description "")
+      (footprint "Battery:BatteryHolder_Keystone_3002_1x2032")
+      (fields
+        (field
+          (name "Description"))
+        (field
+          (name "Footprint") "Battery:BatteryHolder_Keystone_3002_1x2032")
+        (field
+          (name "Datasheet"))
+        (field
+          (name "SKiDL Tag") "kx_M1wLkeI")
+        (field
+          (name "SKiDL Line") "faema_president.py:540"))
+      (libsource
+        (lib "NO_LIB")
+        (part "BatteryHolder"))
+      (sheetpath
+        (names "/block_rtc1/")
+        (tstamps "/33316cec-f19d-5033-a65a-4e36c7a41d16/"))
+      (component_classes)
+      (tstamps "bb0b5ff4-f076-5916-8b40-d1418b436460"))
+    (comp
+      (ref "C1")
+      (value "10uF_16V_X5R")
+      (description "")
+      (footprint "Capacitor_SMD:C_0805_2012Metric")
+      (fields
+        (field
+          (name "Description"))
+        (field
+          (name "Footprint") "Capacitor_SMD:C_0805_2012Metric")
+        (field
+          (name "Datasheet"))
+        (field
+          (name "SKiDL Tag") "raT9mHxD8C")
+        (field
+          (name "SKiDL Line") "faema_president.py:277"))
+      (libsource
+        (lib "NO_LIB")
+        (part "C"))
+      (sheetpath
+        (names "/block_dc_regulation1/")
+        (tstamps "/01c1d1c2-47b2-5e8f-a08a-452300949070/"))
+      (component_classes)
+      (tstamps "b8e6ac7e-ac54-5fc4-8389-c05923f079d6"))
+    (comp
+      (ref "C10")
+      (value "100nF_50V_X7R")
+      (description "")
+      (footprint "Capacitor_SMD:C_0603_1608Metric")
+      (fields
+        (field
+          (name "Description"))
+        (field
+          (name "Footprint") "Capacitor_SMD:C_0603_1608Metric")
+        (field
+          (name "Datasheet"))
+        (field
+          (name "SKiDL Tag") "Dr9G44INCF")
+        (field
+          (name "SKiDL Line") "faema_president.py:397"))
+      (libsource
+        (lib "NO_LIB")
+        (part "C"))
+      (sheetpath
+        (names "/block_rtd_boiler1/")
+        (tstamps "/1b0256b3-0650-5635-8f7a-77673c9bd46c/"))
+      (component_classes)
+      (tstamps "511561f3-8572-5d8c-8a65-7e90d7de3d08"))
+    (comp
+      (ref "C11")
+      (value "100nF_50V_X7R")
+      (description "")
+      (footprint "Capacitor_SMD:C_0603_1608Metric")
+      (fields
+        (field
+          (name "Description"))
+        (field
+          (name "Footprint") "Capacitor_SMD:C_0603_1608Metric")
+        (field
+          (name "Datasheet"))
+        (field
+          (name "SKiDL Tag") "3AQlZWLria")
+        (field
+          (name "SKiDL Line") "faema_president.py:444"))
+      (libsource
+        (lib "NO_LIB")
+        (part "C"))
+      (sheetpath
+        (names "/block_rtd_group1/")
+        (tstamps "/d51b9acd-b194-5d50-a99c-84beba4cdf7a/"))
+      (component_classes)
+      (tstamps "6c16fb00-fb1a-585a-b517-1281d3c74d0d"))
+    (comp
+      (ref "C12")
+      (value "100nF_50V_X7R")
+      (description "")
+      (footprint "Capacitor_SMD:C_0603_1608Metric")
+      (fields
+        (field
+          (name "Description"))
+        (field
+          (name "Footprint") "Capacitor_SMD:C_0603_1608Metric")
+        (field
+          (name "Datasheet"))
+        (field
+          (name "SKiDL Tag") "bScGS7_5Ah")
+        (field
+          (name "SKiDL Line") "faema_president.py:451"))
+      (libsource
+        (lib "NO_LIB")
+        (part "C"))
+      (sheetpath
+        (names "/block_rtd_group1/")
+        (tstamps "/d51b9acd-b194-5d50-a99c-84beba4cdf7a/"))
+      (component_classes)
+      (tstamps "10b3e410-0610-5361-963d-36316e4d716b"))
+    (comp
+      (ref "C2")
+      (value "10uF_10V_X5R")
+      (description "")
+      (footprint "Capacitor_SMD:C_0805_2012Metric")
+      (fields
+        (field
+          (name "Description"))
+        (field
+          (name "Footprint") "Capacitor_SMD:C_0805_2012Metric")
+        (field
+          (name "Datasheet"))
+        (field
+          (name "SKiDL Tag") "qkJ2volTrn")
+        (field
+          (name "SKiDL Line") "faema_president.py:284"))
+      (libsource
+        (lib "NO_LIB")
+        (part "C"))
+      (sheetpath
+        (names "/block_dc_regulation1/")
+        (tstamps "/01c1d1c2-47b2-5e8f-a08a-452300949070/"))
+      (component_classes)
+      (tstamps "5d862d14-9295-5342-bca7-e1d9c8f50c82"))
+    (comp
+      (ref "C3")
+      (value "100nF_50V_X7R")
+      (description "")
+      (footprint "Capacitor_SMD:C_0603_1608Metric")
+      (fields
+        (field
+          (name "Description"))
+        (field
+          (name "Footprint") "Capacitor_SMD:C_0603_1608Metric")
+        (field
+          (name "Datasheet"))
+        (field
+          (name "SKiDL Tag") "CoYp6MxC3n")
+        (field
+          (name "SKiDL Line") "faema_president.py:291"))
+      (libsource
+        (lib "NO_LIB")
+        (part "C"))
+      (sheetpath
+        (names "/block_dc_regulation1/")
+        (tstamps "/01c1d1c2-47b2-5e8f-a08a-452300949070/"))
+      (component_classes)
+      (tstamps "cd04ac6f-cce0-5ed3-b5c3-a5d761307c79"))
+    (comp
+      (ref "C4")
+      (value "100nF_50V_X7R")
+      (description "")
+      (footprint "Capacitor_SMD:C_0603_1608Metric")
+      (fields
+        (field
+          (name "Description"))
+        (field
+          (name "Footprint") "Capacitor_SMD:C_0603_1608Metric")
+        (field
+          (name "Datasheet"))
+        (field
+          (name "SKiDL Tag") "Vo0du4xZqB")
+        (field
+          (name "SKiDL Line") "faema_president.py:298"))
+      (libsource
+        (lib "NO_LIB")
+        (part "C"))
+      (sheetpath
+        (names "/block_dc_regulation1/")
+        (tstamps "/01c1d1c2-47b2-5e8f-a08a-452300949070/"))
+      (component_classes)
+      (tstamps "69bfaece-82a5-54f3-9de1-5818baca482b"))
+    (comp
+      (ref "C7")
+      (value "100nF_50V_X7R")
+      (description "")
+      (footprint "Capacitor_SMD:C_0603_1608Metric")
+      (fields
+        (field
+          (name "Description"))
+        (field
+          (name "Footprint") "Capacitor_SMD:C_0603_1608Metric")
+        (field
+          (name "Datasheet"))
+        (field
+          (name "SKiDL Tag") "pOuMp_QKj8")
+        (field
+          (name "SKiDL Line") "faema_president.py:390"))
+      (libsource
+        (lib "NO_LIB")
+        (part "C"))
+      (sheetpath
+        (names "/block_rtd_boiler1/")
+        (tstamps "/1b0256b3-0650-5635-8f7a-77673c9bd46c/"))
+      (component_classes)
+      (tstamps "0ad169dd-daf0-5f80-9b38-aaf7b64b5a13"))
+    (comp
+      (ref "C8")
+      (value "100nF_50V_X7R")
+      (description "")
+      (footprint "Capacitor_SMD:C_0603_1608Metric")
+      (fields
+        (field
+          (name "Description"))
+        (field
+          (name "Footprint") "Capacitor_SMD:C_0603_1608Metric")
+        (field
+          (name "Datasheet"))
+        (field
+          (name "SKiDL Tag") "HhSTqLKP09")
+        (field
+          (name "SKiDL Line") "faema_president.py:561"))
+      (libsource
+        (lib "NO_LIB")
+        (part "C"))
+      (sheetpath
+        (names "/block_rtc1/")
+        (tstamps "/33316cec-f19d-5033-a65a-4e36c7a41d16/"))
+      (component_classes)
+      (tstamps "93777322-e144-5bbf-8898-3d4dfa7c934e"))
+    (comp
+      (ref "C9")
+      (value "100nF_50V_X7R")
+      (description "")
+      (footprint "Capacitor_SMD:C_0603_1608Metric")
+      (fields
+        (field
+          (name "Description"))
+        (field
+          (name "Footprint") "Capacitor_SMD:C_0603_1608Metric")
+        (field
+          (name "Datasheet"))
+        (field
+          (name "SKiDL Tag") "RoIbqQSuuh")
+        (field
+          (name "SKiDL Line") "faema_president.py:343"))
+      (libsource
+        (lib "NO_LIB")
+        (part "C"))
+      (sheetpath
+        (names "/block_mcu1/")
+        (tstamps "/2020ce5b-6346-5cbb-9f57-b7aeea600868/"))
+      (component_classes)
+      (tstamps "5b6ce800-91e7-532c-a924-fd6559d34374"))
+    (comp
+      (ref "D1")
+      (value "LED_GREEN")
+      (description "")
+      (footprint "LED_SMD:LED_0603_1608Metric")
+      (fields
+        (field
+          (name "Description"))
+        (field
+          (name "Footprint") "LED_SMD:LED_0603_1608Metric")
+        (field
+          (name "Datasheet"))
+        (field
+          (name "SKiDL Tag") "_T16Mmr0Ji")
+        (field
+          (name "SKiDL Line") "faema_president.py:639"))
+      (libsource
+        (lib "NO_LIB")
+        (part "LED"))
+      (sheetpath
+        (names "/block_ui1/")
+        (tstamps "/28ec3827-a82c-5118-ad83-f300eecd606d/"))
+      (component_classes)
+      (tstamps "1f5108b0-0670-5b1e-be1d-2840de3689d6"))
+    (comp
+      (ref "ENC1")
+      (value "EC11")
+      (description "")
+      (footprint "Rotary_Encoder:RotaryEncoder_Alps_EC11E-Switch_Vertical_H20mm")
+      (fields
+        (field
+          (name "Description"))
+        (field
+          (name "Footprint") "Rotary_Encoder:RotaryEncoder_Alps_EC11E-Switch_Vertical_H20mm")
+        (field
+          (name "Datasheet"))
+        (field
+          (name "SKiDL Tag") "t_3GbVez4U")
+        (field
+          (name "SKiDL Line") "faema_president.py:610"))
+      (libsource
+        (lib "NO_LIB")
+        (part "RotaryEncoder"))
+      (sheetpath
+        (names "/block_ui1/")
+        (tstamps "/28ec3827-a82c-5118-ad83-f300eecd606d/"))
+      (component_classes)
+      (tstamps "d5eb9cb6-a88d-53b7-9ba5-8baea021d39e"))
+    (comp
+      (ref "F1")
+      (value "T16A_SLOW")
+      (description "")
+      (footprint "Fuse:Fuseholder_Cylinder-5x20mm_Schurter_FAB_0031-355x_Horizontal_Closed")
+      (fields
+        (field
+          (name "Description"))
+        (field
+          (name "Footprint") "Fuse:Fuseholder_Cylinder-5x20mm_Schurter_FAB_0031-355x_Horizontal_Closed")
+        (field
+          (name "Datasheet"))
+        (field
+          (name "SKiDL Tag") "DGOTpY3Nln")
+        (field
+          (name "SKiDL Line") "faema_president.py:233"))
+      (libsource
+        (lib "NO_LIB")
+        (part "Fuse"))
+      (sheetpath
+        (names "/block_ac_power1/")
+        (tstamps "/2dd22cd8-b0af-5f77-b03d-57f427b4dab0/"))
+      (component_classes)
+      (tstamps "3e9333af-5c77-5a1e-b11b-9d8b69522617"))
+    (comp
+      (ref "J1")
+      (value "AC_INPUT_220V")
+      (description "")
+      (footprint "TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-3-5.08_1x03_P5.08mm_Horizontal")
+      (fields
+        (field
+          (name "Description"))
+        (field
+          (name "Footprint") "TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-3-5.08_1x03_P5.08mm_Horizontal")
+        (field
+          (name "Datasheet"))
+        (field
+          (name "SKiDL Tag") "R3Y1OGf2Ex")
+        (field
+          (name "SKiDL Line") "faema_president.py:220"))
+      (libsource
+        (lib "NO_LIB")
+        (part "Conn_3"))
+      (sheetpath
+        (names "/block_ac_power1/")
+        (tstamps "/2dd22cd8-b0af-5f77-b03d-57f427b4dab0/"))
+      (component_classes)
+      (tstamps "948e2004-d70c-581d-9fcc-6581e7a2612b"))
+    (comp
+      (ref "J3")
+      (value "PT100_CALDEIRA")
+      (description "")
+      (footprint "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical")
+      (fields
+        (field
+          (name "Description"))
+        (field
+          (name "Footprint") "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical")
+        (field
+          (name "Datasheet"))
+        (field
+          (name "SKiDL Tag") "wwXIsSIp4v")
+        (field
+          (name "SKiDL Line") "faema_president.py:381"))
+      (libsource
+        (lib "NO_LIB")
+        (part "Conn_4"))
+      (sheetpath
+        (names "/block_rtd_boiler1/")
+        (tstamps "/1b0256b3-0650-5635-8f7a-77673c9bd46c/"))
+      (component_classes)
+      (tstamps "93fe81e1-7016-535e-acab-41ac546a64bf"))
+    (comp
+      (ref "J5")
+      (value "GC9A01_FPC")
+      (description "")
+      (footprint "Connector_FFC-FPC:Hirose_FH12-24S-0.5SH_1x24-1MP_P0.50mm_Horizontal")
+      (fields
+        (field
+          (name "Description"))
+        (field
+          (name "Footprint") "Connector_FFC-FPC:Hirose_FH12-24S-0.5SH_1x24-1MP_P0.50mm_Horizontal")
+        (field
+          (name "Datasheet"))
+        (field
+          (name "SKiDL Tag") "bKX2TEZDSc")
+        (field
+          (name "SKiDL Line") "faema_president.py:575"))
+      (libsource
+        (lib "NO_LIB")
+        (part "Conn_24"))
+      (sheetpath
+        (names "/block_display1/")
+        (tstamps "/9abce63c-0c2f-557f-840d-1c2be00b11af/"))
+      (component_classes)
+      (tstamps "bac26e56-f3b5-5f78-848a-769919fafbb7"))
+    (comp
+      (ref "J6")
+      (value "PT100_GRUPO")
+      (description "")
+      (footprint "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical")
+      (fields
+        (field
+          (name "Description"))
+        (field
+          (name "Footprint") "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical")
+        (field
+          (name "Datasheet"))
+        (field
+          (name "SKiDL Tag") "aYgunPNwzT")
+        (field
+          (name "SKiDL Line") "faema_president.py:435"))
+      (libsource
+        (lib "NO_LIB")
+        (part "Conn_4"))
+      (sheetpath
+        (names "/block_rtd_group1/")
+        (tstamps "/d51b9acd-b194-5d50-a99c-84beba4cdf7a/"))
+      (component_classes)
+      (tstamps "b4c5d818-c649-5048-836a-053ab728c284"))
+    (comp
+      (ref "J7")
+      (value "SONDA_NIVEL")
+      (description "")
+      (footprint "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical")
+      (fields
+        (field
+          (name "Description"))
+        (field
+          (name "Footprint") "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical")
+        (field
+          (name "Datasheet"))
+        (field
+          (name "SKiDL Tag") "0Ib9nlrWXA")
+        (field
+          (name "SKiDL Line") "faema_president.py:507"))
+      (libsource
+        (lib "NO_LIB")
+        (part "Conn_2"))
+      (sheetpath
+        (names "/block_level_sense1/")
+        (tstamps "/c39e6bcd-c25f-5b79-b6e4-02688556d8ac/"))
+      (component_classes)
+      (tstamps "c4bbf203-0872-5323-bc59-8a760f70a0e2"))
+    (comp
+      (ref "J8")
+      (value "BOTOES_PRESET")
+      (description "")
+      (footprint "Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical")
+      (fields
+        (field
+          (name "Description"))
+        (field
+          (name "Footprint") "Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical")
+        (field
+          (name "Datasheet"))
+        (field
+          (name "SKiDL Tag") "04JqX0sKSm")
+        (field
+          (name "SKiDL Line") "faema_president.py:620"))
+      (libsource
+        (lib "NO_LIB")
+        (part "Conn_6"))
+      (sheetpath
+        (names "/block_ui1/")
+        (tstamps "/28ec3827-a82c-5118-ad83-f300eecd606d/"))
+      (component_classes)
+      (tstamps "c21cd2c5-7834-5fbe-9872-107e7b9fc34f"))
+    (comp
+      (ref "J9")
+      (value "SSR_CTRL_HEADER")
+      (description "")
+      (footprint "TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal")
+      (fields
+        (field
+          (name "Description"))
+        (field
+          (name "Footprint") "TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal")
+        (field
+          (name "Datasheet"))
+        (field
+          (name "SKiDL Tag") "hp0j0SSK6i")
+        (field
+          (name "SKiDL Line") "faema_president.py:485"))
+      (libsource
+        (lib "NO_LIB")
+        (part "Conn_SSR"))
+      (sheetpath
+        (names "/block_ssr_drive1/")
+        (tstamps "/2cf831f8-312a-53e9-b06e-a74fe933eab9/"))
+      (component_classes)
+      (tstamps "8627a3a0-c3d3-51cf-a70c-5c5448e4c26f"))
+    (comp
+      (ref "R10")
+      (value "470R_1pct")
+      (description "")
+      (footprint "Resistor_SMD:R_0603_1608Metric")
+      (fields
+        (field
+          (name "Description"))
+        (field
+          (name "Footprint") "Resistor_SMD:R_0603_1608Metric")
+        (field
+          (name "Datasheet"))
+        (field
+          (name "SKiDL Tag") "tQEKd3McZJ")
+        (field
+          (name "SKiDL Line") "faema_president.py:647"))
+      (libsource
+        (lib "NO_LIB")
+        (part "R"))
+      (sheetpath
+        (names "/block_ui1/")
+        (tstamps "/28ec3827-a82c-5118-ad83-f300eecd606d/"))
+      (component_classes)
+      (tstamps "481b49c6-36fd-5114-bc59-7001ba9f79aa"))
+    (comp
+      (ref "R11")
+      (value "100k_1pct")
+      (description "")
+      (footprint "Resistor_SMD:R_0603_1608Metric")
+      (fields
+        (field
+          (name "Description"))
+        (field
+          (name "Footprint") "Resistor_SMD:R_0603_1608Metric")
+        (field
+          (name "Datasheet"))
+        (field
+          (name "SKiDL Tag") "sUwdylZTS3")
+        (field
+          (name "SKiDL Line") "faema_president.py:500"))
+      (libsource
+        (lib "NO_LIB")
+        (part "R"))
+      (sheetpath
+        (names "/block_level_sense1/")
+        (tstamps "/c39e6bcd-c25f-5b79-b6e4-02688556d8ac/"))
+      (component_classes)
+      (tstamps "b716b010-4d2f-56f8-b50f-66b6d65e22da"))
+    (comp
+      (ref "R12")
+      (value "10k_1pct")
+      (description "")
+      (footprint "Resistor_SMD:R_0603_1608Metric")
+      (fields
+        (field
+          (name "Description"))
+        (field
+          (name "Footprint") "Resistor_SMD:R_0603_1608Metric")
+        (field
+          (name "Datasheet"))
+        (field
+          (name "SKiDL Tag") "hdfYuyHX8c")
+        (field
+          (name "SKiDL Line") "faema_president.py:632"))
+      (libsource
+        (lib "NO_LIB")
+        (part "R"))
+      (sheetpath
+        (names "/block_ui1/")
+        (tstamps "/28ec3827-a82c-5118-ad83-f300eecd606d/"))
+      (component_classes)
+      (tstamps "eb9a821a-a736-5e9a-a0a4-40aedbf155ea"))
+    (comp
+      (ref "R13")
+      (value "10k_1pct")
+      (description "")
+      (footprint "Resistor_SMD:R_0603_1608Metric")
+      (fields
+        (field
+          (name "Description"))
+        (field
+          (name "Footprint") "Resistor_SMD:R_0603_1608Metric")
+        (field
+          (name "Datasheet"))
+        (field
+          (name "SKiDL Tag") "enCXQkcfCF")
+        (field
+          (name "SKiDL Line") "faema_president.py:632"))
+      (libsource
+        (lib "NO_LIB")
+        (part "R"))
+      (sheetpath
+        (names "/block_ui1/")
+        (tstamps "/28ec3827-a82c-5118-ad83-f300eecd606d/"))
+      (component_classes)
+      (tstamps "4303103d-c70b-51f8-bc31-63a4d7be47c9"))
+    (comp
+      (ref "R14")
+      (value "10k_1pct")
+      (description "")
+      (footprint "Resistor_SMD:R_0603_1608Metric")
+      (fields
+        (field
+          (name "Description"))
+        (field
+          (name "Footprint") "Resistor_SMD:R_0603_1608Metric")
+        (field
+          (name "Datasheet"))
+        (field
+          (name "SKiDL Tag") "tbAt6v9mGs")
+        (field
+          (name "SKiDL Line") "faema_president.py:632"))
+      (libsource
+        (lib "NO_LIB")
+        (part "R"))
+      (sheetpath
+        (names "/block_ui1/")
+        (tstamps "/28ec3827-a82c-5118-ad83-f300eecd606d/"))
+      (component_classes)
+      (tstamps "070e0b79-64da-55df-b606-04917865d3ca"))
+    (comp
+      (ref "R2")
+      (value "4k7_1pct")
+      (description "")
+      (footprint "Resistor_SMD:R_0603_1608Metric")
+      (fields
+        (field
+          (name "Description"))
+        (field
+          (name "Footprint") "Resistor_SMD:R_0603_1608Metric")
+        (field
+          (name "Datasheet"))
+        (field
+          (name "SKiDL Tag") "TtTLehPDwf")
+        (field
+          (name "SKiDL Line") "faema_president.py:547"))
+      (libsource
+        (lib "NO_LIB")
+        (part "R"))
+      (sheetpath
+        (names "/block_rtc1/")
+        (tstamps "/33316cec-f19d-5033-a65a-4e36c7a41d16/"))
+      (component_classes)
+      (tstamps "240ba59c-8756-5633-a51e-2d7c42fa18b9"))
+    (comp
+      (ref "R3")
+      (value "4k7_1pct")
+      (description "")
+      (footprint "Resistor_SMD:R_0603_1608Metric")
+      (fields
+        (field
+          (name "Description"))
+        (field
+          (name "Footprint") "Resistor_SMD:R_0603_1608Metric")
+        (field
+          (name "Datasheet"))
+        (field
+          (name "SKiDL Tag") "2fUmQTlQ1W")
+        (field
+          (name "SKiDL Line") "faema_president.py:554"))
+      (libsource
+        (lib "NO_LIB")
+        (part "R"))
+      (sheetpath
+        (names "/block_rtc1/")
+        (tstamps "/33316cec-f19d-5033-a65a-4e36c7a41d16/"))
+      (component_classes)
+      (tstamps "b1a1affd-4ab8-5a71-8433-409e08162376"))
+    (comp
+      (ref "R7")
+      (value "100R_1pct")
+      (description "")
+      (footprint "Resistor_SMD:R_0603_1608Metric")
+      (fields
+        (field
+          (name "Description"))
+        (field
+          (name "Footprint") "Resistor_SMD:R_0603_1608Metric")
+        (field
+          (name "Datasheet"))
+        (field
+          (name "SKiDL Tag") "R0SHtflOYR")
+        (field
+          (name "SKiDL Line") "faema_president.py:466"))
+      (libsource
+        (lib "NO_LIB")
+        (part "R"))
+      (sheetpath
+        (names "/block_ssr_drive1/")
+        (tstamps "/2cf831f8-312a-53e9-b06e-a74fe933eab9/"))
+      (component_classes)
+      (tstamps "7ad31505-9211-5d99-9c86-6be24e22f31e"))
+    (comp
+      (ref "R9")
+      (value "10k_1pct")
+      (description "")
+      (footprint "Resistor_SMD:R_0603_1608Metric")
+      (fields
+        (field
+          (name "Description"))
+        (field
+          (name "Footprint") "Resistor_SMD:R_0603_1608Metric")
+        (field
+          (name "Datasheet"))
+        (field
+          (name "SKiDL Tag") "EVKu1f2gQ4")
+        (field
+          (name "SKiDL Line") "faema_president.py:473"))
+      (libsource
+        (lib "NO_LIB")
+        (part "R"))
+      (sheetpath
+        (names "/block_ssr_drive1/")
+        (tstamps "/2cf831f8-312a-53e9-b06e-a74fe933eab9/"))
+      (component_classes)
+      (tstamps "b395d2e7-01d6-54ca-976b-8cf7480efdfe"))
+    (comp
+      (ref "RV1")
+      (value "S14K275")
+      (description "")
+      (footprint "Varistor:RV_Disc_D15.5mm_W5.0mm_P7.5mm")
+      (fields
+        (field
+          (name "Description"))
+        (field
+          (name "Footprint") "Varistor:RV_Disc_D15.5mm_W5.0mm_P7.5mm")
+        (field
+          (name "Datasheet"))
+        (field
+          (name "SKiDL Tag") "ACkNtAlLFB")
+        (field
+          (name "SKiDL Line") "faema_president.py:246"))
+      (libsource
+        (lib "NO_LIB")
+        (part "Varistor"))
+      (sheetpath
+        (names "/block_ac_power1/")
+        (tstamps "/2dd22cd8-b0af-5f77-b03d-57f427b4dab0/"))
+      (component_classes)
+      (tstamps "f44e51c4-a57a-5ad3-8b0b-65171fdad531"))
+    (comp
+      (ref "Rref")
+      (value "430R_0.1pct")
+      (description "")
+      (footprint "Resistor_SMD:R_0603_1608Metric")
+      (fields
+        (field
+          (name "Description"))
+        (field
+          (name "Footprint") "Resistor_SMD:R_0603_1608Metric")
+        (field
+          (name "Datasheet"))
+        (field
+          (name "SKiDL Tag") "JQxhdJrysY")
+        (field
+          (name "SKiDL Line") "faema_president.py:374"))
+      (libsource
+        (lib "NO_LIB")
+        (part "R"))
+      (sheetpath
+        (names "/block_rtd_boiler1/")
+        (tstamps "/1b0256b3-0650-5635-8f7a-77673c9bd46c/"))
+      (component_classes)
+      (tstamps "35937444-759e-51d2-ba1a-6f84661f0fd3"))
+    (comp
+      (ref "Rref2")
+      (value "430R_0.1pct")
+      (description "")
+      (footprint "Resistor_SMD:R_0603_1608Metric")
+      (fields
+        (field
+          (name "Description"))
+        (field
+          (name "Footprint") "Resistor_SMD:R_0603_1608Metric")
+        (field
+          (name "Datasheet"))
+        (field
+          (name "SKiDL Tag") "WlfhzAjcZh")
+        (field
+          (name "SKiDL Line") "faema_president.py:428"))
+      (libsource
+        (lib "NO_LIB")
+        (part "R"))
+      (sheetpath
+        (names "/block_rtd_group1/")
+        (tstamps "/d51b9acd-b194-5d50-a99c-84beba4cdf7a/"))
+      (component_classes)
+      (tstamps "c5f85edc-9501-5764-8260-543fbd756657"))
+    (comp
+      (ref "U1")
+      (value "ESP32-S3-MINI-1-N8")
+      (description "")
+      (footprint "RF_Module:ESP32-S3-MINI-1")
+      (fields
+        (field
+          (name "Description"))
+        (field
+          (name "Footprint") "RF_Module:ESP32-S3-MINI-1")
+        (field
+          (name "Datasheet"))
+        (field
+          (name "SKiDL Tag") "MnJ6MzrTF7")
+        (field
+          (name "SKiDL Line") "faema_president.py:90"))
+      (libsource
+        (lib "NO_LIB")
+        (part "ESP32_S3_Mini"))
+      (sheetpath
+        (names "/block_mcu1/")
+        (tstamps "/2020ce5b-6346-5cbb-9f57-b7aeea600868/"))
+      (component_classes)
+      (tstamps "ffe5dad2-75d0-5789-89c9-2cc682db5058"))
+    (comp
+      (ref "U2")
+      (value "HLK-PM05")
+      (description "")
+      (footprint "Connector_PinHeader_2.54mm:PinHeader_2x02_P2.54mm_Vertical")
+      (fields
+        (field
+          (name "Description"))
+        (field
+          (name "Footprint") "Connector_PinHeader_2.54mm:PinHeader_2x02_P2.54mm_Vertical")
+        (field
+          (name "Datasheet"))
+        (field
+          (name "SKiDL Tag") "g7BwLnA4Sg")
+        (field
+          (name "SKiDL Line") "faema_president.py:148"))
+      (libsource
+        (lib "NO_LIB")
+        (part "HLK_PM05"))
+      (sheetpath
+        (names "/block_ac_power1/")
+        (tstamps "/2dd22cd8-b0af-5f77-b03d-57f427b4dab0/"))
+      (component_classes)
+      (tstamps "eeee2fa6-05e0-5738-a628-9489871dfd2b"))
+    (comp
+      (ref "U3")
+      (value "AMS1117-3.3")
+      (description "")
+      (footprint "Package_TO_SOT_SMD:SOT-223-3_TabPin2")
+      (fields
+        (field
+          (name "Description"))
+        (field
+          (name "Footprint") "Package_TO_SOT_SMD:SOT-223-3_TabPin2")
+        (field
+          (name "Datasheet"))
+        (field
+          (name "SKiDL Tag") "cVwF2dkhTe")
+        (field
+          (name "SKiDL Line") "faema_president.py:161"))
+      (libsource
+        (lib "NO_LIB")
+        (part "AMS1117_3V3"))
+      (sheetpath
+        (names "/block_dc_regulation1/")
+        (tstamps "/01c1d1c2-47b2-5e8f-a08a-452300949070/"))
+      (component_classes)
+      (tstamps "c869078a-d996-5fd9-b333-beade103468b"))
+    (comp
+      (ref "U4")
+      (value "MAX31865_CALDEIRA")
+      (description "")
+      (footprint "Package_SO:SSOP-20_5.3x7.2mm_P0.65mm")
+      (fields
+        (field
+          (name "Description"))
+        (field
+          (name "Footprint") "Package_SO:SSOP-20_5.3x7.2mm_P0.65mm")
+        (field
+          (name "Datasheet"))
+        (field
+          (name "SKiDL Tag") "Z5FWgwaqSS")
+        (field
+          (name "SKiDL Line") "faema_president.py:113"))
+      (libsource
+        (lib "NO_LIB")
+        (part "MAX31865"))
+      (sheetpath
+        (names "/block_rtd_boiler1/")
+        (tstamps "/1b0256b3-0650-5635-8f7a-77673c9bd46c/"))
+      (component_classes)
+      (tstamps "4a54a3a7-37fb-53d7-899f-14aae5b760e0"))
+    (comp
+      (ref "U5")
+      (value "DS3231SN")
+      (description "")
+      (footprint "Package_SO:SOIC-16W_7.5x10.3mm_P1.27mm")
+      (fields
+        (field
+          (name "Description"))
+        (field
+          (name "Footprint") "Package_SO:SOIC-16W_7.5x10.3mm_P1.27mm")
+        (field
+          (name "Datasheet"))
+        (field
+          (name "SKiDL Tag") "30mZSUfxuX")
+        (field
+          (name "SKiDL Line") "faema_president.py:134"))
+      (libsource
+        (lib "NO_LIB")
+        (part "DS3231"))
+      (sheetpath
+        (names "/block_rtc1/")
+        (tstamps "/33316cec-f19d-5033-a65a-4e36c7a41d16/"))
+      (component_classes)
+      (tstamps "642b3e73-0410-5e72-997f-a5e165389624"))
+    (comp
+      (ref "U6")
+      (value "MAX31865_GRUPO")
+      (description "")
+      (footprint "Package_SO:SSOP-20_5.3x7.2mm_P0.65mm")
+      (fields
+        (field
+          (name "Description"))
+        (field
+          (name "Footprint") "Package_SO:SSOP-20_5.3x7.2mm_P0.65mm")
+        (field
+          (name "Datasheet"))
+        (field
+          (name "SKiDL Tag") "lNvaWL7GB3")
+        (field
+          (name "SKiDL Line") "faema_president.py:113"))
+      (libsource
+        (lib "NO_LIB")
+        (part "MAX31865"))
+      (sheetpath
+        (names "/block_rtd_group1/")
+        (tstamps "/d51b9acd-b194-5d50-a99c-84beba4cdf7a/"))
+      (component_classes)
+      (tstamps "d09581c8-5679-5091-9472-d06028b4f454")))
+  (nets
+    (net
+      (code 1)
+      (name "+3V3")
+      (class "Default")
+      (node
+        (ref "C10")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "C12")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "C2")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "C4")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "C8")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "C9")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "J5")
+        (pin "2")
+        (pintype "PASSIVE"))
+      (node
+        (ref "J8")
+        (pin "4")
+        (pintype "PASSIVE"))
+      (node
+        (ref "R11")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "R12")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "R13")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "R14")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "R2")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "R3")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "U1")
+        (pin "1")
+        (pintype "POWER-IN"))
+      (node
+        (ref "U1")
+        (pin "25")
+        (pintype "INPUT"))
+      (node
+        (ref "U3")
+        (pin "2")
+        (pintype "POWER-OUT"))
+      (node
+        (ref "U4")
+        (pin "1")
+        (pintype "POWER-IN"))
+      (node
+        (ref "U5")
+        (pin "2")
+        (pintype "POWER-IN"))
+      (node
+        (ref "U5")
+        (pin "5")
+        (pintype "INPUT"))
+      (node
+        (ref "U6")
+        (pin "1")
+        (pintype "POWER-IN")))
+    (net
+      (code 2)
+      (name "+5V")
+      (class "Default")
+      (node
+        (ref "C1")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "C3")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "U2")
+        (pin "3")
+        (pintype "POWER-OUT"))
+      (node
+        (ref "U3")
+        (pin "3")
+        (pintype "POWER-IN")))
+    (net
+      (code 3)
+      (name "AC_L")
+      (class "Default")
+      (node
+        (ref "F1")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "J1")
+        (pin "1")
+        (pintype "PASSIVE")))
+    (net
+      (code 4)
+      (name "AC_L_FUSED")
+      (class "Default")
+      (node
+        (ref "F1")
+        (pin "2")
+        (pintype "PASSIVE"))
+      (node
+        (ref "RV1")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "U2")
+        (pin "2")
+        (pintype "PASSIVE")))
+    (net
+      (code 5)
+      (name "AC_N")
+      (class "Default")
+      (node
+        (ref "J1")
+        (pin "2")
+        (pintype "PASSIVE"))
+      (node
+        (ref "RV1")
+        (pin "2")
+        (pintype "PASSIVE"))
+      (node
+        (ref "U2")
+        (pin "1")
+        (pintype "PASSIVE")))
+    (net
+      (code 6)
+      (name "BTN1")
+      (class "Default")
+      (node
+        (ref "J8")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "R12")
+        (pin "2")
+        (pintype "PASSIVE"))
+      (node
+        (ref "U1")
+        (pin "19")
+        (pintype "INPUT")))
+    (net
+      (code 7)
+      (name "BTN2")
+      (class "Default")
+      (node
+        (ref "J8")
+        (pin "2")
+        (pintype "PASSIVE"))
+      (node
+        (ref "R13")
+        (pin "2")
+        (pintype "PASSIVE"))
+      (node
+        (ref "U1")
+        (pin "20")
+        (pintype "INPUT")))
+    (net
+      (code 8)
+      (name "BTN3")
+      (class "Default")
+      (node
+        (ref "J8")
+        (pin "3")
+        (pintype "PASSIVE"))
+      (node
+        (ref "R14")
+        (pin "2")
+        (pintype "PASSIVE"))
+      (node
+        (ref "U1")
+        (pin "21")
+        (pintype "INPUT")))
+    (net
+      (code 9)
+      (name "CS_DISP")
+      (class "Default")
+      (node
+        (ref "J5")
+        (pin "5")
+        (pintype "PASSIVE"))
+      (node
+        (ref "U1")
+        (pin "14")
+        (pintype "OUTPUT")))
+    (net
+      (code 10)
+      (name "CS_MAX_CALD")
+      (class "Default")
+      (node
+        (ref "U1")
+        (pin "13")
+        (pintype "OUTPUT"))
+      (node
+        (ref "U4")
+        (pin "2")
+        (pintype "INPUT")))
+    (net
+      (code 11)
+      (name "CS_MAX_GRUPO")
+      (class "Default")
+      (node
+        (ref "U1")
+        (pin "18")
+        (pintype "OUTPUT"))
+      (node
+        (ref "U6")
+        (pin "2")
+        (pintype "INPUT")))
+    (net
+      (code 12)
+      (name "D1_A")
+      (class "Default")
+      (node
+        (ref "D1")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "R10")
+        (pin "2")
+        (pintype "PASSIVE")))
+    (net
+      (code 13)
+      (name "DC_DISP")
+      (class "Default")
+      (node
+        (ref "J5")
+        (pin "6")
+        (pintype "PASSIVE"))
+      (node
+        (ref "U1")
+        (pin "15")
+        (pintype "OUTPUT")))
+    (net
+      (code 14)
+      (name "ENC_CLK")
+      (class "Default")
+      (node
+        (ref "ENC1")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "U1")
+        (pin "5")
+        (pintype "BIDIRECTIONAL")))
+    (net
+      (code 15)
+      (name "ENC_DT")
+      (class "Default")
+      (node
+        (ref "ENC1")
+        (pin "3")
+        (pintype "PASSIVE"))
+      (node
+        (ref "U1")
+        (pin "6")
+        (pintype "BIDIRECTIONAL")))
+    (net
+      (code 16)
+      (name "ENC_SW")
+      (class "Default")
+      (node
+        (ref "ENC1")
+        (pin "4")
+        (pintype "PASSIVE"))
+      (node
+        (ref "U1")
+        (pin "7")
+        (pintype "BIDIRECTIONAL")))
+    (net
+      (code 17)
+      (name "GND")
+      (class "Default")
+      (node
+        (ref "BT1")
+        (pin "2")
+        (pintype "POWER-IN"))
+      (node
+        (ref "C1")
+        (pin "2")
+        (pintype "PASSIVE"))
+      (node
+        (ref "C10")
+        (pin "2")
+        (pintype "PASSIVE"))
+      (node
+        (ref "C12")
+        (pin "2")
+        (pintype "PASSIVE"))
+      (node
+        (ref "C2")
+        (pin "2")
+        (pintype "PASSIVE"))
+      (node
+        (ref "C3")
+        (pin "2")
+        (pintype "PASSIVE"))
+      (node
+        (ref "C4")
+        (pin "2")
+        (pintype "PASSIVE"))
+      (node
+        (ref "C8")
+        (pin "2")
+        (pintype "PASSIVE"))
+      (node
+        (ref "C9")
+        (pin "2")
+        (pintype "PASSIVE"))
+      (node
+        (ref "D1")
+        (pin "2")
+        (pintype "PASSIVE"))
+      (node
+        (ref "ENC1")
+        (pin "2")
+        (pintype "PASSIVE"))
+      (node
+        (ref "ENC1")
+        (pin "5")
+        (pintype "PASSIVE"))
+      (node
+        (ref "J1")
+        (pin "3")
+        (pintype "PASSIVE"))
+      (node
+        (ref "J5")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "J7")
+        (pin "2")
+        (pintype "PASSIVE"))
+      (node
+        (ref "J8")
+        (pin "5")
+        (pintype "PASSIVE"))
+      (node
+        (ref "J8")
+        (pin "6")
+        (pintype "PASSIVE"))
+      (node
+        (ref "J9")
+        (pin "2")
+        (pintype "PASSIVE"))
+      (node
+        (ref "R9")
+        (pin "2")
+        (pintype "PASSIVE"))
+      (node
+        (ref "U1")
+        (pin "2")
+        (pintype "POWER-IN"))
+      (node
+        (ref "U2")
+        (pin "4")
+        (pintype "POWER-IN"))
+      (node
+        (ref "U3")
+        (pin "1")
+        (pintype "POWER-IN"))
+      (node
+        (ref "U4")
+        (pin "9")
+        (pintype "POWER-IN"))
+      (node
+        (ref "U5")
+        (pin "4")
+        (pintype "POWER-IN"))
+      (node
+        (ref "U6")
+        (pin "9")
+        (pintype "POWER-IN")))
+    (net
+      (code 18)
+      (name "I2C_SCL")
+      (class "Default")
+      (node
+        (ref "R3")
+        (pin "2")
+        (pintype "PASSIVE"))
+      (node
+        (ref "U1")
+        (pin "9")
+        (pintype "BIDIRECTIONAL"))
+      (node
+        (ref "U5")
+        (pin "16")
+        (pintype "INPUT")))
+    (net
+      (code 19)
+      (name "I2C_SDA")
+      (class "Default")
+      (node
+        (ref "R2")
+        (pin "2")
+        (pintype "PASSIVE"))
+      (node
+        (ref "U1")
+        (pin "8")
+        (pintype "BIDIRECTIONAL"))
+      (node
+        (ref "U5")
+        (pin "15")
+        (pintype "BIDIRECTIONAL")))
+    (net
+      (code 20)
+      (name "LED_STATUS")
+      (class "Default")
+      (node
+        (ref "R10")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "U1")
+        (pin "22")
+        (pintype "OUTPUT")))
+    (net
+      (code 21)
+      (name "LEVEL_SENSE")
+      (class "Default")
+      (node
+        (ref "J7")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "R11")
+        (pin "2")
+        (pintype "PASSIVE"))
+      (node
+        (ref "U1")
+        (pin "17")
+        (pintype "INPUT")))
+    (net
+      (code 22)
+      (name "MAX_DRDY")
+      (class "Default")
+      (node
+        (ref "U1")
+        (pin "3")
+        (pintype "BIDIRECTIONAL"))
+      (node
+        (ref "U4")
+        (pin "6")
+        (pintype "OUTPUT")))
+    (net
+      (code 23)
+      (name "PT100_CALD_FN")
+      (class "Default")
+      (node
+        (ref "J3")
+        (pin "4")
+        (pintype "PASSIVE"))
+      (node
+        (ref "Rref")
+        (pin "2")
+        (pintype "PASSIVE"))
+      (node
+        (ref "U4")
+        (pin "13")
+        (pintype "INPUT"))
+      (node
+        (ref "U4")
+        (pin "8")
+        (pintype "PASSIVE")))
+    (net
+      (code 24)
+      (name "PT100_CALD_FP")
+      (class "Default")
+      (node
+        (ref "J3")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "U4")
+        (pin "7")
+        (pintype "PASSIVE")))
+    (net
+      (code 25)
+      (name "PT100_CALD_RN")
+      (class "Default")
+      (node
+        (ref "C7")
+        (pin "2")
+        (pintype "PASSIVE"))
+      (node
+        (ref "J3")
+        (pin "3")
+        (pintype "PASSIVE"))
+      (node
+        (ref "U4")
+        (pin "11")
+        (pintype "INPUT")))
+    (net
+      (code 26)
+      (name "PT100_CALD_RP")
+      (class "Default")
+      (node
+        (ref "C7")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "J3")
+        (pin "2")
+        (pintype "PASSIVE"))
+      (node
+        (ref "U4")
+        (pin "10")
+        (pintype "INPUT")))
+    (net
+      (code 27)
+      (name "PT100_GRUP_FN")
+      (class "Default")
+      (node
+        (ref "J6")
+        (pin "4")
+        (pintype "PASSIVE"))
+      (node
+        (ref "Rref2")
+        (pin "2")
+        (pintype "PASSIVE"))
+      (node
+        (ref "U6")
+        (pin "13")
+        (pintype "INPUT"))
+      (node
+        (ref "U6")
+        (pin "8")
+        (pintype "PASSIVE")))
+    (net
+      (code 28)
+      (name "PT100_GRUP_FP")
+      (class "Default")
+      (node
+        (ref "J6")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "U6")
+        (pin "7")
+        (pintype "PASSIVE")))
+    (net
+      (code 29)
+      (name "PT100_GRUP_RN")
+      (class "Default")
+      (node
+        (ref "C11")
+        (pin "2")
+        (pintype "PASSIVE"))
+      (node
+        (ref "J6")
+        (pin "3")
+        (pintype "PASSIVE"))
+      (node
+        (ref "U6")
+        (pin "11")
+        (pintype "INPUT")))
+    (net
+      (code 30)
+      (name "PT100_GRUP_RP")
+      (class "Default")
+      (node
+        (ref "C11")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "J6")
+        (pin "2")
+        (pintype "PASSIVE"))
+      (node
+        (ref "U6")
+        (pin "10")
+        (pintype "INPUT")))
+    (net
+      (code 31)
+      (name "RREF_CALD_P")
+      (class "Default")
+      (node
+        (ref "Rref")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "U4")
+        (pin "12")
+        (pintype "INPUT")))
+    (net
+      (code 32)
+      (name "RREF_GRUP_P")
+      (class "Default")
+      (node
+        (ref "Rref2")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "U6")
+        (pin "12")
+        (pintype "INPUT")))
+    (net
+      (code 33)
+      (name "RST_DISP")
+      (class "Default")
+      (node
+        (ref "J5")
+        (pin "7")
+        (pintype "PASSIVE"))
+      (node
+        (ref "U1")
+        (pin "16")
+        (pintype "OUTPUT")))
+    (net
+      (code 34)
+      (name "SPI_MISO")
+      (class "Default")
+      (node
+        (ref "U1")
+        (pin "12")
+        (pintype "INPUT"))
+      (node
+        (ref "U4")
+        (pin "4")
+        (pintype "TRISTATE"))
+      (node
+        (ref "U6")
+        (pin "4")
+        (pintype "TRISTATE")))
+    (net
+      (code 35)
+      (name "SPI_MOSI")
+      (class "Default")
+      (node
+        (ref "J5")
+        (pin "4")
+        (pintype "PASSIVE"))
+      (node
+        (ref "U1")
+        (pin "11")
+        (pintype "OUTPUT"))
+      (node
+        (ref "U4")
+        (pin "3")
+        (pintype "INPUT"))
+      (node
+        (ref "U6")
+        (pin "3")
+        (pintype "INPUT")))
+    (net
+      (code 36)
+      (name "SPI_SCK")
+      (class "Default")
+      (node
+        (ref "J5")
+        (pin "3")
+        (pintype "PASSIVE"))
+      (node
+        (ref "U1")
+        (pin "10")
+        (pintype "OUTPUT"))
+      (node
+        (ref "U4")
+        (pin "5")
+        (pintype "INPUT"))
+      (node
+        (ref "U6")
+        (pin "5")
+        (pintype "INPUT")))
+    (net
+      (code 37)
+      (name "SSR_CTRL")
+      (class "Default")
+      (node
+        (ref "R7")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "U1")
+        (pin "4")
+        (pintype "OUTPUT")))
+    (net
+      (code 38)
+      (name "SSR_DRIVE")
+      (class "Default")
+      (node
+        (ref "J9")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "R7")
+        (pin "2")
+        (pintype "PASSIVE"))
+      (node
+        (ref "R9")
+        (pin "1")
+        (pintype "PASSIVE")))
+    (net
+      (code 39)
+      (name "VBAT")
+      (class "Default")
+      (node
+        (ref "BT1")
+        (pin "1")
+        (pintype "POWER-OUT"))
+      (node
+        (ref "U5")
+        (pin "14")
+        (pintype "POWER-IN")))
+    (net
+      (code 40)
+      (name "__NOCONNECT1")
+      (class "Default")
+      (node
+        (ref "U1")
+        (pin "23")
+        (pintype "BIDIRECTIONAL")))
+    (net
+      (code 41)
+      (name "__NOCONNECT10")
+      (class "Default")
+      (node
+        (ref "J5")
+        (pin "12")
+        (pintype "PASSIVE")))
+    (net
+      (code 42)
+      (name "__NOCONNECT11")
+      (class "Default")
+      (node
+        (ref "J5")
+        (pin "13")
+        (pintype "PASSIVE")))
+    (net
+      (code 43)
+      (name "__NOCONNECT12")
+      (class "Default")
+      (node
+        (ref "J5")
+        (pin "14")
+        (pintype "PASSIVE")))
+    (net
+      (code 44)
+      (name "__NOCONNECT13")
+      (class "Default")
+      (node
+        (ref "J5")
+        (pin "15")
+        (pintype "PASSIVE")))
+    (net
+      (code 45)
+      (name "__NOCONNECT14")
+      (class "Default")
+      (node
+        (ref "J5")
+        (pin "16")
+        (pintype "PASSIVE")))
+    (net
+      (code 46)
+      (name "__NOCONNECT15")
+      (class "Default")
+      (node
+        (ref "J5")
+        (pin "17")
+        (pintype "PASSIVE")))
+    (net
+      (code 47)
+      (name "__NOCONNECT16")
+      (class "Default")
+      (node
+        (ref "J5")
+        (pin "18")
+        (pintype "PASSIVE")))
+    (net
+      (code 48)
+      (name "__NOCONNECT17")
+      (class "Default")
+      (node
+        (ref "J5")
+        (pin "19")
+        (pintype "PASSIVE")))
+    (net
+      (code 49)
+      (name "__NOCONNECT18")
+      (class "Default")
+      (node
+        (ref "J5")
+        (pin "20")
+        (pintype "PASSIVE")))
+    (net
+      (code 50)
+      (name "__NOCONNECT19")
+      (class "Default")
+      (node
+        (ref "J5")
+        (pin "21")
+        (pintype "PASSIVE")))
+    (net
+      (code 51)
+      (name "__NOCONNECT2")
+      (class "Default")
+      (node
+        (ref "U1")
+        (pin "24")
+        (pintype "BIDIRECTIONAL")))
+    (net
+      (code 52)
+      (name "__NOCONNECT20")
+      (class "Default")
+      (node
+        (ref "J5")
+        (pin "22")
+        (pintype "PASSIVE")))
+    (net
+      (code 53)
+      (name "__NOCONNECT21")
+      (class "Default")
+      (node
+        (ref "J5")
+        (pin "23")
+        (pintype "PASSIVE")))
+    (net
+      (code 54)
+      (name "__NOCONNECT22")
+      (class "Default")
+      (node
+        (ref "J5")
+        (pin "24")
+        (pintype "PASSIVE")))
+    (net
+      (code 55)
+      (name "__NOCONNECT3")
+      (class "Default")
+      (node
+        (ref "U6")
+        (pin "6")
+        (pintype "OUTPUT")))
+    (net
+      (code 56)
+      (name "__NOCONNECT4")
+      (class "Default")
+      (node
+        (ref "U5")
+        (pin "3")
+        (pintype "OUTPUT")))
+    (net
+      (code 57)
+      (name "__NOCONNECT5")
+      (class "Default")
+      (node
+        (ref "U5")
+        (pin "1")
+        (pintype "OUTPUT")))
+    (net
+      (code 58)
+      (name "__NOCONNECT6")
+      (class "Default")
+      (node
+        (ref "J5")
+        (pin "8")
+        (pintype "PASSIVE")))
+    (net
+      (code 59)
+      (name "__NOCONNECT7")
+      (class "Default")
+      (node
+        (ref "J5")
+        (pin "9")
+        (pintype "PASSIVE")))
+    (net
+      (code 60)
+      (name "__NOCONNECT8")
+      (class "Default")
+      (node
+        (ref "J5")
+        (pin "10")
+        (pintype "PASSIVE")))
+    (net
+      (code 61)
+      (name "__NOCONNECT9")
+      (class "Default")
+      (node
+        (ref "J5")
+        (pin "11")
+        (pintype "PASSIVE")))))

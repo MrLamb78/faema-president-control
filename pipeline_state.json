@@ -1,0 +1,75 @@
+{
+  "version": "4.0",
+  "circuit_name": "faema_president_control",
+  "stage": "coding_complete",
+  "last_updated": "2026-04-09T21:00:00Z",
+  "active_circuit_file": "circuits/faema_president.py",
+  "requirements_complete": true,
+  "spec_path": "SPEC.md",
+  "spec_source": "extracted from CONTEXT.md + CLAUDE.md (interview bypassed)",
+  "architecture_complete": true,
+  "architecture_files": [
+    "architecture/block_diagram.md",
+    "architecture/net_plan.md",
+    "architecture/ic_selection.md",
+    "architecture/skeleton_bom.md",
+    "architecture/design_risks.md"
+  ],
+  "sourcing_complete": true,
+  "sourcing_has_warnings": false,
+  "sourcing_status": "verified",
+  "sourced_bom_path": "sourcing/sourced_bom.md",
+  "sourced_bom_version": "Rev.4-2026-04-09-mcp-verified",
+  "sourcing_warnings": [
+    "U1 ESP32-S3-MINI-1-N8: custom KiCad footprint needed — import Espressif_ESP32-S3-MINI-1_27x15mm",
+    "U2 HLK-PM05: custom KiCad footprint — hand-soldered, non-LCSC",
+    "MAX31865 C779509: single-source, order 3-4 pcs as buffer"
+  ],
+  "sourcing_escalation_count": 0,
+  "sourcing_lcsc_verified": {
+    "U1_ESP32": "C2913206 — stock 11481 verified live",
+    "U4_U6_MAX31865": "C779509 — stock 3035 verified live",
+    "Rref_430R_0.1pct": "C666878 — stock 8666 verified live",
+    "C6_removed": "X2 safety cap removed — HLK-PM05 has internal filter, SSR-40DA zero-crossing",
+    "R8_removed": "snubber resistor removed together with C6"
+  },
+  "datasheets_complete": true,
+  "datasheets_path": "datasheets/",
+  "datasheets_files": {
+    "MAX31865": "datasheets/MAX31865AAP+T_SUMMARY.md",
+    "ESP32-S3-MINI-1-N8": "datasheets/ESP32-S3-MINI-1-N8.pdf + _SUMMARY.md",
+    "AMS1117-3.3": "datasheets/AMS1117-3.3.pdf + _SUMMARY.md",
+    "DS3231": "datasheets/DS3231SN_SUMMARY.md",
+    "HLK-PM05": "datasheets/HLK-PM05_SUMMARY.md",
+    "SSR-40DA": "datasheets/SSR-40DA.pdf + _SUMMARY.md"
+  },
+  "coding_complete": true,
+  "erc_status": {
+    "last_run": "2026-04-09T21:00:00Z",
+    "errors": 0,
+    "warnings": 7,
+    "warnings_accepted": "7x 'Insufficient drive current on GND' — false positive, no PWR_FLAG needed",
+    "pass": true,
+    "report_path": "faema_president.erc"
+  },
+  "netlist_path": "outputs/faema_president.net",
+  "last_modified_circuit": "circuits/faema_president.py",
+  "coding_mode": "modular",
+  "block_manifest": [
+    "block_ac_power",
+    "block_dc_regulation",
+    "block_mcu",
+    "block_rtd_boiler",
+    "block_rtd_group",
+    "block_ssr_drive",
+    "block_level_sense",
+    "block_rtc",
+    "block_display",
+    "block_ui"
+  ],
+  "erc_iteration_count": 4,
+  "architecture_rework_count": 0,
+  "block_count_preview": 10,
+  "coding_mode_preview": "modular",
+  "notes": "Rev.4 — coding completo. SKiDL single-file (10 blocos @subcircuit), sem dependência de libs KiCad. ERC: 0 erros, 7 avisos GND aceitáveis. Netlist gerada em outputs/faema_president.net. Próximo: importar netlist no KiCad PCB Editor e iniciar layout."
+}
