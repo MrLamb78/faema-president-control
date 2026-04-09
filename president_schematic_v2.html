@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Esquemático Rev.2 — Controle Faema President</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #0d0d0d; overflow: hidden; font-family: 'Courier New', monospace; }
+#topbar {
+  position: fixed; top: 0; left: 0; right: 0; height: 42px;
+  background: #141414; border-bottom: 1px solid #2a2a2a;
+  display: flex; align-items: center; gap: 20px; padding: 0 18px; z-index: 20;
+}
+#topbar h1 { color: #bbb; font-size: 12px; font-weight: normal; white-space: nowrap; }
+.leg { display: flex; align-items: center; gap: 6px; font-size: 10px; color: #666; }
+.leg span { display: inline-block; width: 22px; height: 0; }
+.ac-line  { border-top: 1px dashed #c04444; }
+.dc-line  { border-top: 1px dashed #4488cc; }
+.spi-line { border-top: 1px solid #88bbdd; }
+.i2c-line { border-top: 1px solid #aa88dd; }
+.gnd-line { border-top: 1px solid #556655; }
+#controls { position: fixed; bottom: 16px; right: 16px; z-index: 20; display: flex; gap: 6px; }
+button {
+  background: #1a1a1a; color: #999; border: 1px solid #333;
+  padding: 6px 14px; border-radius: 3px; cursor: pointer;
+  font-family: 'Courier New', monospace; font-size: 12px;
+}
+button:hover { background: #252525; color: #ccc; }
+#viewport { position: fixed; top: 42px; left: 0; right: 0; bottom: 0; overflow: hidden; cursor: grab; }
+#viewport:active { cursor: grabbing; }
+</style>
+</head>
+<body>
+
+<div id="topbar">
+  <h1>Esquemático Rev.2 — Controle Faema President | ESP32-S3 + MicroPython</h1>
+  <div class="leg"><span class="ac-line"></span>220 VAC</div>
+  <div class="leg"><span class="dc-line"></span>3.3 V</div>
+  <div class="leg"><span class="spi-line"></span>SPI bus</div>
+  <div class="leg"><span class="i2c-line"></span>I2C bus</div>
+  <div class="leg"><span class="gnd-line"></span>GND</div>
+</div>
+
+<div id="viewport">
+<svg id="sch" xmlns="http://www.w3.org/2000/svg"
+     width="1340" height="1010" viewBox="0 0 1340 1010" style="display:block">
+<defs>
+  <pattern id="dot" width="20" height="20" patternUnits="userSpaceOnUse">
+    <circle cx="0"  cy="0"  r="0.5" fill="#1c1c1c"/>
+    <circle cx="20" cy="0"  r="0.5" fill="#1c1c1c"/>
+    <circle cx="0"  cy="20" r="0.5" fill="#1c1c1c"/>
+    <circle cx="20" cy="20" r="0.5" fill="#1c1c1c"/>
+  </pattern>
+</defs>
+
+<rect width="1340" height="1010" fill="url(#dot)"/>
+
+<!-- ══════════════════════════════════════════════
+     220 VAC DOMAIN
+══════════════════════════════════════════════ -->
+<rect x="14" y="14" width="1312" height="148" rx="6"
+      fill="#1a0a0a" stroke="#c04444" stroke-width="0.8" stroke-dasharray="7 3"/>
+<text x="24" y="30" fill="#c04444" font-size="9" font-family="Courier New" font-weight="bold" letter-spacing="1">220 VAC</text>
+
+<!-- J1 AC INPUT -->
+<rect x="28" y="42" width="52" height="86" rx="3" fill="#1e1212" stroke="#c04444" stroke-width="0.8"/>
+<text x="54" y="57"  text-anchor="middle" fill="#c04444" font-size="8" font-family="Courier New">J1</text>
+<text x="54" y="68"  text-anchor="middle" fill="#777"    font-size="7" font-family="Courier New">AC IN</text>
+<text x="26" y="90"  fill="#cc6666" font-size="7" font-family="Courier New">L</text>
+<text x="26" y="108" fill="#888"    font-size="7" font-family="Courier New">N</text>
+<text x="26" y="126" fill="#668866" font-size="7" font-family="Courier New">PE</text>
+<line x1="80" y1="88"  x2="108" y2="88"  stroke="#c04444" stroke-width="1.2"/>
+<line x1="80" y1="106" x2="260" y2="106" stroke="#888"    stroke-width="1.2"/>
+<line x1="80" y1="124" x2="102" y2="124" stroke="#556644" stroke-width="1"/>
+<text x="105" y="127" fill="#556644" font-size="7" font-family="Courier New">⏚ PE/chassi</text>
+
+<!-- F1 FUSE T16A -->
+<rect x="108" y="80" width="44" height="16" rx="2" fill="#1a1212" stroke="#c04444" stroke-width="0.7"/>
+<text x="130" y="90"  text-anchor="middle" fill="#dd8888" font-size="7" font-family="Courier New" font-weight="bold">F1 T16A</text>
+<text x="130" y="134" text-anchor="middle" fill="#886666" font-size="7" font-family="Courier New">tempo lento</text>
+<line x1="152" y1="88" x2="178" y2="88" stroke="#c04444" stroke-width="1.2"/>
+
+<!-- RV1 MOV VARISTOR -->
+<line x1="185" y1="88"  x2="185" y2="94"  stroke="#c04444" stroke-width="0.8"/>
+<rect x="178" y="94" width="14" height="18" rx="2" fill="#1a1212" stroke="#cc8844" stroke-width="0.7"/>
+<line x1="185" y1="112" x2="185" y2="106" stroke="#888" stroke-width="0.8"/>
+<text x="197" y="100" fill="#cc8844" font-size="7" font-family="Courier New">RV1 MOV</text>
+<text x="197" y="111" fill="#776655" font-size="7" font-family="Courier New">S14K275</text>
+<line x1="185" y1="88" x2="230" y2="88" stroke="#c04444" stroke-width="1.2"/>
+<circle cx="230" cy="88" r="2.5" fill="#c04444"/>
+
+<!-- HLK-PM05 -->
+<rect x="230" y="50" width="128" height="92" rx="4" fill="#1e1010" stroke="#c04444" stroke-width="1"/>
+<text x="294" y="68"  text-anchor="middle" fill="#cc5555" font-size="9" font-family="Courier New" font-weight="bold">HLK-PM05</text>
+<text x="294" y="80"  text-anchor="middle" fill="#886666" font-size="7" font-family="Courier New">220VAC → 5VDC</text>
+<text x="294" y="92"  text-anchor="middle" fill="#886666" font-size="7" font-family="Courier New">5W · isolado 3kV</text>
+<text x="237" y="86"  fill="#886666" font-size="6" font-family="Courier New">L</text>
+<text x="237" y="104" fill="#886666" font-size="6" font-family="Courier New">N</text>
+<line x1="220" y1="106" x2="230" y2="106" stroke="#888" stroke-width="1.2"/>
+<line x1="358" y1="88"  x2="390" y2="88"  stroke="#ddaa22" stroke-width="1.2"/>
+<line x1="358" y1="106" x2="390" y2="106" stroke="#556655" stroke-width="1"/>
+<text x="362" y="84"  fill="#ddaa22" font-size="7" font-family="Courier New">+5V</text>
+<text x="362" y="118" fill="#556655" font-size="7" font-family="Courier New">GND</text>
+
+<!-- L wire goes over HLK to SSR -->
+<line x1="230" y1="88" x2="230" y2="38"  stroke="#c04444" stroke-width="1.2"/>
+<line x1="230" y1="38" x2="600" y2="38"  stroke="#c04444" stroke-width="1.2"/>
+<line x1="600" y1="38" x2="600" y2="72"  stroke="#c04444" stroke-width="1.2"/>
+
+<!-- SSR-40DA -->
+<rect x="560" y="52" width="148" height="92" rx="4" fill="#1e1010" stroke="#c04444" stroke-width="1"/>
+<text x="634" y="70"  text-anchor="middle" fill="#cc5555" font-size="9" font-family="Courier New" font-weight="bold">SSR1 — SSR-40DA</text>
+<text x="634" y="82"  text-anchor="middle" fill="#886666" font-size="7" font-family="Courier New">zero-cross · 40A · ctrl 3–32V</text>
+<text x="634" y="94"  text-anchor="middle" fill="#555"    font-size="6" font-family="Courier New">dissipador 60×40mm + pasta</text>
+<text x="565" y="70"  fill="#886666" font-size="6" font-family="Courier New">AC1</text>
+<text x="698" y="70"  fill="#886666" font-size="6" font-family="Courier New">AC2</text>
+<!-- ctrl lines going down -->
+<line x1="592" y1="144" x2="592" y2="162" stroke="#dd6655" stroke-width="0.8" stroke-dasharray="3 2"/>
+<line x1="616" y1="144" x2="616" y2="162" stroke="#556655" stroke-width="0.8" stroke-dasharray="3 2"/>
+<text x="596" y="158" fill="#dd6655" font-size="6" font-family="Courier New">CTRL+</text>
+<text x="622" y="158" fill="#556655" font-size="6" font-family="Courier New">CTRL−</text>
+<!-- AC2 wire right -->
+<line x1="708" y1="72" x2="748" y2="72" stroke="#c04444" stroke-width="1.2"/>
+
+<!-- Snubber RC -->
+<line x1="560" y1="144" x2="538" y2="144" stroke="#555" stroke-width="0.6"/>
+<line x1="538" y1="72"  x2="538" y2="144" stroke="#555" stroke-width="0.6"/>
+<rect x="560" y="139" width="28" height="10" rx="1" fill="#111" stroke="#555" stroke-width="0.5"/>
+<text x="574" y="147" text-anchor="middle" fill="#555" font-size="6" font-family="Courier New">R8 100Ω</text>
+<line x1="588" y1="144" x2="622" y2="144" stroke="#555" stroke-width="0.6"/>
+<line x1="622" y1="144" x2="622" y2="72"  stroke="#555" stroke-width="0.6"/>
+<line x1="622" y1="144" x2="648" y2="144" stroke="#555" stroke-width="0.6"/>
+<line x1="648" y1="137" x2="648" y2="151" stroke="#555" stroke-width="1.2"/>
+<line x1="652" y1="137" x2="652" y2="151" stroke="#555" stroke-width="1.2"/>
+<line x1="652" y1="144" x2="708" y2="144" stroke="#555" stroke-width="0.6"/>
+<line x1="708" y1="72"  x2="708" y2="144" stroke="#555" stroke-width="0.6"/>
+<text x="668" y="139" fill="#555" font-size="6" font-family="Courier New">C6 100nF/400V</text>
+
+<!-- J2 CALDEIRA -->
+<rect x="748" y="55" width="120" height="58" rx="3" fill="#1e1010" stroke="#c04444" stroke-width="0.8"/>
+<text x="808" y="72"  text-anchor="middle" fill="#cc5555" font-size="8" font-family="Courier New" font-weight="bold">J2 — CALDEIRA</text>
+<text x="808" y="84"  text-anchor="middle" fill="#886666" font-size="7" font-family="Courier New">2400W / 220V</text>
+<text x="808" y="96"  text-anchor="middle" fill="#886666" font-size="7" font-family="Courier New">~10.9A · fio 2.5mm²</text>
+<line x1="868" y1="72"  x2="904" y2="72"  stroke="#c04444" stroke-width="1.2"/>
+<line x1="904" y1="72"  x2="904" y2="106" stroke="#888"    stroke-width="1.2"/>
+<line x1="260" y1="106" x2="904" y2="106" stroke="#888"    stroke-width="1.2"/>
+
+<!-- ══════════════════════════════════════════════
+     POWER SUPPLY CHAIN  (y ≈ 175–230)
+══════════════════════════════════════════════ -->
+<!-- 5V rail from HLK -->
+<line x1="390" y1="88"  x2="432" y2="88"  stroke="#ddaa22" stroke-width="1.2"/>
+<line x1="432" y1="88"  x2="432" y2="192" stroke="#ddaa22" stroke-width="1.2"/>
+<!-- C1 100µF -->
+<line x1="432" y1="192" x2="456" y2="192" stroke="#ddaa22" stroke-width="1.2"/>
+<line x1="456" y1="182" x2="456" y2="202" stroke="#ddaa22" stroke-width="2"/>
+<line x1="460" y1="182" x2="460" y2="202" stroke="#ddaa22" stroke-width="2"/>
+<line x1="460" y1="192" x2="478" y2="192" stroke="#ddaa22" stroke-width="1.2"/>
+<text x="458" y="214" text-anchor="middle" fill="#886633" font-size="7" font-family="Courier New">C1</text>
+<text x="458" y="223" text-anchor="middle" fill="#886633" font-size="7" font-family="Courier New">100µF</text>
+<line x1="458" y1="202" x2="458" y2="232" stroke="#556655" stroke-width="0.8"/>
+<!-- C2 100nF -->
+<line x1="478" y1="182" x2="478" y2="202" stroke="#ddaa22" stroke-width="2"/>
+<line x1="482" y1="182" x2="482" y2="202" stroke="#ddaa22" stroke-width="2"/>
+<line x1="482" y1="192" x2="522" y2="192" stroke="#ddaa22" stroke-width="1.2"/>
+<text x="480" y="214" text-anchor="middle" fill="#886633" font-size="7" font-family="Courier New">C2</text>
+<text x="480" y="223" text-anchor="middle" fill="#886633" font-size="7" font-family="Courier New">100nF</text>
+<line x1="480" y1="202" x2="480" y2="232" stroke="#556655" stroke-width="0.8"/>
+<!-- AMS1117-3.3 -->
+<rect x="522" y="180" width="108" height="28" rx="3" fill="#111e1e" stroke="#4488cc" stroke-width="0.8"/>
+<text x="576" y="191" text-anchor="middle" fill="#55aacc" font-size="7" font-family="Courier New" font-weight="bold">U2 AMS1117-3.3</text>
+<text x="576" y="201" text-anchor="middle" fill="#337799" font-size="6" font-family="Courier New">5V → 3.3V / 800mA</text>
+<line x1="630" y1="192" x2="666" y2="192" stroke="#4488cc" stroke-width="1.2"/>
+<!-- C3 10µF -->
+<line x1="666" y1="182" x2="666" y2="202" stroke="#4488cc" stroke-width="2"/>
+<line x1="670" y1="182" x2="670" y2="202" stroke="#4488cc" stroke-width="2"/>
+<line x1="670" y1="192" x2="688" y2="192" stroke="#4488cc" stroke-width="1.2"/>
+<text x="668" y="214" text-anchor="middle" fill="#335577" font-size="7" font-family="Courier New">C3</text>
+<text x="668" y="223" text-anchor="middle" fill="#335577" font-size="7" font-family="Courier New">10µF</text>
+<line x1="668" y1="202" x2="668" y2="232" stroke="#556655" stroke-width="0.8"/>
+<!-- C4 100nF -->
+<line x1="688" y1="182" x2="688" y2="202" stroke="#4488cc" stroke-width="2"/>
+<line x1="692" y1="182" x2="692" y2="202" stroke="#4488cc" stroke-width="2"/>
+<line x1="692" y1="192" x2="730" y2="192" stroke="#4488cc" stroke-width="1.2"/>
+<text x="690" y="214" text-anchor="middle" fill="#335577" font-size="7" font-family="Courier New">C4</text>
+<text x="690" y="223" text-anchor="middle" fill="#335577" font-size="7" font-family="Courier New">100nF</text>
+<line x1="690" y1="202" x2="690" y2="232" stroke="#556655" stroke-width="0.8"/>
+<!-- power rails (dashed guide lines) -->
+<line x1="730" y1="192" x2="1300" y2="192" stroke="#4488cc" stroke-width="0.6" stroke-dasharray="5 3" opacity="0.45"/>
+<text x="1270" y="189" fill="#4488cc" font-size="7" font-family="Courier New">3.3V</text>
+<line x1="390" y1="232" x2="1300" y2="232" stroke="#556655" stroke-width="0.6" stroke-dasharray="5 3" opacity="0.45"/>
+<text x="1270" y="229" fill="#556655" font-size="7" font-family="Courier New">GND</text>
+<!-- HLK GND down -->
+<line x1="395" y1="106" x2="395" y2="232" stroke="#556655" stroke-width="0.8"/>
+
+<!-- ══════════════════════════════════════════════
+     3.3V LOGIC DOMAIN
+══════════════════════════════════════════════ -->
+<rect x="14" y="248" width="1312" height="748" rx="6"
+      fill="#0d1520" stroke="#4488cc" stroke-width="0.8" stroke-dasharray="7 3"/>
+<text x="24" y="266" fill="#4488cc" font-size="9" font-family="Courier New" font-weight="bold" letter-spacing="1">3.3 V — LÓGICA</text>
+
+<!-- ────────────────────────────────────────────
+     ESP32-S3 MINI  (central)
+──────────────────────────────────────────── -->
+<rect x="448" y="290" width="210" height="350" rx="5"
+      fill="#0a1428" stroke="#4488cc" stroke-width="1.2"/>
+<text x="553" y="308" text-anchor="middle" fill="#55aadd" font-size="10" font-family="Courier New" font-weight="bold">U1 — ESP32-S3 Mini</text>
+<text x="553" y="321" text-anchor="middle" fill="#336688" font-size="7"  font-family="Courier New">MicroPython · Wi-Fi + BT</text>
+<line x1="468" y1="330" x2="638" y2="330" stroke="#1e2e3e" stroke-width="0.5"/>
+
+<!-- LEFT PINS (SPI + ADC + SSR ctrl) -->
+<!-- 3V3 -->
+<line x1="408" y1="348" x2="448" y2="348" stroke="#4488cc" stroke-width="1"/>
+<text x="445" y="345" text-anchor="end" fill="#4488cc" font-size="7" font-family="Courier New">3V3</text>
+<!-- GND -->
+<line x1="408" y1="366" x2="448" y2="366" stroke="#556655" stroke-width="1"/>
+<text x="445" y="363" text-anchor="end" fill="#556655" font-size="7" font-family="Courier New">GND</text>
+
+<!-- SPI pins — shared bus (MAX31865 + GC9A01) -->
+<line x1="340" y1="396" x2="448" y2="396" stroke="#88bbdd" stroke-width="0.9"/>
+<text x="445" y="393" text-anchor="end" fill="#88bbdd" font-size="7" font-family="Courier New">GPIO13/CS_MAX</text>
+<line x1="340" y1="414" x2="448" y2="414" stroke="#88bbdd" stroke-width="0.9"/>
+<text x="445" y="411" text-anchor="end" fill="#88bbdd" font-size="7" font-family="Courier New">GPIO12/MISO</text>
+<line x1="340" y1="432" x2="448" y2="432" stroke="#88bbdd" stroke-width="0.9"/>
+<text x="445" y="429" text-anchor="end" fill="#88bbdd" font-size="7" font-family="Courier New">GPIO11/MOSI ←→</text>
+<line x1="340" y1="450" x2="448" y2="450" stroke="#88bbdd" stroke-width="0.9"/>
+<text x="445" y="447" text-anchor="end" fill="#88bbdd" font-size="7" font-family="Courier New">GPIO10/SCK  ←→</text>
+
+<!-- ADC NTC -->
+<line x1="340" y1="476" x2="448" y2="476" stroke="#ddaa55" stroke-width="0.9"/>
+<text x="445" y="473" text-anchor="end" fill="#ddaa55" font-size="7" font-family="Courier New">GPIO1/ADC_NTC</text>
+<!-- SSR ctrl -->
+<line x1="340" y1="496" x2="448" y2="496" stroke="#dd6655" stroke-width="0.9"/>
+<text x="445" y="493" text-anchor="end" fill="#dd6655" font-size="7" font-family="Courier New">GPIO4/SSR_CTRL</text>
+
+<!-- RIGHT PINS (GC9A01 extras + I2C + encoder) -->
+<!-- 3V3 -->
+<line x1="658" y1="348" x2="698" y2="348" stroke="#4488cc" stroke-width="1"/>
+<text x="661" y="345" fill="#4488cc" font-size="7" font-family="Courier New">3V3</text>
+<!-- GND -->
+<line x1="658" y1="366" x2="698" y2="366" stroke="#556655" stroke-width="1"/>
+<text x="661" y="363" fill="#556655" font-size="7" font-family="Courier New">GND</text>
+
+<!-- GC9A01 dedicated pins -->
+<line x1="658" y1="396" x2="730" y2="396" stroke="#88bbdd" stroke-width="0.9"/>
+<text x="661" y="393" fill="#88bbdd" font-size="7" font-family="Courier New">GPIO14/CS_DISP</text>
+<line x1="658" y1="414" x2="730" y2="414" stroke="#88bbdd" stroke-width="0.9"/>
+<text x="661" y="411" fill="#88bbdd" font-size="7" font-family="Courier New">GPIO15/DC_DISP</text>
+<line x1="658" y1="432" x2="730" y2="432" stroke="#88bbdd" stroke-width="0.9"/>
+<text x="661" y="429" fill="#88bbdd" font-size="7" font-family="Courier New">GPIO16/RST_DISP</text>
+
+<!-- I2C (DS3231 only) -->
+<line x1="658" y1="460" x2="730" y2="460" stroke="#aa88dd" stroke-width="0.9"/>
+<text x="661" y="457" fill="#aa88dd" font-size="7" font-family="Courier New">GPIO9/SCL</text>
+<line x1="658" y1="478" x2="730" y2="478" stroke="#aa88dd" stroke-width="0.9"/>
+<text x="661" y="475" fill="#aa88dd" font-size="7" font-family="Courier New">GPIO8/SDA</text>
+
+<!-- Encoder -->
+<line x1="658" y1="510" x2="730" y2="510" stroke="#88cc88" stroke-width="0.9"/>
+<text x="661" y="507" fill="#88cc88" font-size="7" font-family="Courier New">GPIO5/ENC_CLK</text>
+<line x1="658" y1="528" x2="730" y2="528" stroke="#88cc88" stroke-width="0.9"/>
+<text x="661" y="525" fill="#88cc88" font-size="7" font-family="Courier New">GPIO6/ENC_DT</text>
+<line x1="658" y1="546" x2="730" y2="546" stroke="#88cc88" stroke-width="0.9"/>
+<text x="661" y="543" fill="#88cc88" font-size="7" font-family="Courier New">GPIO7/ENC_SW</text>
+
+<!-- ESP32 notes -->
+<text x="553" y="580" text-anchor="middle" fill="#334455" font-size="7" font-family="Courier New">USB nativo · flashing direto</text>
+<text x="553" y="594" text-anchor="middle" fill="#334455" font-size="7" font-family="Courier New">3.3V / 800mA max</text>
+<text x="553" y="608" text-anchor="middle" fill="#2a3a2a" font-size="7" font-family="Courier New">Rev.2 — GC9A01 no SPI compartilhado</text>
+
+<!-- ────────────────────────────────────────────
+     MAX31865  (left)
+──────────────────────────────────────────── -->
+<rect x="90" y="378" width="158" height="128" rx="4"
+      fill="#0d1e18" stroke="#3a8866" stroke-width="0.9"/>
+<text x="169" y="396" text-anchor="middle" fill="#44aa77" font-size="8" font-family="Courier New" font-weight="bold">U3 MAX31865</text>
+<text x="169" y="408" text-anchor="middle" fill="#336655" font-size="7" font-family="Courier New">PT100 caldeira → SPI</text>
+<!-- right pins → SPI bus (direct horizontal wires to ESP32) -->
+<line x1="248" y1="420" x2="340" y2="396" stroke="#88bbdd" stroke-width="0.7"/>
+<line x1="248" y1="436" x2="340" y2="414" stroke="#88bbdd" stroke-width="0.7"/>
+<line x1="248" y1="452" x2="340" y2="432" stroke="#88bbdd" stroke-width="0.7"/>
+<line x1="248" y1="468" x2="340" y2="450" stroke="#88bbdd" stroke-width="0.7"/>
+<text x="250" y="418" fill="#336688" font-size="6" font-family="Courier New">CS</text>
+<text x="250" y="434" fill="#336688" font-size="6" font-family="Courier New">MISO</text>
+<text x="250" y="450" fill="#336688" font-size="6" font-family="Courier New">MOSI</text>
+<text x="250" y="466" fill="#336688" font-size="6" font-family="Courier New">SCK</text>
+<!-- left pins → J3 PT100 -->
+<line x1="48"  y1="432" x2="90" y2="432" stroke="#aaccaa" stroke-width="0.9"/>
+<line x1="48"  y1="450" x2="90" y2="450" stroke="#aaccaa" stroke-width="0.9"/>
+<line x1="48"  y1="468" x2="90" y2="468" stroke="#aaccaa" stroke-width="0.9"/>
+<line x1="48"  y1="486" x2="90" y2="486" stroke="#aaccaa" stroke-width="0.9"/>
+<text x="88"   y="430" text-anchor="end" fill="#4a7a6a" font-size="6" font-family="Courier New">RTD+</text>
+<text x="88"   y="448" text-anchor="end" fill="#4a7a6a" font-size="6" font-family="Courier New">RTD−</text>
+<text x="88"   y="466" text-anchor="end" fill="#4a7a6a" font-size="6" font-family="Courier New">FORCE+</text>
+<text x="88"   y="484" text-anchor="end" fill="#4a7a6a" font-size="6" font-family="Courier New">FORCE−</text>
+<!-- J3 PT100 connector -->
+<rect x="16" y="422" width="32" height="72" rx="3" fill="#0d1a14" stroke="#3a8866" stroke-width="0.7"/>
+<text x="32" y="438" text-anchor="middle" fill="#44aa77" font-size="6" font-family="Courier New">J3</text>
+<text x="32" y="449" text-anchor="middle" fill="#336655" font-size="6" font-family="Courier New">PT100</text>
+<text x="32" y="460" text-anchor="middle" fill="#225544" font-size="6" font-family="Courier New">caldeira</text>
+<text x="32" y="471" text-anchor="middle" fill="#225544" font-size="6" font-family="Courier New">4-wire</text>
+<!-- VCC / GND to MAX31865 -->
+<line x1="169" y1="378" x2="169" y2="368" stroke="#4488cc" stroke-width="0.7"/>
+<line x1="169" y1="368" x2="412" y2="368" stroke="#4488cc" stroke-width="0.7" stroke-dasharray="3 2" opacity="0.6"/>
+<text x="174" y="365" fill="#335577" font-size="6" font-family="Courier New">3.3V</text>
+<line x1="140" y1="506" x2="140" y2="518" stroke="#556655" stroke-width="0.7"/>
+<line x1="140" y1="518" x2="412" y2="518" stroke="#556655" stroke-width="0.7" stroke-dasharray="3 2" opacity="0.5"/>
+
+<!-- ────────────────────────────────────────────
+     NTC DIVIDER  (left, below MAX31865)
+──────────────────────────────────────────── -->
+<rect x="90" y="568" width="158" height="104" rx="4"
+      fill="#1a180d" stroke="#887733" stroke-width="0.8"/>
+<text x="169" y="586" text-anchor="middle" fill="#bbaa44" font-size="8" font-family="Courier New" font-weight="bold">NTC — Grupo</text>
+<text x="169" y="598" text-anchor="middle" fill="#665522" font-size="7" font-family="Courier New">divisor resistivo</text>
+<!-- R1 10k -->
+<text x="124" y="614" fill="#887733" font-size="7" font-family="Courier New">R1 10kΩ</text>
+<rect x="110" y="616" width="8" height="18" rx="1" fill="#111" stroke="#887733" stroke-width="0.6"/>
+<line x1="114" y1="616" x2="114" y2="606" stroke="#4488cc" stroke-width="0.7"/>
+<line x1="114" y1="634" x2="114" y2="646" stroke="#ddaa55" stroke-width="0.7"/>
+<!-- NTC symbol -->
+<text x="146" y="656" fill="#cc8833" font-size="7" font-family="Courier New">NTC 10k</text>
+<rect x="110" y="646" width="8" height="18" rx="1" fill="#111" stroke="#cc8833" stroke-width="0.6"/>
+<text x="122" y="657" fill="#cc7722" font-size="6" font-family="Courier New">−T°</text>
+<line x1="114" y1="664" x2="114" y2="674" stroke="#556655" stroke-width="0.7"/>
+<!-- C5 filter -->
+<line x1="114" y1="646" x2="175" y2="646" stroke="#ddaa55" stroke-width="0.7"/>
+<line x1="175" y1="638" x2="175" y2="654" stroke="#887733" stroke-width="1.5"/>
+<line x1="179" y1="638" x2="179" y2="654" stroke="#887733" stroke-width="1.5"/>
+<text x="185" y="644" fill="#665522" font-size="6" font-family="Courier New">C5 100nF</text>
+<line x1="179" y1="646" x2="248" y2="646" stroke="#ddaa55" stroke-width="0.7"/>
+<!-- ADC line to ESP32 GPIO1 -->
+<line x1="248" y1="646" x2="340" y2="476" stroke="#ddaa55" stroke-width="0.7"/>
+<!-- J4 NTC connector -->
+<rect x="16" y="582" width="32" height="42" rx="3" fill="#1a1505" stroke="#887733" stroke-width="0.7"/>
+<text x="32" y="598" text-anchor="middle" fill="#bbaa44" font-size="6" font-family="Courier New">J4</text>
+<text x="32" y="609" text-anchor="middle" fill="#887733" font-size="6" font-family="Courier New">NTC</text>
+<text x="32" y="620" text-anchor="middle" fill="#665522" font-size="6" font-family="Courier New">grupo</text>
+<line x1="48" y1="596" x2="90" y2="596" stroke="#aaaaaa" stroke-width="0.8"/>
+<line x1="48" y1="612" x2="90" y2="612" stroke="#556655" stroke-width="0.8"/>
+<!-- 3.3V to divider top -->
+<line x1="114" y1="606" x2="114" y2="600" stroke="#4488cc" stroke-width="0.7"/>
+<line x1="90"  y1="596" x2="114" y2="596" stroke="#4488cc" stroke-width="0.7"/>
+<line x1="114" y1="674" x2="114" y2="682" stroke="#556655" stroke-width="0.7"/>
+<line x1="114" y1="682" x2="412" y2="682" stroke="#556655" stroke-width="0.7" stroke-dasharray="3 2" opacity="0.5"/>
+
+<!-- ────────────────────────────────────────────
+     SSR CTRL LINE  (GPIO4 up through AC domain)
+──────────────────────────────────────────── -->
+<line x1="340" y1="496" x2="318" y2="496" stroke="#dd6655" stroke-width="0.9"/>
+<rect x="296" y="489" width="22" height="14" rx="2" fill="#1a0d0d" stroke="#cc5544" stroke-width="0.7"/>
+<text x="307" y="498" text-anchor="middle" fill="#cc5544" font-size="6" font-family="Courier New">R7 220Ω</text>
+<line x1="296" y1="496" x2="272" y2="496" stroke="#dd6655" stroke-width="0.9"/>
+<line x1="272" y1="496" x2="272" y2="268" stroke="#dd6655" stroke-width="0.9"/>
+<line x1="272" y1="268" x2="592" y2="268" stroke="#dd6655" stroke-width="0.9"/>
+<line x1="592" y1="268" x2="592" y2="162" stroke="#dd6655" stroke-width="0.9" stroke-dasharray="4 2"/>
+<text x="276" y="267" fill="#cc5544" font-size="6" font-family="Courier New">→ SSR CTRL+</text>
+<line x1="616" y1="162" x2="616" y2="268" stroke="#556655" stroke-width="0.8" stroke-dasharray="3 2"/>
+<line x1="616" y1="268" x2="616" y2="518" stroke="#556655" stroke-width="0.8" stroke-dasharray="3 2" opacity="0.4"/>
+
+<!-- ────────────────────────────────────────────
+     SPI BUS BRIDGE  (MOSI + SCK go both ways)
+     From ESP32 left (GPIO10/11) → right to GC9A01
+──────────────────────────────────────────── -->
+<!-- MOSI junction: at x=340, y=432 goes left to MAX31865 AND right through ESP32 to GC9A01 -->
+<!-- The ←→ labels on GPIO10/11 indicate bidirectional routing -->
+<!-- SCK/MOSI bridge lines (inside ESP32 box, symbolic) -->
+<line x1="555" y1="432" x2="555" y2="440" stroke="#88bbdd" stroke-width="0.5" stroke-dasharray="2 2" opacity="0.4"/>
+<line x1="555" y1="450" x2="555" y2="440" stroke="#88bbdd" stroke-width="0.5" stroke-dasharray="2 2" opacity="0.4"/>
+<text x="553" y="444" text-anchor="middle" fill="#2a3a4a" font-size="6" font-family="Courier New">SPI shared</text>
+<!-- MOSI bridge from GPIO11 right side -->
+<line x1="658" y1="432" x2="730" y2="432" stroke="#88bbdd" stroke-width="0.7" stroke-dasharray="3 1" opacity="0.7"/>
+<!-- SCK bridge from GPIO10 right side (routed at y=450 → y=412 for GC9A01) -->
+<line x1="658" y1="450" x2="715" y2="450" stroke="#88bbdd" stroke-width="0.7" stroke-dasharray="3 1" opacity="0.7"/>
+<line x1="715" y1="450" x2="715" y2="414" stroke="#88bbdd" stroke-width="0.7" stroke-dasharray="3 1" opacity="0.7"/>
+<!-- Both meet GC9A01 block at x=730 -->
+<text x="690" y="442" fill="#336688" font-size="6" font-family="Courier New">MOSI</text>
+<text x="690" y="410" fill="#336688" font-size="6" font-family="Courier New">SCK</text>
+<circle cx="730" cy="432" r="1.5" fill="#88bbdd" opacity="0.7"/>
+<circle cx="730" cy="414" r="1.5" fill="#88bbdd" opacity="0.7"/>
+
+<!-- ────────────────────────────────────────────
+     GC9A01 ROUND DISPLAY  (right side, top)
+──────────────────────────────────────────── -->
+<rect x="730" y="376" width="195" height="140" rx="4"
+      fill="#0d0d20" stroke="#5577bb" stroke-width="0.9"/>
+<!-- round display hint -->
+<circle cx="827" cy="420" r="28" fill="none" stroke="#334466" stroke-width="0.5" stroke-dasharray="3 2"/>
+<text x="827" y="416" text-anchor="middle" fill="#334466" font-size="6" font-family="Courier New">240×240</text>
+<text x="827" y="426" text-anchor="middle" fill="#334466" font-size="6" font-family="Courier New">round IPS</text>
+<text x="827" y="360" text-anchor="middle" fill="#7799cc" font-size="8" font-family="Courier New" font-weight="bold">J5 — GC9A01</text>
+<text x="827" y="372" text-anchor="middle" fill="#445588" font-size="7" font-family="Courier New">1.28" IPS LCD · 240×240 · SPI</text>
+<!-- pins -->
+<line x1="730" y1="396" x2="700" y2="396" stroke="#88bbdd" stroke-width="0.7"/>
+<line x1="730" y1="414" x2="715" y2="414" stroke="#88bbdd" stroke-width="0.7"/>
+<line x1="730" y1="432" x2="700" y2="432" stroke="#88bbdd" stroke-width="0.7"/>
+<line x1="730" y1="450" x2="700" y2="450" stroke="#88bbdd" stroke-width="0.7"/>
+<line x1="730" y1="468" x2="700" y2="468" stroke="#88bbdd" stroke-width="0.7"/>
+<text x="728" y="394" text-anchor="end" fill="#445588" font-size="6" font-family="Courier New">CS</text>
+<text x="728" y="412" text-anchor="end" fill="#445588" font-size="6" font-family="Courier New">SCK</text>
+<text x="728" y="430" text-anchor="end" fill="#445588" font-size="6" font-family="Courier New">MOSI</text>
+<text x="728" y="448" text-anchor="end" fill="#445588" font-size="6" font-family="Courier New">DC</text>
+<text x="728" y="466" text-anchor="end" fill="#445588" font-size="6" font-family="Courier New">RST</text>
+<line x1="730" y1="396" x2="730" y2="396"/>
+<!-- CS from GPIO14 -->
+<line x1="730" y1="396" x2="730" y2="396"/>
+<!-- wires from ESP32 right pins -->
+<line x1="730" y1="396" x2="700" y2="396" stroke="#88bbdd" stroke-width="0.7"/>
+<!-- DC and RST from GPIO15/16 direct -->
+<line x1="730" y1="448" x2="700" y2="448" stroke="#88bbdd" stroke-width="0.7"/>
+<line x1="700" y1="448" x2="700" y2="414" stroke="#88bbdd" stroke-width="0.7" stroke-dasharray="2 2"/>
+<line x1="730" y1="466" x2="698" y2="466" stroke="#88bbdd" stroke-width="0.7"/>
+<line x1="698" y1="466" x2="698" y2="432" stroke="#88bbdd" stroke-width="0.7" stroke-dasharray="2 2"/>
+<!-- VCC / GND -->
+<text x="925" y="400" fill="#335577" font-size="7" font-family="Courier New">VCC → 3.3V</text>
+<text x="925" y="413" fill="#334433" font-size="7" font-family="Courier New">GND → GND</text>
+<text x="925" y="428" fill="#334455" font-size="7" font-family="Courier New">BL → 3.3V ou PWM</text>
+<text x="925" y="441" fill="#223322" font-size="6" font-family="Courier New">lib: gc9a01 (Russ Hughes)</text>
+<text x="925" y="453" fill="#223322" font-size="6" font-family="Courier New">install: mip.install('gc9a01')</text>
+<text x="925" y="468" fill="#1a2a3a" font-size="6" font-family="Courier New">gauge analógico: arco temp PID</text>
+<text x="925" y="480" fill="#1a2a3a" font-size="6" font-family="Courier New">65k cores / 240×240px</text>
+
+<!-- ────────────────────────────────────────────
+     DS3231 RTC  (right side, middle)
+──────────────────────────────────────────── -->
+<rect x="730" y="556" width="155" height="100" rx="4"
+      fill="#0d1a0d" stroke="#447744" stroke-width="0.9"/>
+<text x="807" y="574" text-anchor="middle" fill="#66aa66" font-size="8" font-family="Courier New" font-weight="bold">U4 DS3231 RTC</text>
+<text x="807" y="586" text-anchor="middle" fill="#336633" font-size="7" font-family="Courier New">I2C · 0x68 · ±2ppm</text>
+<text x="807" y="598" text-anchor="middle" fill="#336633" font-size="7" font-family="Courier New">Agendamento liga/desliga</text>
+<text x="807" y="610" text-anchor="middle" fill="#225522" font-size="6" font-family="Courier New">VCC → 3.3V · GND → GND</text>
+<!-- I2C wires from ESP32 GPIO9/8 -->
+<line x1="730" y1="574" x2="700" y2="574" stroke="#aa88dd" stroke-width="0.8"/>
+<line x1="730" y1="590" x2="700" y2="590" stroke="#aa88dd" stroke-width="0.8"/>
+<line x1="700" y1="574" x2="700" y2="460" stroke="#aa88dd" stroke-width="0.8"/>
+<line x1="700" y1="590" x2="696" y2="590" stroke="#aa88dd" stroke-width="0.8"/>
+<line x1="696" y1="590" x2="696" y2="478" stroke="#aa88dd" stroke-width="0.8"/>
+<text x="728" y="572" text-anchor="end" fill="#664488" font-size="6" font-family="Courier New">SCL</text>
+<text x="728" y="588" text-anchor="end" fill="#664488" font-size="6" font-family="Courier New">SDA</text>
+<!-- junctions on I2C lines -->
+<circle cx="700" cy="460" r="2" fill="#aa88dd"/>
+<circle cx="696" cy="478" r="2" fill="#aa88dd"/>
+<!-- I2C pull-ups R2/R3 -->
+<text x="710" y="438" fill="#553366" font-size="6" font-family="Courier New">R2 4.7kΩ SCL</text>
+<text x="710" y="450" fill="#553366" font-size="6" font-family="Courier New">R3 4.7kΩ SDA</text>
+<line x1="700" y1="440" x2="700" y2="460" stroke="#aa88dd" stroke-width="0.6"/>
+<line x1="696" y1="440" x2="696" y2="478" stroke="#aa88dd" stroke-width="0.6"/>
+<line x1="696" y1="440" x2="700" y2="440" stroke="#aa88dd" stroke-width="0.6"/>
+<line x1="700" y1="440" x2="700" y2="432" stroke="#4488cc" stroke-width="0.6"/>
+<line x1="700" y1="432" x2="710" y2="432" stroke="#4488cc" stroke-width="0.6" stroke-dasharray="2 1" opacity="0.6"/>
+<!-- BT1 CR2032 -->
+<rect x="748" y="620" width="76" height="26" rx="3" fill="#0d1a0d" stroke="#336633" stroke-width="0.6"/>
+<text x="786" y="631" text-anchor="middle" fill="#336633" font-size="7" font-family="Courier New">BT1 CR2032</text>
+<text x="786" y="641" text-anchor="middle" fill="#225522" font-size="6" font-family="Courier New">VBAT backup</text>
+<line x1="786" y1="620" x2="786" y2="617" stroke="#336633" stroke-width="0.6"/>
+<line x1="786" y1="617" x2="820" y2="617" stroke="#336633" stroke-width="0.6"/>
+<line x1="820" y1="617" x2="820" y2="603" stroke="#447744" stroke-width="0.6"/>
+
+<!-- ────────────────────────────────────────────
+     ENCODER  (right side, bottom)
+──────────────────────────────────────────── -->
+<rect x="730" y="690" width="155" height="90" rx="4"
+      fill="#0d1a0d" stroke="#448844" stroke-width="0.9"/>
+<text x="807" y="708" text-anchor="middle" fill="#66bb66" font-size="8" font-family="Courier New" font-weight="bold">ENC1 — Encoder</text>
+<text x="807" y="720" text-anchor="middle" fill="#336633" font-size="7" font-family="Courier New">EC11 / KY-040</text>
+<text x="807" y="732" text-anchor="middle" fill="#336633" font-size="7" font-family="Courier New">Setpoint · menu · ajuste</text>
+<text x="807" y="744" text-anchor="middle" fill="#225522" font-size="6" font-family="Courier New">R4/R5/R6 10kΩ pull-up → 3.3V</text>
+<text x="807" y="756" text-anchor="middle" fill="#225522" font-size="6" font-family="Courier New">GND → GND · VCC → 3.3V</text>
+<!-- wires from ESP32 GPIO5/6/7 -->
+<line x1="730" y1="708" x2="700" y2="708" stroke="#88cc88" stroke-width="0.8"/>
+<line x1="700" y1="708" x2="700" y2="510" stroke="#88cc88" stroke-width="0.8"/>
+<circle cx="700" cy="510" r="2" fill="#88cc88"/>
+<line x1="730" y1="724" x2="704" y2="724" stroke="#88cc88" stroke-width="0.8"/>
+<line x1="704" y1="724" x2="704" y2="528" stroke="#88cc88" stroke-width="0.8"/>
+<circle cx="704" cy="528" r="2" fill="#88cc88"/>
+<line x1="730" y1="740" x2="708" y2="740" stroke="#88cc88" stroke-width="0.8"/>
+<line x1="708" y1="740" x2="708" y2="546" stroke="#88cc88" stroke-width="0.8"/>
+<circle cx="708" cy="546" r="2" fill="#88cc88"/>
+<text x="728" y="706" text-anchor="end" fill="#446644" font-size="6" font-family="Courier New">CLK</text>
+<text x="728" y="722" text-anchor="end" fill="#446644" font-size="6" font-family="Courier New">DT</text>
+<text x="728" y="738" text-anchor="end" fill="#446644" font-size="6" font-family="Courier New">SW</text>
+
+<!-- ══════════════════════════════════════════════
+     COMPONENT LIST
+══════════════════════════════════════════════ -->
+<rect x="14" y="808" width="700" height="186" rx="5"
+      fill="#0a0a0a" stroke="#222" stroke-width="0.8"/>
+<text x="26" y="826" fill="#888" font-size="8" font-family="Courier New" font-weight="bold" letter-spacing="1">LISTA DE COMPONENTES — Rev.2</text>
+<line x1="20" y1="832" x2="708" y2="832" stroke="#1e1e1e" stroke-width="0.5"/>
+<text x="26"  y="845" fill="#555" font-size="7" font-family="Courier New">REF</text>
+<text x="80"  y="845" fill="#555" font-size="7" font-family="Courier New">VALOR / PART</text>
+<text x="260" y="845" fill="#555" font-size="7" font-family="Courier New">DESCRIÇÃO</text>
+<text x="500" y="845" fill="#555" font-size="7" font-family="Courier New">OBS / GPIO</text>
+<line x1="20" y1="851" x2="708" y2="851" stroke="#1a1a1a" stroke-width="0.5"/>
+
+<text x="26"  y="865" fill="#aaa" font-size="7" font-family="Courier New">J1</text>
+<text x="80"  y="865" fill="#777" font-size="7" font-family="Courier New">Bornier 3-vias 5mm</text>
+<text x="260" y="865" fill="#777" font-size="7" font-family="Courier New">Entrada AC L/N/PE</text>
+<text x="500" y="865" fill="#555" font-size="7" font-family="Courier New">250VAC/15A</text>
+
+<text x="26"  y="879" fill="#aaa" font-size="7" font-family="Courier New">F1</text>
+<text x="80"  y="879" fill="#777" font-size="7" font-family="Courier New">T16A/250V</text>
+<text x="260" y="879" fill="#777" font-size="7" font-family="Courier New">Fusível tempo lento</text>
+<text x="500" y="879" fill="#555" font-size="7" font-family="Courier New">Porta-fusível 5×20mm</text>
+
+<text x="26"  y="893" fill="#aaa" font-size="7" font-family="Courier New">RV1</text>
+<text x="80"  y="893" fill="#777" font-size="7" font-family="Courier New">MOV S14K275</text>
+<text x="260" y="893" fill="#777" font-size="7" font-family="Courier New">Varistor surto 275VAC</text>
+<text x="500" y="893" fill="#555" font-size="7" font-family="Courier New">14mm, across L-N</text>
+
+<text x="26"  y="907" fill="#aaa" font-size="7" font-family="Courier New">U1</text>
+<text x="80"  y="907" fill="#777" font-size="7" font-family="Courier New">HLK-PM05</text>
+<text x="260" y="907" fill="#777" font-size="7" font-family="Courier New">SMPS 220VAC→5VDC/5W</text>
+<text x="500" y="907" fill="#555" font-size="7" font-family="Courier New">Hi-Link, isolação 3kV</text>
+
+<text x="26"  y="921" fill="#aaa" font-size="7" font-family="Courier New">SSR1</text>
+<text x="80"  y="921" fill="#777" font-size="7" font-family="Courier New">Fotek SSR-40DA</text>
+<text x="260" y="921" fill="#777" font-size="7" font-family="Courier New">SSR 40A zero-cross</text>
+<text x="500" y="921" fill="#555" font-size="7" font-family="Courier New">GPIO4 via R7 220Ω</text>
+
+<text x="26"  y="935" fill="#aaa" font-size="7" font-family="Courier New">U2</text>
+<text x="80"  y="935" fill="#777" font-size="7" font-family="Courier New">AMS1117-3.3</text>
+<text x="260" y="935" fill="#777" font-size="7" font-family="Courier New">LDO 5V→3.3V 800mA</text>
+<text x="500" y="935" fill="#555" font-size="7" font-family="Courier New">SOT-223</text>
+
+<text x="26"  y="949" fill="#aaa" font-size="7" font-family="Courier New">U3</text>
+<text x="80"  y="949" fill="#777" font-size="7" font-family="Courier New">MAX31865</text>
+<text x="260" y="949" fill="#777" font-size="7" font-family="Courier New">ADC PT100 caldeira</text>
+<text x="500" y="949" fill="#555" font-size="7" font-family="Courier New">GPIO10-13 (SPI)</text>
+
+<text x="26"  y="963" fill="#aaa" font-size="7" font-family="Courier New">U4</text>
+<text x="80"  y="963" fill="#777" font-size="7" font-family="Courier New">DS3231</text>
+<text x="260" y="963" fill="#777" font-size="7" font-family="Courier New">RTC I2C + CR2032</text>
+<text x="500" y="963" fill="#555" font-size="7" font-family="Courier New">GPIO8/9 (I2C)</text>
+
+<text x="26"  y="977" fill="#aaa" font-size="7" font-family="Courier New">J5</text>
+<text x="80"  y="977" fill="#777" font-size="7" font-family="Courier New">GC9A01 1.28" IPS</text>
+<text x="260" y="977" fill="#777" font-size="7" font-family="Courier New">Display redondo 240×240</text>
+<text x="500" y="977" fill="#555" font-size="7" font-family="Courier New">GPIO10-11,14-16 (SPI)</text>
+
+<text x="26"  y="991" fill="#aaa" font-size="7" font-family="Courier New">ENC1</text>
+<text x="80"  y="991" fill="#777" font-size="7" font-family="Courier New">EC11 / KY-040</text>
+<text x="260" y="991" fill="#777" font-size="7" font-family="Courier New">Encoder rotativo c/ botão</text>
+<text x="500" y="991" fill="#555" font-size="7" font-family="Courier New">GPIO5/6/7 + pull-ups 10kΩ</text>
+
+<!-- revision block -->
+<rect x="1060" y="900" width="260" height="88" rx="3" fill="#0a0a0a" stroke="#222" stroke-width="0.7"/>
+<text x="1190" y="918" text-anchor="middle" fill="#555" font-size="8" font-family="Courier New">FAEMA PRESIDENT CTRL</text>
+<line x1="1065" y1="924" x2="1315" y2="924" stroke="#1e1e1e" stroke-width="0.5"/>
+<text x="1070" y="938" fill="#444" font-size="7" font-family="Courier New">Rev:</text>
+<text x="1100" y="938" fill="#888" font-size="7" font-family="Courier New">2.0-DRAFT</text>
+<text x="1070" y="952" fill="#444" font-size="7" font-family="Courier New">Display:</text>
+<text x="1115" y="952" fill="#888" font-size="7" font-family="Courier New">GC9A01 1.28" IPS round</text>
+<text x="1070" y="966" fill="#444" font-size="7" font-family="Courier New">Bus SPI:</text>
+<text x="1115" y="966" fill="#888" font-size="7" font-family="Courier New">MAX31865 + GC9A01 shared</text>
+<text x="1070" y="980" fill="#444" font-size="7" font-family="Courier New">Bus I2C:</text>
+<text x="1115" y="980" fill="#888" font-size="7" font-family="Courier New">DS3231 only · 0x68</text>
+<text x="1070" y="992" fill="#333" font-size="6" font-family="Courier New">2400W/220V · 10.9A · SSR-40DA</text>
+
+</svg>
+</div>
+
+<div id="controls">
+  <button onclick="resetView()">⌂ Reset</button>
+  <button onclick="zoom(1.25)">＋</button>
+  <button onclick="zoom(0.8)">－</button>
+</div>
+
+<script>
+const vp = document.getElementById('viewport');
+const sch = document.getElementById('sch');
+let scale = 1, tx = 0, ty = 0;
+let dragging = false, startX, startY, startTx, startTy;
+
+function applyTransform() {
+  sch.style.transform = `translate(${tx}px,${ty}px) scale(${scale})`;
+  sch.style.transformOrigin = '0 0';
+}
+function zoom(f) {
+  const cx = vp.clientWidth/2, cy = vp.clientHeight/2;
+  tx = cx - f*(cx - tx); ty = cy - f*(cy - ty); scale *= f;
+  applyTransform();
+}
+function resetView() {
+  const sw = sch.width.baseVal.value, sh = sch.height.baseVal.value;
+  const vw = vp.clientWidth, vh = vp.clientHeight;
+  scale = Math.min(vw/sw, vh/sh) * 0.97;
+  tx = (vw - sw*scale)/2; ty = 4;
+  applyTransform();
+}
+vp.addEventListener('wheel', e => {
+  e.preventDefault();
+  const f = e.deltaY < 0 ? 1.12 : 0.89;
+  const r = vp.getBoundingClientRect();
+  const mx = e.clientX - r.left, my = e.clientY - r.top;
+  tx = mx - f*(mx - tx); ty = my - f*(my - ty); scale *= f;
+  applyTransform();
+}, { passive: false });
+vp.addEventListener('mousedown', e => {
+  dragging = true; startX = e.clientX; startY = e.clientY;
+  startTx = tx; startTy = ty;
+});
+window.addEventListener('mousemove', e => {
+  if (!dragging) return;
+  tx = startTx + e.clientX - startX;
+  ty = startTy + e.clientY - startY;
+  applyTransform();
+});
+window.addEventListener('mouseup', () => dragging = false);
+window.addEventListener('load', resetView);
+</script>
+</body>
+</html>
