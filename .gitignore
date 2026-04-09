@@ -1,0 +1,9 @@
+# KiCad lock files
+*.lck
+# KiCad local history
+.history/
+# KiCad backups
+*-backups/
+*.kicad_sch-bak
+*.kicad_pcb-bak
+fp-info-cache
