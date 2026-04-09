@@ -1,0 +1,25 @@
+{
+  "meta": {
+    "filename": "faema-president.kicad_pro",
+    "version": 1
+  },
+  "project": {
+    "meta": {
+      "name": "faema-president",
+      "version": 1
+    },
+    "schematic": {
+      "drawing": {
+        "default_line_thickness": 6.0,
+        "default_text_size": 50.0
+      },
+      "page_layout_descr_file": ""
+    },
+    "boards": [],
+    "text_variables": {
+      "REVISION": "4.0",
+      "TITLE": "Faema President - Controle de Temperatura",
+      "COMPANY": ""
+    }
+  }
+}
