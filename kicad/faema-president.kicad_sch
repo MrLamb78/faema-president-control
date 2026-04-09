@@ -13,7 +13,6 @@
 
   (lib_symbols
 
-    ;; ─── RESISTOR ───
     (symbol "faema:R"
       (pin_numbers hide)
       (pin_names (offset 0) hide)
@@ -37,7 +36,6 @@
       )
     )
 
-    ;; ─── CAPACITOR ───
     (symbol "faema:C"
       (pin_numbers hide)
       (pin_names (offset 0) hide)
@@ -63,7 +61,6 @@
       )
     )
 
-    ;; ─── LED ───
     (symbol "faema:LED"
       (pin_numbers hide)
       (pin_names (offset 0) hide)
@@ -89,7 +86,6 @@
       )
     )
 
-    ;; ─── ESP32-S3 MINI (U1) ───
     (symbol "faema:ESP32_S3_Mini"
       (in_bom yes)
       (on_board yes)
@@ -102,14 +98,12 @@
           (stroke (width 0.254) (type default)) (fill (type background)))
       )
       (symbol "ESP32_S3_Mini_1_1"
-        ;; Left side - Power
         (pin power_in line (at -16.51 33.02 0) (length 2.54)
           (name "3V3" (effects (font (size 1.016 1.016))))
           (number "1" (effects (font (size 1.016 1.016)))))
         (pin power_in line (at -16.51 30.48 0) (length 2.54)
           (name "GND" (effects (font (size 1.016 1.016))))
           (number "2" (effects (font (size 1.016 1.016)))))
-        ;; Left side - SPI
         (pin bidirectional line (at -16.51 25.4 0) (length 2.54)
           (name "GPIO10/SCK" (effects (font (size 1.016 1.016))))
           (number "10" (effects (font (size 1.016 1.016)))))
@@ -122,7 +116,6 @@
         (pin bidirectional line (at -16.51 17.78 0) (length 2.54)
           (name "GPIO13/CS_MAX" (effects (font (size 1.016 1.016))))
           (number "13" (effects (font (size 1.016 1.016)))))
-        ;; Left side - Control
         (pin bidirectional line (at -16.51 12.7 0) (length 2.54)
           (name "GPIO3/DRDY" (effects (font (size 1.016 1.016))))
           (number "3" (effects (font (size 1.016 1.016)))))
@@ -132,14 +125,12 @@
         (pin bidirectional line (at -16.51 7.62 0) (length 2.54)
           (name "GPIO2/LED" (effects (font (size 1.016 1.016))))
           (number "22" (effects (font (size 1.016 1.016)))))
-        ;; Left side - Level + Extra SPI CS
         (pin bidirectional line (at -16.51 2.54 0) (length 2.54)
           (name "GPIO17/LEVEL" (effects (font (size 1.016 1.016))))
           (number "17" (effects (font (size 1.016 1.016)))))
         (pin bidirectional line (at -16.51 0 0) (length 2.54)
           (name "GPIO18/CS_MAX2" (effects (font (size 1.016 1.016))))
           (number "18" (effects (font (size 1.016 1.016)))))
-        ;; Right side - Display
         (pin bidirectional line (at 16.51 33.02 180) (length 2.54)
           (name "GPIO14/CS_DISP" (effects (font (size 1.016 1.016))))
           (number "14" (effects (font (size 1.016 1.016)))))
@@ -149,14 +140,12 @@
         (pin bidirectional line (at 16.51 27.94 180) (length 2.54)
           (name "GPIO16/RST_DISP" (effects (font (size 1.016 1.016))))
           (number "16" (effects (font (size 1.016 1.016)))))
-        ;; Right side - I2C
         (pin bidirectional line (at 16.51 22.86 180) (length 2.54)
           (name "GPIO9/SCL" (effects (font (size 1.016 1.016))))
           (number "9" (effects (font (size 1.016 1.016)))))
         (pin bidirectional line (at 16.51 20.32 180) (length 2.54)
           (name "GPIO8/SDA" (effects (font (size 1.016 1.016))))
           (number "8" (effects (font (size 1.016 1.016)))))
-        ;; Right side - Encoder
         (pin bidirectional line (at 16.51 15.24 180) (length 2.54)
           (name "GPIO5/ENC_CLK" (effects (font (size 1.016 1.016))))
           (number "5" (effects (font (size 1.016 1.016)))))
@@ -166,7 +155,6 @@
         (pin bidirectional line (at 16.51 10.16 180) (length 2.54)
           (name "GPIO7/ENC_SW" (effects (font (size 1.016 1.016))))
           (number "7" (effects (font (size 1.016 1.016)))))
-        ;; Right side - Buttons
         (pin bidirectional line (at 16.51 5.08 180) (length 2.54)
           (name "GPIO19/BTN1" (effects (font (size 1.016 1.016))))
           (number "19" (effects (font (size 1.016 1.016)))))
@@ -176,7 +164,6 @@
         (pin bidirectional line (at 16.51 0 180) (length 2.54)
           (name "GPIO21/BTN3" (effects (font (size 1.016 1.016))))
           (number "21" (effects (font (size 1.016 1.016)))))
-        ;; Bottom - USB
         (pin bidirectional line (at -16.51 -5.08 0) (length 2.54)
           (name "USB_D+" (effects (font (size 1.016 1.016))))
           (number "23" (effects (font (size 1.016 1.016)))))
@@ -189,7 +176,6 @@
       )
     )
 
-    ;; ─── HLK-PM05 (U2) ───
     (symbol "faema:HLK_PM05"
       (in_bom yes)
       (on_board yes)
@@ -218,7 +204,6 @@
       )
     )
 
-    ;; ─── AMS1117-3.3 (U3) ───
     (symbol "faema:AMS1117_3V3"
       (in_bom yes)
       (on_board yes)
@@ -244,7 +229,6 @@
       )
     )
 
-    ;; ─── MAX31865 (U4, U6) ───
     (symbol "faema:MAX31865"
       (in_bom yes)
       (on_board yes)
@@ -258,14 +242,12 @@
         (text "PT100 ADC" (at 0 0 0) (effects (font (size 1.27 1.27))))
       )
       (symbol "MAX31865_1_1"
-        ;; Power
         (pin power_in line (at 0 21.59 270) (length 2.54)
           (name "VDD" (effects (font (size 1.016 1.016))))
           (number "1" (effects (font (size 1.016 1.016)))))
         (pin power_in line (at 0 -21.59 90) (length 2.54)
           (name "GND" (effects (font (size 1.016 1.016))))
           (number "9" (effects (font (size 1.016 1.016)))))
-        ;; SPI (right side)
         (pin input line (at 12.7 15.24 180) (length 2.54)
           (name "CS" (effects (font (size 1.016 1.016))))
           (number "2" (effects (font (size 1.016 1.016)))))
@@ -281,7 +263,6 @@
         (pin output line (at 12.7 2.54 180) (length 2.54)
           (name "DRDY" (effects (font (size 1.016 1.016))))
           (number "6" (effects (font (size 1.016 1.016)))))
-        ;; RTD (left side)
         (pin passive line (at -12.7 15.24 0) (length 2.54)
           (name "FORCE+" (effects (font (size 1.016 1.016))))
           (number "7" (effects (font (size 1.016 1.016)))))
@@ -294,7 +275,6 @@
         (pin passive line (at -12.7 7.62 0) (length 2.54)
           (name "FORCE-" (effects (font (size 1.016 1.016))))
           (number "8" (effects (font (size 1.016 1.016)))))
-        ;; Reference
         (pin passive line (at -12.7 2.54 0) (length 2.54)
           (name "REFIN+" (effects (font (size 1.016 1.016))))
           (number "12" (effects (font (size 1.016 1.016)))))
@@ -304,7 +284,6 @@
       )
     )
 
-    ;; ─── DS3231 (U5) ───
     (symbol "faema:DS3231"
       (in_bom yes)
       (on_board yes)
@@ -345,7 +324,6 @@
       )
     )
 
-    ;; ─── Generic connectors ───
     (symbol "faema:Conn_2pin"
       (pin_names (offset 1.016))
       (in_bom yes)
@@ -421,7 +399,6 @@
       )
     )
 
-    ;; ─── SSR connector (4-pin: AC1, AC2, CTRL+, CTRL-) ───
     (symbol "faema:SSR_40DA"
       (in_bom yes)
       (on_board yes)
@@ -450,7 +427,6 @@
       )
     )
 
-    ;; ─── Power symbols ───
     (symbol "power:+3V3"
       (power)
       (pin_names (offset 0))
@@ -517,11 +493,7 @@
 
   ) ;; end lib_symbols
 
-  ;; ═══════════════════════════════════════
-  ;; SECTION: AC POWER (top-left)
-  ;; ═══════════════════════════════════════
 
-  ;; J1 - AC Input
   (symbol
     (lib_id "faema:Conn_3pin")
     (at 30.48 45.72 0)
@@ -537,7 +509,6 @@
     (pin "3" (uuid "c0000001-0001-4000-8000-000000000003"))
   )
 
-  ;; U2 - HLK-PM05
   (symbol
     (lib_id "faema:HLK_PM05")
     (at 76.2 45.72 0)
@@ -554,7 +525,6 @@
     (pin "4" (uuid "c0000002-0001-4000-8000-000000000004"))
   )
 
-  ;; SSR1 - SSR-40DA
   (symbol
     (lib_id "faema:SSR_40DA")
     (at 76.2 76.2 0)
@@ -571,7 +541,6 @@
     (pin "4" (uuid "c0000003-0001-4000-8000-000000000004"))
   )
 
-  ;; J2 - Caldeira
   (symbol
     (lib_id "faema:Conn_2pin")
     (at 127 76.2 0)
@@ -586,11 +555,7 @@
     (pin "2" (uuid "c0000004-0001-4000-8000-000000000002"))
   )
 
-  ;; ═══════════════════════════════════════
-  ;; SECTION: DC POWER REGULATION
-  ;; ═══════════════════════════════════════
 
-  ;; U3 - AMS1117-3.3
   (symbol
     (lib_id "faema:AMS1117_3V3")
     (at 139.7 45.72 0)
@@ -606,11 +571,7 @@
     (pin "3" (uuid "c0000005-0001-4000-8000-000000000003"))
   )
 
-  ;; ═══════════════════════════════════════
-  ;; SECTION: MCU (center)
-  ;; ═══════════════════════════════════════
 
-  ;; U1 - ESP32-S3 Mini
   (symbol
     (lib_id "faema:ESP32_S3_Mini")
     (at 220 140 0)
@@ -648,11 +609,7 @@
     (pin "25" (uuid "c0000006-0001-4000-8000-000000000025"))
   )
 
-  ;; ═══════════════════════════════════════
-  ;; SECTION: SENSORS (left of MCU)
-  ;; ═══════════════════════════════════════
 
-  ;; U4 - MAX31865 Caldeira
   (symbol
     (lib_id "faema:MAX31865")
     (at 120 140 0)
@@ -678,7 +635,6 @@
     (pin "13" (uuid "c0000007-0001-4000-8000-000000000013"))
   )
 
-  ;; U6 - MAX31865 Grupo
   (symbol
     (lib_id "faema:MAX31865")
     (at 120 200 0)
@@ -704,7 +660,6 @@
     (pin "13" (uuid "c0000008-0001-4000-8000-000000000013"))
   )
 
-  ;; J3 - PT100 Caldeira
   (symbol
     (lib_id "faema:Conn_4pin")
     (at 63.5 140 0)
@@ -721,7 +676,6 @@
     (pin "4" (uuid "c0000009-0001-4000-8000-000000000004"))
   )
 
-  ;; J6 - PT100 Grupo
   (symbol
     (lib_id "faema:Conn_4pin")
     (at 63.5 200 0)
@@ -738,7 +692,6 @@
     (pin "4" (uuid "c0000010-0001-4000-8000-000000000004"))
   )
 
-  ;; J7 - Sonda de nível
   (symbol
     (lib_id "faema:Conn_2pin")
     (at 63.5 235 0)
@@ -753,11 +706,7 @@
     (pin "2" (uuid "c0000011-0001-4000-8000-000000000002"))
   )
 
-  ;; ═══════════════════════════════════════
-  ;; SECTION: PERIPHERALS (right of MCU)
-  ;; ═══════════════════════════════════════
 
-  ;; U5 - DS3231 RTC
   (symbol
     (lib_id "faema:DS3231")
     (at 310 115 0)
@@ -778,7 +727,6 @@
     (pin "16" (uuid "c0000012-0001-4000-8000-000000000016"))
   )
 
-  ;; BT1 - CR2032
   (symbol
     (lib_id "faema:Conn_2pin")
     (at 275 115 0)
@@ -793,11 +741,7 @@
     (pin "2" (uuid "c0000013-0001-4000-8000-000000000002"))
   )
 
-  ;; ═══════════════════════════════════════
-  ;; SECTION: KEY PASSIVES
-  ;; ═══════════════════════════════════════
 
-  ;; R7 - SSR series resistor
   (symbol
     (lib_id "faema:R")
     (at 175 130.16 0)
@@ -812,7 +756,6 @@
     (pin "2" (uuid "c0000020-0001-4000-8000-000000000002"))
   )
 
-  ;; R9 - SSR pull-down (SAFETY)
   (symbol
     (lib_id "faema:R")
     (at 185 140 0)
@@ -827,7 +770,6 @@
     (pin "2" (uuid "c0000021-0001-4000-8000-000000000002"))
   )
 
-  ;; R10 - LED series resistor
   (symbol
     (lib_id "faema:R")
     (at 175 147.62 0)
@@ -842,7 +784,6 @@
     (pin "2" (uuid "c0000022-0001-4000-8000-000000000002"))
   )
 
-  ;; D1 - Status LED
   (symbol
     (lib_id "faema:LED")
     (at 165 147.62 0)
@@ -857,7 +798,6 @@
     (pin "2" (uuid "c0000023-0001-4000-8000-000000000002"))
   )
 
-  ;; R11 - Level sensor resistor
   (symbol
     (lib_id "faema:R")
     (at 175 140 90)
@@ -872,12 +812,7 @@
     (pin "2" (uuid "c0000024-0001-4000-8000-000000000002"))
   )
 
-  ;; ═══════════════════════════════════════
-  ;; GLOBAL LABELS (net connections)
-  ;; These show what connects where
-  ;; ═══════════════════════════════════════
 
-  ;; SPI Bus
   (global_label "SPI_SCK" (shape bidirectional) (at 155 114.6 180)
     (effects (font (size 1.27 1.27)))
     (uuid "d0000001-0001-4000-8000-000000000001"))
@@ -894,7 +829,6 @@
     (effects (font (size 1.27 1.27)))
     (uuid "d0000005-0001-4000-8000-000000000001"))
 
-  ;; I2C Bus
   (global_label "I2C_SCL" (shape bidirectional) (at 265 122.86 0)
     (effects (font (size 1.27 1.27)))
     (uuid "d0000006-0001-4000-8000-000000000001"))
@@ -902,7 +836,6 @@
     (effects (font (size 1.27 1.27)))
     (uuid "d0000007-0001-4000-8000-000000000001"))
 
-  ;; Control signals
   (global_label "SSR_CTRL" (shape output) (at 155 130.16 180)
     (effects (font (size 1.27 1.27)))
     (uuid "d0000008-0001-4000-8000-000000000001"))
@@ -916,9 +849,6 @@
     (effects (font (size 1.27 1.27)))
     (uuid "d0000011-0001-4000-8000-000000000001"))
 
-  ;; ═══════════════════════════════════════
-  ;; TEXT ANNOTATIONS (notes for the user)
-  ;; ═══════════════════════════════════════
 
   (text "FAEMA PRESIDENT - Rev.4\nConectar nets com mesmo nome global label.\nTODO: adicionar passivos (Rref, bypass caps, pull-ups)\nVer CONTEXT.md para especificação completa."
     (at 30.48 260 0)
@@ -962,4 +892,4 @@
     (uuid "e0000007-0001-4000-8000-000000000001")
   )
 
-) ;; end kicad_sch
+)
