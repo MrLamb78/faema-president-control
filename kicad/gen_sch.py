@@ -338,6 +338,36 @@ def wire(x1, y1, x2, y2, wire_n=None):
     )
 
 
+def fanout(name, pin_x, pin_y, side="left", shape="input", dx=7.62):
+    """Create a short horizontal wire plus a label for readable pin fanout."""
+    if side == "left":
+        label_x = pin_x - dx
+        rot = 180
+    else:
+        label_x = pin_x + dx
+        rot = 0
+
+    return [
+        wire(pin_x, pin_y, label_x, pin_y),
+        global_label(name, label_x, pin_y, rot, shape),
+    ]
+
+
+def vertical_tap(name, pin_x, pin_y, direction="up", shape="input", dy=6.35):
+    """Create a short vertical wire plus a label for vertical parts like fuses."""
+    if direction == "up":
+        label_y = pin_y - dy
+        rot = 270
+    else:
+        label_y = pin_y + dy
+        rot = 90
+
+    return [
+        wire(pin_x, pin_y, pin_x, label_y),
+        global_label(name, pin_x, label_y, rot, shape),
+    ]
+
+
 # ---------------------------------------------------------------------------
 # New lib_symbol definitions
 # ---------------------------------------------------------------------------
@@ -1437,11 +1467,11 @@ def make_existing_components():
 
     out = []
 
-    # ---- J1 Conn_3pin at (30.48, 45.72) uuid b0000001 ----
+    # ---- J1 Conn_3pin ----
     out.append(
         "(symbol\n"
         "\t(lib_id \"faema:Conn_3pin\")\n"
-        "\t(at 30.48 45.72 0)\n"
+        "\t(at 25 45 0)\n"
         "\t(unit 1)\n"
         "\t(body_style 1)\n"
         "\t(exclude_from_sim no)\n"
@@ -1451,33 +1481,33 @@ def make_existing_components():
         "\t(dnp no)\n"
         "\t(uuid \"b0000001-0001-4000-8000-000000000001\")\n"
         "\t(property \"Reference\" \"J1\"\n"
-        "\t\t(at 30.48 38.1 0)\n"
+        "\t\t(at 25 37 0)\n"
         "\t\t(show_name no)\n"
         "\t\t(do_not_autoplace no)\n"
         "\t\t(effects (font (size 1.27 1.27)))\n"
         "\t)\n"
         "\t(property \"Value\" \"AC_INPUT\"\n"
-        "\t\t(at 30.48 53.34 0)\n"
+        "\t\t(at 25 53 0)\n"
         "\t\t(show_name no)\n"
         "\t\t(do_not_autoplace no)\n"
         "\t\t(effects (font (size 1.27 1.27)))\n"
         "\t)\n"
         "\t(property \"Footprint\" \"\"\n"
-        "\t\t(at 30.48 45.72 0)\n"
+        "\t\t(at 25 45 0)\n"
         "\t\t(hide yes)\n"
         "\t\t(show_name no)\n"
         "\t\t(do_not_autoplace no)\n"
         "\t\t(effects (font (size 1.27 1.27)))\n"
         "\t)\n"
         "\t(property \"Datasheet\" \"\"\n"
-        "\t\t(at 30.48 45.72 0)\n"
+        "\t\t(at 25 45 0)\n"
         "\t\t(hide yes)\n"
         "\t\t(show_name no)\n"
         "\t\t(do_not_autoplace no)\n"
         "\t\t(effects (font (size 1.27 1.27)))\n"
         "\t)\n"
         "\t(property \"Description\" \"\"\n"
-        "\t\t(at 30.48 45.72 0)\n"
+        "\t\t(at 25 45 0)\n"
         "\t\t(show_name no)\n"
         "\t\t(do_not_autoplace no)\n"
         "\t\t(effects (font (size 1.27 1.27)))\n"
@@ -1560,56 +1590,56 @@ def make_existing_components():
         )
 
     # U2 HLK_PM05
-    out.append(comp("faema:HLK_PM05", 76.2, 45.72, 0, "U2", "HLK-PM05",
+    out.append(comp("faema:HLK_PM05", 72, 45, 0, "U2", "HLK-PM05",
                     "0000002", [1,2,3,4],
                     ref_dy=-12.7, val_dy=12.7))
 
     # SSR1 SSR_40DA
-    out.append(comp("faema:SSR_40DA", 76.2, 76.2, 0, "SSR1", "SSR-40DA",
+    out.append(comp("faema:SSR_40DA", 80, 86, 0, "SSR1", "SSR-40DA",
                     "0000003", [1,2,3,4],
                     ref_dy=-12.7, val_dy=12.7))
 
     # J2 Conn_2pin
-    out.append(comp("faema:Conn_2pin", 127, 76.2, 0, "J2", "CALDEIRA_2400W",
+    out.append(comp("faema:Conn_2pin", 125, 86, 0, "J2", "CALDEIRA_2400W",
                     "0000004", [1,2],
                     ref_dy=-6.35, val_dy=7.62))
 
     # U3 AMS1117_3V3
-    out.append(comp("faema:AMS1117_3V3", 139.7, 45.72, 0, "U3", "AMS1117-3.3",
+    out.append(comp("faema:AMS1117_3V3", 150, 45, 0, "U3", "AMS1117-3.3",
                     "0000005", [1,2,3],
                     ref_dy=-10.16, val_dy=10.16))
 
     # U1 ESP32_S3_Mini — many pins
     esp_pins = list(range(1, 26))
     esp_pinstr = [str(p) for p in esp_pins]
-    out.append(comp("faema:ESP32_S3_Mini", 295, 160, 0, "U1", "ESP32-S3 Mini",
+    out.append(comp("faema:ESP32_S3_Mini", 275, 170, 0, "U1", "ESP32-S3 Mini",
                     "0000006", esp_pinstr,
                     ref_dy=-40, val_dy=38))
 
     # U4 MAX31865 caldeira
     max_pins_u4 = [str(i) for i in range(1, 14)]
-    out.append(comp("faema:MAX31865", 120, 140, 0, "U4", "MAX31865_CALDEIRA",
+    out.append(comp("faema:MAX31865", 120, 145, 0, "U4", "MAX31865_CALDEIRA",
                     "0000007", max_pins_u4,
                     ref_dy=-23, val_dy=23))
 
     # U6 MAX31865 grupo
     max_pins_u6 = [str(i) for i in range(1, 14)]
-    out.append(comp("faema:MAX31865", 120, 200, 0, "U6", "MAX31865_GRUPO",
+    out.append(comp("faema:MAX31865", 120, 220, 0, "U6", "MAX31865_GRUPO",
                     "0000008", max_pins_u6,
                     ref_dy=-23, val_dy=23))
 
     # J3 Conn_4pin (PT100 caldeira)
-    out.append(comp("faema:Conn_4pin", 63.5, 140, 0, "J3", "PT100_CALDEIRA",
+    out.append(comp("faema:Conn_4pin", 60, 145, 0, "J3", "PT100_CALDEIRA",
                     "0000009", [1,2,3,4],
                     ref_dy=-9.19, val_dy=9.86))
 
     # J6 Conn_4pin (PT100 grupo)
-    out.append(comp("faema:Conn_4pin", 63.5, 200, 0, "J6", "PT100_GRUPO",
+    out.append(comp("faema:Conn_4pin", 60, 220, 0, "J6", "PT100_GRUPO",
                     "0000010", [1,2,3,4],
                     ref_dy=-9.5, val_dy=10))
 
     # J7 Conn_2pin (sonda nivel)
-    out.append(comp("faema:Conn_2pin", 63.5, 235, 0, "J7", "SONDA_NIVEL",
+    out.append(comp("faema:Conn_2pin", 60, 250, 0, "J7", "SONDA_NIVEL",
                     "0000011", [1,2],
                     ref_dy=-6.4, val_dy=6.3))
 
@@ -1621,7 +1651,7 @@ def make_existing_components():
         return lines
 
     ds_pins = ["1","2","3","4","5","14","15","16"]
-    rx, ry = r(310), r(115)
+    rx, ry = r(360), r(155)
     out.append(
         f"(symbol\n"
         f"\t(lib_id \"faema:DS3231\")\n"
@@ -1679,7 +1709,7 @@ def make_existing_components():
     )
 
     # BT1 Conn_2pin (CR2032)
-    out.append(comp("faema:Conn_2pin", 275, 115, 0, "BT1", "CR2032",
+    out.append(comp("faema:Conn_2pin", 325, 155, 0, "BT1", "CR2032",
                     "0000013", [1,2],
                     ref_dy=-6.4, val_dy=6.3))
 
@@ -1687,7 +1717,7 @@ def make_existing_components():
     out.append(
         "(symbol\n"
         "\t(lib_id \"faema:R\")\n"
-        "\t(at 188 70 0)\n"
+        "\t(at 190 72 0)\n"
         "\t(unit 1)\n"
         "\t(body_style 1)\n"
         "\t(exclude_from_sim no)\n"
@@ -1697,33 +1727,33 @@ def make_existing_components():
         "\t(dnp no)\n"
         "\t(uuid \"b0000020-0001-4000-8000-000000000001\")\n"
         "\t(property \"Reference\" \"R7\"\n"
-        "\t\t(at 190.8 70 0)\n"
+        "\t\t(at 192.8 72 0)\n"
         "\t\t(show_name no)\n"
         "\t\t(do_not_autoplace no)\n"
         "\t\t(effects (font (size 1.27 1.27)))\n"
         "\t)\n"
         "\t(property \"Value\" \"220R\"\n"
-        "\t\t(at 185 70 0)\n"
+        "\t\t(at 187 72 0)\n"
         "\t\t(show_name no)\n"
         "\t\t(do_not_autoplace no)\n"
         "\t\t(effects (font (size 1.27 1.27)))\n"
         "\t)\n"
         "\t(property \"Footprint\" \"\"\n"
-        "\t\t(at 188 70 0)\n"
+        "\t\t(at 190 72 0)\n"
         "\t\t(hide yes)\n"
         "\t\t(show_name no)\n"
         "\t\t(do_not_autoplace no)\n"
         "\t\t(effects (font (size 1.27 1.27)))\n"
         "\t)\n"
         "\t(property \"Datasheet\" \"\"\n"
-        "\t\t(at 188 70 0)\n"
+        "\t\t(at 190 72 0)\n"
         "\t\t(hide yes)\n"
         "\t\t(show_name no)\n"
         "\t\t(do_not_autoplace no)\n"
         "\t\t(effects (font (size 1.27 1.27)))\n"
         "\t)\n"
         "\t(property \"Description\" \"\"\n"
-        "\t\t(at 188 70 0)\n"
+        "\t\t(at 190 72 0)\n"
         "\t\t(show_name no)\n"
         "\t\t(do_not_autoplace no)\n"
         "\t\t(effects (font (size 1.27 1.27)))\n"
@@ -1742,17 +1772,17 @@ def make_existing_components():
     )
 
     # R9 10k PD
-    out.append(comp("faema:R", 192, 112, 0, "R9", "10k PD",
+    out.append(comp("faema:R", 200, 104, 0, "R9", "10k PD",
                     "0000021", [1,2],
                     ref_dx=2.8, ref_dy=0, val_dx=-3, val_dy=0))
 
     # R10 470R
-    out.append(comp("faema:R", 256, 232, 0, "R10", "470R",
+    out.append(comp("faema:R", 250, 250, 0, "R10", "470R",
                     "0000022", [1,2],
                     ref_dx=2.8, ref_dy=0, val_dx=-3, val_dy=0))
 
     # D1 LED
-    out.append(comp("faema:LED", 240, 232, 0, "D1", "LED_GREEN",
+    out.append(comp("faema:LED", 235, 250, 0, "D1", "LED_GREEN",
                     "0000023", [1,2],
                     ref_dy=-3.54, val_dy=3.51))
 
@@ -1760,7 +1790,7 @@ def make_existing_components():
     out.append(
         "(symbol\n"
         "\t(lib_id \"faema:R\")\n"
-        "\t(at 48 248 90)\n"
+        "\t(at 45 250 90)\n"
         "\t(unit 1)\n"
         "\t(body_style 1)\n"
         "\t(exclude_from_sim no)\n"
@@ -1770,33 +1800,33 @@ def make_existing_components():
         "\t(dnp no)\n"
         "\t(uuid \"b0000024-0001-4000-8000-000000000001\")\n"
         "\t(property \"Reference\" \"R11\"\n"
-        "\t\t(at 48 253 0)\n"
+        "\t\t(at 45 255 0)\n"
         "\t\t(show_name no)\n"
         "\t\t(do_not_autoplace no)\n"
         "\t\t(effects (font (size 1.27 1.27)))\n"
         "\t)\n"
         "\t(property \"Value\" \"100k\"\n"
-        "\t\t(at 48 255 0)\n"
+        "\t\t(at 45 257 0)\n"
         "\t\t(show_name no)\n"
         "\t\t(do_not_autoplace no)\n"
         "\t\t(effects (font (size 1.27 1.27)))\n"
         "\t)\n"
         "\t(property \"Footprint\" \"\"\n"
-        "\t\t(at 48 248 0)\n"
+        "\t\t(at 45 250 0)\n"
         "\t\t(hide yes)\n"
         "\t\t(show_name no)\n"
         "\t\t(do_not_autoplace no)\n"
         "\t\t(effects (font (size 1.27 1.27)))\n"
         "\t)\n"
         "\t(property \"Datasheet\" \"\"\n"
-        "\t\t(at 48 248 0)\n"
+        "\t\t(at 45 250 0)\n"
         "\t\t(hide yes)\n"
         "\t\t(show_name no)\n"
         "\t\t(do_not_autoplace no)\n"
         "\t\t(effects (font (size 1.27 1.27)))\n"
         "\t)\n"
         "\t(property \"Description\" \"\"\n"
-        "\t\t(at 48 248 0)\n"
+        "\t\t(at 45 250 0)\n"
         "\t\t(show_name no)\n"
         "\t\t(do_not_autoplace no)\n"
         "\t\t(effects (font (size 1.27 1.27)))\n"
@@ -1824,22 +1854,22 @@ def make_new_components():
     parts = []
     counters = {"sym": _sym_n}  # will be used via next_sym()
 
-    # ----- Q1 NMOS_GSD at (175, 95) -----
+    # ----- Q1 NMOS_GSD -----
     n = next_sym()
     parts.append(sym_instance(
-        "faema:NMOS_GSD", 175, 95, 0, "Q1", "2N7002", n,
+        "faema:NMOS_GSD", 190, 97, 0, "Q1", "2N7002", n,
         ["1","2","3"],
-        ref_off_x=177.5, ref_off_y=91.5,
-        val_off_x=177.5, val_off_y=93.0
+        ref_off_x=192.5, ref_off_y=93.5,
+        val_off_x=192.5, val_off_y=95.0
     ))
 
-    # ----- R_gate horizontal R at (160, 95) rot=90 -----
+    # ----- R_gate -----
     n = next_sym()
     parts.append(sym_instance(
-        "faema:R", 160, 95, 90, "R_gate", "100R", n,
+        "faema:R", 174, 97, 90, "R_gate", "100R", n,
         ["1","2"],
-        ref_off_x=160, ref_off_y=97.5,
-        val_off_x=160, val_off_y=99.5
+        ref_off_x=174, ref_off_y=99.5,
+        val_off_x=174, val_off_y=101.5
     ))
 
     # ----- F1 Fuse at (47, 28) -----
@@ -1860,184 +1890,184 @@ def make_new_components():
         val_off_x=62.5, val_off_y=28
     ))
 
-    # ----- C1 C at (175, 28) -----
+    # ----- Input/output decoupling -----
     n = next_sym()
     parts.append(sym_instance(
-        "faema:C", 175, 28, 0, "C1", "10u/16V", n,
+        "faema:C", 182, 28, 0, "C1", "10u/16V", n,
         ["1","2"],
-        ref_off_x=177.5, ref_off_y=28,
-        val_off_x=172.5, val_off_y=28
+        ref_off_x=184.5, ref_off_y=28,
+        val_off_x=179.5, val_off_y=28
     ))
 
     # ----- C2 C at (190, 28) -----
     n = next_sym()
     parts.append(sym_instance(
-        "faema:C", 190, 28, 0, "C2", "10u/16V", n,
+        "faema:C", 197, 28, 0, "C2", "10u/16V", n,
         ["1","2"],
-        ref_off_x=192.5, ref_off_y=28,
-        val_off_x=187.5, val_off_y=28
+        ref_off_x=199.5, ref_off_y=28,
+        val_off_x=194.5, val_off_y=28
     ))
 
     # ----- C3 C at (205, 28) -----
     n = next_sym()
     parts.append(sym_instance(
-        "faema:C", 205, 28, 0, "C3", "100n", n,
+        "faema:C", 212, 28, 0, "C3", "100n", n,
         ["1","2"],
-        ref_off_x=207.5, ref_off_y=28,
-        val_off_x=202.5, val_off_y=28
+        ref_off_x=214.5, ref_off_y=28,
+        val_off_x=209.5, val_off_y=28
     ))
 
     # ----- C4 C at (220, 28) -----
     n = next_sym()
     parts.append(sym_instance(
-        "faema:C", 220, 28, 0, "C4", "100n", n,
+        "faema:C", 227, 28, 0, "C4", "100n", n,
         ["1","2"],
-        ref_off_x=222.5, ref_off_y=28,
-        val_off_x=217.5, val_off_y=28
+        ref_off_x=229.5, ref_off_y=28,
+        val_off_x=224.5, val_off_y=28
     ))
 
     # ----- Rref R horizontal at (92, 155) rot=90 -----
     n = next_sym()
     parts.append(sym_instance(
-        "faema:R", 92, 155, 90, "Rref", "430R 0.1%", n,
+        "faema:R", 92, 160, 90, "Rref", "430R 0.1%", n,
         ["1","2"],
-        ref_off_x=92, ref_off_y=157.5,
-        val_off_x=92, val_off_y=159.5
+        ref_off_x=92, ref_off_y=162.5,
+        val_off_x=92, val_off_y=164.5
     ))
 
     # ----- C7 C at (100, 155) -----
     n = next_sym()
     parts.append(sym_instance(
-        "faema:C", 100, 155, 0, "C7", "100n", n,
+        "faema:C", 100, 160, 0, "C7", "100n", n,
         ["1","2"],
-        ref_off_x=102.5, ref_off_y=155,
-        val_off_x=97.5, val_off_y=155
+        ref_off_x=102.5, ref_off_y=160,
+        val_off_x=97.5, val_off_y=160
     ))
 
     # ----- C10 C at (110, 155) -----
     n = next_sym()
     parts.append(sym_instance(
-        "faema:C", 110, 155, 0, "C10", "100n", n,
+        "faema:C", 110, 160, 0, "C10", "100n", n,
         ["1","2"],
-        ref_off_x=112.5, ref_off_y=155,
-        val_off_x=107.5, val_off_y=155
+        ref_off_x=112.5, ref_off_y=160,
+        val_off_x=107.5, val_off_y=160
     ))
 
     # ----- Rref2 R horizontal at (92, 215) rot=90 -----
     n = next_sym()
     parts.append(sym_instance(
-        "faema:R", 92, 215, 90, "Rref2", "430R 0.1%", n,
+        "faema:R", 92, 235, 90, "Rref2", "430R 0.1%", n,
         ["1","2"],
-        ref_off_x=92, ref_off_y=217.5,
-        val_off_x=92, val_off_y=219.5
+        ref_off_x=92, ref_off_y=237.5,
+        val_off_x=92, val_off_y=239.5
     ))
 
     # ----- C11 C at (100, 215) -----
     n = next_sym()
     parts.append(sym_instance(
-        "faema:C", 100, 215, 0, "C11", "100n", n,
+        "faema:C", 100, 235, 0, "C11", "100n", n,
         ["1","2"],
-        ref_off_x=102.5, ref_off_y=215,
-        val_off_x=97.5, val_off_y=215
+        ref_off_x=102.5, ref_off_y=235,
+        val_off_x=97.5, val_off_y=235
     ))
 
     # ----- C12 C at (110, 215) -----
     n = next_sym()
     parts.append(sym_instance(
-        "faema:C", 110, 215, 0, "C12", "100n", n,
+        "faema:C", 110, 235, 0, "C12", "100n", n,
         ["1","2"],
-        ref_off_x=112.5, ref_off_y=215,
-        val_off_x=107.5, val_off_y=215
+        ref_off_x=112.5, ref_off_y=235,
+        val_off_x=107.5, val_off_y=235
     ))
 
     # ----- R2 R horizontal at (340, 100) rot=90 -----
     n = next_sym()
     parts.append(sym_instance(
-        "faema:R", 340, 100, 90, "R2", "4k7", n,
+        "faema:R", 350, 125, 90, "R2", "4k7", n,
         ["1","2"],
-        ref_off_x=340, ref_off_y=102.5,
-        val_off_x=340, val_off_y=104.5
+        ref_off_x=350, ref_off_y=127.5,
+        val_off_x=350, val_off_y=129.5
     ))
 
     # ----- R3 R horizontal at (350, 100) rot=90 -----
     n = next_sym()
     parts.append(sym_instance(
-        "faema:R", 350, 100, 90, "R3", "4k7", n,
+        "faema:R", 360, 125, 90, "R3", "4k7", n,
         ["1","2"],
-        ref_off_x=350, ref_off_y=102.5,
-        val_off_x=350, val_off_y=104.5
+        ref_off_x=360, ref_off_y=127.5,
+        val_off_x=360, val_off_y=129.5
     ))
 
     # ----- C8 C at (360, 100) -----
     n = next_sym()
     parts.append(sym_instance(
-        "faema:C", 360, 100, 0, "C8", "100n", n,
+        "faema:C", 370, 125, 0, "C8", "100n", n,
         ["1","2"],
-        ref_off_x=362.5, ref_off_y=100,
-        val_off_x=357.5, val_off_y=100
+        ref_off_x=372.5, ref_off_y=125,
+        val_off_x=367.5, val_off_y=125
     ))
 
     # ----- C9 C at (295, 110) -----
     n = next_sym()
     parts.append(sym_instance(
-        "faema:C", 295, 110, 0, "C9", "100n", n,
+        "faema:C", 255, 205, 0, "C9", "100n", n,
         ["1","2"],
-        ref_off_x=297.5, ref_off_y=110,
-        val_off_x=292.5, val_off_y=110
+        ref_off_x=257.5, ref_off_y=205,
+        val_off_x=252.5, val_off_y=205
     ))
 
     # ----- J5 Conn_8pin at (55, 268) — ILI9341 display -----
     n = next_sym()
     parts.append(sym_instance(
-        "faema:Conn_8pin", 55, 268, 0, "J5", "ILI9341_DISP", n,
+        "faema:Conn_8pin", 55, 282, 0, "J5", "ILI9341_DISP", n,
         ["1","2","3","4","5","6","7","8"],
-        ref_off_x=55, ref_off_y=255.5,
-        val_off_x=55, val_off_y=280.5
+        ref_off_x=55, ref_off_y=269.5,
+        val_off_x=55, val_off_y=293
     ))
 
     # ----- J8 Conn_6pin at (110, 268) — preset buttons -----
     n = next_sym()
     parts.append(sym_instance(
-        "faema:Conn_6pin", 110, 268, 0, "J8", "PRESET_BTNS", n,
+        "faema:Conn_6pin", 120, 282, 0, "J8", "PRESET_BTNS", n,
         ["1","2","3","4","5","6"],
-        ref_off_x=110, ref_off_y=258,
-        val_off_x=110, val_off_y=278
+        ref_off_x=120, ref_off_y=271,
+        val_off_x=120, val_off_y=292
     ))
 
     # ----- J9 Conn_5pin at (155, 268) — encoder -----
     n = next_sym()
     parts.append(sym_instance(
-        "faema:Conn_5pin", 155, 268, 0, "J9", "ENCODER", n,
+        "faema:Conn_5pin", 185, 282, 0, "J9", "ENCODER", n,
         ["1","2","3","4","5"],
-        ref_off_x=155, ref_off_y=259.5,
-        val_off_x=155, val_off_y=277.5
+        ref_off_x=185, ref_off_y=273.5,
+        val_off_x=185, val_off_y=291.5
     ))
 
     # ----- R12 R horizontal at (115, 255) rot=90 -----
     n = next_sym()
     parts.append(sym_instance(
-        "faema:R", 115, 255, 90, "R12", "10k", n,
+        "faema:R", 120, 265, 90, "R12", "10k", n,
         ["1","2"],
-        ref_off_x=115, ref_off_y=257.5,
-        val_off_x=115, val_off_y=259.5
+        ref_off_x=120, ref_off_y=267.5,
+        val_off_x=120, val_off_y=269.5
     ))
 
     # ----- R13 R horizontal at (125, 255) rot=90 -----
     n = next_sym()
     parts.append(sym_instance(
-        "faema:R", 125, 255, 90, "R13", "10k", n,
+        "faema:R", 130, 265, 90, "R13", "10k", n,
         ["1","2"],
-        ref_off_x=125, ref_off_y=257.5,
-        val_off_x=125, val_off_y=259.5
+        ref_off_x=130, ref_off_y=267.5,
+        val_off_x=130, val_off_y=269.5
     ))
 
     # ----- R14 R horizontal at (135, 255) rot=90 -----
     n = next_sym()
     parts.append(sym_instance(
-        "faema:R", 135, 255, 90, "R14", "10k", n,
+        "faema:R", 140, 265, 90, "R14", "10k", n,
         ["1","2"],
-        ref_off_x=135, ref_off_y=257.5,
-        val_off_x=135, val_off_y=259.5
+        ref_off_x=140, ref_off_y=267.5,
+        val_off_x=140, val_off_y=269.5
     ))
 
     return "\n".join(parts)
@@ -2049,155 +2079,178 @@ def make_new_components():
 def make_connections():
     items = []
 
-    # --- Q1 Gate ---
-    items.append(wire(163.81, 95, 167.64, 95))
-    items.append(wire(167.64, 95, 171.19, 95))
-    items.append(global_label("Q1_GATE", 167.64, 95, 180, "input"))
-    items.append(global_label("SSR_MINUS", 175, 87.38, 270, "input"))
-    items.append(power_sym("GND", 175, 98.81))
+    # AC input and primary protection.
+    items.extend(fanout("L_IN", 19.92, 47.54, "left", "input"))
+    items.extend(fanout("N_IN", 19.92, 45.00, "left", "input"))
+    items.extend(fanout("PE",   19.92, 42.46, "left", "input"))
+    items.extend(vertical_tap("L_IN", 45, 24.19, "up", "input"))
+    items.extend(vertical_tap("L_FUSED", 45, 31.81, "down", "output"))
+    items.extend(vertical_tap("N_IN", 62, 24.19, "up", "input"))
+    items.extend(vertical_tap("L_FUSED", 62, 31.81, "down", "input"))
 
-    # --- R_gate ---
-    items.append(global_label("SSR_CTRL", 154.92, 95, 180, "input"))
+    # Mains converter and low-voltage regulation.
+    items.extend(fanout("L_FUSED", 61.84, 50.08, "left", "input"))
+    items.extend(fanout("N_IN", 61.84, 39.92, "left", "input"))
+    items.append(power_sym("+5V", 82.16, 50.08))
+    items.append(power_sym("GND", 82.16, 39.92))
+    items.append(power_sym("+5V", 141.11, 47.54))
+    items.append(power_sym("+3V3", 158.89, 47.54))
+    items.append(power_sym("GND", 150, 36.11))
 
-    # --- F1 ---
-    items.append(global_label("L_IN", 47, 22.92, 270, "input"))
-    items.append(global_label("L_FUSED", 47, 33.08, 90, "output"))
+    # Bulk and ceramic decoupling around the regulator.
+    items.append(power_sym("+5V", 182, 25.46))
+    items.append(power_sym("GND", 182, 30.54))
+    items.append(power_sym("+3V3", 197, 25.46))
+    items.append(power_sym("GND", 197, 30.54))
+    items.append(power_sym("+5V", 212, 25.46))
+    items.append(power_sym("GND", 212, 30.54))
+    items.append(power_sym("+3V3", 227, 25.46))
+    items.append(power_sym("GND", 227, 30.54))
 
-    # --- RV1 ---
-    items.append(global_label("L_FUSED", 65, 22.92, 270, "input"))
-    items.append(global_label("N_IN", 65, 33.08, 90, "output"))
+    # SSR power stage and low-side drive.
+    items.append(power_sym("+5V", 190, 75.81))
+    items.extend(vertical_tap("SSR_PLUS", 190, 68.19, "down", "output"))
+    items.extend(vertical_tap("Q1_GATE", 200, 107.81, "up", "input"))
+    items.append(power_sym("GND", 200, 100.19))
+    items.extend(fanout("SSR_CTRL", 170.19, 97, "left", "input"))
+    items.extend(fanout("Q1_GATE", 177.81, 97, "right", "input"))
+    items.extend(vertical_tap("SSR_MINUS", 190, 93.19, "up", "input"))
+    items.append(power_sym("GND", 190, 100.81))
+    items.extend(fanout("AC_SSR_L_IN", 69.84, 91.08, "left", "input"))
+    items.extend(fanout("AC_SSR_L_OUT", 69.84, 80.92, "left", "output"))
+    items.extend(fanout("SSR_PLUS", 90.16, 91.08, "right", "input"))
+    items.extend(fanout("SSR_MINUS", 90.16, 80.92, "right", "input"))
+    items.extend(fanout("AC_SSR_L_OUT", 119.92, 87.27, "left", "input"))
+    items.extend(fanout("N_IN", 119.92, 84.73, "left", "input"))
 
-    # --- R7 (vertical at 188, 70) ---
-    items.append(power_sym("+5V", 188, 66.19))
-    items.append(global_label("SSR_PLUS", 188, 75.08, 90, "output"))
+    # Boiler RTD front-end.
+    items.append(power_sym("+3V3", 120, 166.59))
+    items.append(power_sym("GND", 120, 123.41))
+    items.extend(fanout("CS_MAX_CALD", 132.70, 160.24, "right", "input"))
+    items.extend(fanout("SPI_MOSI", 132.70, 157.70, "right", "bidirectional"))
+    items.extend(fanout("SPI_MISO", 132.70, 155.16, "right", "bidirectional"))
+    items.extend(fanout("SPI_SCK", 132.70, 152.62, "right", "bidirectional"))
+    items.extend(fanout("MAX_DRDY", 132.70, 147.54, "right", "input"))
+    items.extend(fanout("FORCE_PLUS_U4", 107.30, 160.24, "left", "output"))
+    items.extend(fanout("RTDIN_PLUS_U4", 107.30, 157.70, "left", "input"))
+    items.extend(fanout("RTDIN_MINUS_U4", 107.30, 155.16, "left", "output"))
+    items.extend(fanout("FORCE_MINUS_U4", 107.30, 152.62, "left", "output"))
+    items.extend(fanout("REFIN_PLUS_U4", 107.30, 147.54, "left", "input"))
+    items.extend(fanout("REFIN_MINUS_U4", 107.30, 145.00, "left", "input"))
+    items.extend(fanout("FORCE_PLUS_U4", 54.92, 148.81, "left", "input"))
+    items.extend(fanout("RTDIN_PLUS_U4", 54.92, 146.27, "left", "input"))
+    items.extend(fanout("RTDIN_MINUS_U4", 54.92, 143.73, "left", "input"))
+    items.extend(fanout("FORCE_MINUS_U4", 54.92, 141.19, "left", "input"))
+    items.extend(fanout("REFIN_PLUS_U4", 88.19, 160.00, "left", "input"))
+    items.extend(fanout("FORCE_PLUS_U4", 95.81, 160.00, "right", "output"))
+    items.extend(vertical_tap("RTDIN_PLUS_U4", 100.00, 157.46, "up", "input"))
+    items.extend(vertical_tap("RTDIN_MINUS_U4", 100.00, 162.54, "down", "output"))
+    items.append(power_sym("+3V3", 110.00, 157.46))
+    items.append(power_sym("GND", 110.00, 162.54))
 
-    # --- R9 (vertical at 192, 112) ---
-    items.append(global_label("Q1_GATE", 192, 106.92, 270, "input"))
-    items.append(power_sym("GND", 192, 115.81))
+    # Group RTD front-end.
+    items.append(power_sym("+3V3", 120, 241.59))
+    items.append(power_sym("GND", 120, 198.41))
+    items.extend(fanout("CS_MAX_GRUPO", 132.70, 235.24, "right", "input"))
+    items.extend(fanout("SPI_MOSI", 132.70, 232.70, "right", "bidirectional"))
+    items.extend(fanout("SPI_MISO", 132.70, 230.16, "right", "bidirectional"))
+    items.extend(fanout("SPI_SCK", 132.70, 227.62, "right", "bidirectional"))
+    items.extend(fanout("FORCE_PLUS_U6", 107.30, 235.24, "left", "output"))
+    items.extend(fanout("RTDIN_PLUS_U6", 107.30, 232.70, "left", "input"))
+    items.extend(fanout("RTDIN_MINUS_U6", 107.30, 230.16, "left", "output"))
+    items.extend(fanout("FORCE_MINUS_U6", 107.30, 227.62, "left", "output"))
+    items.extend(fanout("REFIN_PLUS_U6", 107.30, 222.54, "left", "input"))
+    items.extend(fanout("REFIN_MINUS_U6", 107.30, 220.00, "left", "input"))
+    items.extend(fanout("FORCE_PLUS_U6", 54.92, 223.81, "left", "input"))
+    items.extend(fanout("RTDIN_PLUS_U6", 54.92, 221.27, "left", "input"))
+    items.extend(fanout("RTDIN_MINUS_U6", 54.92, 218.73, "left", "input"))
+    items.extend(fanout("FORCE_MINUS_U6", 54.92, 216.19, "left", "input"))
+    items.extend(fanout("REFIN_PLUS_U6", 88.19, 235.00, "left", "input"))
+    items.extend(fanout("FORCE_PLUS_U6", 95.81, 235.00, "right", "output"))
+    items.extend(vertical_tap("RTDIN_PLUS_U6", 100.00, 232.46, "up", "input"))
+    items.extend(vertical_tap("RTDIN_MINUS_U6", 100.00, 237.54, "down", "output"))
+    items.append(power_sym("+3V3", 110.00, 232.46))
+    items.append(power_sym("GND", 110.00, 237.54))
 
-    # --- C1 (at 175, 28) ---
-    items.append(power_sym("+5V", 175, 25.46))
-    items.append(power_sym("GND", 175, 30.54))
+    # RTC and backup battery.
+    items.append(power_sym("+3V3", 360, 170.24))
+    items.append(power_sym("GND", 360, 139.76))
+    items.extend(fanout("VBAT_RTC", 349.84, 160.08, "left", "input"))
+    items.extend(fanout("I2C_SDA", 370.16, 162.62, "right", "bidirectional"))
+    items.extend(fanout("I2C_SCL", 370.16, 160.08, "right", "bidirectional"))
+    items.extend(fanout("VBAT_RTC", 319.92, 156.27, "left", "input"))
+    items.append(power_sym("GND", 319.92, 153.73))
+    items.append(power_sym("+3V3", 346.19, 125.00))
+    items.extend(fanout("I2C_SDA", 353.81, 125.00, "right", "bidirectional"))
+    items.append(power_sym("+3V3", 356.19, 125.00))
+    items.extend(fanout("I2C_SCL", 363.81, 125.00, "right", "bidirectional"))
+    items.append(power_sym("+3V3", 370.00, 122.46))
+    items.append(power_sym("GND", 370.00, 127.54))
 
-    # --- C2 (at 190, 28) ---
-    items.append(power_sym("+3V3", 190, 25.46))
-    items.append(power_sym("GND", 190, 30.54))
+    # MCU fanout.
+    items.append(power_sym("+3V3", 258.49, 203.02))
+    items.append(power_sym("GND", 258.49, 200.48))
+    items.extend(fanout("SPI_SCK", 258.49, 195.40, "left", "bidirectional"))
+    items.extend(fanout("SPI_MOSI", 258.49, 192.86, "left", "bidirectional"))
+    items.extend(fanout("SPI_MISO", 258.49, 190.32, "left", "bidirectional"))
+    items.extend(fanout("CS_MAX_CALD", 258.49, 187.78, "left", "output"))
+    items.extend(fanout("MAX_DRDY", 258.49, 182.70, "left", "input"))
+    items.extend(fanout("SSR_CTRL", 258.49, 180.16, "left", "output"))
+    items.extend(fanout("LED_STATUS", 258.49, 177.62, "left", "output"))
+    items.extend(fanout("LEVEL_SENSE", 258.49, 172.54, "left", "input"))
+    items.extend(fanout("CS_MAX_GRUPO", 258.49, 170.00, "left", "output"))
+    items.extend(fanout("CS_DISP", 291.51, 203.02, "right", "output"))
+    items.extend(fanout("DC_DISP", 291.51, 200.48, "right", "output"))
+    items.extend(fanout("RST_DISP", 291.51, 197.94, "right", "output"))
+    items.extend(fanout("I2C_SCL", 291.51, 192.86, "right", "bidirectional"))
+    items.extend(fanout("I2C_SDA", 291.51, 190.32, "right", "bidirectional"))
+    items.extend(fanout("ENC_CLK", 291.51, 185.24, "right", "input"))
+    items.extend(fanout("ENC_DT", 291.51, 182.70, "right", "input"))
+    items.extend(fanout("ENC_SW", 291.51, 180.16, "right", "input"))
+    items.extend(fanout("BTN1", 291.51, 175.08, "right", "input"))
+    items.extend(fanout("BTN2", 291.51, 172.54, "right", "input"))
+    items.extend(fanout("BTN3", 291.51, 170.00, "right", "input"))
+    items.append(power_sym("+3V3", 255.00, 202.46))
+    items.append(power_sym("GND", 255.00, 207.54))
 
-    # --- C3 (at 205, 28) ---
-    items.append(power_sym("+5V", 205, 25.46))
-    items.append(power_sym("GND", 205, 30.54))
+    # Display and UI headers.
+    items.append(power_sym("+3V3", 49.92, 290.89))
+    items.append(power_sym("GND", 49.92, 288.35))
+    items.extend(fanout("CS_DISP", 49.92, 285.81, "left", "input"))
+    items.extend(fanout("RST_DISP", 49.92, 283.27, "left", "input"))
+    items.extend(fanout("DC_DISP", 49.92, 280.73, "left", "input"))
+    items.extend(fanout("SPI_MOSI", 49.92, 278.19, "left", "bidirectional"))
+    items.extend(fanout("SPI_SCK", 49.92, 275.65, "left", "bidirectional"))
+    items.append(power_sym("+3V3", 49.92, 273.11))
 
-    # --- C4 (at 220, 28) ---
-    items.append(power_sym("+3V3", 220, 25.46))
-    items.append(power_sym("GND", 220, 30.54))
+    items.extend(fanout("BTN1", 114.92, 288.35, "left", "input"))
+    items.extend(fanout("BTN2", 114.92, 285.81, "left", "input"))
+    items.extend(fanout("BTN3", 114.92, 283.27, "left", "input"))
+    items.append(power_sym("+3V3", 114.92, 280.73))
+    items.append(power_sym("GND", 114.92, 278.19))
+    items.append(power_sym("GND", 114.92, 275.65))
 
-    # --- Rref (horizontal at 92,155 rot=90) ---
-    items.append(global_label("REFIN_PLUS_U4", 88.19, 155, 180, "input"))
-    items.append(global_label("FORCE_PLUS_U4", 95.81, 155, 0, "output"))
+    items.extend(fanout("ENC_CLK", 179.92, 287.08, "left", "input"))
+    items.extend(fanout("ENC_DT", 179.92, 284.54, "left", "input"))
+    items.extend(fanout("ENC_SW", 179.92, 282.00, "left", "input"))
+    items.append(power_sym("+3V3", 179.92, 279.46))
+    items.append(power_sym("GND", 179.92, 276.92))
 
-    # --- C7 (at 100,155) ---
-    items.append(global_label("RTDIN_PLUS_U4", 100, 152.46, 270, "input"))
-    items.append(global_label("RTDIN_MINUS_U4", 100, 157.54, 90, "output"))
+    items.append(power_sym("+3V3", 116.19, 265.00))
+    items.extend(fanout("BTN1", 123.81, 265.00, "right", "output"))
+    items.append(power_sym("+3V3", 126.19, 265.00))
+    items.extend(fanout("BTN2", 133.81, 265.00, "right", "output"))
+    items.append(power_sym("+3V3", 136.19, 265.00))
+    items.extend(fanout("BTN3", 143.81, 265.00, "right", "output"))
 
-    # --- C10 (at 110,155) ---
-    items.append(power_sym("+3V3", 110, 152.46))
-    items.append(power_sym("GND", 110, 157.54))
+    items.append(power_sym("+3V3", 41.19, 250.00))
+    items.extend(fanout("LEVEL_SENSE", 48.81, 250.00, "right", "output"))
+    items.extend(fanout("LEVEL_SENSE", 54.92, 251.27, "left", "input"))
+    items.append(power_sym("GND", 54.92, 248.73))
 
-    # --- Rref2 (horizontal at 92,215 rot=90) ---
-    items.append(global_label("REFIN_PLUS_U6", 88.19, 215, 180, "input"))
-    items.append(global_label("FORCE_PLUS_U6", 95.81, 215, 0, "output"))
-
-    # --- C11 (at 100,215) ---
-    items.append(global_label("RTDIN_PLUS_U6", 100, 212.46, 270, "input"))
-    items.append(global_label("RTDIN_MINUS_U6", 100, 217.54, 90, "output"))
-
-    # --- C12 (at 110,215) ---
-    items.append(power_sym("+3V3", 110, 212.46))
-    items.append(power_sym("GND", 110, 217.54))
-
-    # --- R2 (horizontal at 340,100 rot=90) ---
-    items.append(power_sym("+3V3", 336.19, 100))
-    items.append(global_label("I2C_SDA", 343.81, 100, 0, "bidirectional"))
-
-    # --- R3 (horizontal at 350,100 rot=90) ---
-    items.append(power_sym("+3V3", 346.19, 100))
-    items.append(global_label("I2C_SCL", 353.81, 100, 0, "bidirectional"))
-
-    # --- C8 (at 360,100) ---
-    items.append(power_sym("+3V3", 360, 97.46))
-    items.append(power_sym("GND", 360, 102.54))
-
-    # --- C9 (at 295,110) ---
-    items.append(power_sym("+3V3", 295, 107.46))
-    items.append(power_sym("GND", 295, 112.54))
-
-    # --- J5 Conn_8pin at (55,268) — ILI9341 ---
-    # Pins are at (X-5.08, Y+offset) for Conn_8pin at rot=0
-    # Pin 1: (49.92, 268+8.89=276.89)  -> VCC
-    # Pin 2: (49.92, 268+6.35=274.35)  -> GND
-    # Pin 3: (49.92, 268+3.81=271.81)  -> CS_DISP
-    # Pin 4: (49.92, 268+1.27=269.27)  -> RST_DISP
-    # Pin 5: (49.92, 268-1.27=266.73)  -> DC_DISP
-    # Pin 6: (49.92, 268-3.81=264.19)  -> SPI_MOSI
-    # Pin 7: (49.92, 268-6.35=261.65)  -> SPI_SCK
-    # Pin 8: (49.92, 268-8.89=259.11)  -> +3V3 (LED)
-    items.append(power_sym("+3V3", 49.92, 276.89))
-    items.append(power_sym("GND",  49.92, 274.35))
-    items.append(global_label("CS_DISP",  49.92, 271.81, 180, "input"))
-    items.append(global_label("RST_DISP", 49.92, 269.27, 180, "input"))
-    items.append(global_label("DC_DISP",  49.92, 266.73, 180, "input"))
-    items.append(global_label("SPI_MOSI", 49.92, 264.19, 180, "bidirectional"))
-    items.append(global_label("SPI_SCK",  49.92, 261.65, 180, "bidirectional"))
-    items.append(power_sym("+3V3", 49.92, 259.11))
-
-    # --- J8 Conn_6pin at (110,268) — preset buttons ---
-    # Pin 1: (104.92, 268+6.35=274.35)
-    # Pin 2: (104.92, 268+3.81=271.81)
-    # Pin 3: (104.92, 268+1.27=269.27)
-    # Pin 4: (104.92, 268-1.27=266.73)
-    # Pin 5: (104.92, 268-3.81=264.19)
-    # Pin 6: (104.92, 268-6.35=261.65)
-    items.append(global_label("BTN1", 104.92, 274.35, 180, "input"))
-    items.append(global_label("BTN2", 104.92, 271.81, 180, "input"))
-    items.append(global_label("BTN3", 104.92, 269.27, 180, "input"))
-    items.append(power_sym("+3V3", 104.92, 266.73))
-    items.append(power_sym("GND",  104.92, 264.19))
-    items.append(power_sym("GND",  104.92, 261.65))
-
-    # --- J9 Conn_5pin at (155,268) — encoder ---
-    # Pin 1: (149.92, 268+5.08=273.08)
-    # Pin 2: (149.92, 268+2.54=270.54)
-    # Pin 3: (149.92, 268+0=268.0)
-    # Pin 4: (149.92, 268-2.54=265.46)
-    # Pin 5: (149.92, 268-5.08=262.92)
-    items.append(global_label("ENC_CLK", 149.92, 273.08, 180, "input"))
-    items.append(global_label("ENC_DT",  149.92, 270.54, 180, "input"))
-    items.append(global_label("ENC_SW",  149.92, 268.0,  180, "input"))
-    items.append(power_sym("+3V3", 149.92, 265.46))
-    items.append(power_sym("GND",  149.92, 262.92))
-
-    # --- R12 pull-up at (115,255) rot=90 ---
-    # Pin 1 left: (111.19, 255)
-    # Pin 2 right: (118.81, 255)
-    items.append(power_sym("+3V3", 111.19, 255))
-    items.append(global_label("BTN1", 118.81, 255, 0, "output"))
-
-    # --- R13 pull-up at (125,255) rot=90 ---
-    items.append(power_sym("+3V3", 121.19, 255))
-    items.append(global_label("BTN2", 128.81, 255, 0, "output"))
-
-    # --- R14 pull-up at (135,255) rot=90 ---
-    items.append(power_sym("+3V3", 131.19, 255))
-    items.append(global_label("BTN3", 138.81, 255, 0, "output"))
-
-    # --- R11 level probe pull-up at (48, 248) rot=90 ---
-    items.append(power_sym("+3V3", 44.19, 248))
-    items.append(global_label("LEVEL_SENSE", 53.08, 248, 0, "output"))
-
-    # --- D1 LED + R10 resistor at (240,232) and (256,232) ---
-    items.append(global_label("LED_STATUS", 234.92, 232, 180, "input"))
-    items.append(wire(243.81, 232, 252.19, 232))
-    items.append(power_sym("GND", 259.81, 232))
+    items.extend(fanout("LED_STATUS", 231.19, 250.00, "left", "input"))
+    items.append(wire(238.81, 250.00, 250.00, 250.00))
+    items.append(power_sym("GND", 250.00, 246.19))
 
     return "\n".join(items)
 
@@ -2205,19 +2258,19 @@ def make_connections():
 # ---------------------------------------------------------------------------
 # Preserve existing text annotations and global labels from Rev.4
 # ---------------------------------------------------------------------------
-EXISTING_TEXTS_AND_LABELS = r"""(text "FAEMA PRESIDENT - Rev.5\nConectar nets com mesmo nome global label.\nVer CLAUDE.md para especificação completa."
+EXISTING_TEXTS_AND_LABELS = r"""(text "FAEMA PRESIDENT - Rev.5\nEsquemático reorganizado por blocos funcionais."
 	(exclude_from_sim no)
-	(at 30.48 295 0)
+	(at 20 294 0)
 	(effects
 		(font
-			(size 2.54 2.54)
+			(size 2.2 2.2)
 		)
 	)
 	(uuid "e0000001-0001-4000-8000-000000000001")
 )
-(text "SEÇÃO AC\n220VAC"
+(text "ENTRADA AC / PROTEÇÕES"
 	(exclude_from_sim no)
-	(at 30.48 20 0)
+	(at 18 14 0)
 	(effects
 		(font
 			(size 2 2)
@@ -2226,9 +2279,9 @@ EXISTING_TEXTS_AND_LABELS = r"""(text "FAEMA PRESIDENT - Rev.5\nConectar nets co
 	)
 	(uuid "e0000002-0001-4000-8000-000000000001")
 )
-(text "REGULAÇÃO DC\n5V → 3.3V"
+(text "FONTE 5V / 3V3"
 	(exclude_from_sim no)
-	(at 165 12 0)
+	(at 145 14 0)
 	(effects
 		(font
 			(size 2 2)
@@ -2237,9 +2290,9 @@ EXISTING_TEXTS_AND_LABELS = r"""(text "FAEMA PRESIDENT - Rev.5\nConectar nets co
 	)
 	(uuid "e0000003-0001-4000-8000-000000000001")
 )
-(text "MCU"
+(text "MCU / CONTROLE"
 	(exclude_from_sim no)
-	(at 288 96 0)
+	(at 245 118 0)
 	(effects
 		(font
 			(size 2 2)
@@ -2248,9 +2301,9 @@ EXISTING_TEXTS_AND_LABELS = r"""(text "FAEMA PRESIDENT - Rev.5\nConectar nets co
 	)
 	(uuid "e0000004-0001-4000-8000-000000000001")
 )
-(text "SENSORES PT100"
+(text "SENSOR PT100 CALDEIRA"
 	(exclude_from_sim no)
-	(at 80 96 0)
+	(at 42 118 0)
 	(effects
 		(font
 			(size 2 2)
@@ -2259,9 +2312,9 @@ EXISTING_TEXTS_AND_LABELS = r"""(text "FAEMA PRESIDENT - Rev.5\nConectar nets co
 	)
 	(uuid "e0000005-0001-4000-8000-000000000001")
 )
-(text "PERIFÉRICOS"
+(text "SENSOR PT100 GRUPO"
 	(exclude_from_sim no)
-	(at 295 96 0)
+	(at 42 206 0)
 	(effects
 		(font
 			(size 2 2)
@@ -2270,247 +2323,49 @@ EXISTING_TEXTS_AND_LABELS = r"""(text "FAEMA PRESIDENT - Rev.5\nConectar nets co
 	)
 	(uuid "e0000006-0001-4000-8000-000000000001")
 )
-(text "R9: PULL-DOWN SEGURANÇA\nGarante SSR OFF durante boot"
+(text "DRIVE SSR / SEGURANÇA"
 	(exclude_from_sim no)
-	(at 192 122 0)
+	(at 165 82 0)
+	(effects
+		(font
+			(size 2 2)
+			(bold yes)
+		)
+	)
+	(uuid "e0000007-0001-4000-8000-000000000001")
+)
+(text "RTC"
+	(exclude_from_sim no)
+	(at 330 118 0)
+	(effects
+		(font
+			(size 2 2)
+			(bold yes)
+		)
+	)
+	(uuid "e0000008-0001-4000-8000-000000000001")
+)
+(text "DISPLAY / UI"
+	(exclude_from_sim no)
+	(at 42 258 0)
+	(effects
+		(font
+			(size 2 2)
+			(bold yes)
+		)
+	)
+	(uuid "e0000009-0001-4000-8000-000000000001")
+)
+(text "R9: pull-down de segurança\nQ1 desliga o SSR por low-side."
+	(exclude_from_sim no)
+	(at 210 108 0)
 	(effects
 		(font
 			(size 1.27 1.27)
 		)
 		(justify left)
 	)
-	(uuid "e0000007-0001-4000-8000-000000000001")
-)
-(global_label "SPI_SCK"
-	(shape bidirectional)
-	(at 155 114.6 0)
-	(effects
-		(font
-			(size 1.27 1.27)
-		)
-	)
-	(uuid "d0000001-0001-4000-8000-000000000001")
-	(property "Intersheetrefs" "${INTERSHEET_REFS}"
-		(at 155 114.6 0)
-		(hide yes)
-		(show_name no)
-		(do_not_autoplace no)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-	)
-)
-(global_label "SPI_MOSI"
-	(shape bidirectional)
-	(at 155 117.14 0)
-	(effects
-		(font
-			(size 1.27 1.27)
-		)
-	)
-	(uuid "d0000002-0001-4000-8000-000000000001")
-	(property "Intersheetrefs" "${INTERSHEET_REFS}"
-		(at 155 117.14 0)
-		(hide yes)
-		(show_name no)
-		(do_not_autoplace no)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-	)
-)
-(global_label "SPI_MISO"
-	(shape bidirectional)
-	(at 155 119.68 0)
-	(effects
-		(font
-			(size 1.27 1.27)
-		)
-	)
-	(uuid "d0000003-0001-4000-8000-000000000001")
-	(property "Intersheetrefs" "${INTERSHEET_REFS}"
-		(at 155 119.68 0)
-		(hide yes)
-		(show_name no)
-		(do_not_autoplace no)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-	)
-)
-(global_label "CS_MAX_CALD"
-	(shape output)
-	(at 155 124.78 0)
-	(effects
-		(font
-			(size 1.27 1.27)
-		)
-	)
-	(uuid "d0000004-0001-4000-8000-000000000001")
-	(property "Intersheetrefs" "${INTERSHEET_REFS}"
-		(at 155 124.78 0)
-		(hide yes)
-		(show_name no)
-		(do_not_autoplace no)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-	)
-)
-(global_label "CS_MAX_GRUPO"
-	(shape output)
-	(at 155 140 0)
-	(effects
-		(font
-			(size 1.27 1.27)
-		)
-	)
-	(uuid "d0000005-0001-4000-8000-000000000001")
-	(property "Intersheetrefs" "${INTERSHEET_REFS}"
-		(at 155 140 0)
-		(hide yes)
-		(show_name no)
-		(do_not_autoplace no)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-	)
-)
-(global_label "I2C_SCL"
-	(shape bidirectional)
-	(at 265 122.86 0)
-	(effects
-		(font
-			(size 1.27 1.27)
-		)
-	)
-	(uuid "d0000006-0001-4000-8000-000000000001")
-	(property "Intersheetrefs" "${INTERSHEET_REFS}"
-		(at 265 122.86 0)
-		(hide yes)
-		(show_name no)
-		(do_not_autoplace no)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-	)
-)
-(global_label "I2C_SDA"
-	(shape bidirectional)
-	(at 265 120.32 0)
-	(effects
-		(font
-			(size 1.27 1.27)
-		)
-	)
-	(uuid "d0000007-0001-4000-8000-000000000001")
-	(property "Intersheetrefs" "${INTERSHEET_REFS}"
-		(at 265 120.32 0)
-		(hide yes)
-		(show_name no)
-		(do_not_autoplace no)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-	)
-)
-(global_label "SSR_CTRL"
-	(shape output)
-	(at 155 130.16 0)
-	(effects
-		(font
-			(size 1.27 1.27)
-		)
-	)
-	(uuid "d0000008-0001-4000-8000-000000000001")
-	(property "Intersheetrefs" "${INTERSHEET_REFS}"
-		(at 155 130.16 0)
-		(hide yes)
-		(show_name no)
-		(do_not_autoplace no)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-	)
-)
-(global_label "MAX_DRDY"
-	(shape input)
-	(at 155 127.3 0)
-	(effects
-		(font
-			(size 1.27 1.27)
-		)
-	)
-	(uuid "d0000009-0001-4000-8000-000000000001")
-	(property "Intersheetrefs" "${INTERSHEET_REFS}"
-		(at 155 127.3 0)
-		(hide yes)
-		(show_name no)
-		(do_not_autoplace no)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-	)
-)
-(global_label "LEVEL_SENSE"
-	(shape input)
-	(at 155 137.46 0)
-	(effects
-		(font
-			(size 1.27 1.27)
-		)
-	)
-	(uuid "d0000010-0001-4000-8000-000000000001")
-	(property "Intersheetrefs" "${INTERSHEET_REFS}"
-		(at 155 137.46 0)
-		(hide yes)
-		(show_name no)
-		(do_not_autoplace no)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-	)
-)
-(global_label "LED_STATUS"
-	(shape output)
-	(at 155 132.62 0)
-	(effects
-		(font
-			(size 1.27 1.27)
-		)
-	)
-	(uuid "d0000011-0001-4000-8000-000000000001")
-	(property "Intersheetrefs" "${INTERSHEET_REFS}"
-		(at 155 132.62 0)
-		(hide yes)
-		(show_name no)
-		(do_not_autoplace no)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-	)
+	(uuid "e0000010-0001-4000-8000-000000000001")
 )
 """
 
