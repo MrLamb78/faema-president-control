@@ -47,9 +47,10 @@ def _make_conn(n_pins, footprint):
 _Conn2 = _make_conn(2, 'Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical')
 _Conn3 = _make_conn(3, 'TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-3-5.08_1x03_P5.08mm_Horizontal')
 _Conn4 = _make_conn(4, 'Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical')
+_Conn5 = _make_conn(5, 'Connector_PinHeader_2.54mm:PinHeader_1x05_P2.54mm_Vertical')
 _Conn6 = _make_conn(6, 'Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical')
 
-_FPC24 = _make_conn(24, 'Connector_FFC-FPC:Hirose_FH12-24S-0.5SH_1x24-1MP_P0.50mm_Horizontal')
+_Conn8 = _make_conn(8, 'Connector_PinHeader_2.54mm:PinHeader_1x08_P2.54mm_Vertical')
 
 # ---------------------------------------------------------------------------
 # Partes customizadas (não disponíveis nas libs KiCad padrão)
@@ -167,8 +168,8 @@ def make_ams1117():
 VCC3V3    = Net('+3V3')
 VCC5V     = Net('+5V')
 GND       = Net('GND')
-AC_L      = Net('AC_L')
-AC_N      = Net('AC_N')
+AC_L1     = Net('AC_L1')     # 220V bifásica — fase 1
+AC_L2     = Net('AC_L2')     # 220V bifásica — fase 2
 
 SPI_SCK   = Net('SPI_SCK')
 SPI_MOSI  = Net('SPI_MOSI')
@@ -205,7 +206,12 @@ PT100_GRUP_RP  = Net('PT100_GRUP_RP')
 PT100_GRUP_RN  = Net('PT100_GRUP_RN')
 RREF_CALD_P    = Net('RREF_CALD_P')
 RREF_GRUP_P    = Net('RREF_GRUP_P')
-SSR_DRIVE      = Net('SSR_DRIVE')        # entre R7 e SSR CTRL+
+AC_L1_FUSED    = Net('AC_L1_FUSED')      # L1 após fusível F1
+AC_L2_FUSED    = Net('AC_L2_FUSED')      # L2 após fusível F2
+L1_SWITCHED    = Net('L1_SWITCHED')      # L1 após SSR (saída AC para caldeira)
+SSR_CTRL_P     = Net('SSR_CTRL_P')       # R7 output → SSR input (+)
+SSR_DRIVE      = Net('SSR_DRIVE')        # Q1 drain → SSR input (−)
+Q1_GATE        = Net('Q1_GATE')          # R_gate → Q1 gate
 VBAT           = Net('VBAT')             # CR2032 backup
 
 
@@ -214,30 +220,39 @@ VBAT           = Net('VBAT')             # CR2032 backup
 # ---------------------------------------------------------------------------
 @subcircuit
 def block_ac_power():
-    """J1 (AC screw terminal), F1 (fuse), RV1 (MOV), U2 (HLK-PM05)"""
+    """J1 (AC screw terminal), F1/F2 (fuses), RV1 (MOV), U2 (HLK-PM05)
+    220V bifásica (L1+L2, sem neutro) — fusível em cada fase."""
 
-    # J1 — entrada AC (L/N/PE)
+    # J1 — entrada AC bifásica (L1/L2/PE)
     j1 = _Conn3()
     j1.ref   = 'J1'
     j1.value = 'AC_INPUT_220V'
-    j1[1] += AC_L    # Live
-    j1[2] += AC_N    # Neutral
+    j1[1] += AC_L1   # Fase 1
+    j1[2] += AC_L2   # Fase 2
     j1[3] += GND     # PE / chassis
 
-    # F1 — fusível T16A na linha L (footprint holder 5×20mm)
-    f1 = Part(tool=SKIDL, name='Fuse',
-              footprint='Fuse:Fuseholder_Cylinder-5x20mm_Schurter_FAB_0031-355x_Horizontal_Closed',
-              dest=TEMPLATE)
-    f1 += [Pin(num=1, name='A', func=Pin.types.PASSIVE),
-           Pin(num=2, name='K', func=Pin.types.PASSIVE)]
-    f1 = f1()
+    # Template de fusível (reusado por F1 e F2)
+    _Fuse = Part(tool=SKIDL, name='Fuse',
+                 footprint='Fuse:Fuseholder_Cylinder-5x20mm_Schurter_FAB_0031-355x_Horizontal_Closed',
+                 dest=TEMPLATE)
+    _Fuse += [Pin(num=1, name='A', func=Pin.types.PASSIVE),
+              Pin(num=2, name='K', func=Pin.types.PASSIVE)]
+
+    # F1 — fusível T16A na fase L1
+    f1 = _Fuse()
     f1.ref   = 'F1'
     f1.value = 'T16A_SLOW'
-    AC_L_FUSED = Net('AC_L_FUSED')
-    f1[1] += AC_L
-    f1[2] += AC_L_FUSED
+    f1[1] += AC_L1
+    f1[2] += AC_L1_FUSED
 
-    # RV1 — MOV S14K275 entre L_FUSED e N
+    # F2 — fusível T16A na fase L2
+    f2 = _Fuse()
+    f2.ref   = 'F2'
+    f2.value = 'T16A_SLOW'
+    f2[1] += AC_L2
+    f2[2] += AC_L2_FUSED
+
+    # RV1 — MOV S14K275 entre as linhas fusíveis (proteção diferencial)
     rv1 = Part(tool=SKIDL, name='Varistor',
                footprint='Varistor:RV_Disc_D15.5mm_W5.0mm_P7.5mm',
                dest=TEMPLATE)
@@ -246,17 +261,29 @@ def block_ac_power():
     rv1 = rv1()
     rv1.ref   = 'RV1'
     rv1.value = 'S14K275'
-    rv1[1] += AC_L_FUSED
-    rv1[2] += AC_N
+    rv1[1] += AC_L1_FUSED
+    rv1[2] += AC_L2_FUSED
 
     # U2 — HLK-PM05
     u2 = make_hlk_pm05()
     u2.ref   = 'U2'
     u2.value = 'HLK-PM05'
-    u2['AC_L'] += AC_L_FUSED
-    u2['AC_N'] += AC_N
+    u2['AC_L'] += AC_L1_FUSED
+    u2['AC_N'] += AC_L2_FUSED
     u2['VO_P'] += VCC5V
     u2['VO_N'] += GND
+
+    # J2 — bornier 2 pinos para caldeira: L1_SWITCHED (saída SSR) e L2_FUSED
+    j2 = Part(tool=SKIDL, name='Conn_Boiler_AC',
+              footprint='TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal',
+              dest=TEMPLATE)
+    j2 += [Pin(num=1, name='L1_SW', func=Pin.types.PASSIVE),
+           Pin(num=2, name='L2',    func=Pin.types.PASSIVE)]
+    j2 = j2()
+    j2.ref   = 'J2'
+    j2.value = 'AC_BOILER_OUT'
+    j2[1] += L1_SWITCHED    # vem do SSR-40DA (carga AC, externo)
+    j2[2] += AC_L2_FUSED    # L2 direto (não chaveado)
 
 
 # ---------------------------------------------------------------------------
@@ -456,37 +483,60 @@ def block_rtd_group():
 
 
 # ---------------------------------------------------------------------------
-# BLOCO 6 — Acionamento SSR
+# BLOCO 6 — Acionamento SSR (low-side NMOS drive)
 # ---------------------------------------------------------------------------
 @subcircuit
 def block_ssr_drive():
-    """R7 (100Ω série), R9 (10kΩ pull-down segurança), J9 (header SSR)"""
+    """Topologia: GPIO4→R_gate(100Ω)→Q1 gate ; R9(10kΩ) gate→GND ;
+    +5V→R7(220Ω)→SSR_CTRL_P=SSR+(J10p1) ; Q1 drain=SSR_DRIVE=SSR-(J10p2) ; Q1 source→GND
+    GPIO4 HIGH → Q1 ON → corrente via R7 → SSR ON (lógica direta)"""
 
-    # R7 — série entre GPIO4 e SSR CTRL+ (limita corrente ≈21mA)
-    r7 = _R()
-    r7.ref   = 'R7'
-    r7.value = '100R_1pct'
-    r7[1] += SSR_CTRL
-    r7[2] += SSR_DRIVE
+    # R_gate — 100 Ω série entre GPIO4 e gate do Q1 (limita corrente de gate)
+    r_gate = _R()
+    r_gate.ref   = 'R_gate'
+    r_gate.value = '100R_1pct'
+    r_gate[1] += SSR_CTRL      # GPIO4
+    r_gate[2] += Q1_GATE
 
-    # R9 — pull-down 10kΩ garante SSR OFF durante boot/reset
+    # R9 — pull-down 10 kΩ: mantém Q1 desligado durante boot/reset do ESP32
     r9 = _R()
     r9.ref   = 'R9'
     r9.value = '10k_1pct'
-    r9[1] += SSR_DRIVE
+    r9[1] += Q1_GATE
     r9[2] += GND
 
-    # J9 — header 2 pinos para SSR externo (CTRL+ e CTRL-)
-    j9 = Part(tool=SKIDL, name='Conn_SSR',
-              footprint='TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal',
+    # Q1 — 2N7002 NMOS SOT-23: low-side switch do SSR-40DA
+    q1 = Part(tool=SKIDL, name='2N7002',
+              footprint='Package_TO_SOT_SMD:SOT-23',
               dest=TEMPLATE)
-    j9 += [Pin(num=1, name='CTRL_P', func=Pin.types.PASSIVE),
-           Pin(num=2, name='CTRL_N', func=Pin.types.PASSIVE)]
-    j9 = j9()
-    j9.ref   = 'J9'
-    j9.value = 'SSR_CTRL_HEADER'
-    j9[1] += SSR_DRIVE
-    j9[2] += GND
+    q1 += [Pin(num=1, name='S',  func=Pin.types.PASSIVE),   # source
+           Pin(num=2, name='G',  func=Pin.types.INPUT),     # gate
+           Pin(num=3, name='D',  func=Pin.types.PASSIVE)]   # drain
+    q1 = q1()
+    q1.ref   = 'Q1'
+    q1.value = '2N7002'
+    q1['G'] += Q1_GATE
+    q1['S'] += GND
+    q1['D'] += SSR_DRIVE       # drain → SSR input (−)
+
+    # R7 — 220 Ω de +5V para SSR input (+); ~17 mA drive (min 7.5 mA)
+    r7 = _R()
+    r7.ref   = 'R7'
+    r7.value = '220R_1pct'
+    r7[1] += VCC5V
+    r7[2] += SSR_CTRL_P        # SSR input (+)
+
+    # J10 — bornier 2 pinos para SSR-40DA externo (CTRL+ e CTRL-)
+    j10 = Part(tool=SKIDL, name='Conn_SSR',
+               footprint='TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal',
+               dest=TEMPLATE)
+    j10 += [Pin(num=1, name='CTRL_P', func=Pin.types.PASSIVE),
+            Pin(num=2, name='CTRL_N', func=Pin.types.PASSIVE)]
+    j10 = j10()
+    j10.ref   = 'J10'
+    j10.value = 'SSR_CTRL_HEADER'
+    j10[1] += SSR_CTRL_P       # SSR input (+): +5V via R7
+    j10[2] += SSR_DRIVE        # SSR input (−): Q1 drain
 
 
 # ---------------------------------------------------------------------------
@@ -566,27 +616,25 @@ def block_rtc():
 
 
 # ---------------------------------------------------------------------------
-# BLOCO 9 — Display GC9A01
+# BLOCO 9 — Display ILI9341 2.4"
 # ---------------------------------------------------------------------------
 @subcircuit
 def block_display():
-    """J5 (FPC 24-pin 0.5mm Hirose FH12-24S)"""
+    """J5 (8-pin 2.54mm header — cabo do módulo ILI9341 2.4")
+    Pinout: VCC / GND / CS / RST / DC / MOSI / SCK / LED"""
 
-    j5 = _FPC24()
+    j5 = _Conn8()
     j5.ref   = 'J5'
-    j5.value = 'GC9A01_FPC'
+    j5.value = 'ILI9341_2.4_HEADER'
 
-    # Mapeamento típico GC9A01 24-pin FPC 0.5mm:
-    # Pin 1=GND, 2=VDD(3V3), 3=SCL, 4=SDA/MOSI, 5=CS, 6=DC, 7=RST, 8-24=NC
-    j5[1]  += GND
-    j5[2]  += VCC3V3
-    j5[3]  += SPI_SCK
-    j5[4]  += SPI_MOSI
-    j5[5]  += CS_DISP
-    j5[6]  += DC_DISP
-    j5[7]  += RST_DISP
-    for n in range(8, 25):
-        j5[n] += NC(drive=True)
+    j5[1] += VCC3V3     # VCC
+    j5[2] += GND        # GND
+    j5[3] += CS_DISP    # CS   — GPIO14
+    j5[4] += RST_DISP   # RST  — GPIO16
+    j5[5] += DC_DISP    # DC   — GPIO15
+    j5[6] += SPI_MOSI   # MOSI — GPIO11
+    j5[7] += SPI_SCK    # SCK  — GPIO10
+    j5[8] += VCC3V3     # LED (backlight sempre ligado via 3V3)
 
 
 # ---------------------------------------------------------------------------
@@ -594,27 +642,17 @@ def block_display():
 # ---------------------------------------------------------------------------
 @subcircuit
 def block_ui():
-    """ENC1 (EC11), J8 (botões preset), D1 (LED), R10/R12/R13/R14"""
+    """J9 (encoder off-board), J8 (botões preset), D1 (LED), R10/R12/R13/R14"""
 
-    # ENC1 — encoder rotativo Alps EC11
-    enc1 = Part(tool=SKIDL, name='RotaryEncoder',
-                footprint='Rotary_Encoder:RotaryEncoder_Alps_EC11E-Switch_Vertical_H20mm',
-                dest=TEMPLATE)
-    enc1 += [
-        Pin(num=1, name='A',   func=Pin.types.PASSIVE),  # ENC_CLK
-        Pin(num=2, name='GND', func=Pin.types.PASSIVE),
-        Pin(num=3, name='B',   func=Pin.types.PASSIVE),  # ENC_DT
-        Pin(num=4, name='SW',  func=Pin.types.PASSIVE),  # ENC_SW
-        Pin(num=5, name='SW_GND', func=Pin.types.PASSIVE),
-    ]
-    enc1 = enc1()
-    enc1.ref   = 'ENC1'
-    enc1.value = 'EC11'
-    enc1['A']      += ENC_CLK
-    enc1['GND']    += GND
-    enc1['B']      += ENC_DT
-    enc1['SW']     += ENC_SW
-    enc1['SW_GND'] += GND
+    # J9 — encoder EC11 off-board (5-pin header: ENC_CLK/ENC_DT/ENC_SW/3V3/GND)
+    j9 = _Conn5()
+    j9.ref   = 'J9'
+    j9.value = 'ENCODER_EC11'
+    j9[1] += ENC_CLK
+    j9[2] += ENC_DT
+    j9[3] += ENC_SW
+    j9[4] += VCC3V3
+    j9[5] += GND
 
     # J8 — painel de botões (6 pinos: BTN1/BTN2/BTN3 + 3V3 + GND + GND)
     j8 = _Conn6()

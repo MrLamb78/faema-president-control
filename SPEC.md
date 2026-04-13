@@ -25,7 +25,7 @@ with an electronic PID temperature controller featuring:
 ## 2. System overview
 
 ```
-220 VAC  ──► HLK-PM05 (isolated SMPS) ──► 5 V rail
+220 VAC (bifásica L1+L2)  ──► F1+F2+RV1 ──► HLK-PM05 (isolated SMPS) ──► 5 V rail
                                           │
                                           ├──► AMS1117-3.3 ──► 3.3 V rail
                                           │                     │
@@ -47,7 +47,7 @@ with an electronic PID temperature controller featuring:
 ### 3.1 Power
 | Rail | Source | Current budget | Notes |
 |------|--------|----------------|-------|
-| 220 VAC | Mains | ~11 A peak (boiler) | F1 T16A slow-blow, MOV S14K275, 6 mm creepage min |
+| 220 VAC | Mains (bifásica L1+L2) | ~11 A peak (boiler) | F1+F2 T16A slow-blow (um por fase), MOV S14K275 across L1–L2 após fusíveis, 6 mm creepage min |
 | +5 V    | HLK-PM05 (AC/DC isolated, 3 kV) | ~1 A | powers AMS1117 + SSR gate drive |
 | +3.3 V  | AMS1117-3.3 (SOT-223 LDO) | ~500 mA | ESP32 peak ~300 mA + peripherals |
 
@@ -72,8 +72,8 @@ Sensors J3 (boiler PT100) and J6 (group PT100) are both 4-wire off-board connect
 - **R9 = 10 kΩ** from Q1 gate to GND — guarantees SSR OFF during ESP32 boot/crash (gate held LOW).
 - Q1 drain → SSR-40DA input (−); Q1 source → GND.
 - **R7 = 220 Ω** from +5 V to SSR-40DA input (+) → ~17 mA drive (min 7.5 mA; no GPIO current stress).
-- SSR-40DA is external (with heatsink). J1 brings in AC mains; J2 carries switched L + N to boiler.
-- F1 T16A slow-blow fuse + RV1 MOV S14K275 across L–N on the AC input side.
+- SSR-40DA is external (with heatsink). J1 brings in AC mains; J2 carries switched L1 + L2 to boiler.
+- F1+F2 T16A slow-blow fuses (one per phase) + RV1 MOV S14K275 across L1_FUSED–L2_FUSED on the AC input side.
 - Snubber omitted: SSR-40DA is zero-crossing type; boiler element is purely resistive.
 
 ### 3.5 Real-time clock
@@ -125,8 +125,9 @@ The display, encoder, and preset buttons are housed in a **dedicated external UI
 | C12 | U6 VDD | 100 nF |
 
 ### 3.9 AC protection / isolation
-- **F1**: T16A slow blow, 5 × 20 mm fuseholder (THT)
-- **RV1**: S14K275 MOV across L–N (THT)
+- **F1**: T16A slow blow on L1, 5 × 20 mm fuseholder (THT)
+- **F2**: T16A slow blow on L2, 5 × 20 mm fuseholder (THT)
+- **RV1**: S14K275 MOV across L1_FUSED–L2_FUSED (THT) — proteção diferencial após fusíveis
 - Minimum creepage/clearance AC↔DC: **6 mm** (reinforced isolation)
 - Mains wiring to boiler: external 2.5 mm² minimum (off PCB)
 - PE rail: dedicated trace from J1-PE to chassis mounting point — **not shared with signal GND**
@@ -166,25 +167,27 @@ The display, encoder, and preset buttons are housed in a **dedicated external UI
 | U4  | MAX31865 | SSOP-20 | Boiler sensor |
 | U5  | DS3231 | SO-16 | RTC |
 | U6  | MAX31865 | SSOP-20 | Group sensor |
-| Q1  | 2N7002 | SOT-23 | NMOS, SSR gate driver |
+| Q1  | 2N7002 | SOT-23 | NMOS low-side switch — drain→SSR(−), source→GND |
 | D1  | Green LED | 0603 | Status |
-| F1  | T16A fuse | 5×20 mm holder | AC input |
-| RV1 | S14K275 MOV | Disc | AC input |
+| F1  | T16A fuse | 5×20 mm holder | AC input L1 |
+| F2  | T16A fuse | 5×20 mm holder | AC input L2 |
+| RV1 | S14K275 MOV | Disc | Across L1_FUSED–L2_FUSED |
 | SSR1 | Fotek SSR-40DA | External | Not on PCB (header only) |
-| J1  | AC input terminal | THT bornier 3-pin | L / N / PE |
-| J2  | AC boiler output terminal | THT bornier 2-pin | L_switched (from SSR) / N |
+| J1  | AC input terminal | THT bornier 3-pin | L1 / L2 / PE |
+| J2  | AC boiler output terminal | THT bornier 2-pin | L1_switched (from SSR) / L2 |
 | J3  | PT100 boiler | 4-pin header | Off-board, 4-wire |
 | J5  | ILI9341 2.4" display cable | 8-pin header 2.54 mm | VCC / GND / CS / RST / DC / MOSI / SCK / LED |
 | J6  | PT100 group | 4-pin header | Off-board, 4-wire |
 | J7  | Level probe | 2-pin header | Off-board |
 | J8  | Preset buttons | 6-pin header | BTN1/BTN2/BTN3 + 3.3V + GND + GND |
 | J9  | Encoder | 5-pin header | ENC_A / ENC_B / ENC_SW / 3.3V / GND |
+| J10 | SSR-40DA control | 2-pin bornier | SSR input (+) via R7 / SSR input (−) via Q1 drain |
 | Rref | 430 Ω 0.1 % | 0603 | U4 reference |
 | Rref2 | 430 Ω 0.1 % | 0603 | U6 reference |
 | R2, R3 | 4.7 kΩ | 0603 | I2C pull-ups |
-| R_gate | 100 Ω | 0603 | Q1 gate series resistor |
-| R7 | 220 Ω | 0603 | +5V → SSR drive current limit |
-| R9 | 10 kΩ | 0603 | Q1 gate pulldown (SSR-safe boot) |
+| R_gate | 100 Ω | 0603 | GPIO4 → Q1 gate (limita corrente de gate) |
+| R7 | 220 Ω | 0603 | +5V → SSR input (+) — ~17 mA drive |
+| R9 | 10 kΩ | 0603 | Q1 gate pulldown (SSR OFF durante boot/reset) |
 | R10 | 470 Ω | 0603 | LED |
 | R11 | 100 kΩ | 0603 | Level probe pull-up |
 | R12, R13, R14 | 10 kΩ | 0603 | Button pull-ups |
@@ -233,19 +236,19 @@ beyond what those devices would normally catch.
 
 ## 8. Constraints for the design pipeline
 
-- **Source of truth:** `kicad/*.kicad_sch` for schematic; `kicad/*.kicad_pcb` for layout. KiCad is the primary design authority from Rev.5 onwards.
+- **Source of truth:** `circuits/faema_president.py` (SKiDL) for circuit connections; `kicad/*.kicad_pcb` for layout. SKiDL generates the netlist (`outputs/faema_president.net`) which is imported into KiCad PCB. Do not edit the schematic file directly.
 - **Must keep** the locked GPIO assignment in §4 — do not reassign pins.
 - **Must reuse** reference designators in §5 for traceability with existing KiCad work.
 - **Must prefer** JLCPCB Basic/Preferred LCSC parts; HLK-PM05, SSR, PT100s, display, encoder acceptable as non-LCSC.
-- **Must enforce** 6 mm clearance between any AC net (L, N, L_switched, J2) and any DC net.
+- **Must enforce** 6 mm clearance between any AC net (L1, L2, L1_switched, J2) and any DC net.
 - **Must include** all bypass capacitors listed in §3.8.
 - **J5** is a standard 2.54 mm 8-pin header — no special footprint required.
 
 ## 9. Deliverables
 
-1. `kicad/faema-president.kicad_sch` — schematic (primary source)
-2. `kicad/faema-president.kicad_pcb` — PCB layout (primary source)
-3. `outputs/faema_president.net` — KiCad netlist export
+1. `circuits/faema_president.py` — SKiDL netlist (primary source of truth)
+2. `outputs/faema_president.net` — netlist gerada pelo SKiDL (importar no KiCad PCB)
+3. `kicad/faema-president.kicad_pcb` — PCB layout (primary source for layout)
 4. `outputs/BOM.csv` — KiCad BOM export (LCSC part numbers in fields)
 5. `outputs/erc_report` — KiCad ERC must show 0 errors
 6. `outputs/drc_report` — KiCad DRC must show 0 errors (after layout)

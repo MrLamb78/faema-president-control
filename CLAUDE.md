@@ -4,10 +4,10 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Projeto
 
-Controle eletrônico de temperatura para a Faema President (grupo manual). Substitui o pressostato original por PID com display redondo e agendamento por horário.
+Controle eletrônico de temperatura para a Faema President (grupo manual). Substitui o pressostato original por PID com display ILI9341 2.4" e agendamento por horário.
 
 **Plataforma:** ESP32-S3 Mini rodando MicroPython
-**Status atual:** Rev.4 — esquemático KiCad (`kicad/`) com componentes posicionados, próximo passo: completar wiring + layout PCB + firmware
+**Status atual:** Rev.5 — fonte de verdade é `circuits/faema_president.py` (SKiDL) → netlist → KiCad PCB
 
 ## Comandos de desenvolvimento (firmware MicroPython)
 
@@ -27,7 +27,7 @@ mpremote cp -r firmware/ :
 mpremote connect
 
 # Instalar bibliotecas no dispositivo (via REPL)
-# import mip; mip.install('gc9a01')
+# import mip; mip.install('ili9341')
 ```
 
 ## Estrutura de firmware
@@ -42,7 +42,7 @@ firmware/
 │   └── level.py         # sonda nível água (condutividade pulsada, GPIO17)
 ├── display/
 │   ├── ui.py            # layout gauge + telas
-│   └── gauge.py         # desenho arco analógico (gauge central 240×240)
+│   └── display_ili9341.py  # driver ILI9341 2.4" via header J5 (8-pin 2.54mm)
 ├── rtc/
 │   └── ds3231.py        # driver RTC + alarmes I2C
 ├── control/
@@ -60,9 +60,9 @@ firmware/
 | 4 | SSR_CTRL | SSR-40DA caldeira — HIGH=ligado, R9 pull-down |
 | 5/6/7 | ENC_CLK/DT/SW | Encoder EC11 |
 | 8/9 | I2C_SDA/SCL | DS3231 RTC (0x68) |
-| 10/11/12 | SPI_SCK/MOSI/MISO | Barramento SPI compartilhado (U4+U6+GC9A01) |
+| 10/11/12 | SPI_SCK/MOSI/MISO | Barramento SPI compartilhado (U4+U6+ILI9341) |
 | 13 | CS_MAX | Chip select MAX31865 caldeira (U4) |
-| 14/15/16 | CS/DC/RST_DISP | GC9A01 display via FPC (não usa MISO) |
+| 14/15/16 | CS/DC/RST_DISP | ILI9341 display via J5 header 8-pin (não usa MISO) |
 | 17 | LEVEL_SENSE | Sonda nível água caldeira (R11 100kΩ) |
 | 18 | CS_MAX2 | Chip select MAX31865 grupo (U6) |
 | 19/20/21 | BTN1/BTN2/BTN3 | Botões preset (pull-up 10kΩ, active LOW) |
@@ -74,8 +74,8 @@ firmware/
 - **Nível água:** sonda condutividade (GPIO17) — bloqueia SSR se caldeira seca. Override sobre PID.
 - **Presets:** 3 botões físicos (GPIO19-21) para modos pré-configurados (extração, boost, vapor).
 - **Agendamento:** DS3231 fornece hora real (±2ppm); config hora liga/desliga em `config.py`.
-- **Display:** biblioteca `gc9a01` de Russ Hughes (FPC). Gauge analógico central + widgets.
-- **SPI compartilhado:** MAX31865 x2 (Mode 1/3, 5MHz) e GC9A01 (Mode 0, 80MHz) — reconfigurar modo ao alternar.
+- **Display:** ILI9341 2.4" via J5 (header 8-pin 2.54mm). Tela retangular 320×240, SPI.
+- **SPI compartilhado:** MAX31865 x2 (Mode 1/3, 5MHz) e ILI9341 (Mode 0, ≤40MHz) — reconfigurar modo ao alternar.
 
 ## Referências de componentes
 
