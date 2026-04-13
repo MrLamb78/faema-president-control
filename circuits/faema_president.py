@@ -138,7 +138,7 @@ def make_ds3231():
 def make_hlk_pm05():
     """HLK-PM05 — 220VAC→5VDC 3W — THT, hand-soldered"""
     u = Part(tool=SKIDL, name='HLK_PM05',
-             footprint='Converter_ACDC:Hi-Link_HLK-PMxx',
+             footprint='Converter_ACDC:Converter_ACDC_Hi-Link_HLK-PMxx',
              dest=TEMPLATE)
     u += [
         Pin(num=1, name='AC_N', func=Pin.types.PASSIVE),
@@ -208,7 +208,7 @@ RREF_CALD_P    = Net('RREF_CALD_P')
 RREF_GRUP_P    = Net('RREF_GRUP_P')
 AC_L1_FUSED    = Net('AC_L1_FUSED')      # L1 após fusível F1
 AC_L2_FUSED    = Net('AC_L2_FUSED')      # L2 após fusível F2
-L1_SWITCHED    = Net('L1_SWITCHED')      # L1 após SSR (saída AC para caldeira)
+# L1_SWITCHED removido: fiação AC de potência (SSR→caldeira) é totalmente externa à PCB
 SSR_CTRL_P     = Net('SSR_CTRL_P')       # R7 output → SSR input (+)
 SSR_DRIVE      = Net('SSR_DRIVE')        # Q1 drain → SSR input (−)
 Q1_GATE        = Net('Q1_GATE')          # R_gate → Q1 gate
@@ -273,17 +273,8 @@ def block_ac_power():
     u2['VO_P'] += VCC5V
     u2['VO_N'] += GND
 
-    # J2 — bornier 2 pinos para caldeira: L1_SWITCHED (saída SSR) e L2_FUSED
-    j2 = Part(tool=SKIDL, name='Conn_Boiler_AC',
-              footprint='TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal',
-              dest=TEMPLATE)
-    j2 += [Pin(num=1, name='L1_SW', func=Pin.types.PASSIVE),
-           Pin(num=2, name='L2',    func=Pin.types.PASSIVE)]
-    j2 = j2()
-    j2.ref   = 'J2'
-    j2.value = 'AC_BOILER_OUT'
-    j2[1] += L1_SWITCHED    # vem do SSR-40DA (carga AC, externo)
-    j2[2] += AC_L2_FUSED    # L2 direto (não chaveado)
+    # J2 removido: toda a fiação AC de potência (SSR→caldeira) fica
+    # externa à PCB em cabo 2.5mm². Não rotear 11A pela placa.
 
 
 # ---------------------------------------------------------------------------

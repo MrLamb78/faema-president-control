@@ -2,7 +2,7 @@
   (version "D")
   (design
     (source "faema_president.py")
-    (date "04/13/2026 07:28 PM")
+    (date "04/13/2026 08:00 PM")
     (tool "SKiDL (2.2.3)")
     (sheet
       (number 1)
@@ -425,9 +425,9 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "szl8cxUdvY")
+          (name "SKiDL Tag") "EP165U21qH")
         (field
-          (name "SKiDL Line") "faema_president.py:590"))
+          (name "SKiDL Line") "faema_president.py:581"))
       (libsource
         (lib "NO_LIB")
         (part "BatteryHolder"))
@@ -435,7 +435,7 @@
         (names "/block_rtc1/")
         (tstamps "/33316cec-f19d-5033-a65a-4e36c7a41d16/"))
       (component_classes)
-      (tstamps "98f8b138-e5a2-512b-8572-935ce81c0956"))
+      (tstamps "a79c9094-449f-5001-abc8-2e1b8aa0a5eb"))
     (comp
       (ref "C1")
       (value "10uF_16V_X5R")
@@ -449,9 +449,9 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "w51Nu7NbfF")
+          (name "SKiDL Tag") "0z0PI5syIf")
         (field
-          (name "SKiDL Line") "faema_president.py:304"))
+          (name "SKiDL Line") "faema_president.py:295"))
       (libsource
         (lib "NO_LIB")
         (part "C"))
@@ -459,7 +459,7 @@
         (names "/block_dc_regulation1/")
         (tstamps "/01c1d1c2-47b2-5e8f-a08a-452300949070/"))
       (component_classes)
-      (tstamps "5e996321-38c3-538a-a0ff-3cf5a94b9d82"))
+      (tstamps "6f5878fb-8412-592a-b131-bc97c6c0a081"))
     (comp
       (ref "C10")
       (value "100nF_50V_X7R")
@@ -473,9 +473,9 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "CO20LgUZ6e")
+          (name "SKiDL Tag") "tRx_rUHXTg")
         (field
-          (name "SKiDL Line") "faema_president.py:424"))
+          (name "SKiDL Line") "faema_president.py:415"))
       (libsource
         (lib "NO_LIB")
         (part "C"))
@@ -483,7 +483,7 @@
         (names "/block_rtd_boiler1/")
         (tstamps "/1b0256b3-0650-5635-8f7a-77673c9bd46c/"))
       (component_classes)
-      (tstamps "1cefdd45-bc75-5a9e-8e5a-350f08b418fc"))
+      (tstamps "c1921e2b-4544-52dd-a6d5-69951e4afb91"))
     (comp
       (ref "C11")
       (value "100nF_50V_X7R")
@@ -497,9 +497,9 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "PxbDUh7_pF")
+          (name "SKiDL Tag") "UV8PQPViGi")
         (field
-          (name "SKiDL Line") "faema_president.py:471"))
+          (name "SKiDL Line") "faema_president.py:462"))
       (libsource
         (lib "NO_LIB")
         (part "C"))
@@ -507,7 +507,7 @@
         (names "/block_rtd_group1/")
         (tstamps "/d51b9acd-b194-5d50-a99c-84beba4cdf7a/"))
       (component_classes)
-      (tstamps "1c853917-6f53-5ac8-b2f5-d900ef0b3b77"))
+      (tstamps "c85d29a1-792f-554b-b87e-8b11b27f8ee1"))
     (comp
       (ref "C12")
       (value "100nF_50V_X7R")
@@ -521,9 +521,9 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "evDcRNHEkb")
+          (name "SKiDL Tag") "1dzpRoudn6")
         (field
-          (name "SKiDL Line") "faema_president.py:478"))
+          (name "SKiDL Line") "faema_president.py:469"))
       (libsource
         (lib "NO_LIB")
         (part "C"))
@@ -531,7 +531,7 @@
         (names "/block_rtd_group1/")
         (tstamps "/d51b9acd-b194-5d50-a99c-84beba4cdf7a/"))
       (component_classes)
-      (tstamps "573b4333-a1d5-5c80-8602-d78b95ba007b"))
+      (tstamps "8c001e3c-d75e-544e-bd65-5305f7610b81"))
     (comp
       (ref "C2")
       (value "10uF_10V_X5R")
@@ -545,9 +545,9 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "lzcBrg8yOE")
+          (name "SKiDL Tag") "ZHBBOfkvvs")
         (field
-          (name "SKiDL Line") "faema_president.py:311"))
+          (name "SKiDL Line") "faema_president.py:302"))
       (libsource
         (lib "NO_LIB")
         (part "C"))
@@ -555,7 +555,7 @@
         (names "/block_dc_regulation1/")
         (tstamps "/01c1d1c2-47b2-5e8f-a08a-452300949070/"))
       (component_classes)
-      (tstamps "ab820f98-6f68-5fe6-8a74-d776df65fdbb"))
+      (tstamps "5bddcbab-09e9-5b33-b39b-875b2099e0ca"))
     (comp
       (ref "C3")
       (value "100nF_50V_X7R")
@@ -569,9 +569,9 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "FwlGU6N83c")
+          (name "SKiDL Tag") "3YGo5mYr0z")
         (field
-          (name "SKiDL Line") "faema_president.py:318"))
+          (name "SKiDL Line") "faema_president.py:309"))
       (libsource
         (lib "NO_LIB")
         (part "C"))
@@ -579,7 +579,7 @@
         (names "/block_dc_regulation1/")
         (tstamps "/01c1d1c2-47b2-5e8f-a08a-452300949070/"))
       (component_classes)
-      (tstamps "cbe0caa2-9bc4-5b58-9896-b0cf266f1cfd"))
+      (tstamps "f0b070a9-df0a-5893-8740-4ae0055dd68d"))
     (comp
       (ref "C4")
       (value "100nF_50V_X7R")
@@ -593,9 +593,9 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "02JZ4hMJfA")
+          (name "SKiDL Tag") "F9ZfxGGodS")
         (field
-          (name "SKiDL Line") "faema_president.py:325"))
+          (name "SKiDL Line") "faema_president.py:316"))
       (libsource
         (lib "NO_LIB")
         (part "C"))
@@ -603,7 +603,7 @@
         (names "/block_dc_regulation1/")
         (tstamps "/01c1d1c2-47b2-5e8f-a08a-452300949070/"))
       (component_classes)
-      (tstamps "c08dfaee-a338-51ed-8fee-e6842ac4bf30"))
+      (tstamps "ca668528-e589-5ace-ba4b-d85f1497f331"))
     (comp
       (ref "C7")
       (value "100nF_50V_X7R")
@@ -617,9 +617,9 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "PEId74JNOA")
+          (name "SKiDL Tag") "e_ECkkwFYq")
         (field
-          (name "SKiDL Line") "faema_president.py:417"))
+          (name "SKiDL Line") "faema_president.py:408"))
       (libsource
         (lib "NO_LIB")
         (part "C"))
@@ -627,7 +627,7 @@
         (names "/block_rtd_boiler1/")
         (tstamps "/1b0256b3-0650-5635-8f7a-77673c9bd46c/"))
       (component_classes)
-      (tstamps "3ccb5352-81f4-5e3a-b332-4c6a60299409"))
+      (tstamps "345c8066-5ccb-57ca-8ab8-668f76601e66"))
     (comp
       (ref "C8")
       (value "100nF_50V_X7R")
@@ -641,9 +641,9 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "wWlezM5Z6k")
+          (name "SKiDL Tag") "OTydTNtDJ9")
         (field
-          (name "SKiDL Line") "faema_president.py:611"))
+          (name "SKiDL Line") "faema_president.py:602"))
       (libsource
         (lib "NO_LIB")
         (part "C"))
@@ -651,7 +651,7 @@
         (names "/block_rtc1/")
         (tstamps "/33316cec-f19d-5033-a65a-4e36c7a41d16/"))
       (component_classes)
-      (tstamps "94e1745a-55c2-5745-b12a-cceda38718e3"))
+      (tstamps "b551604b-e940-5e9f-a100-60f2a8b6f2c0"))
     (comp
       (ref "C9")
       (value "100nF_50V_X7R")
@@ -665,9 +665,9 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "TblzQAVo90")
+          (name "SKiDL Tag") "3crI18SAkR")
         (field
-          (name "SKiDL Line") "faema_president.py:370"))
+          (name "SKiDL Line") "faema_president.py:361"))
       (libsource
         (lib "NO_LIB")
         (part "C"))
@@ -675,7 +675,7 @@
         (names "/block_mcu1/")
         (tstamps "/2020ce5b-6346-5cbb-9f57-b7aeea600868/"))
       (component_classes)
-      (tstamps "7498b88a-9c66-541b-9f61-29923088ccb7"))
+      (tstamps "d287f057-dce7-5f51-928d-8772a54b5777"))
     (comp
       (ref "D1")
       (value "LED_GREEN")
@@ -689,9 +689,9 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "3SeuxWRkhf")
+          (name "SKiDL Tag") "2SUvJ1hqob")
         (field
-          (name "SKiDL Line") "faema_president.py:677"))
+          (name "SKiDL Line") "faema_president.py:668"))
       (libsource
         (lib "NO_LIB")
         (part "LED"))
@@ -699,7 +699,7 @@
         (names "/block_ui1/")
         (tstamps "/28ec3827-a82c-5118-ad83-f300eecd606d/"))
       (component_classes)
-      (tstamps "403b49f6-cded-59fb-839f-4501ffdcf6db"))
+      (tstamps "5a0883de-4c62-54b5-b98a-09411ed50797"))
     (comp
       (ref "F1")
       (value "T16A_SLOW")
@@ -713,7 +713,7 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "_wu8f5ycwg")
+          (name "SKiDL Tag") "wK3f8F9QLH")
         (field
           (name "SKiDL Line") "faema_president.py:242"))
       (libsource
@@ -723,7 +723,7 @@
         (names "/block_ac_power1/")
         (tstamps "/2dd22cd8-b0af-5f77-b03d-57f427b4dab0/"))
       (component_classes)
-      (tstamps "0bff3ec9-dbd7-55f7-9137-a193645f0f13"))
+      (tstamps "e468411c-74f0-5856-824d-021eca404c79"))
     (comp
       (ref "F2")
       (value "T16A_SLOW")
@@ -737,7 +737,7 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "_zPkodSV5s")
+          (name "SKiDL Tag") "ICSnC0aePt")
         (field
           (name "SKiDL Line") "faema_president.py:249"))
       (libsource
@@ -747,7 +747,7 @@
         (names "/block_ac_power1/")
         (tstamps "/2dd22cd8-b0af-5f77-b03d-57f427b4dab0/"))
       (component_classes)
-      (tstamps "cfe5eee2-98e5-57c6-b59a-8375c59bdaa4"))
+      (tstamps "56bf60d0-2ee4-5cf1-9129-18f96ae3af33"))
     (comp
       (ref "J1")
       (value "AC_INPUT_220V")
@@ -761,7 +761,7 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "NHFE0xgsvK")
+          (name "SKiDL Tag") "lgBo8AEJRX")
         (field
           (name "SKiDL Line") "faema_president.py:227"))
       (libsource
@@ -771,7 +771,7 @@
         (names "/block_ac_power1/")
         (tstamps "/2dd22cd8-b0af-5f77-b03d-57f427b4dab0/"))
       (component_classes)
-      (tstamps "58f8242c-5834-5681-baae-c2af5aebdf9b"))
+      (tstamps "fd0fcda4-6fdf-5907-992b-8bb8834de54a"))
     (comp
       (ref "J10")
       (value "SSR_CTRL_HEADER")
@@ -785,9 +785,9 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "5PcjITKF57")
+          (name "SKiDL Tag") "h9WEEUta2e")
         (field
-          (name "SKiDL Line") "faema_president.py:535"))
+          (name "SKiDL Line") "faema_president.py:526"))
       (libsource
         (lib "NO_LIB")
         (part "Conn_SSR"))
@@ -795,31 +795,7 @@
         (names "/block_ssr_drive1/")
         (tstamps "/2cf831f8-312a-53e9-b06e-a74fe933eab9/"))
       (component_classes)
-      (tstamps "882ce4e5-8e75-54d9-b0d3-d346307463ca"))
-    (comp
-      (ref "J2")
-      (value "AC_BOILER_OUT")
-      (description "")
-      (footprint "TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal")
-      (fields
-        (field
-          (name "Description"))
-        (field
-          (name "Footprint") "TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal")
-        (field
-          (name "Datasheet"))
-        (field
-          (name "SKiDL Tag") "anT9hTjU3U")
-        (field
-          (name "SKiDL Line") "faema_president.py:282"))
-      (libsource
-        (lib "NO_LIB")
-        (part "Conn_Boiler_AC"))
-      (sheetpath
-        (names "/block_ac_power1/")
-        (tstamps "/2dd22cd8-b0af-5f77-b03d-57f427b4dab0/"))
-      (component_classes)
-      (tstamps "17cee80f-6f5b-52f9-80f5-4fdd7ee69065"))
+      (tstamps "9afdea42-4a20-548f-84e6-8a20898a1b80"))
     (comp
       (ref "J3")
       (value "PT100_CALDEIRA")
@@ -833,9 +809,9 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "i7LXmCOzYP")
+          (name "SKiDL Tag") "rlHsHzB91A")
         (field
-          (name "SKiDL Line") "faema_president.py:408"))
+          (name "SKiDL Line") "faema_president.py:399"))
       (libsource
         (lib "NO_LIB")
         (part "Conn_4"))
@@ -843,7 +819,7 @@
         (names "/block_rtd_boiler1/")
         (tstamps "/1b0256b3-0650-5635-8f7a-77673c9bd46c/"))
       (component_classes)
-      (tstamps "c6cf97a7-e1a5-5614-9163-d06e218c573c"))
+      (tstamps "2f944d32-aba4-5aa2-bbb7-c8f61a5c5bb5"))
     (comp
       (ref "J5")
       (value "ILI9341_2.4_HEADER")
@@ -857,9 +833,9 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "C3oY2wCULx")
+          (name "SKiDL Tag") "OePQE_fHG5")
         (field
-          (name "SKiDL Line") "faema_president.py:626"))
+          (name "SKiDL Line") "faema_president.py:617"))
       (libsource
         (lib "NO_LIB")
         (part "Conn_8"))
@@ -867,7 +843,7 @@
         (names "/block_display1/")
         (tstamps "/9abce63c-0c2f-557f-840d-1c2be00b11af/"))
       (component_classes)
-      (tstamps "cbc3167b-8381-5e62-9897-29a2010155b5"))
+      (tstamps "7fb89b92-1a55-5b83-be82-f853231de78d"))
     (comp
       (ref "J6")
       (value "PT100_GRUPO")
@@ -881,9 +857,9 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "GX92ObyqjL")
+          (name "SKiDL Tag") "4K7S0CMGHZ")
         (field
-          (name "SKiDL Line") "faema_president.py:462"))
+          (name "SKiDL Line") "faema_president.py:453"))
       (libsource
         (lib "NO_LIB")
         (part "Conn_4"))
@@ -891,7 +867,7 @@
         (names "/block_rtd_group1/")
         (tstamps "/d51b9acd-b194-5d50-a99c-84beba4cdf7a/"))
       (component_classes)
-      (tstamps "06564ac2-a59b-5017-9e96-68aece53d21f"))
+      (tstamps "f0a84ce3-8ee4-54b2-a483-573a43ebb938"))
     (comp
       (ref "J7")
       (value "SONDA_NIVEL")
@@ -905,9 +881,9 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "oBpCKh_V2B")
+          (name "SKiDL Tag") "YM0BNrQbp6")
         (field
-          (name "SKiDL Line") "faema_president.py:557"))
+          (name "SKiDL Line") "faema_president.py:548"))
       (libsource
         (lib "NO_LIB")
         (part "Conn_2"))
@@ -915,7 +891,7 @@
         (names "/block_level_sense1/")
         (tstamps "/c39e6bcd-c25f-5b79-b6e4-02688556d8ac/"))
       (component_classes)
-      (tstamps "0194de0f-bad3-5441-9d71-0ccf2de2fe52"))
+      (tstamps "7707bd61-9457-5066-893b-7bdeb33a3b19"))
     (comp
       (ref "J8")
       (value "BOTOES_PRESET")
@@ -929,9 +905,9 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "rWN87vwI00")
+          (name "SKiDL Tag") "Obpk7dGjHC")
         (field
-          (name "SKiDL Line") "faema_president.py:658"))
+          (name "SKiDL Line") "faema_president.py:649"))
       (libsource
         (lib "NO_LIB")
         (part "Conn_6"))
@@ -939,7 +915,7 @@
         (names "/block_ui1/")
         (tstamps "/28ec3827-a82c-5118-ad83-f300eecd606d/"))
       (component_classes)
-      (tstamps "a6ad48ea-48b6-5564-82ad-d24d0107f265"))
+      (tstamps "053f417d-1a0d-5f88-b66e-e60e7e5a8680"))
     (comp
       (ref "J9")
       (value "ENCODER_EC11")
@@ -953,9 +929,9 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "TE9k9vf86a")
+          (name "SKiDL Tag") "96p2iQLE9I")
         (field
-          (name "SKiDL Line") "faema_president.py:648"))
+          (name "SKiDL Line") "faema_president.py:639"))
       (libsource
         (lib "NO_LIB")
         (part "Conn_5"))
@@ -963,7 +939,7 @@
         (names "/block_ui1/")
         (tstamps "/28ec3827-a82c-5118-ad83-f300eecd606d/"))
       (component_classes)
-      (tstamps "646cbf81-6be8-54e9-99dd-b14ea76ff39a"))
+      (tstamps "c2af987c-f417-5562-80ff-73e8ed6cbde3"))
     (comp
       (ref "Q1")
       (value "2N7002")
@@ -977,9 +953,9 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "7qiNMlw9L5")
+          (name "SKiDL Tag") "vLic6eyJI0")
         (field
-          (name "SKiDL Line") "faema_president.py:515"))
+          (name "SKiDL Line") "faema_president.py:506"))
       (libsource
         (lib "NO_LIB")
         (part "2N7002"))
@@ -987,7 +963,7 @@
         (names "/block_ssr_drive1/")
         (tstamps "/2cf831f8-312a-53e9-b06e-a74fe933eab9/"))
       (component_classes)
-      (tstamps "641dbb13-f567-506d-a287-9ef5589fd3bd"))
+      (tstamps "adc34312-f55a-5115-8204-18d4a3883be7"))
     (comp
       (ref "R10")
       (value "470R_1pct")
@@ -1001,9 +977,9 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "A8c5XyMfqw")
+          (name "SKiDL Tag") "8oU7eMZFPN")
         (field
-          (name "SKiDL Line") "faema_president.py:685"))
+          (name "SKiDL Line") "faema_president.py:676"))
       (libsource
         (lib "NO_LIB")
         (part "R"))
@@ -1011,7 +987,7 @@
         (names "/block_ui1/")
         (tstamps "/28ec3827-a82c-5118-ad83-f300eecd606d/"))
       (component_classes)
-      (tstamps "b7f05d52-88bd-5d53-9b6d-48f74ff9a314"))
+      (tstamps "648d719b-c8b5-53a3-969c-dacfa4d623c5"))
     (comp
       (ref "R11")
       (value "100k_1pct")
@@ -1025,9 +1001,9 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "s8eTcNcHNk")
+          (name "SKiDL Tag") "PJVuTvNdh7")
         (field
-          (name "SKiDL Line") "faema_president.py:550"))
+          (name "SKiDL Line") "faema_president.py:541"))
       (libsource
         (lib "NO_LIB")
         (part "R"))
@@ -1035,7 +1011,7 @@
         (names "/block_level_sense1/")
         (tstamps "/c39e6bcd-c25f-5b79-b6e4-02688556d8ac/"))
       (component_classes)
-      (tstamps "a48a0ae1-312d-57ac-8ea9-8b30dcf192fb"))
+      (tstamps "47915ae4-6b68-55f7-a85d-e32a3da15251"))
     (comp
       (ref "R12")
       (value "10k_1pct")
@@ -1049,9 +1025,9 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "7mGqpWCCQa")
+          (name "SKiDL Tag") "lVTm7jvdh7")
         (field
-          (name "SKiDL Line") "faema_president.py:670"))
+          (name "SKiDL Line") "faema_president.py:661"))
       (libsource
         (lib "NO_LIB")
         (part "R"))
@@ -1059,7 +1035,7 @@
         (names "/block_ui1/")
         (tstamps "/28ec3827-a82c-5118-ad83-f300eecd606d/"))
       (component_classes)
-      (tstamps "1a5bb953-62df-5550-b31a-dd303579523e"))
+      (tstamps "b0e2d902-2005-5c95-aef2-23864dc82df6"))
     (comp
       (ref "R13")
       (value "10k_1pct")
@@ -1073,9 +1049,9 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "ZJjGZe1vBr")
+          (name "SKiDL Tag") "ZTQ73KWITA")
         (field
-          (name "SKiDL Line") "faema_president.py:670"))
+          (name "SKiDL Line") "faema_president.py:661"))
       (libsource
         (lib "NO_LIB")
         (part "R"))
@@ -1083,7 +1059,7 @@
         (names "/block_ui1/")
         (tstamps "/28ec3827-a82c-5118-ad83-f300eecd606d/"))
       (component_classes)
-      (tstamps "fdfe9b9f-3d37-5c33-a800-0e4bdba96648"))
+      (tstamps "c1b76462-80de-581a-bfbe-7ec716271c03"))
     (comp
       (ref "R14")
       (value "10k_1pct")
@@ -1097,9 +1073,9 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "nTHo6WNxyg")
+          (name "SKiDL Tag") "FNVV_ARsjN")
         (field
-          (name "SKiDL Line") "faema_president.py:670"))
+          (name "SKiDL Line") "faema_president.py:661"))
       (libsource
         (lib "NO_LIB")
         (part "R"))
@@ -1107,7 +1083,7 @@
         (names "/block_ui1/")
         (tstamps "/28ec3827-a82c-5118-ad83-f300eecd606d/"))
       (component_classes)
-      (tstamps "fd14057a-2da4-5157-b9ab-be4dbf7f4988"))
+      (tstamps "ed06c46a-f125-5e65-b9be-ffb1e6bcecbb"))
     (comp
       (ref "R2")
       (value "4k7_1pct")
@@ -1121,9 +1097,9 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "bWF9CTzZM0")
+          (name "SKiDL Tag") "8f6uR4PRu1")
         (field
-          (name "SKiDL Line") "faema_president.py:597"))
+          (name "SKiDL Line") "faema_president.py:588"))
       (libsource
         (lib "NO_LIB")
         (part "R"))
@@ -1131,7 +1107,7 @@
         (names "/block_rtc1/")
         (tstamps "/33316cec-f19d-5033-a65a-4e36c7a41d16/"))
       (component_classes)
-      (tstamps "39b4f28e-9f73-5751-b07b-918c6e2905bd"))
+      (tstamps "9a3262a3-94cb-5e1d-b514-d7214ead7427"))
     (comp
       (ref "R3")
       (value "4k7_1pct")
@@ -1145,9 +1121,9 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "a18yeLti00")
+          (name "SKiDL Tag") "yVSigmF7zT")
         (field
-          (name "SKiDL Line") "faema_president.py:604"))
+          (name "SKiDL Line") "faema_president.py:595"))
       (libsource
         (lib "NO_LIB")
         (part "R"))
@@ -1155,7 +1131,7 @@
         (names "/block_rtc1/")
         (tstamps "/33316cec-f19d-5033-a65a-4e36c7a41d16/"))
       (component_classes)
-      (tstamps "c6c745d5-b765-54f9-b2e2-037f72017fb8"))
+      (tstamps "5e211b3f-18bb-56fe-a283-67f7ac22aa86"))
     (comp
       (ref "R7")
       (value "220R_1pct")
@@ -1169,9 +1145,9 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "o8mFPTXjy3")
+          (name "SKiDL Tag") "4ybUpAZJkC")
         (field
-          (name "SKiDL Line") "faema_president.py:523"))
+          (name "SKiDL Line") "faema_president.py:514"))
       (libsource
         (lib "NO_LIB")
         (part "R"))
@@ -1179,7 +1155,7 @@
         (names "/block_ssr_drive1/")
         (tstamps "/2cf831f8-312a-53e9-b06e-a74fe933eab9/"))
       (component_classes)
-      (tstamps "24280c46-4689-5273-8137-38e810742cfc"))
+      (tstamps "7afbda61-7187-595f-82c6-633cb0a3a308"))
     (comp
       (ref "R9")
       (value "10k_1pct")
@@ -1193,9 +1169,9 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "qG2IsJlzZv")
+          (name "SKiDL Tag") "Wd9hEhlInE")
         (field
-          (name "SKiDL Line") "faema_president.py:502"))
+          (name "SKiDL Line") "faema_president.py:493"))
       (libsource
         (lib "NO_LIB")
         (part "R"))
@@ -1203,7 +1179,7 @@
         (names "/block_ssr_drive1/")
         (tstamps "/2cf831f8-312a-53e9-b06e-a74fe933eab9/"))
       (component_classes)
-      (tstamps "fb73486c-f7ed-5837-984b-c9611674038b"))
+      (tstamps "536a3fff-8f23-50e6-bab7-8fac8f0345fe"))
     (comp
       (ref "RV1")
       (value "S14K275")
@@ -1217,7 +1193,7 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "uSFW9TDZU5")
+          (name "SKiDL Tag") "oUYWT5sG7w")
         (field
           (name "SKiDL Line") "faema_president.py:261"))
       (libsource
@@ -1227,7 +1203,7 @@
         (names "/block_ac_power1/")
         (tstamps "/2dd22cd8-b0af-5f77-b03d-57f427b4dab0/"))
       (component_classes)
-      (tstamps "bf660152-6e90-5292-808a-215875be7929"))
+      (tstamps "b1a97056-43c9-5a7b-916e-0247db6e1cef"))
     (comp
       (ref "R_gate")
       (value "100R_1pct")
@@ -1241,9 +1217,9 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "UmJqEUnuIT")
+          (name "SKiDL Tag") "drv4O_v_OL")
         (field
-          (name "SKiDL Line") "faema_president.py:495"))
+          (name "SKiDL Line") "faema_president.py:486"))
       (libsource
         (lib "NO_LIB")
         (part "R"))
@@ -1251,7 +1227,7 @@
         (names "/block_ssr_drive1/")
         (tstamps "/2cf831f8-312a-53e9-b06e-a74fe933eab9/"))
       (component_classes)
-      (tstamps "22536345-de03-5bdb-a70a-5d006fecd764"))
+      (tstamps "9aa74d45-1525-50c2-baed-9d0ff0f27d46"))
     (comp
       (ref "Rref")
       (value "430R_0.1pct")
@@ -1265,9 +1241,9 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "oYK_niUXwG")
+          (name "SKiDL Tag") "LiE1N8eaKb")
         (field
-          (name "SKiDL Line") "faema_president.py:401"))
+          (name "SKiDL Line") "faema_president.py:392"))
       (libsource
         (lib "NO_LIB")
         (part "R"))
@@ -1275,7 +1251,7 @@
         (names "/block_rtd_boiler1/")
         (tstamps "/1b0256b3-0650-5635-8f7a-77673c9bd46c/"))
       (component_classes)
-      (tstamps "681a8dfb-ce47-5bd0-9fab-5e7462f524be"))
+      (tstamps "7d6dd770-0e59-51cc-a398-0ef4590c923a"))
     (comp
       (ref "Rref2")
       (value "430R_0.1pct")
@@ -1289,9 +1265,9 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "A6LiTyUIlL")
+          (name "SKiDL Tag") "ou2D0oHEnb")
         (field
-          (name "SKiDL Line") "faema_president.py:455"))
+          (name "SKiDL Line") "faema_president.py:446"))
       (libsource
         (lib "NO_LIB")
         (part "R"))
@@ -1299,7 +1275,7 @@
         (names "/block_rtd_group1/")
         (tstamps "/d51b9acd-b194-5d50-a99c-84beba4cdf7a/"))
       (component_classes)
-      (tstamps "b045e71a-f6ea-5f42-9a53-cc7915ba6c0f"))
+      (tstamps "0f8e5701-c8d7-5ff0-9dfb-9d114f12ddd6"))
     (comp
       (ref "U1")
       (value "ESP32-S3-MINI-1-N8")
@@ -1313,7 +1289,7 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "xZ2Su52Lm_")
+          (name "SKiDL Tag") "JHZdjCHqoe")
         (field
           (name "SKiDL Line") "faema_president.py:91"))
       (libsource
@@ -1323,21 +1299,21 @@
         (names "/block_mcu1/")
         (tstamps "/2020ce5b-6346-5cbb-9f57-b7aeea600868/"))
       (component_classes)
-      (tstamps "7b5bf03b-72e6-52c7-abed-237b00b773f1"))
+      (tstamps "50eda1a6-e921-5c9b-a2ba-ea1d4c498113"))
     (comp
       (ref "U2")
       (value "HLK-PM05")
       (description "")
-      (footprint "Converter_ACDC:Hi-Link_HLK-PMxx")
+      (footprint "Converter_ACDC:Converter_ACDC_Hi-Link_HLK-PMxx")
       (fields
         (field
           (name "Description"))
         (field
-          (name "Footprint") "Converter_ACDC:Hi-Link_HLK-PMxx")
+          (name "Footprint") "Converter_ACDC:Converter_ACDC_Hi-Link_HLK-PMxx")
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "y9O8eYB1X7")
+          (name "SKiDL Tag") "9R3JfLYkwg")
         (field
           (name "SKiDL Line") "faema_president.py:149"))
       (libsource
@@ -1347,7 +1323,7 @@
         (names "/block_ac_power1/")
         (tstamps "/2dd22cd8-b0af-5f77-b03d-57f427b4dab0/"))
       (component_classes)
-      (tstamps "63dbb2bb-bc2f-5262-9882-dcfade708dee"))
+      (tstamps "3a2f46ba-1c0d-588c-a9ee-604d7f0f0859"))
     (comp
       (ref "U3")
       (value "AMS1117-3.3")
@@ -1361,7 +1337,7 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "Uc8KRcyAor")
+          (name "SKiDL Tag") "ErvXJRMtgE")
         (field
           (name "SKiDL Line") "faema_president.py:162"))
       (libsource
@@ -1371,7 +1347,7 @@
         (names "/block_dc_regulation1/")
         (tstamps "/01c1d1c2-47b2-5e8f-a08a-452300949070/"))
       (component_classes)
-      (tstamps "c2a95047-40a6-502d-a075-fb6902de2c3d"))
+      (tstamps "fa66b9f0-ac0a-5411-a02f-e5b843a29d9e"))
     (comp
       (ref "U4")
       (value "MAX31865_CALDEIRA")
@@ -1385,7 +1361,7 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "h__1Cy28TE")
+          (name "SKiDL Tag") "UibQ727xwn")
         (field
           (name "SKiDL Line") "faema_president.py:114"))
       (libsource
@@ -1395,7 +1371,7 @@
         (names "/block_rtd_boiler1/")
         (tstamps "/1b0256b3-0650-5635-8f7a-77673c9bd46c/"))
       (component_classes)
-      (tstamps "8df94d0d-74ad-51b2-b2a3-7503ef33bea5"))
+      (tstamps "7cca9d8f-b10a-59bc-98df-6500a73c83b8"))
     (comp
       (ref "U5")
       (value "DS3231SN")
@@ -1409,7 +1385,7 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "l_ckN2_2L9")
+          (name "SKiDL Tag") "rPT_7fwUr5")
         (field
           (name "SKiDL Line") "faema_president.py:135"))
       (libsource
@@ -1419,7 +1395,7 @@
         (names "/block_rtc1/")
         (tstamps "/33316cec-f19d-5033-a65a-4e36c7a41d16/"))
       (component_classes)
-      (tstamps "0cdc9792-3929-567f-b9ad-a34f0208698a"))
+      (tstamps "66398c28-efab-5d9e-9d6a-0adbc070047b"))
     (comp
       (ref "U6")
       (value "MAX31865_GRUPO")
@@ -1433,7 +1409,7 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "h44GexOwnT")
+          (name "SKiDL Tag") "rG6t8xf25G")
         (field
           (name "SKiDL Line") "faema_president.py:114"))
       (libsource
@@ -1443,7 +1419,7 @@
         (names "/block_rtd_group1/")
         (tstamps "/d51b9acd-b194-5d50-a99c-84beba4cdf7a/"))
       (component_classes)
-      (tstamps "a1ae209b-6ff2-5716-bd25-f95788672d24")))
+      (tstamps "434f154c-6382-5039-8d00-1e0ce3e42ed3")))
   (nets
     (net
       (code 1)
@@ -1611,10 +1587,6 @@
       (class "Default")
       (node
         (ref "F2")
-        (pin "2")
-        (pintype "PASSIVE"))
-      (node
-        (ref "J2")
         (pin "2")
         (pintype "PASSIVE"))
       (node
@@ -1903,14 +1875,6 @@
         (pintype "BIDIRECTIONAL")))
     (net
       (code 21)
-      (name "L1_SWITCHED")
-      (class "Default")
-      (node
-        (ref "J2")
-        (pin "1")
-        (pintype "PASSIVE")))
-    (net
-      (code 22)
       (name "LED_STATUS")
       (class "Default")
       (node
@@ -1922,7 +1886,7 @@
         (pin "22")
         (pintype "OUTPUT")))
     (net
-      (code 23)
+      (code 22)
       (name "LEVEL_SENSE")
       (class "Default")
       (node
@@ -1938,7 +1902,7 @@
         (pin "17")
         (pintype "INPUT")))
     (net
-      (code 24)
+      (code 23)
       (name "MAX_DRDY")
       (class "Default")
       (node
@@ -1950,7 +1914,7 @@
         (pin "6")
         (pintype "OUTPUT")))
     (net
-      (code 25)
+      (code 24)
       (name "PT100_CALD_FN")
       (class "Default")
       (node
@@ -1970,7 +1934,7 @@
         (pin "8")
         (pintype "PASSIVE")))
     (net
-      (code 26)
+      (code 25)
       (name "PT100_CALD_FP")
       (class "Default")
       (node
@@ -1982,7 +1946,7 @@
         (pin "7")
         (pintype "PASSIVE")))
     (net
-      (code 27)
+      (code 26)
       (name "PT100_CALD_RN")
       (class "Default")
       (node
@@ -1998,7 +1962,7 @@
         (pin "11")
         (pintype "INPUT")))
     (net
-      (code 28)
+      (code 27)
       (name "PT100_CALD_RP")
       (class "Default")
       (node
@@ -2014,7 +1978,7 @@
         (pin "10")
         (pintype "INPUT")))
     (net
-      (code 29)
+      (code 28)
       (name "PT100_GRUP_FN")
       (class "Default")
       (node
@@ -2034,7 +1998,7 @@
         (pin "8")
         (pintype "PASSIVE")))
     (net
-      (code 30)
+      (code 29)
       (name "PT100_GRUP_FP")
       (class "Default")
       (node
@@ -2046,7 +2010,7 @@
         (pin "7")
         (pintype "PASSIVE")))
     (net
-      (code 31)
+      (code 30)
       (name "PT100_GRUP_RN")
       (class "Default")
       (node
@@ -2062,7 +2026,7 @@
         (pin "11")
         (pintype "INPUT")))
     (net
-      (code 32)
+      (code 31)
       (name "PT100_GRUP_RP")
       (class "Default")
       (node
@@ -2078,7 +2042,7 @@
         (pin "10")
         (pintype "INPUT")))
     (net
-      (code 33)
+      (code 32)
       (name "Q1_GATE")
       (class "Default")
       (node
@@ -2094,7 +2058,7 @@
         (pin "2")
         (pintype "PASSIVE")))
     (net
-      (code 34)
+      (code 33)
       (name "RREF_CALD_P")
       (class "Default")
       (node
@@ -2106,7 +2070,7 @@
         (pin "12")
         (pintype "INPUT")))
     (net
-      (code 35)
+      (code 34)
       (name "RREF_GRUP_P")
       (class "Default")
       (node
@@ -2118,7 +2082,7 @@
         (pin "12")
         (pintype "INPUT")))
     (net
-      (code 36)
+      (code 35)
       (name "RST_DISP")
       (class "Default")
       (node
@@ -2130,7 +2094,7 @@
         (pin "16")
         (pintype "OUTPUT")))
     (net
-      (code 37)
+      (code 36)
       (name "SPI_MISO")
       (class "Default")
       (node
@@ -2146,7 +2110,7 @@
         (pin "4")
         (pintype "TRISTATE")))
     (net
-      (code 38)
+      (code 37)
       (name "SPI_MOSI")
       (class "Default")
       (node
@@ -2166,7 +2130,7 @@
         (pin "3")
         (pintype "INPUT")))
     (net
-      (code 39)
+      (code 38)
       (name "SPI_SCK")
       (class "Default")
       (node
@@ -2186,7 +2150,7 @@
         (pin "5")
         (pintype "INPUT")))
     (net
-      (code 40)
+      (code 39)
       (name "SSR_CTRL")
       (class "Default")
       (node
@@ -2198,7 +2162,7 @@
         (pin "4")
         (pintype "OUTPUT")))
     (net
-      (code 41)
+      (code 40)
       (name "SSR_CTRL_P")
       (class "Default")
       (node
@@ -2210,7 +2174,7 @@
         (pin "2")
         (pintype "PASSIVE")))
     (net
-      (code 42)
+      (code 41)
       (name "SSR_DRIVE")
       (class "Default")
       (node
@@ -2222,7 +2186,7 @@
         (pin "3")
         (pintype "PASSIVE")))
     (net
-      (code 43)
+      (code 42)
       (name "VBAT")
       (class "Default")
       (node
@@ -2234,7 +2198,7 @@
         (pin "14")
         (pintype "POWER-IN")))
     (net
-      (code 44)
+      (code 43)
       (name "__NOCONNECT1")
       (class "Default")
       (node
@@ -2242,7 +2206,7 @@
         (pin "23")
         (pintype "BIDIRECTIONAL")))
     (net
-      (code 45)
+      (code 44)
       (name "__NOCONNECT2")
       (class "Default")
       (node
@@ -2250,7 +2214,7 @@
         (pin "24")
         (pintype "BIDIRECTIONAL")))
     (net
-      (code 46)
+      (code 45)
       (name "__NOCONNECT3")
       (class "Default")
       (node
@@ -2258,7 +2222,7 @@
         (pin "6")
         (pintype "OUTPUT")))
     (net
-      (code 47)
+      (code 46)
       (name "__NOCONNECT4")
       (class "Default")
       (node
@@ -2266,7 +2230,7 @@
         (pin "3")
         (pintype "OUTPUT")))
     (net
-      (code 48)
+      (code 47)
       (name "__NOCONNECT5")
       (class "Default")
       (node
