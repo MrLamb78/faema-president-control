@@ -59,7 +59,7 @@ _Conn8 = _make_conn(8, 'Connector_PinHeader_2.54mm:PinHeader_1x08_P2.54mm_Vertic
 def make_esp32s3_mini():
     """ESP32-S3-MINI-1-N8 — LCSC C2913206"""
     u = Part(tool=SKIDL, name='ESP32_S3_Mini',
-             footprint='RF_Module:ESP32-S3-MINI-1',  # custom: importar da lib Espressif
+             footprint='PCF_Espressif:ESP32-S3-MINI-1',
              dest=TEMPLATE)
     u += [
         Pin(num=1,  name='3V3',           func=Pin.types.PWRIN),
@@ -254,7 +254,7 @@ def block_ac_power():
 
     # RV1 — MOV S14K275 entre as linhas fusíveis (proteção diferencial)
     rv1 = Part(tool=SKIDL, name='Varistor',
-               footprint='Varistor:RV_Disc_D15.5mm_W5.0mm_P7.5mm',
+               footprint='Varistor:RV_Disc_D15.5mm_W5mm_P7.5mm',
                dest=TEMPLATE)
     rv1 += [Pin(num=1, name='1', func=Pin.types.PASSIVE),
             Pin(num=2, name='2', func=Pin.types.PASSIVE)]
