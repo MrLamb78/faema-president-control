@@ -138,7 +138,7 @@ def make_ds3231():
 def make_hlk_pm05():
     """HLK-PM05 — 220VAC→5VDC 3W — THT, hand-soldered"""
     u = Part(tool=SKIDL, name='HLK_PM05',
-             footprint='Connector_PinHeader_2.54mm:PinHeader_2x02_P2.54mm_Vertical',  # placeholder
+             footprint='Converter_ACDC:Hi-Link_HLK-PMxx',
              dest=TEMPLATE)
     u += [
         Pin(num=1, name='AC_N', func=Pin.types.PASSIVE),
