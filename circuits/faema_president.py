@@ -59,7 +59,7 @@ _Conn8 = _make_conn(8, 'Connector_PinHeader_2.54mm:PinHeader_1x08_P2.54mm_Vertic
 def make_esp32s3_mini():
     """ESP32-S3-MINI-1-N8 — LCSC C2913206"""
     u = Part(tool=SKIDL, name='ESP32_S3_Mini',
-             footprint='PCF_Espressif:ESP32-S3-MINI-1',
+             footprint='PCM_Espressif:ESP32-S3-MINI-1',
              dest=TEMPLATE)
     u += [
         Pin(num=1,  name='3V3',           func=Pin.types.PWRIN),
