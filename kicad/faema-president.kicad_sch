@@ -12,6 +12,7 @@
 	)
 (lib_symbols
 
+
 		(symbol "faema:AMS1117_3V3"
 			(exclude_from_sim no)
 			(in_bom yes)
@@ -674,6 +675,573 @@
 						(effects
 							(font
 								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "faema:Conn_5pin"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "J"
+				(at 0 -7.62 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "Conn_5pin"
+				(at 0 7.62 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "Conn_5pin_0_1"
+				(rectangle
+					(start -2.54 6.35)
+					(end 2.54 -6.35)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+			)
+			(symbol "Conn_5pin_1_1"
+				(pin passive line
+					(at -5.08 5.08 0)
+					(length 2.54)
+					(name "Pin_1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 2.54 0)
+					(length 2.54)
+					(name "Pin_2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 0 0)
+					(length 2.54)
+					(name "Pin_3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -2.54 0)
+					(length 2.54)
+					(name "Pin_4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -5.08 0)
+					(length 2.54)
+					(name "Pin_5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "faema:Conn_6pin"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "J"
+				(at 0 -8.89 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "Conn_6pin"
+				(at 0 8.89 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "Conn_6pin_0_1"
+				(rectangle
+					(start -2.54 7.62)
+					(end 2.54 -7.62)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+			)
+			(symbol "Conn_6pin_1_1"
+				(pin passive line
+					(at -5.08 6.35 0)
+					(length 2.54)
+					(name "Pin_1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 3.81 0)
+					(length 2.54)
+					(name "Pin_2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 1.27 0)
+					(length 2.54)
+					(name "Pin_3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -1.27 0)
+					(length 2.54)
+					(name "Pin_4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -3.81 0)
+					(length 2.54)
+					(name "Pin_5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -6.35 0)
+					(length 2.54)
+					(name "Pin_6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "faema:Conn_8pin"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "J"
+				(at 0 -11.43 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "Conn_8pin"
+				(at 0 11.43 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "Conn_8pin_0_1"
+				(rectangle
+					(start -2.54 10.16)
+					(end 2.54 -10.16)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+			)
+			(symbol "Conn_8pin_1_1"
+				(pin passive line
+					(at -5.08 8.89 0)
+					(length 2.54)
+					(name "Pin_1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 6.35 0)
+					(length 2.54)
+					(name "Pin_2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 3.81 0)
+					(length 2.54)
+					(name "Pin_3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 1.27 0)
+					(length 2.54)
+					(name "Pin_4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -1.27 0)
+					(length 2.54)
+					(name "Pin_5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -3.81 0)
+					(length 2.54)
+					(name "Pin_6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -6.35 0)
+					(length 2.54)
+					(name "Pin_7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -8.89 0)
+					(length 2.54)
+					(name "Pin_8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "8"
+						(effects
+							(font
+								(size 1.27 1.27)
 							)
 						)
 					)
@@ -1435,6 +2003,141 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "faema:Fuse"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "F"
+				(at 1.778 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "Fuse"
+				(at -1.778 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "Fuse_0_1"
+				(rectangle
+					(start -1.016 2.54)
+					(end 1.016 -2.54)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 2.54) (xy 0 3.81)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -2.54) (xy 0 -3.81)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "Fuse_1_1"
+				(pin passive line
+					(at 0 3.81 270)
+					(length 1.27)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -3.81 90)
+					(length 1.27)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "faema:HLK_PM05"
 			(exclude_from_sim no)
 			(in_bom yes)
@@ -2034,6 +2737,354 @@
 						(effects
 							(font
 								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "faema:MOV"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "RV"
+				(at 1.778 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "MOV"
+				(at -1.778 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "MOV_0_1"
+				(rectangle
+					(start -1.016 2.54)
+					(end 1.016 -2.54)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -0.762 1.016) (xy 0 0) (xy 0.762 -1.016)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 2.54) (xy 0 3.81)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -2.54) (xy 0 -3.81)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "MOV_1_1"
+				(pin passive line
+					(at 0 3.81 270)
+					(length 1.27)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -3.81 90)
+					(length 1.27)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "faema:NMOS_GSD"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "Q"
+				(at 2.54 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "NMOS"
+				(at 2.54 -2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "NMOS_GSD_0_1"
+				(rectangle
+					(start -1.524 2.921)
+					(end 1.524 -2.921)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 0) (xy -3.81 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -0.508 -2.032) (xy 0 -1.27) (xy 0.508 -2.032)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 1.27) (xy 0 3.81)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 0) (xy -1.27 0) (xy -1.27 2.54) (xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 0) (xy -1.27 0) (xy -1.27 -2.54) (xy 0 -2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -1.27) (xy 0 -3.81)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "NMOS_GSD_1_1"
+				(pin input line
+					(at -3.81 0 0)
+					(length 1.27)
+					(name "G"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -3.81 270)
+					(length 1.27)
+					(name "D"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 3.81 90)
+					(length 1.27)
+					(name "S"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
 							)
 						)
 					)
@@ -3692,6 +4743,1058 @@
 		(embedded_fonts no)
 	)
 
+
+	(symbol "faema:NMOS_GSD"
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "Q"
+			(at 2.54 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "NMOS"
+			(at 2.54 -2.54 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(symbol "NMOS_GSD_0_1"
+			(polyline
+				(pts
+					(xy 0 0) (xy -1.27 0) (xy -1.27 -2.54) (xy 0 -2.54)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy 0 0) (xy -1.27 0) (xy -1.27 2.54) (xy 0 2.54)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy -1.27 0) (xy -3.81 0)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy 0 -1.27) (xy 0 -3.81)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy 0 1.27) (xy 0 3.81)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy -0.508 -2.032) (xy 0 -1.27) (xy 0.508 -2.032)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(rectangle
+				(start -1.524 2.921)
+				(end 1.524 -2.921)
+				(stroke
+					(width 0.254)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+		)
+		(symbol "NMOS_GSD_1_1"
+			(pin input line
+				(at -3.81 0 0)
+				(length 1.27)
+				(name "G"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at 0 -3.81 270)
+				(length 1.27)
+				(name "D"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at 0 3.81 90)
+				(length 1.27)
+				(name "S"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "3"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+		)
+		(embedded_fonts no)
+	)
+	(symbol "faema:Fuse"
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "F"
+			(at 1.778 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Fuse"
+			(at -1.778 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(symbol "Fuse_0_1"
+			(rectangle
+				(start -1.016 2.54)
+				(end 1.016 -2.54)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy 0 2.54) (xy 0 3.81)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy 0 -2.54) (xy 0 -3.81)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+		)
+		(symbol "Fuse_1_1"
+			(pin passive line
+				(at 0 3.81 270)
+				(length 1.27)
+				(name "~"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at 0 -3.81 90)
+				(length 1.27)
+				(name "~"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+		)
+		(embedded_fonts no)
+	)
+	(symbol "faema:MOV"
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "RV"
+			(at 1.778 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "MOV"
+			(at -1.778 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(symbol "MOV_0_1"
+			(rectangle
+				(start -1.016 2.54)
+				(end 1.016 -2.54)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy 0 2.54) (xy 0 3.81)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy 0 -2.54) (xy 0 -3.81)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy -0.762 1.016) (xy 0 0) (xy 0.762 -1.016)
+				)
+				(stroke
+					(width 0.254)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+		)
+		(symbol "MOV_1_1"
+			(pin passive line
+				(at 0 3.81 270)
+				(length 1.27)
+				(name "~"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at 0 -3.81 90)
+				(length 1.27)
+				(name "~"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+		)
+		(embedded_fonts no)
+	)
+	(symbol "faema:Conn_5pin"
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "J"
+			(at 0 -7.62 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Conn_5pin"
+			(at 0 7.62 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(symbol "Conn_5pin_0_1"
+			(rectangle
+				(start -2.54 6.35)
+				(end 2.54 -6.35)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type background)
+				)
+			)
+		)
+		(symbol "Conn_5pin_1_1"
+			(pin passive line
+				(at -5.08 5.08 0)
+				(length 2.54)
+				(name "Pin_1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at -5.08 2.54 0)
+				(length 2.54)
+				(name "Pin_2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at -5.08 0 0)
+				(length 2.54)
+				(name "Pin_3"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "3"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at -5.08 -2.54 0)
+				(length 2.54)
+				(name "Pin_4"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "4"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at -5.08 -5.08 0)
+				(length 2.54)
+				(name "Pin_5"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "5"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+		)
+		(embedded_fonts no)
+	)
+	(symbol "faema:Conn_6pin"
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "J"
+			(at 0 -8.89 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Conn_6pin"
+			(at 0 8.89 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(symbol "Conn_6pin_0_1"
+			(rectangle
+				(start -2.54 7.62)
+				(end 2.54 -7.62)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type background)
+				)
+			)
+		)
+		(symbol "Conn_6pin_1_1"
+			(pin passive line
+				(at -5.08 6.35 0)
+				(length 2.54)
+				(name "Pin_1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at -5.08 3.81 0)
+				(length 2.54)
+				(name "Pin_2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at -5.08 1.27 0)
+				(length 2.54)
+				(name "Pin_3"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "3"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at -5.08 -1.27 0)
+				(length 2.54)
+				(name "Pin_4"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "4"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at -5.08 -3.81 0)
+				(length 2.54)
+				(name "Pin_5"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "5"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at -5.08 -6.35 0)
+				(length 2.54)
+				(name "Pin_6"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "6"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+		)
+		(embedded_fonts no)
+	)
+	(symbol "faema:Conn_8pin"
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "J"
+			(at 0 -11.43 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Conn_8pin"
+			(at 0 11.43 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(symbol "Conn_8pin_0_1"
+			(rectangle
+				(start -2.54 10.16)
+				(end 2.54 -10.16)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type background)
+				)
+			)
+		)
+		(symbol "Conn_8pin_1_1"
+			(pin passive line
+				(at -5.08 8.89 0)
+				(length 2.54)
+				(name "Pin_1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at -5.08 6.35 0)
+				(length 2.54)
+				(name "Pin_2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at -5.08 3.81 0)
+				(length 2.54)
+				(name "Pin_3"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "3"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at -5.08 1.27 0)
+				(length 2.54)
+				(name "Pin_4"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "4"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at -5.08 -1.27 0)
+				(length 2.54)
+				(name "Pin_5"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "5"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at -5.08 -3.81 0)
+				(length 2.54)
+				(name "Pin_6"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "6"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at -5.08 -6.35 0)
+				(length 2.54)
+				(name "Pin_7"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "7"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at -5.08 -8.89 0)
+				(length 2.54)
+				(name "Pin_8"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "8"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+		)
+		(embedded_fonts no)
+	)
+
 )
 (text "FAEMA PRESIDENT - Rev.5\nConectar nets com mesmo nome global label.\nVer CLAUDE.md para especificação completa."
 	(exclude_from_sim no)
@@ -3716,7 +5819,7 @@
 )
 (text "REGULAÇÃO DC\n5V → 3.3V"
 	(exclude_from_sim no)
-	(at 125 20 0)
+	(at 165 12 0)
 	(effects
 		(font
 			(size 2 2)
@@ -3727,7 +5830,7 @@
 )
 (text "MCU"
 	(exclude_from_sim no)
-	(at 215 96 0)
+	(at 288 96 0)
 	(effects
 		(font
 			(size 2 2)
@@ -3760,7 +5863,7 @@
 )
 (text "R9: PULL-DOWN SEGURANÇA\nGarante SSR OFF durante boot"
 	(exclude_from_sim no)
-	(at 185 150 0)
+	(at 192 122 0)
 	(effects
 		(font
 			(size 1.27 1.27)
@@ -4284,7 +6387,7 @@
 
 (symbol
 	(lib_id "faema:ESP32_S3_Mini")
-	(at 220.0 140.0 0)
+	(at 295.0 160.0 0)
 	(unit 1)
 	(body_style 1)
 	(exclude_from_sim no)
@@ -4294,33 +6397,33 @@
 	(dnp no)
 	(uuid "b00000060-0001-4000-8000-000000000001")
 	(property "Reference" "U1"
-		(at 220.0 100.0 0)
+		(at 295.0 120.0 0)
 		(show_name no)
 		(do_not_autoplace no)
 		(effects (font (size 1.27 1.27)))
 	)
 	(property "Value" "ESP32-S3 Mini"
-		(at 220.0 178.0 0)
+		(at 295.0 198.0 0)
 		(show_name no)
 		(do_not_autoplace no)
 		(effects (font (size 1.27 1.27)))
 	)
 	(property "Footprint" ""
-		(at 220.0 140.0 0)
+		(at 295.0 160.0 0)
 		(hide yes)
 		(show_name no)
 		(do_not_autoplace no)
 		(effects (font (size 1.27 1.27)))
 	)
 	(property "Datasheet" ""
-		(at 220.0 140.0 0)
+		(at 295.0 160.0 0)
 		(hide yes)
 		(show_name no)
 		(do_not_autoplace no)
 		(effects (font (size 1.27 1.27)))
 	)
 	(property "Description" ""
-		(at 220.0 140.0 0)
+		(at 295.0 160.0 0)
 		(show_name no)
 		(do_not_autoplace no)
 		(effects (font (size 1.27 1.27)))
@@ -4779,7 +6882,7 @@
 
 (symbol
 	(lib_id "faema:R")
-	(at 175 130.16 0)
+	(at 188 70 0)
 	(unit 1)
 	(body_style 1)
 	(exclude_from_sim no)
@@ -4789,33 +6892,33 @@
 	(dnp no)
 	(uuid "b0000020-0001-4000-8000-000000000001")
 	(property "Reference" "R7"
-		(at 177.8 130.16 0)
+		(at 190.8 70 0)
 		(show_name no)
 		(do_not_autoplace no)
 		(effects (font (size 1.27 1.27)))
 	)
 	(property "Value" "220R"
-		(at 172 130.16 0)
+		(at 185 70 0)
 		(show_name no)
 		(do_not_autoplace no)
 		(effects (font (size 1.27 1.27)))
 	)
 	(property "Footprint" ""
-		(at 175 130.16 0)
+		(at 188 70 0)
 		(hide yes)
 		(show_name no)
 		(do_not_autoplace no)
 		(effects (font (size 1.27 1.27)))
 	)
 	(property "Datasheet" ""
-		(at 175 130.16 0)
+		(at 188 70 0)
 		(hide yes)
 		(show_name no)
 		(do_not_autoplace no)
 		(effects (font (size 1.27 1.27)))
 	)
 	(property "Description" ""
-		(at 175 130.16 0)
+		(at 188 70 0)
 		(show_name no)
 		(do_not_autoplace no)
 		(effects (font (size 1.27 1.27)))
@@ -4834,7 +6937,7 @@
 
 (symbol
 	(lib_id "faema:R")
-	(at 185.0 140.0 0)
+	(at 192.0 112.0 0)
 	(unit 1)
 	(body_style 1)
 	(exclude_from_sim no)
@@ -4844,33 +6947,33 @@
 	(dnp no)
 	(uuid "b00000210-0001-4000-8000-000000000001")
 	(property "Reference" "R9"
-		(at 187.8 140.0 0)
+		(at 194.8 112.0 0)
 		(show_name no)
 		(do_not_autoplace no)
 		(effects (font (size 1.27 1.27)))
 	)
 	(property "Value" "10k PD"
-		(at 182.0 140.0 0)
+		(at 189.0 112.0 0)
 		(show_name no)
 		(do_not_autoplace no)
 		(effects (font (size 1.27 1.27)))
 	)
 	(property "Footprint" ""
-		(at 185.0 140.0 0)
+		(at 192.0 112.0 0)
 		(hide yes)
 		(show_name no)
 		(do_not_autoplace no)
 		(effects (font (size 1.27 1.27)))
 	)
 	(property "Datasheet" ""
-		(at 185.0 140.0 0)
+		(at 192.0 112.0 0)
 		(hide yes)
 		(show_name no)
 		(do_not_autoplace no)
 		(effects (font (size 1.27 1.27)))
 	)
 	(property "Description" ""
-		(at 185.0 140.0 0)
+		(at 192.0 112.0 0)
 		(show_name no)
 		(do_not_autoplace no)
 		(effects (font (size 1.27 1.27)))
@@ -4889,7 +6992,7 @@
 
 (symbol
 	(lib_id "faema:R")
-	(at 175.0 147.62 0)
+	(at 256.0 232.0 0)
 	(unit 1)
 	(body_style 1)
 	(exclude_from_sim no)
@@ -4899,33 +7002,33 @@
 	(dnp no)
 	(uuid "b00000220-0001-4000-8000-000000000001")
 	(property "Reference" "R10"
-		(at 177.8 147.62 0)
+		(at 258.8 232.0 0)
 		(show_name no)
 		(do_not_autoplace no)
 		(effects (font (size 1.27 1.27)))
 	)
 	(property "Value" "470R"
-		(at 172.0 147.62 0)
+		(at 253.0 232.0 0)
 		(show_name no)
 		(do_not_autoplace no)
 		(effects (font (size 1.27 1.27)))
 	)
 	(property "Footprint" ""
-		(at 175.0 147.62 0)
+		(at 256.0 232.0 0)
 		(hide yes)
 		(show_name no)
 		(do_not_autoplace no)
 		(effects (font (size 1.27 1.27)))
 	)
 	(property "Datasheet" ""
-		(at 175.0 147.62 0)
+		(at 256.0 232.0 0)
 		(hide yes)
 		(show_name no)
 		(do_not_autoplace no)
 		(effects (font (size 1.27 1.27)))
 	)
 	(property "Description" ""
-		(at 175.0 147.62 0)
+		(at 256.0 232.0 0)
 		(show_name no)
 		(do_not_autoplace no)
 		(effects (font (size 1.27 1.27)))
@@ -4944,7 +7047,7 @@
 
 (symbol
 	(lib_id "faema:LED")
-	(at 165.0 147.62 0)
+	(at 240.0 232.0 0)
 	(unit 1)
 	(body_style 1)
 	(exclude_from_sim no)
@@ -4954,33 +7057,33 @@
 	(dnp no)
 	(uuid "b00000230-0001-4000-8000-000000000001")
 	(property "Reference" "D1"
-		(at 165.0 144.08 0)
+		(at 240.0 228.46 0)
 		(show_name no)
 		(do_not_autoplace no)
 		(effects (font (size 1.27 1.27)))
 	)
 	(property "Value" "LED_GREEN"
-		(at 165.0 151.13 0)
+		(at 240.0 235.51 0)
 		(show_name no)
 		(do_not_autoplace no)
 		(effects (font (size 1.27 1.27)))
 	)
 	(property "Footprint" ""
-		(at 165.0 147.62 0)
+		(at 240.0 232.0 0)
 		(hide yes)
 		(show_name no)
 		(do_not_autoplace no)
 		(effects (font (size 1.27 1.27)))
 	)
 	(property "Datasheet" ""
-		(at 165.0 147.62 0)
+		(at 240.0 232.0 0)
 		(hide yes)
 		(show_name no)
 		(do_not_autoplace no)
 		(effects (font (size 1.27 1.27)))
 	)
 	(property "Description" ""
-		(at 165.0 147.62 0)
+		(at 240.0 232.0 0)
 		(show_name no)
 		(do_not_autoplace no)
 		(effects (font (size 1.27 1.27)))
@@ -4999,7 +7102,7 @@
 
 (symbol
 	(lib_id "faema:R")
-	(at 175 140 90)
+	(at 48 248 90)
 	(unit 1)
 	(body_style 1)
 	(exclude_from_sim no)
@@ -5009,33 +7112,33 @@
 	(dnp no)
 	(uuid "b0000024-0001-4000-8000-000000000001")
 	(property "Reference" "R11"
-		(at 175 155 0)
+		(at 48 253 0)
 		(show_name no)
 		(do_not_autoplace no)
 		(effects (font (size 1.27 1.27)))
 	)
 	(property "Value" "100k"
-		(at 175 157 0)
+		(at 48 255 0)
 		(show_name no)
 		(do_not_autoplace no)
 		(effects (font (size 1.27 1.27)))
 	)
 	(property "Footprint" ""
-		(at 175 140 0)
+		(at 48 248 0)
 		(hide yes)
 		(show_name no)
 		(do_not_autoplace no)
 		(effects (font (size 1.27 1.27)))
 	)
 	(property "Datasheet" ""
-		(at 175 140 0)
+		(at 48 248 0)
 		(hide yes)
 		(show_name no)
 		(do_not_autoplace no)
 		(effects (font (size 1.27 1.27)))
 	)
 	(property "Description" ""
-		(at 175 140 0)
+		(at 48 248 0)
 		(show_name no)
 		(do_not_autoplace no)
 		(effects (font (size 1.27 1.27)))
@@ -5373,7 +7476,7 @@
 
 (symbol
 	(lib_id "faema:C")
-	(at 100.0 28.0 0)
+	(at 175.0 28.0 0)
 	(unit 1)
 	(body_style 1)
 	(exclude_from_sim no)
@@ -5383,7 +7486,7 @@
 	(dnp no)
 	(uuid "b00001040-0001-4000-8000-000000000001")
 	(property "Reference" "C1"
-		(at 102.5 28.0 0)
+		(at 177.5 28.0 0)
 		(show_name no)
 		(do_not_autoplace no)
 		(effects
@@ -5393,7 +7496,7 @@
 		)
 	)
 	(property "Value" "10u/16V"
-		(at 97.5 28.0 0)
+		(at 172.5 28.0 0)
 		(show_name no)
 		(do_not_autoplace no)
 		(effects
@@ -5403,7 +7506,7 @@
 		)
 	)
 	(property "Footprint" ""
-		(at 100.0 28.0 0)
+		(at 175.0 28.0 0)
 		(hide yes)
 		(show_name no)
 		(do_not_autoplace no)
@@ -5414,7 +7517,7 @@
 		)
 	)
 	(property "Datasheet" ""
-		(at 100.0 28.0 0)
+		(at 175.0 28.0 0)
 		(hide yes)
 		(show_name no)
 		(do_not_autoplace no)
@@ -5425,7 +7528,7 @@
 		)
 	)
 	(property "Description" ""
-		(at 100.0 28.0 0)
+		(at 175.0 28.0 0)
 		(show_name no)
 		(do_not_autoplace no)
 		(effects
@@ -5452,7 +7555,7 @@
 
 (symbol
 	(lib_id "faema:C")
-	(at 120.0 28.0 0)
+	(at 190.0 28.0 0)
 	(unit 1)
 	(body_style 1)
 	(exclude_from_sim no)
@@ -5462,7 +7565,7 @@
 	(dnp no)
 	(uuid "b00001050-0001-4000-8000-000000000001")
 	(property "Reference" "C2"
-		(at 122.5 28.0 0)
+		(at 192.5 28.0 0)
 		(show_name no)
 		(do_not_autoplace no)
 		(effects
@@ -5472,7 +7575,7 @@
 		)
 	)
 	(property "Value" "10u/16V"
-		(at 117.5 28.0 0)
+		(at 187.5 28.0 0)
 		(show_name no)
 		(do_not_autoplace no)
 		(effects
@@ -5482,7 +7585,7 @@
 		)
 	)
 	(property "Footprint" ""
-		(at 120.0 28.0 0)
+		(at 190.0 28.0 0)
 		(hide yes)
 		(show_name no)
 		(do_not_autoplace no)
@@ -5493,7 +7596,7 @@
 		)
 	)
 	(property "Datasheet" ""
-		(at 120.0 28.0 0)
+		(at 190.0 28.0 0)
 		(hide yes)
 		(show_name no)
 		(do_not_autoplace no)
@@ -5504,7 +7607,7 @@
 		)
 	)
 	(property "Description" ""
-		(at 120.0 28.0 0)
+		(at 190.0 28.0 0)
 		(show_name no)
 		(do_not_autoplace no)
 		(effects
@@ -5531,7 +7634,7 @@
 
 (symbol
 	(lib_id "faema:C")
-	(at 135.0 28.0 0)
+	(at 205.0 28.0 0)
 	(unit 1)
 	(body_style 1)
 	(exclude_from_sim no)
@@ -5541,7 +7644,7 @@
 	(dnp no)
 	(uuid "b00001060-0001-4000-8000-000000000001")
 	(property "Reference" "C3"
-		(at 137.5 28.0 0)
+		(at 207.5 28.0 0)
 		(show_name no)
 		(do_not_autoplace no)
 		(effects
@@ -5551,7 +7654,7 @@
 		)
 	)
 	(property "Value" "100n"
-		(at 132.5 28.0 0)
+		(at 202.5 28.0 0)
 		(show_name no)
 		(do_not_autoplace no)
 		(effects
@@ -5561,7 +7664,7 @@
 		)
 	)
 	(property "Footprint" ""
-		(at 135.0 28.0 0)
+		(at 205.0 28.0 0)
 		(hide yes)
 		(show_name no)
 		(do_not_autoplace no)
@@ -5572,7 +7675,7 @@
 		)
 	)
 	(property "Datasheet" ""
-		(at 135.0 28.0 0)
+		(at 205.0 28.0 0)
 		(hide yes)
 		(show_name no)
 		(do_not_autoplace no)
@@ -5583,7 +7686,7 @@
 		)
 	)
 	(property "Description" ""
-		(at 135.0 28.0 0)
+		(at 205.0 28.0 0)
 		(show_name no)
 		(do_not_autoplace no)
 		(effects
@@ -5610,7 +7713,7 @@
 
 (symbol
 	(lib_id "faema:C")
-	(at 150.0 28.0 0)
+	(at 220.0 28.0 0)
 	(unit 1)
 	(body_style 1)
 	(exclude_from_sim no)
@@ -5620,7 +7723,7 @@
 	(dnp no)
 	(uuid "b00001070-0001-4000-8000-000000000001")
 	(property "Reference" "C4"
-		(at 152.5 28.0 0)
+		(at 222.5 28.0 0)
 		(show_name no)
 		(do_not_autoplace no)
 		(effects
@@ -5630,7 +7733,7 @@
 		)
 	)
 	(property "Value" "100n"
-		(at 147.5 28.0 0)
+		(at 217.5 28.0 0)
 		(show_name no)
 		(do_not_autoplace no)
 		(effects
@@ -5640,7 +7743,7 @@
 		)
 	)
 	(property "Footprint" ""
-		(at 150.0 28.0 0)
+		(at 220.0 28.0 0)
 		(hide yes)
 		(show_name no)
 		(do_not_autoplace no)
@@ -5651,7 +7754,7 @@
 		)
 	)
 	(property "Datasheet" ""
-		(at 150.0 28.0 0)
+		(at 220.0 28.0 0)
 		(hide yes)
 		(show_name no)
 		(do_not_autoplace no)
@@ -5662,7 +7765,7 @@
 		)
 	)
 	(property "Description" ""
-		(at 150.0 28.0 0)
+		(at 220.0 28.0 0)
 		(show_name no)
 		(do_not_autoplace no)
 		(effects
@@ -6400,7 +8503,7 @@
 
 (symbol
 	(lib_id "faema:C")
-	(at 240.0 105.0 0)
+	(at 295.0 110.0 0)
 	(unit 1)
 	(body_style 1)
 	(exclude_from_sim no)
@@ -6410,7 +8513,7 @@
 	(dnp no)
 	(uuid "b00001110-0001-4000-8000-000000000001")
 	(property "Reference" "C9"
-		(at 242.5 105.0 0)
+		(at 297.5 110.0 0)
 		(show_name no)
 		(do_not_autoplace no)
 		(effects
@@ -6420,7 +8523,7 @@
 		)
 	)
 	(property "Value" "100n"
-		(at 237.5 105.0 0)
+		(at 292.5 110.0 0)
 		(show_name no)
 		(do_not_autoplace no)
 		(effects
@@ -6430,7 +8533,7 @@
 		)
 	)
 	(property "Footprint" ""
-		(at 240.0 105.0 0)
+		(at 295.0 110.0 0)
 		(hide yes)
 		(show_name no)
 		(do_not_autoplace no)
@@ -6441,7 +8544,7 @@
 		)
 	)
 	(property "Datasheet" ""
-		(at 240.0 105.0 0)
+		(at 295.0 110.0 0)
 		(hide yes)
 		(show_name no)
 		(do_not_autoplace no)
@@ -6452,7 +8555,7 @@
 		)
 	)
 	(property "Description" ""
-		(at 240.0 105.0 0)
+		(at 295.0 110.0 0)
 		(show_name no)
 		(do_not_autoplace no)
 		(effects
@@ -7252,7 +9355,7 @@
 
 (symbol
 	(lib_id "power:+5V")
-	(at 175.0 126.35 0)
+	(at 188.0 66.19 0)
 	(unit 1)
 	(body_style 1)
 	(exclude_from_sim no)
@@ -7262,7 +9365,7 @@
 	(dnp no)
 	(uuid "e00001010-0001-4000-8000-000000000001")
 	(property "Reference" "#PWR101"
-		(at 175.0 126.35 0)
+		(at 188.0 66.19 0)
 		(show_name no)
 		(do_not_autoplace no)
 		(hide yes)
@@ -7273,7 +9376,7 @@
 		)
 	)
 	(property "Value" "+5V"
-		(at 175.0 128.89 0)
+		(at 188.0 68.73 0)
 		(show_name no)
 		(do_not_autoplace no)
 		(effects
@@ -7329,7 +9432,7 @@
 
 (global_label "SSR_PLUS"
 	(shape output)
-	(at 175.0 135.24 90)
+	(at 188.0 75.08 90)
 	(effects
 		(font
 			(size 1.27 1.27)
@@ -7338,7 +9441,7 @@
 	)
 	(uuid "d00002070-0001-4000-8000-000000000001")
 	(property "Intersheetrefs" "${INTERSHEET_REFS}"
-		(at 175.0 135.24 90)
+		(at 188.0 75.08 90)
 		(hide yes)
 		(show_name no)
 		(do_not_autoplace no)
@@ -7352,7 +9455,7 @@
 
 (global_label "Q1_GATE"
 	(shape input)
-	(at 185.0 134.92 270)
+	(at 192.0 106.92 270)
 	(effects
 		(font
 			(size 1.27 1.27)
@@ -7361,7 +9464,7 @@
 	)
 	(uuid "d00002080-0001-4000-8000-000000000001")
 	(property "Intersheetrefs" "${INTERSHEET_REFS}"
-		(at 185.0 134.92 270)
+		(at 192.0 106.92 270)
 		(hide yes)
 		(show_name no)
 		(do_not_autoplace no)
@@ -7375,7 +9478,7 @@
 
 (symbol
 	(lib_id "power:GND")
-	(at 185.0 143.81 0)
+	(at 192.0 115.81 0)
 	(unit 1)
 	(body_style 1)
 	(exclude_from_sim no)
@@ -7385,7 +9488,7 @@
 	(dnp no)
 	(uuid "e00001020-0001-4000-8000-000000000001")
 	(property "Reference" "#PWR102"
-		(at 185.0 143.81 0)
+		(at 192.0 115.81 0)
 		(show_name no)
 		(do_not_autoplace no)
 		(hide yes)
@@ -7396,7 +9499,7 @@
 		)
 	)
 	(property "Value" "GND"
-		(at 185.0 141.27 0)
+		(at 192.0 113.27 0)
 		(show_name no)
 		(do_not_autoplace no)
 		(effects
@@ -7452,7 +9555,7 @@
 
 (symbol
 	(lib_id "power:+5V")
-	(at 100.0 25.46 0)
+	(at 175.0 25.46 0)
 	(unit 1)
 	(body_style 1)
 	(exclude_from_sim no)
@@ -7462,7 +9565,7 @@
 	(dnp no)
 	(uuid "e00001030-0001-4000-8000-000000000001")
 	(property "Reference" "#PWR103"
-		(at 100.0 25.46 0)
+		(at 175.0 25.46 0)
 		(show_name no)
 		(do_not_autoplace no)
 		(hide yes)
@@ -7473,7 +9576,7 @@
 		)
 	)
 	(property "Value" "+5V"
-		(at 100.0 28.0 0)
+		(at 175.0 28.0 0)
 		(show_name no)
 		(do_not_autoplace no)
 		(effects
@@ -7529,7 +9632,7 @@
 
 (symbol
 	(lib_id "power:GND")
-	(at 100.0 30.54 0)
+	(at 175.0 30.54 0)
 	(unit 1)
 	(body_style 1)
 	(exclude_from_sim no)
@@ -7539,7 +9642,7 @@
 	(dnp no)
 	(uuid "e00001040-0001-4000-8000-000000000001")
 	(property "Reference" "#PWR104"
-		(at 100.0 30.54 0)
+		(at 175.0 30.54 0)
 		(show_name no)
 		(do_not_autoplace no)
 		(hide yes)
@@ -7550,7 +9653,7 @@
 		)
 	)
 	(property "Value" "GND"
-		(at 100.0 28.0 0)
+		(at 175.0 28.0 0)
 		(show_name no)
 		(do_not_autoplace no)
 		(effects
@@ -7606,7 +9709,7 @@
 
 (symbol
 	(lib_id "power:+3V3")
-	(at 120.0 25.46 0)
+	(at 190.0 25.46 0)
 	(unit 1)
 	(body_style 1)
 	(exclude_from_sim no)
@@ -7616,7 +9719,7 @@
 	(dnp no)
 	(uuid "e00001050-0001-4000-8000-000000000001")
 	(property "Reference" "#PWR105"
-		(at 120.0 25.46 0)
+		(at 190.0 25.46 0)
 		(show_name no)
 		(do_not_autoplace no)
 		(hide yes)
@@ -7627,7 +9730,7 @@
 		)
 	)
 	(property "Value" "+3V3"
-		(at 120.0 28.0 0)
+		(at 190.0 28.0 0)
 		(show_name no)
 		(do_not_autoplace no)
 		(effects
@@ -7683,7 +9786,7 @@
 
 (symbol
 	(lib_id "power:GND")
-	(at 120.0 30.54 0)
+	(at 190.0 30.54 0)
 	(unit 1)
 	(body_style 1)
 	(exclude_from_sim no)
@@ -7693,7 +9796,7 @@
 	(dnp no)
 	(uuid "e00001060-0001-4000-8000-000000000001")
 	(property "Reference" "#PWR106"
-		(at 120.0 30.54 0)
+		(at 190.0 30.54 0)
 		(show_name no)
 		(do_not_autoplace no)
 		(hide yes)
@@ -7704,7 +9807,7 @@
 		)
 	)
 	(property "Value" "GND"
-		(at 120.0 28.0 0)
+		(at 190.0 28.0 0)
 		(show_name no)
 		(do_not_autoplace no)
 		(effects
@@ -7760,7 +9863,7 @@
 
 (symbol
 	(lib_id "power:+5V")
-	(at 135.0 25.46 0)
+	(at 205.0 25.46 0)
 	(unit 1)
 	(body_style 1)
 	(exclude_from_sim no)
@@ -7770,7 +9873,7 @@
 	(dnp no)
 	(uuid "e00001070-0001-4000-8000-000000000001")
 	(property "Reference" "#PWR107"
-		(at 135.0 25.46 0)
+		(at 205.0 25.46 0)
 		(show_name no)
 		(do_not_autoplace no)
 		(hide yes)
@@ -7781,7 +9884,7 @@
 		)
 	)
 	(property "Value" "+5V"
-		(at 135.0 28.0 0)
+		(at 205.0 28.0 0)
 		(show_name no)
 		(do_not_autoplace no)
 		(effects
@@ -7837,7 +9940,7 @@
 
 (symbol
 	(lib_id "power:GND")
-	(at 135.0 30.54 0)
+	(at 205.0 30.54 0)
 	(unit 1)
 	(body_style 1)
 	(exclude_from_sim no)
@@ -7847,7 +9950,7 @@
 	(dnp no)
 	(uuid "e00001080-0001-4000-8000-000000000001")
 	(property "Reference" "#PWR108"
-		(at 135.0 30.54 0)
+		(at 205.0 30.54 0)
 		(show_name no)
 		(do_not_autoplace no)
 		(hide yes)
@@ -7858,7 +9961,7 @@
 		)
 	)
 	(property "Value" "GND"
-		(at 135.0 28.0 0)
+		(at 205.0 28.0 0)
 		(show_name no)
 		(do_not_autoplace no)
 		(effects
@@ -7914,7 +10017,7 @@
 
 (symbol
 	(lib_id "power:+3V3")
-	(at 150.0 25.46 0)
+	(at 220.0 25.46 0)
 	(unit 1)
 	(body_style 1)
 	(exclude_from_sim no)
@@ -7924,7 +10027,7 @@
 	(dnp no)
 	(uuid "e00001090-0001-4000-8000-000000000001")
 	(property "Reference" "#PWR109"
-		(at 150.0 25.46 0)
+		(at 220.0 25.46 0)
 		(show_name no)
 		(do_not_autoplace no)
 		(hide yes)
@@ -7935,7 +10038,7 @@
 		)
 	)
 	(property "Value" "+3V3"
-		(at 150.0 28.0 0)
+		(at 220.0 28.0 0)
 		(show_name no)
 		(do_not_autoplace no)
 		(effects
@@ -7991,7 +10094,7 @@
 
 (symbol
 	(lib_id "power:GND")
-	(at 150.0 30.54 0)
+	(at 220.0 30.54 0)
 	(unit 1)
 	(body_style 1)
 	(exclude_from_sim no)
@@ -8001,7 +10104,7 @@
 	(dnp no)
 	(uuid "e000010a0-0001-4000-8000-000000000001")
 	(property "Reference" "#PWR110"
-		(at 150.0 30.54 0)
+		(at 220.0 30.54 0)
 		(show_name no)
 		(do_not_autoplace no)
 		(hide yes)
@@ -8012,7 +10115,7 @@
 		)
 	)
 	(property "Value" "GND"
-		(at 150.0 28.0 0)
+		(at 220.0 28.0 0)
 		(show_name no)
 		(do_not_autoplace no)
 		(effects
@@ -8914,7 +11017,7 @@
 
 (symbol
 	(lib_id "power:+3V3")
-	(at 240.0 102.46 0)
+	(at 295.0 107.46 0)
 	(unit 1)
 	(body_style 1)
 	(exclude_from_sim no)
@@ -8924,7 +11027,7 @@
 	(dnp no)
 	(uuid "e00001130-0001-4000-8000-000000000001")
 	(property "Reference" "#PWR119"
-		(at 240.0 102.46 0)
+		(at 295.0 107.46 0)
 		(show_name no)
 		(do_not_autoplace no)
 		(hide yes)
@@ -8935,7 +11038,7 @@
 		)
 	)
 	(property "Value" "+3V3"
-		(at 240.0 105.0 0)
+		(at 295.0 110.0 0)
 		(show_name no)
 		(do_not_autoplace no)
 		(effects
@@ -8991,7 +11094,7 @@
 
 (symbol
 	(lib_id "power:GND")
-	(at 240.0 107.54 0)
+	(at 295.0 112.54 0)
 	(unit 1)
 	(body_style 1)
 	(exclude_from_sim no)
@@ -9001,7 +11104,7 @@
 	(dnp no)
 	(uuid "e00001140-0001-4000-8000-000000000001")
 	(property "Reference" "#PWR120"
-		(at 240.0 107.54 0)
+		(at 295.0 112.54 0)
 		(show_name no)
 		(do_not_autoplace no)
 		(hide yes)
@@ -9012,7 +11115,7 @@
 		)
 	)
 	(property "Value" "GND"
-		(at 240.0 105.0 0)
+		(at 295.0 110.0 0)
 		(show_name no)
 		(do_not_autoplace no)
 		(effects
@@ -10230,6 +12333,217 @@
 		(effects
 			(font
 				(size 1.27 1.27)
+			)
+		)
+	)
+)
+
+(symbol
+	(lib_id "power:+3V3")
+	(at 44.19 248.0 0)
+	(unit 1)
+	(body_style 1)
+	(exclude_from_sim no)
+	(in_bom yes)
+	(on_board yes)
+	(in_pos_files yes)
+	(dnp no)
+	(uuid "e00001200-0001-4000-8000-000000000001")
+	(property "Reference" "#PWR132"
+		(at 44.19 248.0 0)
+		(show_name no)
+		(do_not_autoplace no)
+		(hide yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Value" "+3V3"
+		(at 44.19 250.54 0)
+		(show_name no)
+		(do_not_autoplace no)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Footprint" ""
+		(at 0 0 0)
+		(hide yes)
+		(show_name no)
+		(do_not_autoplace no)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(hide yes)
+		(show_name no)
+		(do_not_autoplace no)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(show_name no)
+		(do_not_autoplace no)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(pin "1"
+		(uuid "e0000120-0001-4000-8000-000000000120")
+	)
+	(instances
+		(project "faema-president"
+			(path "/a0000000-0000-4000-8000-000000000001"
+				(reference "#PWR132")
+				(unit 1)
+			)
+		)
+	)
+)
+
+(global_label "LEVEL_SENSE"
+	(shape output)
+	(at 53.08 248.0 0)
+	(effects
+		(font
+			(size 1.27 1.27)
+		)
+		(justify left)
+	)
+	(uuid "d00002210-0001-4000-8000-000000000001")
+	(property "Intersheetrefs" "${INTERSHEET_REFS}"
+		(at 53.08 248.0 0)
+		(hide yes)
+		(show_name no)
+		(do_not_autoplace no)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+)
+
+(global_label "LED_STATUS"
+	(shape input)
+	(at 234.92 232.0 180)
+	(effects
+		(font
+			(size 1.27 1.27)
+		)
+		(justify right)
+	)
+	(uuid "d00002220-0001-4000-8000-000000000001")
+	(property "Intersheetrefs" "${INTERSHEET_REFS}"
+		(at 234.92 232.0 180)
+		(hide yes)
+		(show_name no)
+		(do_not_autoplace no)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+)
+
+(wire
+	(pts
+		(xy 243.81 232.0) (xy 252.19 232.0)
+	)
+	(stroke
+		(width 0)
+		(type default)
+	)
+	(uuid "f00001020-0001-4000-8000-000000000001")
+)
+
+(symbol
+	(lib_id "power:GND")
+	(at 259.81 232.0 0)
+	(unit 1)
+	(body_style 1)
+	(exclude_from_sim no)
+	(in_bom yes)
+	(on_board yes)
+	(in_pos_files yes)
+	(dnp no)
+	(uuid "e00001210-0001-4000-8000-000000000001")
+	(property "Reference" "#PWR133"
+		(at 259.81 232.0 0)
+		(show_name no)
+		(do_not_autoplace no)
+		(hide yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Value" "GND"
+		(at 259.81 229.46 0)
+		(show_name no)
+		(do_not_autoplace no)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Footprint" ""
+		(at 0 0 0)
+		(hide yes)
+		(show_name no)
+		(do_not_autoplace no)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(hide yes)
+		(show_name no)
+		(do_not_autoplace no)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(show_name no)
+		(do_not_autoplace no)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(pin "1"
+		(uuid "e0000121-0001-4000-8000-000000000121")
+	)
+	(instances
+		(project "faema-president"
+			(path "/a0000000-0000-4000-8000-000000000001"
+				(reference "#PWR133")
+				(unit 1)
 			)
 		)
 	)

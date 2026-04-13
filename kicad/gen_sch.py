@@ -1582,7 +1582,7 @@ def make_existing_components():
     # U1 ESP32_S3_Mini — many pins
     esp_pins = list(range(1, 26))
     esp_pinstr = [str(p) for p in esp_pins]
-    out.append(comp("faema:ESP32_S3_Mini", 220, 140, 0, "U1", "ESP32-S3 Mini",
+    out.append(comp("faema:ESP32_S3_Mini", 295, 160, 0, "U1", "ESP32-S3 Mini",
                     "0000006", esp_pinstr,
                     ref_dy=-40, val_dy=38))
 
@@ -1687,7 +1687,7 @@ def make_existing_components():
     out.append(
         "(symbol\n"
         "\t(lib_id \"faema:R\")\n"
-        "\t(at 175 130.16 0)\n"
+        "\t(at 188 70 0)\n"
         "\t(unit 1)\n"
         "\t(body_style 1)\n"
         "\t(exclude_from_sim no)\n"
@@ -1697,33 +1697,33 @@ def make_existing_components():
         "\t(dnp no)\n"
         "\t(uuid \"b0000020-0001-4000-8000-000000000001\")\n"
         "\t(property \"Reference\" \"R7\"\n"
-        "\t\t(at 177.8 130.16 0)\n"
+        "\t\t(at 190.8 70 0)\n"
         "\t\t(show_name no)\n"
         "\t\t(do_not_autoplace no)\n"
         "\t\t(effects (font (size 1.27 1.27)))\n"
         "\t)\n"
         "\t(property \"Value\" \"220R\"\n"
-        "\t\t(at 172 130.16 0)\n"
+        "\t\t(at 185 70 0)\n"
         "\t\t(show_name no)\n"
         "\t\t(do_not_autoplace no)\n"
         "\t\t(effects (font (size 1.27 1.27)))\n"
         "\t)\n"
         "\t(property \"Footprint\" \"\"\n"
-        "\t\t(at 175 130.16 0)\n"
+        "\t\t(at 188 70 0)\n"
         "\t\t(hide yes)\n"
         "\t\t(show_name no)\n"
         "\t\t(do_not_autoplace no)\n"
         "\t\t(effects (font (size 1.27 1.27)))\n"
         "\t)\n"
         "\t(property \"Datasheet\" \"\"\n"
-        "\t\t(at 175 130.16 0)\n"
+        "\t\t(at 188 70 0)\n"
         "\t\t(hide yes)\n"
         "\t\t(show_name no)\n"
         "\t\t(do_not_autoplace no)\n"
         "\t\t(effects (font (size 1.27 1.27)))\n"
         "\t)\n"
         "\t(property \"Description\" \"\"\n"
-        "\t\t(at 175 130.16 0)\n"
+        "\t\t(at 188 70 0)\n"
         "\t\t(show_name no)\n"
         "\t\t(do_not_autoplace no)\n"
         "\t\t(effects (font (size 1.27 1.27)))\n"
@@ -1742,17 +1742,17 @@ def make_existing_components():
     )
 
     # R9 10k PD
-    out.append(comp("faema:R", 185, 140, 0, "R9", "10k PD",
+    out.append(comp("faema:R", 192, 112, 0, "R9", "10k PD",
                     "0000021", [1,2],
                     ref_dx=2.8, ref_dy=0, val_dx=-3, val_dy=0))
 
     # R10 470R
-    out.append(comp("faema:R", 175, 147.62, 0, "R10", "470R",
+    out.append(comp("faema:R", 256, 232, 0, "R10", "470R",
                     "0000022", [1,2],
                     ref_dx=2.8, ref_dy=0, val_dx=-3, val_dy=0))
 
     # D1 LED
-    out.append(comp("faema:LED", 165, 147.62, 0, "D1", "LED_GREEN",
+    out.append(comp("faema:LED", 240, 232, 0, "D1", "LED_GREEN",
                     "0000023", [1,2],
                     ref_dy=-3.54, val_dy=3.51))
 
@@ -1760,7 +1760,7 @@ def make_existing_components():
     out.append(
         "(symbol\n"
         "\t(lib_id \"faema:R\")\n"
-        "\t(at 175 140 90)\n"
+        "\t(at 48 248 90)\n"
         "\t(unit 1)\n"
         "\t(body_style 1)\n"
         "\t(exclude_from_sim no)\n"
@@ -1770,33 +1770,33 @@ def make_existing_components():
         "\t(dnp no)\n"
         "\t(uuid \"b0000024-0001-4000-8000-000000000001\")\n"
         "\t(property \"Reference\" \"R11\"\n"
-        "\t\t(at 175 155 0)\n"
+        "\t\t(at 48 253 0)\n"
         "\t\t(show_name no)\n"
         "\t\t(do_not_autoplace no)\n"
         "\t\t(effects (font (size 1.27 1.27)))\n"
         "\t)\n"
         "\t(property \"Value\" \"100k\"\n"
-        "\t\t(at 175 157 0)\n"
+        "\t\t(at 48 255 0)\n"
         "\t\t(show_name no)\n"
         "\t\t(do_not_autoplace no)\n"
         "\t\t(effects (font (size 1.27 1.27)))\n"
         "\t)\n"
         "\t(property \"Footprint\" \"\"\n"
-        "\t\t(at 175 140 0)\n"
+        "\t\t(at 48 248 0)\n"
         "\t\t(hide yes)\n"
         "\t\t(show_name no)\n"
         "\t\t(do_not_autoplace no)\n"
         "\t\t(effects (font (size 1.27 1.27)))\n"
         "\t)\n"
         "\t(property \"Datasheet\" \"\"\n"
-        "\t\t(at 175 140 0)\n"
+        "\t\t(at 48 248 0)\n"
         "\t\t(hide yes)\n"
         "\t\t(show_name no)\n"
         "\t\t(do_not_autoplace no)\n"
         "\t\t(effects (font (size 1.27 1.27)))\n"
         "\t)\n"
         "\t(property \"Description\" \"\"\n"
-        "\t\t(at 175 140 0)\n"
+        "\t\t(at 48 248 0)\n"
         "\t\t(show_name no)\n"
         "\t\t(do_not_autoplace no)\n"
         "\t\t(effects (font (size 1.27 1.27)))\n"
@@ -1860,40 +1860,40 @@ def make_new_components():
         val_off_x=62.5, val_off_y=28
     ))
 
-    # ----- C1 C at (100, 28) -----
+    # ----- C1 C at (175, 28) -----
     n = next_sym()
     parts.append(sym_instance(
-        "faema:C", 100, 28, 0, "C1", "10u/16V", n,
+        "faema:C", 175, 28, 0, "C1", "10u/16V", n,
         ["1","2"],
-        ref_off_x=102.5, ref_off_y=28,
-        val_off_x=97.5, val_off_y=28
+        ref_off_x=177.5, ref_off_y=28,
+        val_off_x=172.5, val_off_y=28
     ))
 
-    # ----- C2 C at (120, 28) -----
+    # ----- C2 C at (190, 28) -----
     n = next_sym()
     parts.append(sym_instance(
-        "faema:C", 120, 28, 0, "C2", "10u/16V", n,
+        "faema:C", 190, 28, 0, "C2", "10u/16V", n,
         ["1","2"],
-        ref_off_x=122.5, ref_off_y=28,
-        val_off_x=117.5, val_off_y=28
+        ref_off_x=192.5, ref_off_y=28,
+        val_off_x=187.5, val_off_y=28
     ))
 
-    # ----- C3 C at (135, 28) -----
+    # ----- C3 C at (205, 28) -----
     n = next_sym()
     parts.append(sym_instance(
-        "faema:C", 135, 28, 0, "C3", "100n", n,
+        "faema:C", 205, 28, 0, "C3", "100n", n,
         ["1","2"],
-        ref_off_x=137.5, ref_off_y=28,
-        val_off_x=132.5, val_off_y=28
+        ref_off_x=207.5, ref_off_y=28,
+        val_off_x=202.5, val_off_y=28
     ))
 
-    # ----- C4 C at (150, 28) -----
+    # ----- C4 C at (220, 28) -----
     n = next_sym()
     parts.append(sym_instance(
-        "faema:C", 150, 28, 0, "C4", "100n", n,
+        "faema:C", 220, 28, 0, "C4", "100n", n,
         ["1","2"],
-        ref_off_x=152.5, ref_off_y=28,
-        val_off_x=147.5, val_off_y=28
+        ref_off_x=222.5, ref_off_y=28,
+        val_off_x=217.5, val_off_y=28
     ))
 
     # ----- Rref R horizontal at (92, 155) rot=90 -----
@@ -1977,13 +1977,13 @@ def make_new_components():
         val_off_x=357.5, val_off_y=100
     ))
 
-    # ----- C9 C at (240, 105) -----
+    # ----- C9 C at (295, 110) -----
     n = next_sym()
     parts.append(sym_instance(
-        "faema:C", 240, 105, 0, "C9", "100n", n,
+        "faema:C", 295, 110, 0, "C9", "100n", n,
         ["1","2"],
-        ref_off_x=242.5, ref_off_y=105,
-        val_off_x=237.5, val_off_y=105
+        ref_off_x=297.5, ref_off_y=110,
+        val_off_x=292.5, val_off_y=110
     ))
 
     # ----- J5 Conn_8pin at (55, 268) — ILI9341 display -----
@@ -2067,29 +2067,29 @@ def make_connections():
     items.append(global_label("L_FUSED", 65, 22.92, 270, "input"))
     items.append(global_label("N_IN", 65, 33.08, 90, "output"))
 
-    # --- R7 (vertical at 175, 130.16) ---
-    items.append(power_sym("+5V", 175, 126.35))
-    items.append(global_label("SSR_PLUS", 175, 135.24, 90, "output"))
+    # --- R7 (vertical at 188, 70) ---
+    items.append(power_sym("+5V", 188, 66.19))
+    items.append(global_label("SSR_PLUS", 188, 75.08, 90, "output"))
 
-    # --- R9 (vertical at 185, 140) ---
-    items.append(global_label("Q1_GATE", 185, 134.92, 270, "input"))
-    items.append(power_sym("GND", 185, 143.81))
+    # --- R9 (vertical at 192, 112) ---
+    items.append(global_label("Q1_GATE", 192, 106.92, 270, "input"))
+    items.append(power_sym("GND", 192, 115.81))
 
-    # --- C1 (at 100, 28) ---
-    items.append(power_sym("+5V", 100, 25.46))
-    items.append(power_sym("GND", 100, 30.54))
+    # --- C1 (at 175, 28) ---
+    items.append(power_sym("+5V", 175, 25.46))
+    items.append(power_sym("GND", 175, 30.54))
 
-    # --- C2 (at 120, 28) ---
-    items.append(power_sym("+3V3", 120, 25.46))
-    items.append(power_sym("GND", 120, 30.54))
+    # --- C2 (at 190, 28) ---
+    items.append(power_sym("+3V3", 190, 25.46))
+    items.append(power_sym("GND", 190, 30.54))
 
-    # --- C3 (at 135, 28) ---
-    items.append(power_sym("+5V", 135, 25.46))
-    items.append(power_sym("GND", 135, 30.54))
+    # --- C3 (at 205, 28) ---
+    items.append(power_sym("+5V", 205, 25.46))
+    items.append(power_sym("GND", 205, 30.54))
 
-    # --- C4 (at 150, 28) ---
-    items.append(power_sym("+3V3", 150, 25.46))
-    items.append(power_sym("GND", 150, 30.54))
+    # --- C4 (at 220, 28) ---
+    items.append(power_sym("+3V3", 220, 25.46))
+    items.append(power_sym("GND", 220, 30.54))
 
     # --- Rref (horizontal at 92,155 rot=90) ---
     items.append(global_label("REFIN_PLUS_U4", 88.19, 155, 180, "input"))
@@ -2127,9 +2127,9 @@ def make_connections():
     items.append(power_sym("+3V3", 360, 97.46))
     items.append(power_sym("GND", 360, 102.54))
 
-    # --- C9 (at 240,105) ---
-    items.append(power_sym("+3V3", 240, 102.46))
-    items.append(power_sym("GND", 240, 107.54))
+    # --- C9 (at 295,110) ---
+    items.append(power_sym("+3V3", 295, 107.46))
+    items.append(power_sym("GND", 295, 112.54))
 
     # --- J5 Conn_8pin at (55,268) — ILI9341 ---
     # Pins are at (X-5.08, Y+offset) for Conn_8pin at rot=0
@@ -2190,6 +2190,15 @@ def make_connections():
     items.append(power_sym("+3V3", 131.19, 255))
     items.append(global_label("BTN3", 138.81, 255, 0, "output"))
 
+    # --- R11 level probe pull-up at (48, 248) rot=90 ---
+    items.append(power_sym("+3V3", 44.19, 248))
+    items.append(global_label("LEVEL_SENSE", 53.08, 248, 0, "output"))
+
+    # --- D1 LED + R10 resistor at (240,232) and (256,232) ---
+    items.append(global_label("LED_STATUS", 234.92, 232, 180, "input"))
+    items.append(wire(243.81, 232, 252.19, 232))
+    items.append(power_sym("GND", 259.81, 232))
+
     return "\n".join(items)
 
 
@@ -2219,7 +2228,7 @@ EXISTING_TEXTS_AND_LABELS = r"""(text "FAEMA PRESIDENT - Rev.5\nConectar nets co
 )
 (text "REGULAÇÃO DC\n5V → 3.3V"
 	(exclude_from_sim no)
-	(at 125 20 0)
+	(at 165 12 0)
 	(effects
 		(font
 			(size 2 2)
@@ -2230,7 +2239,7 @@ EXISTING_TEXTS_AND_LABELS = r"""(text "FAEMA PRESIDENT - Rev.5\nConectar nets co
 )
 (text "MCU"
 	(exclude_from_sim no)
-	(at 215 96 0)
+	(at 288 96 0)
 	(effects
 		(font
 			(size 2 2)
@@ -2263,7 +2272,7 @@ EXISTING_TEXTS_AND_LABELS = r"""(text "FAEMA PRESIDENT - Rev.5\nConectar nets co
 )
 (text "R9: PULL-DOWN SEGURANÇA\nGarante SSR OFF durante boot"
 	(exclude_from_sim no)
-	(at 185 150 0)
+	(at 192 122 0)
 	(effects
 		(font
 			(size 1.27 1.27)
