@@ -168,8 +168,8 @@ def make_ams1117():
 VCC3V3    = Net('+3V3')
 VCC5V     = Net('+5V')
 GND       = Net('GND')
-AC_L1     = Net('AC_L1')     # 220V bifásica — fase 1
-AC_L2     = Net('AC_L2')     # 220V bifásica — fase 2
+# AC_L1/AC_L2 removidas: fusíveis são externos à placa (porta-fusível de painel)
+# J1 recebe as fases já fusadas diretamente
 
 SPI_SCK   = Net('SPI_SCK')
 SPI_MOSI  = Net('SPI_MOSI')
@@ -206,8 +206,8 @@ PT100_GRUP_RP  = Net('PT100_GRUP_RP')
 PT100_GRUP_RN  = Net('PT100_GRUP_RN')
 RREF_CALD_P    = Net('RREF_CALD_P')
 RREF_GRUP_P    = Net('RREF_GRUP_P')
-AC_L1_FUSED    = Net('AC_L1_FUSED')      # L1 após fusível F1
-AC_L2_FUSED    = Net('AC_L2_FUSED')      # L2 após fusível F2
+AC_L1_FUSED    = Net('AC_L1_FUSED')      # L1 (já fusada externamente)
+AC_L2_FUSED    = Net('AC_L2_FUSED')      # L2 (já fusada externamente)
 # L1_SWITCHED removido: fiação AC de potência (SSR→caldeira) é totalmente externa à PCB
 SSR_CTRL_P     = Net('SSR_CTRL_P')       # R7 output → SSR input (+)
 SSR_DRIVE      = Net('SSR_DRIVE')        # Q1 drain → SSR input (−)
@@ -220,37 +220,17 @@ VBAT           = Net('VBAT')             # CR2032 backup
 # ---------------------------------------------------------------------------
 @subcircuit
 def block_ac_power():
-    """J1 (AC screw terminal), F1/F2 (fuses), RV1 (MOV), U2 (HLK-PM05)
-    220V bifásica (L1+L2, sem neutro) — fusível em cada fase."""
+    """J1 (bornier 3-pin), RV1 (MOV), U2 (HLK-PM05).
+    220V bifásica (L1+L2, sem neutro). Fusíveis T16A externos à PCB
+    (porta-fusível de painel) — J1 recebe fases já fusadas."""
 
-    # J1 — entrada AC bifásica (L1/L2/PE)
+    # J1 — entrada AC bifásica: L1_fused / L2_fused / PE
     j1 = _Conn3()
     j1.ref   = 'J1'
     j1.value = 'AC_INPUT_220V'
-    j1[1] += AC_L1   # Fase 1
-    j1[2] += AC_L2   # Fase 2
-    j1[3] += GND     # PE / chassis
-
-    # Template de fusível (reusado por F1 e F2)
-    _Fuse = Part(tool=SKIDL, name='Fuse',
-                 footprint='Fuse:Fuseholder_Cylinder-5x20mm_Schurter_FAB_0031-355x_Horizontal_Closed',
-                 dest=TEMPLATE)
-    _Fuse += [Pin(num=1, name='A', func=Pin.types.PASSIVE),
-              Pin(num=2, name='K', func=Pin.types.PASSIVE)]
-
-    # F1 — fusível T16A na fase L1
-    f1 = _Fuse()
-    f1.ref   = 'F1'
-    f1.value = 'T16A_SLOW'
-    f1[1] += AC_L1
-    f1[2] += AC_L1_FUSED
-
-    # F2 — fusível T16A na fase L2
-    f2 = _Fuse()
-    f2.ref   = 'F2'
-    f2.value = 'T16A_SLOW'
-    f2[1] += AC_L2
-    f2[2] += AC_L2_FUSED
+    j1[1] += AC_L1_FUSED   # L1 (já fusada externamente, T16A)
+    j1[2] += AC_L2_FUSED   # L2 (já fusada externamente, T16A)
+    j1[3] += GND            # PE / chassis
 
     # RV1 — MOV S14K275 entre as linhas fusíveis (proteção diferencial)
     rv1 = Part(tool=SKIDL, name='Varistor',

@@ -103,13 +103,12 @@ def main():
 
     # ════════════════════════════════════════════════════════════════════
     # ZONA AC  (y = 2–20 mm)
-    # Toda a fiação nesta zona é 220 VAC → clearance mínimo 6 mm das DC
+    # Fusíveis T16A são EXTERNOS à PCB (porta-fusível de painel).
+    # J1 recebe L1_fused / L2_fused / PE — toda fiação de potência externa.
     # ════════════════════════════════════════════════════════════════════
-    place(board, 'J1',   5.0,  11.0)          # bornier L/N/PE — borda esquerda
-    place(board, 'F1',  18.0,   9.0, rot=90)  # porta-fusível 5×20 mm — em série com L
-    place(board, 'RV1', 30.0,  10.0)          # MOV S14K275 disc ~D15 mm
-    place(board, 'U2',  55.0,  12.0)          # HLK-PM05 34×20 mm — centro da zona AC
-    place(board, 'J2',  81.0,  11.0)          # bornier AC saída caldeira (via SSR)
+    place(board, 'J1',   8.0,  11.0)          # bornier 3-pin: L1f / L2f / PE
+    place(board, 'RV1', 28.0,  11.0)          # MOV S14K275 disc D15.5mm
+    place(board, 'U2',  62.0,  12.0)          # HLK-PM05 34×20mm
 
     # ════════════════════════════════════════════════════════════════════
     # REGULAÇÃO DE TENSÃO  (x = 2–32, y = 29–46)
