@@ -24,8 +24,13 @@ if KICAD_PY not in sys.path:
 
 import pcbnew
 
-SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-PCB_FILE   = os.path.join(SCRIPT_DIR, 'faema-president.kicad_pcb')
+# Funciona tanto na linha de comando quanto no console Python do KiCad
+try:
+    SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+except NameError:
+    # No console do KiCad __file__ não existe — usa o diretório do .kicad_pcb aberto
+    SCRIPT_DIR = os.path.dirname(pcbnew.GetBoard().GetFileName())
+PCB_FILE = os.path.join(SCRIPT_DIR, 'faema-president.kicad_pcb')
 
 # ---------------------------------------------------------------------------
 # Helpers
@@ -124,6 +129,7 @@ def main():
     # GPIO4 → R_gate → Q1 → SSR−  /  +5V → R7 → SSR+
     # ════════════════════════════════════════════════════════════════════
     place(board, 'R7',      5.0,  49.0)           # 220 Ω  +5V→SSR+
+    place(board, 'J10',    14.0,  49.0)           # bornier 2-pin SSR externo (CTRL+/CTRL-)
     place(board, 'R_gate',  5.0,  57.0, rot=90)   # 100 Ω  gate série (horizontal)
     place(board, 'Q1',     12.0,  57.0)           # 2N7002 SOT-23
     place(board, 'R9',     20.0,  57.0)           # 10 kΩ  gate pull-down

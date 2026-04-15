@@ -1,0 +1,20 @@
+Comment,Designator,Footprint,LCSC Part #
+ESP32-S3-MINI-1-N8,U1,PCM_Espressif:ESP32-S3-MINI-1,C2913206
+AMS1117-3.3,U3,Package_TO_SOT_SMD:SOT-223-3_TabPin2,C6186
+MAX31865AAP+T,"U4,U6",Package_SO:SSOP-20_5.3x7.2mm_P0.65mm,C779509
+DS3231SN#,U5,Package_SO:SOIC-16W_7.5x10.3mm_P1.27mm,C131027
+2N7002,Q1,Package_TO_SOT_SMD:SOT-23,C8545
+430R 0.1%,"Rref,Rref2",Resistor_SMD:R_0603_1608Metric,C666878
+4k7 1%,"R2,R3",Resistor_SMD:R_0603_1608Metric,C23162
+220R 1%,R7,Resistor_SMD:R_0603_1608Metric,C22962
+100R 1%,R_gate,Resistor_SMD:R_0603_1608Metric,C22810
+10k 1%,"R9,R12,R13,R14",Resistor_SMD:R_0603_1608Metric,C25804
+470R 1%,R10,Resistor_SMD:R_0603_1608Metric,C23179
+100k 1%,R11,Resistor_SMD:R_0603_1608Metric,C25741
+10uF 16V X5R,"C1,C2",Capacitor_SMD:C_0805_2012Metric,C15850
+100nF 50V X7R,"C3,C4,C7,C8,C9,C10,C11,C12",Capacitor_SMD:C_0603_1608Metric,C14663
+LED Green 0603,D1,LED_SMD:LED_0603_1608Metric,C72043
+FPC 24-pin 0.5mm ZIF,J5,Connector_FFC-FPC:Hirose_FH12-24S-0.5SH_1x24-1MP_P0.50mm_Horizontal,C225396
+1x04 2.54mm header,"J3,J6",Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical,C49661
+1x02 2.54mm header,J7,Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical,C49658
+1x06 2.54mm header,J8,Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical,C49663

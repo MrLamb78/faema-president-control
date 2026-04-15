@@ -7,3 +7,21 @@
 *.kicad_sch-bak
 *.kicad_pcb-bak
 fp-info-cache
+
+# SKiDL generated files
+*.erc
+*.log
+*_sklib.py
+skidl_REPL.*
+
+# Python cache
+__pycache__/
+*.pyc
+
+# macOS
+.DS_Store
+
+# KiCad Gerber outputs (gerados pelo KiCad, não versionados)
+kicad/*.gbr
+kicad/*.gbrjob
+kicad/*.zip

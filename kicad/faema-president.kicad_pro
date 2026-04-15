@@ -226,7 +226,13 @@
       "mpn": "",
       "sch_revision": "5.0"
     },
-    "layer_pairs": [],
+    "layer_pairs": [
+      {
+        "bottomLayer": 2,
+        "enabled": true,
+        "topLayer": 0
+      }
+    ],
     "layer_presets": [],
     "viewports": []
   },
@@ -507,8 +513,8 @@
   "pcbnew": {
     "last_paths": {
       "idf": "",
-      "netlist": "../outputs/faema_president.net",
-      "plot": "",
+      "netlist": "../outputs/faema_carrier.net",
+      "plot": "./",
       "specctra_dsn": "",
       "vrml": ""
     },

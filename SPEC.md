@@ -1,13 +1,9 @@
 # Faema President Temperature Controller — SPEC
 
-**Circuit name:** `faema_president_control`
-**Revision:** Rev.5
-**Source:** Rev.4 + editorial review (2026-04-12)
-**Target manufacturer:** JLCPCB with PCBA (LCSC parts, prefer Basic/Preferred tier)
-**Target board size:** ~90 x 80 mm
-
-> **⚠ Display module not yet selected.** J5 FPC footprint (pin count, pitch, pinout) must be
-> frozen before starting PCB layout. Do not route display connections until confirmed.
+**Circuit name:** `faema_carrier`
+**Revision:** Rev.6 — Carrier Board
+**Date:** 2026-04-14
+**Target:** PCB bare (JLCPCB), hand-soldered. Single unit.
 
 ---
 
@@ -15,242 +11,298 @@
 
 Replace the mechanical pressostat in a Faema President espresso machine (manual group)
 with an electronic PID temperature controller featuring:
-- PID control of the boiler heating resistor
-- Round IPS display with analog gauge UI
-- Real-time clock scheduling (on/off heating by time of day)
+- PID control of the boiler heating element via SSR-40DA (external)
+- Display (Nextion NX3224T024 2.4" UART primary, SPI ILI9341 optional)
+- Time-based scheduling via NTP (WiFi) or optional DS3231 RTC module
 - Adaptive setpoint based on group head temperature
 - Dry-boiler protection via conductivity level sensor
-- 3 physical preset buttons (extraction / boost / steam)
+- 3 physical preset buttons + rotary encoder
 
-## 2. System overview
+## 2. Architecture — Carrier Board
+
+The PCB is a **carrier board** (backplane) with connectors for plug-in modules.
+No fine-pitch SMD ICs to solder — the complex chips live on ready-made modules.
 
 ```
-220 VAC (bifásica L1+L2)  ──► F1+F2+RV1 ──► HLK-PM05 (isolated SMPS) ──► 5 V rail
-                                          │
-                                          ├──► AMS1117-3.3 ──► 3.3 V rail
-                                          │                     │
-                                          │                     ├──► ESP32-S3 Mini (MCU)
-                                          │                     ├──► 2 x MAX31865 (SPI)
-                                          │                     ├──► DS3231 RTC (I2C)
-                                          │                     ├──► GC9A01 display (SPI + FPC)
-                                          │                     └──► 3 preset buttons, encoder, level probe, LED
-                                          │
-                                          └──► Q1 (2N7002) gate drive from GPIO4
-                                                     │
-                                                     └─ Q1 drain → SSR-40DA input (−)
-                                                        R7 from +5V → SSR-40DA input (+)
-                                                        SSR-40DA switches 220 VAC to boiler resistor (external)
+┌──────────────────────────────────────────────────────────────┐
+│  ZONA AC (6mm clearance)         │    ZONA DC                │
+│                                  │                            │
+│  J1 (bornier AC 3-pin)           │    [Pico 2 W]              │
+│  RV1 (MOV S14K275)               │     2×20 socket            │
+│  U1 (HLK-PM05)                   │                            │
+│                                  │    [SEN-30201] ×3          │
+│ ─────── isolação 6mm ────────────│     1×8 socket (vertical)  │
+│                                  │                            │
+│  U2 (AMS1117-3.3)  C1-C4        │    J6 Nextion (UART 4-pin) │
+│  SSR drive (Q1 + R1-R3)         │    J7 SPI display (8-pin)  │
+│  J2 (bornier SSR 2-pin)         │    J8 I2C/RTC (4-pin)      │
+│                                  │    J9/J10 NTC (2-pin, DNF) │
+│  D1+R4 (LED status)             │                            │
+│  R5+J5 (level probe)            │    J3 encoder (5-pin)      │
+│                                  │    J4 buttons (4-pin)      │
+└──────────────────────────────────────────────────────────────┘
 ```
+
+### Plug-in modules (not on carrier PCB)
+
+| Module | Interface | Connector on carrier |
+|--------|-----------|---------------------|
+| Raspberry Pi Pico 2 W | 2×20 headers | J11 + J12 (female sockets) |
+| Playing with Fusion SEN-30201 ×3 | 1×8 header each | J13, J14, J15 (female sockets) |
+| Nextion NX3224T024 (primary display) | UART 4-wire | J6 (male header) |
+| DS3231 module (optional RTC) | I2C 4-wire | J8 (male header) |
+| SSR-40DA (external, with heatsink) | 2-wire control | J2 (bornier) |
+
+### Components ON the carrier PCB
+
+| Category | Components |
+|----------|-----------|
+| Power | U1 HLK-PM05, U2 AMS1117-3.3, C1-C4 |
+| Protection | RV1 MOV S14K275 |
+| SSR drive | Q1 2N7002, R1 220Ω, R2 100Ω, R3 10kΩ |
+| LED | D1 green 0603, R4 470Ω |
+| Level probe | R5 100kΩ pull-up |
+| UART level shift | R6 10kΩ, R7 15kΩ (Nextion 5V→3.3V) |
+| NTC option (DNF) | R8, R9 10kΩ reference |
+| Button pull-ups | R10, R11, R12 10kΩ |
+| Encoder pull-ups | R13, R14, R15 10kΩ |
+| Connectors | J1–J15 (headers + borniers) |
 
 ## 3. Electrical requirements
 
 ### 3.1 Power
+
 | Rail | Source | Current budget | Notes |
 |------|--------|----------------|-------|
-| 220 VAC | Mains (bifásica L1+L2) | ~11 A peak (boiler) | F1+F2 T16A slow-blow (um por fase), MOV S14K275 across L1–L2 após fusíveis, 6 mm creepage min |
-| +5 V    | HLK-PM05 (AC/DC isolated, 3 kV) | ~1 A | powers AMS1117 + SSR gate drive |
-| +3.3 V  | AMS1117-3.3 (SOT-223 LDO) | ~500 mA | ESP32 peak ~300 mA + peripherals |
+| 220 VAC | Mains (bifásica L1+L2, sem neutro) | ~11 A peak (boiler, external) | External T16A slow-blow fuses (panel-mount), MOV on PCB |
+| +5 V | HLK-PM05 (AC/DC isolated, 3 kV) | ~600 mA | Pico (via VSYS), Nextion, SSR drive, SEN-30201 breakouts |
+| +3.3 V | AMS1117-3.3 (SOT-223 LDO) | ~50 mA | Pull-ups, NTC dividers, LED. Pico has own 3.3V via internal regulator |
 
-- AMS1117-3.3 dissipates ~1 W (5 V → 3.3 V at 500 mA); generous copper pour on SOT-223 GND pad required.
-- HLK-PM05 and SSR are THT/external — all other parts are SMD suitable for PCBA.
+- HLK-PM05: THT module, hand-soldered.
+- Pico powered via VSYS (pin 39) with +5V. Pico's internal regulator provides 3.3V to RP2350.
+- AMS1117 provides independent 3.3V for carrier board passives.
+- SEN-30201 breakouts: fed 5V on Vin, use their own onboard LDO.
 
-### 3.2 Microcontroller
-- **ESP32-S3 Mini module** (MicroPython), native USB, Wi-Fi + BT, 3.3 V logic.
+### 3.2 Microcontroller — Raspberry Pi Pico 2 W
+
+- RP2350 dual-core ARM Cortex-M33, 150 MHz
+- 520KB SRAM, 4MB flash
+- WiFi (CYW43439) + Bluetooth
+- MicroPython
+- 26 GPIO pins, 3 ADC channels
+- Plugs into 2×20 female sockets on carrier
 
 ### 3.3 Temperature sensing
-Two independent channels, both using MAX31865 (SSOP-20, direct IC not breakout):
 
-| Channel | IC | Rref | Filter caps | DRDY | CS | Config |
-|---------|----|------|-------------|------|----|----|
-| Boiler (U4) | MAX31865 | 430 Ω 0.1 % (REFIN+ ↔ FORCE+) | C7 100 nF across RTDIN+/− ; C10 100 nF VDD | GPIO3 (active LOW) | GPIO13 | 4-wire, 50 Hz filter, SPI mode 1 or 3 ≤ 5 MHz |
-| Group (U6)  | MAX31865 | 430 Ω 0.1 %                     | C11 100 nF across RTDIN+/− ; C12 100 nF VDD | not connected (polling) | GPIO18 | 4-wire, 50 Hz filter |
+**Primary: RTD via SEN-30201 breakout boards (3×)**
 
-Sensors J3 (boiler PT100) and J6 (group PT100) are both 4-wire off-board connectors.
+Each SEN-30201 contains a MAX31865 with onboard Rref, LDO, and level shifter.
+Connects via 1×8 header: Vin, GND, SDO, SDI, SCK, CS, DRDY, 3Vo.
+SPI bus shared (SCK/MOSI/MISO common), CS unique per board.
 
-### 3.4 Boiler SSR drive
-- GPIO4 → **R_gate = 100 Ω** → Q1 (2N7002 SOT-23) gate.
-- **R9 = 10 kΩ** from Q1 gate to GND — guarantees SSR OFF during ESP32 boot/crash (gate held LOW).
-- Q1 drain → SSR-40DA input (−); Q1 source → GND.
-- **R7 = 220 Ω** from +5 V to SSR-40DA input (+) → ~17 mA drive (min 7.5 mA; no GPIO current stress).
-- SSR-40DA is external (with heatsink). J1 brings in AC mains; J2 carries switched L1 + L2 to boiler.
-- F1+F2 T16A slow-blow fuses (one per phase) + RV1 MOV S14K275 across L1_FUSED–L2_FUSED on the AC input side.
-- Snubber omitted: SSR-40DA is zero-crossing type; boiler element is purely resistive.
+| Slot | Connector | CS | Sensor | Notes |
+|------|-----------|-----|--------|-------|
+| Caldeira | J13 | GP5 | PT100 or PT1000 | Boiler temperature |
+| Grupo | J14 | GP6 | PT100 or PT1000 | Group head temperature |
+| Spare | J15 | GP7 | — | Future expansion |
 
-### 3.5 Real-time clock
-- **DS3231** on I2C (address 0x68), SDA=GPIO8, SCL=GPIO9.
-- Pull-ups R2, R3 = 4.7 kΩ to +3.3 V.
-- C8 = 100 nF bypass on VCC.
-- CR2032 backup battery holder on VBAT.
+- DRDY pins not connected on carrier (polling via SPI register read).
+- SEN-30201 supports PT100, PT500, PT1000 via jumper/config on breakout.
+- 4-wire RTD connection via screw terminal on each breakout board.
 
-### 3.6 Display
-- **ILI9341** 2.4" TFT 240×320, 16-bit colour, SPI 4-wire module with pin header.
-- Shares the SPI bus with both MAX31865 (SCK=GPIO10, MOSI=GPIO11, MISO=GPIO12).
-- ILI9341 does **not** use MISO.
-- CS_DISP=GPIO14, DC=GPIO15, RST=GPIO16.
-- ILI9341 SPI mode 0, ≤ 40 MHz; MAX31865 uses mode 1/3 @ ≤ 5 MHz — firmware reconfigures per transaction.
-- Module connects via J5 (8-pin cable header: VCC, GND, CS, RST, DC, MOSI, SCK, LED).
-- Display is mounted in the external UI enclosure (see §3.7); cable length ~40 cm, operate SPI at ≤ 20 MHz over cable.
-- Portrait orientation (240 wide × 320 tall). The 52 mm opening in the front panel is not used.
+**Alternative: NTC thermistors (DNF option)**
+
+For lower cost, populate R8/R9 (10kΩ reference) and J9/J10 (NTC connectors).
+Voltage divider: VCC3V3 → R_ref(10kΩ) → ADC_pin → NTC → GND.
+Connected to GP26 (ADC0) and GP27 (ADC1) on Pico.
+Do NOT populate simultaneously with RTD breakouts on same channel.
+
+### 3.4 Display
+
+**Option A — Nextion NX3224T024 (primary)**
+- 2.4" TFT with resistive touch, built-in processor
+- UART interface: 4 pins (5V, GND, TX, RX)
+- J6 on carrier board
+- Level shifter required: Nextion TX (5V) → voltage divider (R6 10kΩ + R7 15kΩ) → Pico RX (3.0V)
+- Pico TX (3.3V) → Nextion RX directly (3.3V accepted as HIGH)
+- UI designed in Nextion Editor, uploaded to display via SD card
+
+**Option B — SPI display 2.4" ILI9341 (alternative)**
+- Standard SPI 4-wire, 8-pin header J7
+- Shares SPI bus with RTD breakouts
+- CS=GP8, DC=GP9, RST=GP10, LED=GP13
+- J7 pinout: VCC, GND, CS, RST, DC, MOSI, SCK, LED
+
+### 3.5 SSR drive
+
+- GP11 → R2 (100Ω gate series) → Q1 gate (2N7002 SOT-23)
+- R3 (10kΩ) Q1 gate → GND: guarantees SSR OFF during boot/reset
+- Q1 drain → J2 pin 2 (SSR input −)
+- Q1 source → GND
+- R1 (220Ω) from +5V → J2 pin 1 (SSR input +): ~17 mA drive current
+- SSR-40DA is external with heatsink. Zero-crossing type, no snubber needed.
+- AC power wiring (SSR → boiler) is entirely external, NOT on PCB.
+
+### 3.6 Level probe
+
+- GP22 → R5 (100kΩ pull-up to 3.3V) → J5 pin 1 → probe
+- J5 pin 2 → GND (return via boiler chassis)
+- Water present → LOW (conductivity shorts to GND via boiler body)
+- Dry → HIGH (probe floating, pull-up holds high)
+- R5 = 100kΩ limits current to ~33µA (minimizes electrolysis)
+- Firmware uses pulsed reading to further reduce electrolysis
 
 ### 3.7 User interface
 
-The display, encoder, and preset buttons are housed in a **dedicated external UI enclosure** mounted on the side of the machine. All elements connect to the main PCB via cables through J5, J8, and J9.
+| Element | Connector | Notes |
+|---------|-----------|-------|
+| Encoder EC11 (quadrature + push) | J3 (5-pin: CLK, DT, SW, 3V3, GND) | R13-R15 10kΩ pull-ups on carrier |
+| 3 preset buttons (active LOW) | J4 (4-pin: BTN1, BTN2, BTN3, GND) | R10-R12 10kΩ pull-ups on carrier |
+| Status LED D1 (green 0603) | On carrier board | GP12 → R4 470Ω → D1 → GND |
 
-```
-┌─────────────────────┐
-│   [ ILI9341 2.4" ]  │  portrait, 240×320
-│   [   display    ]  │
-│                     │
-│  [enc]  [●] [●] [●] │  EC11 rotary + 3 preset buttons
-└─────────────────────┘
-  ~70 mm × ~130 mm (indicative)
-```
+### 3.8 RTC (optional)
 
-| Element | Connection | Notes |
-|---------|------------|-------|
-| ILI9341 2.4" display via J5 (8-pin header) | CS=GPIO14, DC=GPIO15, RST=GPIO16, SCK=GPIO10, MOSI=GPIO11 | External enclosure, ~40 cm cable |
-| EC11 encoder (quadrature + push) via J9 | ENC_A=GPIO5, ENC_B=GPIO6, ENC_SW=GPIO7 | 5-pin header; internal pull-ups OK |
-| 3 preset buttons via J8 (6-pin: 3 signals + 3.3 V + GND + extra GND) | BTN1=GPIO19, BTN2=GPIO20, BTN3=GPIO21 | R12/R13/R14 = 10 kΩ pull-ups to 3.3 V, active LOW |
-| Status LED D1 (green) | GPIO2 → R10 470 Ω → LED → GND | On main PCB — power / Wi-Fi / heating indication |
-| Level probe J7 (conductivity, single wire) | GPIO17 → **R11 100 kΩ pull-up to 3.3 V** → probe; return via boiler body to GND | Water present → LOW; dry → HIGH. Firmware pulses read to minimise electrolysis. |
-
-### 3.8 Bypass capacitors
-| Cap | Location | Value |
-|-----|----------|-------|
-| C7  | U4 RTDIN+/− across | 100 nF |
-| C8  | DS3231 VCC | 100 nF |
-| C9  | ESP32-S3 VDD | 100 nF |
-| C10 | U4 VDD | 100 nF |
-| C11 | U6 RTDIN+/− across | 100 nF |
-| C12 | U6 VDD | 100 nF |
+- J8: 4-pin I2C header (3V3, GND, SDA=GP14, SCL=GP15)
+- Accepts any DS3231 module (ZS-042 or similar)
+- Pull-ups on DS3231 module (not on carrier)
+- Alternative: use NTP via Pico's WiFi (no RTC needed)
 
 ### 3.9 AC protection / isolation
-- **F1**: T16A slow blow on L1, 5 × 20 mm fuseholder (THT)
-- **F2**: T16A slow blow on L2, 5 × 20 mm fuseholder (THT)
-- **RV1**: S14K275 MOV across L1_FUSED–L2_FUSED (THT) — proteção diferencial após fusíveis
-- Minimum creepage/clearance AC↔DC: **6 mm** (reinforced isolation)
-- Mains wiring to boiler: external 2.5 mm² minimum (off PCB)
-- PE rail: dedicated trace from J1-PE to chassis mounting point — **not shared with signal GND**
 
-## 4. GPIO assignment (locked)
+- **RV1**: S14K275 MOV across L1_FUSED–L2_FUSED on PCB (surge/transient protection)
+- **External fuses**: T16A slow-blow (one per phase), panel-mount fuse holders (NOT on PCB)
+- J1 receives pre-fused phases: L1_FUSED, L2_FUSED, PE
+- **6 mm minimum clearance** between AC nets and DC nets on PCB layout
+- PE rail from J1 pin 3 to chassis mounting point — separate from signal GND
+- HLK-PM05 provides 3kV isolation between AC and DC sides
+- AMS1117 has thermal shutdown
+- Boiler element protected by machine's original thermal fuse (independent of this controller)
 
-| GPIO | Signal | Component |
-|------|--------|-----------|
-| 2  | LED_STATUS    | D1 + R10 470 Ω |
-| 3  | MAX_DRDY      | U4 DRDY (boiler) |
-| 4  | SSR_CTRL      | Q1 gate via R_gate + R9 pulldown |
-| 5  | ENC_CLK       | Encoder A (via J9) |
-| 6  | ENC_DT        | Encoder B (via J9) |
-| 7  | ENC_SW        | Encoder push (via J9) |
-| 8  | I2C_SDA       | DS3231 |
-| 9  | I2C_SCL       | DS3231 |
-| 10 | SPI_SCK       | Shared U4 + U6 + GC9A01 |
-| 11 | SPI_MOSI      | Shared |
-| 12 | SPI_MISO      | Shared (U4 + U6 only) |
-| 13 | CS_MAX        | U4 chip select |
-| 14 | CS_DISP       | GC9A01 chip select |
-| 15 | DC_DISP       | GC9A01 D/C |
-| 16 | RST_DISP      | GC9A01 reset |
-| 17 | LEVEL_SENSE   | Level probe (R11 pull-up) |
-| 18 | CS_MAX2       | U6 chip select |
-| 19 | BTN1          | Preset 1 (via J8) |
-| 20 | BTN2          | Preset 2 (via J8) |
-| 21 | BTN3          | Preset 3 (via J8) |
+## 4. GPIO assignment — Pico 2 W
+
+| GPIO | Signal | Direction | Component |
+|------|--------|-----------|-----------|
+| GP0 | UART_TX | OUT | → Nextion RX |
+| GP1 | UART_RX | IN | ← Nextion TX (via R6/R7 level shift) |
+| GP2 | SPI_SCK | OUT | Shared: RTDs + SPI display |
+| GP3 | SPI_MOSI | OUT | Shared |
+| GP4 | SPI_MISO | IN | Shared |
+| GP5 | CS_RTD1 | OUT | SEN-30201 caldeira |
+| GP6 | CS_RTD2 | OUT | SEN-30201 grupo |
+| GP7 | CS_RTD3 | OUT | SEN-30201 spare |
+| GP8 | CS_DISP | OUT | SPI display option (J7) |
+| GP9 | DC_DISP | OUT | SPI display option (J7) |
+| GP10 | RST_DISP | OUT | SPI display option (J7) |
+| GP11 | SSR_CTRL | OUT | Q1 gate via R2 |
+| GP12 | LED_STATUS | OUT | D1 via R4 |
+| GP13 | DISP_LED | OUT | SPI display backlight (J7) |
+| GP14 | I2C_SDA | I/O | DS3231 module (J8) |
+| GP15 | I2C_SCL | OUT | DS3231 module (J8) |
+| GP16 | ENC_CLK | IN | Encoder A (J3) |
+| GP17 | ENC_DT | IN | Encoder B (J3) |
+| GP18 | ENC_SW | IN | Encoder push (J3) |
+| GP19 | BTN1 | IN | Preset 1 (J4) |
+| GP20 | BTN2 | IN | Preset 2 (J4) |
+| GP21 | BTN3 | IN | Preset 3 (J4) |
+| GP22 | LEVEL_SENSE | IN | Level probe (J5) |
+| GP26 | NTC1_ADC | ADC IN | NTC caldeira (J9, DNF) |
+| GP27 | NTC2_ADC | ADC IN | NTC grupo (J10, DNF) |
 
 ## 5. Reference designator registry
 
 | Ref | Part | Package | Notes |
 |-----|------|---------|-------|
-| U1  | ESP32-S3 Mini module | Module | THT/SMD module |
-| U2  | HLK-PM05 | Module | AC/DC 5 V, THT |
-| U3  | AMS1117-3.3 | SOT-223 | LDO |
-| U4  | MAX31865 | SSOP-20 | Boiler sensor |
-| U5  | DS3231 | SO-16 | RTC |
-| U6  | MAX31865 | SSOP-20 | Group sensor |
-| Q1  | 2N7002 | SOT-23 | NMOS low-side switch — drain→SSR(−), source→GND |
-| D1  | Green LED | 0603 | Status |
-| F1  | T16A fuse | 5×20 mm holder | AC input L1 |
-| F2  | T16A fuse | 5×20 mm holder | AC input L2 |
-| RV1 | S14K275 MOV | Disc | Across L1_FUSED–L2_FUSED |
-| SSR1 | Fotek SSR-40DA | External | Not on PCB (header only) |
-| J1  | AC input terminal | THT bornier 3-pin | L1 / L2 / PE |
-| J2  | AC boiler output terminal | THT bornier 2-pin | L1_switched (from SSR) / L2 |
-| J3  | PT100 boiler | 4-pin header | Off-board, 4-wire |
-| J5  | ILI9341 2.4" display cable | 8-pin header 2.54 mm | VCC / GND / CS / RST / DC / MOSI / SCK / LED |
-| J6  | PT100 group | 4-pin header | Off-board, 4-wire |
-| J7  | Level probe | 2-pin header | Off-board |
-| J8  | Preset buttons | 6-pin header | BTN1/BTN2/BTN3 + 3.3V + GND + GND |
-| J9  | Encoder | 5-pin header | ENC_A / ENC_B / ENC_SW / 3.3V / GND |
-| J10 | SSR-40DA control | 2-pin bornier | SSR input (+) via R7 / SSR input (−) via Q1 drain |
-| Rref | 430 Ω 0.1 % | 0603 | U4 reference |
-| Rref2 | 430 Ω 0.1 % | 0603 | U6 reference |
-| R2, R3 | 4.7 kΩ | 0603 | I2C pull-ups |
-| R_gate | 100 Ω | 0603 | GPIO4 → Q1 gate (limita corrente de gate) |
-| R7 | 220 Ω | 0603 | +5V → SSR input (+) — ~17 mA drive |
-| R9 | 10 kΩ | 0603 | Q1 gate pulldown (SSR OFF durante boot/reset) |
-| R10 | 470 Ω | 0603 | LED |
-| R11 | 100 kΩ | 0603 | Level probe pull-up |
-| R12, R13, R14 | 10 kΩ | 0603 | Button pull-ups |
-| C1, C2 | 10 µF | 0805 | Bulk on 5 V / 3.3 V (AMS1117 in/out) |
-| C3, C4 | 100 nF | 0603 | AMS1117 in/out ceramic |
-| C7 | 100 nF | 0603 | U4 RTDIN filter |
-| C8 | 100 nF | 0603 | DS3231 VCC bypass |
-| C9 | 100 nF | 0603 | ESP32 VDD bypass |
-| C10 | 100 nF | 0603 | U4 VDD bypass |
-| C11 | 100 nF | 0603 | U6 RTDIN filter |
-| C12 | 100 nF | 0603 | U6 VDD bypass |
-| BT1 | CR2032 holder | THT | DS3231 backup |
+| U1 | HLK-PM05 | THT module | AC/DC 5V isolated |
+| U2 | AMS1117-3.3 | SOT-223 | LDO 3.3V |
+| Q1 | 2N7002 | SOT-23 | NMOS SSR low-side switch |
+| D1 | Green LED | 0603 | Status |
+| RV1 | S14K275 MOV | Disc THT | Surge protection |
+| R1 | 220Ω 1% | 0603 | +5V → SSR+ current limit |
+| R2 | 100Ω 1% | 0603 | Gate series resistor |
+| R3 | 10kΩ 1% | 0603 | Gate pull-down (boot-safe) |
+| R4 | 470Ω 1% | 0603 | LED current limit |
+| R5 | 100kΩ 1% | 0603 | Level probe pull-up |
+| R6 | 10kΩ 1% | 0603 | UART level shift top |
+| R7 | 15kΩ 1% | 0603 | UART level shift bottom |
+| R8 | 10kΩ 1% | 0603 | NTC1 reference (DNF) |
+| R9 | 10kΩ 1% | 0603 | NTC2 reference (DNF) |
+| R10 | 10kΩ 1% | 0603 | BTN1 pull-up |
+| R11 | 10kΩ 1% | 0603 | BTN2 pull-up |
+| R12 | 10kΩ 1% | 0603 | BTN3 pull-up |
+| R13 | 10kΩ 1% | 0603 | ENC_CLK pull-up |
+| R14 | 10kΩ 1% | 0603 | ENC_DT pull-up |
+| R15 | 10kΩ 1% | 0603 | ENC_SW pull-up |
+| C1 | 10µF 16V X5R | 0805 | +5V bulk |
+| C2 | 10µF 16V X5R | 0805 | +3.3V bulk |
+| C3 | 100nF 50V X7R | 0603 | +5V bypass |
+| C4 | 100nF 50V X7R | 0603 | +3.3V bypass |
+| J1 | AC input bornier | 3-pin 5.08mm | L1_FUSED, L2_FUSED, PE |
+| J2 | SSR control bornier | 2-pin 5.08mm | SSR+, SSR− |
+| J3 | Encoder header | 5-pin 2.54mm | CLK, DT, SW, 3V3, GND |
+| J4 | Buttons header | 4-pin 2.54mm | BTN1, BTN2, BTN3, GND |
+| J5 | Level probe header | 2-pin 2.54mm | SENSE, GND |
+| J6 | Nextion display | 4-pin 2.54mm | 5V, GND, NX_TX, NX_RX |
+| J7 | SPI display (optional) | 8-pin 2.54mm | VCC, GND, CS, RST, DC, MOSI, SCK, LED |
+| J8 | I2C / RTC (optional) | 4-pin 2.54mm | 3V3, GND, SDA, SCL |
+| J9 | NTC1 (DNF) | 2-pin 2.54mm | NTC1, GND |
+| J10 | NTC2 (DNF) | 2-pin 2.54mm | NTC2, GND |
+| J11 | Pico left socket | 1×20 female 2.54mm | GP0–GP15 side |
+| J12 | Pico right socket | 1×20 female 2.54mm | GP16–GP28 + power side |
+| J13 | RTD caldeira socket | 1×8 female 2.54mm | SEN-30201 slot 1 |
+| J14 | RTD grupo socket | 1×8 female 2.54mm | SEN-30201 slot 2 |
+| J15 | RTD spare socket | 1×8 female 2.54mm | SEN-30201 slot 3 |
 
 ## 6. Operational requirements
 
 ### 6.1 Adaptive PID
-- Boiler PT100 → U4 → PID → SSR (~1 s cycle, zero-cross SSR)
-- Group PT100 → U6 → feed-forward offset on SV_caldeira
-- Hard limits: SV_MIN = 85 °C, SV_MAX = 128 °C
+- RTD caldeira (J13) → MAX31865 SPI → PID → SSR (~1s cycle, zero-cross)
+- RTD grupo (J14) → feed-forward offset on SV_caldeira
+- Hard limits: SV_MIN = 85°C, SV_MAX = 128°C
 
 ### 6.2 Presets
-- Normal: 93 °C (extraction)
-- Boost: 108 °C (pre-infusion)
-- Steam: 125 °C (milk steam)
+- Normal: 93°C (extraction)
+- Boost: 108°C (pre-infusion)
+- Steam: 125°C (milk steam)
 
 ### 6.3 Protections
-- Level-sense override: any LOW-water reading immediately forces SSR OFF.
-- R9 pulldown guarantees SSR OFF while ESP32 is in reset/boot.
-- Watchdog + sensor fault handling in firmware.
+- Level-sense override: LOW-water forces SSR OFF immediately
+- R3 pull-down guarantees SSR OFF while Pico is in reset/boot
+- Watchdog + sensor fault handling in firmware
+- Machine's original thermal fuse provides independent backup protection
 
 ### 6.4 Scheduling
-- DS3231 backup battery maintains time across power-offs.
-- Config file defines on/off hours (optional weekday mask).
-- **The scheduler controls boiler heating only (via SSR). It does not cut mains power to the machine.**
+- NTP via WiFi (primary): Pico syncs time at boot
+- DS3231 RTC via I2C (optional fallback): maintains time across power-offs
+- Config defines on/off hours
 
 ## 7. Safety
 
-This electronic controller operates alongside — and does not replace — independent mechanical
-safety devices already present in the machine (thermal cutout fuse, overpressure valve, pressure
-relief valve, boiler safety valve). A failure of this controller must not create an unsafe condition
-beyond what those devices would normally catch.
+This controller operates alongside — and does not replace — independent mechanical
+safety devices already present in the machine (thermal cutout fuse, overpressure valve,
+safety valve). A failure of this controller must not create an unsafe condition.
 
-- The boiler element must remain protected by the machine's original thermal fuse.
-- This PCB must not bypass or defeat any existing mechanical safety device.
-- PE must be connected at J1 and bonded to the chassis at the mounting point.
+- RV1 MOV: surge/transient protection on AC lines
+- External T16A fuses: overcurrent protection (one per phase)
+- 6mm AC/DC clearance: reinforced isolation on PCB layout
+- R3 gate pull-down: SSR OFF guaranteed during boot/reset/crash
+- R5 100kΩ: limits probe current to prevent electrolysis
+- PE bonded to chassis at J1 — not shared with signal GND
+- HLK-PM05: 3kV galvanic isolation, internal overcurrent protection
+- AMS1117: thermal shutdown
+- All AC power wiring external to PCB (2.5mm² minimum)
 
-## 8. Constraints for the design pipeline
+## 8. Constraints
 
-- **Source of truth:** `circuits/faema_president.py` (SKiDL) for circuit connections; `kicad/*.kicad_pcb` for layout. SKiDL generates the netlist (`outputs/faema_president.net`) which is imported into KiCad PCB. Do not edit the schematic file directly.
-- **Must keep** the locked GPIO assignment in §4 — do not reassign pins.
-- **Must reuse** reference designators in §5 for traceability with existing KiCad work.
-- **Must prefer** JLCPCB Basic/Preferred LCSC parts; HLK-PM05, SSR, PT100s, display, encoder acceptable as non-LCSC.
-- **Must enforce** 6 mm clearance between any AC net (L1, L2, L1_switched, J2) and any DC net.
-- **Must include** all bypass capacitors listed in §3.8.
-- **J5** is a standard 2.54 mm 8-pin header — no special footprint required.
+- **Source of truth:** `circuits/faema_carrier.py` (SKiDL) → `outputs/faema_carrier.net`
+- **GPIO assignment** in §4 is locked — do not reassign pins
+- **6mm clearance** between AC and DC nets (layout rule)
+- **SEN-30201 pinout** (1×8): Vin, GND, SDO, SDI, SCK, CS, DRDY, 3Vo — verify against actual board before fabrication
+- **Pico 2 W socket**: pin 39 (VSYS) = 5V power input; pin 36 (3V3 OUT) = not connected to carrier 3V3
+- PCB bare from JLCPCB, all components hand-soldered
 
 ## 9. Deliverables
 
-1. `circuits/faema_president.py` — SKiDL netlist (primary source of truth)
-2. `outputs/faema_president.net` — netlist gerada pelo SKiDL (importar no KiCad PCB)
-3. `kicad/faema-president.kicad_pcb` — PCB layout (primary source for layout)
-4. `outputs/BOM.csv` — KiCad BOM export (LCSC part numbers in fields)
-5. `outputs/erc_report` — KiCad ERC must show 0 errors
-6. `outputs/drc_report` — KiCad DRC must show 0 errors (after layout)
-7. `sourcing/sourced_bom.md` — LCSC-sourced BOM with stock + pricing (kept in sync)
-8. `datasheets/` — PDFs + SUMMARY.md for significant ICs
+1. `circuits/faema_carrier.py` — SKiDL circuit (source of truth)
+2. `outputs/faema_carrier.net` — netlist for KiCad PCB import
+3. `kicad/faema-carrier.kicad_pcb` — PCB layout
+4. `outputs/bom_carrier.csv` — BOM for ordering
