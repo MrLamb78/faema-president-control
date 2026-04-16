@@ -5,8 +5,10 @@ place_components.py — Posicionamento automático dos componentes no PCB.
 Usa a API pcbnew do KiCad para posicionar todos os componentes e criar
 a borda da placa. Roda APÓS importar a netlist no KiCad PCB Editor.
 
-Uso (linha de comando):
-    python3 kicad/place_components.py
+Uso (linha de comando) — requer Python do KiCad + frameworks no DYLD path:
+    DYLD_FALLBACK_LIBRARY_PATH=/Applications/KiCad/KiCad.app/Contents/Frameworks \
+    /Applications/KiCad/KiCad.app/Contents/Frameworks/Python.framework/Versions/3.9/bin/python3 \
+    kicad/place_components.py
 
 Ou no console Python do KiCad PCB Editor:
     exec(open('kicad/place_components.py').read())

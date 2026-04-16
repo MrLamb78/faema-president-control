@@ -22,6 +22,7 @@ __pycache__/
 .DS_Store
 
 # KiCad Gerber outputs (gerados pelo KiCad, não versionados)
-kicad/*.gbr
-kicad/*.gbrjob
-kicad/*.zip
+kicad/**/*.gbr
+kicad/**/*.gbrjob
+kicad/**/*.zip
+kicad/**/Gerber/

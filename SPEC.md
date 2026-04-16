@@ -1,8 +1,8 @@
 # Faema President Temperature Controller — SPEC
 
 **Circuit name:** `faema_carrier`
-**Revision:** Rev.6 — Carrier Board
-**Date:** 2026-04-14
+**Revision:** Rev.6b — Carrier Board
+**Date:** 2026-04-16
 **Target:** PCB bare (JLCPCB), hand-soldered. Single unit.
 
 ---
@@ -30,13 +30,13 @@ No fine-pitch SMD ICs to solder — the complex chips live on ready-made modules
 │  J1 (bornier AC 3-pin)           │    [Pico 2 W]              │
 │  RV1 (MOV S14K275)               │     2×20 socket            │
 │  U1 (HLK-PM05)                   │                            │
-│                                  │    [SEN-30201] ×3          │
+│                                  │    [SEN-30201] ×2          │
 │ ─────── isolação 6mm ────────────│     1×8 socket (vertical)  │
 │                                  │                            │
 │  U2 (AMS1117-3.3)  C1-C4        │    J6 Nextion (UART 4-pin) │
 │  SSR drive (Q1 + R1-R3)         │    J7 SPI display (8-pin)  │
 │  J2 (bornier SSR 2-pin)         │    J8 I2C/RTC (4-pin)      │
-│                                  │    J9/J10 NTC (2-pin, DNF) │
+│                                  │    J9/J10 NTC (JST XH 2-pin)│
 │  D1+R4 (LED status)             │                            │
 │  R5+J5 (level probe)            │    J3 encoder (5-pin)      │
 │                                  │    J4 buttons (4-pin)      │
@@ -48,7 +48,7 @@ No fine-pitch SMD ICs to solder — the complex chips live on ready-made modules
 | Module | Interface | Connector on carrier |
 |--------|-----------|---------------------|
 | Raspberry Pi Pico 2 W | 2×20 headers | J11 + J12 (female sockets) |
-| Playing with Fusion SEN-30201 ×3 | 1×8 header each | J13, J14, J15 (female sockets) |
+| Playing with Fusion SEN-30201 ×2 | 1×8 header each | J13, J14 (female sockets) |
 | Nextion NX3224T024 (primary display) | UART 4-wire | J6 (male header) |
 | DS3231 module (optional RTC) | I2C 4-wire | J8 (male header) |
 | SSR-40DA (external, with heatsink) | 2-wire control | J2 (bornier) |
@@ -63,7 +63,7 @@ No fine-pitch SMD ICs to solder — the complex chips live on ready-made modules
 | LED | D1 green 0603, R4 470Ω |
 | Level probe | R5 100kΩ pull-up |
 | UART level shift | R6 10kΩ, R7 15kΩ (Nextion 5V→3.3V) |
-| NTC option (DNF) | R8, R9 10kΩ reference |
+| NTC (simultâneo com RTD) | R8, R9 2k2 0.1% ref; C5, C6 100nF filtro |
 | Button pull-ups | R10, R11, R12 10kΩ |
 | Encoder pull-ups | R13, R14, R15 10kΩ |
 | Connectors | J1–J15 (headers + borniers) |
@@ -94,7 +94,7 @@ No fine-pitch SMD ICs to solder — the complex chips live on ready-made modules
 
 ### 3.3 Temperature sensing
 
-**Primary: RTD via SEN-30201 breakout boards (3×)**
+**Primary: RTD via SEN-30201 breakout boards (2×)**
 
 Each SEN-30201 contains a MAX31865 with onboard Rref, LDO, and level shifter.
 Connects via 1×8 header: Vin, GND, SDO, SDI, SCK, CS, DRDY, 3Vo.
@@ -104,18 +104,19 @@ SPI bus shared (SCK/MOSI/MISO common), CS unique per board.
 |------|-----------|-----|--------|-------|
 | Caldeira | J13 | GP5 | PT100 or PT1000 | Boiler temperature |
 | Grupo | J14 | GP6 | PT100 or PT1000 | Group head temperature |
-| Spare | J15 | GP7 | — | Future expansion |
 
 - DRDY pins not connected on carrier (polling via SPI register read).
 - SEN-30201 supports PT100, PT500, PT1000 via jumper/config on breakout.
 - 4-wire RTD connection via screw terminal on each breakout board.
 
-**Alternative: NTC thermistors (DNF option)**
+**Simultaneous: NTC thermistors on GP26/GP27**
 
-For lower cost, populate R8/R9 (10kΩ reference) and J9/J10 (NTC connectors).
-Voltage divider: VCC3V3 → R_ref(10kΩ) → ADC_pin → NTC → GND.
-Connected to GP26 (ADC0) and GP27 (ADC1) on Pico.
-Do NOT populate simultaneously with RTD breakouts on same channel.
+NTC circuit operates simultaneously with RTD (independent ADC vs SPI interfaces).
+Voltage divider: VCC3V3 → R_ref(2k2 0.1%) → ADC_pin → NTC(10k) → GND.
+C5/C6 (100nF) low-pass filter in parallel with NTC reduces ADC noise.
+Connected to GP26 (ADC0, caldeira) and GP27 (ADC1, grupo).
+V_adc range: 25°C→2.70V, 85°C→1.08V, 128°C→0.56V.
+Use 0.1% precision for R8/R9 to keep temperature error < 0.5°C.
 
 ### 3.4 Display
 
@@ -189,7 +190,7 @@ Do NOT populate simultaneously with RTD breakouts on same channel.
 | GP4 | SPI_MISO | IN | Shared |
 | GP5 | CS_RTD1 | OUT | SEN-30201 caldeira |
 | GP6 | CS_RTD2 | OUT | SEN-30201 grupo |
-| GP7 | CS_RTD3 | OUT | SEN-30201 spare |
+| GP7 | — | — | Spare (not connected on carrier) |
 | GP8 | CS_DISP | OUT | SPI display option (J7) |
 | GP9 | DC_DISP | OUT | SPI display option (J7) |
 | GP10 | RST_DISP | OUT | SPI display option (J7) |
@@ -205,8 +206,8 @@ Do NOT populate simultaneously with RTD breakouts on same channel.
 | GP20 | BTN2 | IN | Preset 2 (J4) |
 | GP21 | BTN3 | IN | Preset 3 (J4) |
 | GP22 | LEVEL_SENSE | IN | Level probe (J5) |
-| GP26 | NTC1_ADC | ADC IN | NTC caldeira (J9, DNF) |
-| GP27 | NTC2_ADC | ADC IN | NTC grupo (J10, DNF) |
+| GP26 | NTC1_ADC | ADC IN | NTC caldeira (J9) — simultâneo com RTD |
+| GP27 | NTC2_ADC | ADC IN | NTC grupo (J10) — simultâneo com RTD |
 
 ## 5. Reference designator registry
 
@@ -224,8 +225,8 @@ Do NOT populate simultaneously with RTD breakouts on same channel.
 | R5 | 100kΩ 1% | 0603 | Level probe pull-up |
 | R6 | 10kΩ 1% | 0603 | UART level shift top |
 | R7 | 15kΩ 1% | 0603 | UART level shift bottom |
-| R8 | 10kΩ 1% | 0603 | NTC1 reference (DNF) |
-| R9 | 10kΩ 1% | 0603 | NTC2 reference (DNF) |
+| R8 | 2k2Ω 0.1% | 0603 | NTC1 reference (caldeira) |
+| R9 | 2k2Ω 0.1% | 0603 | NTC2 reference (grupo) |
 | R10 | 10kΩ 1% | 0603 | BTN1 pull-up |
 | R11 | 10kΩ 1% | 0603 | BTN2 pull-up |
 | R12 | 10kΩ 1% | 0603 | BTN3 pull-up |
@@ -236,21 +237,22 @@ Do NOT populate simultaneously with RTD breakouts on same channel.
 | C2 | 10µF 16V X5R | 0805 | +3.3V bulk |
 | C3 | 100nF 50V X7R | 0603 | +5V bypass |
 | C4 | 100nF 50V X7R | 0603 | +3.3V bypass |
+| C5 | 100nF 50V X7R | 0603 | NTC1 ADC filter (GP26) |
+| C6 | 100nF 50V X7R | 0603 | NTC2 ADC filter (GP27) |
 | J1 | AC input bornier | 3-pin 5.08mm | L1_FUSED, L2_FUSED, PE |
 | J2 | SSR control bornier | 2-pin 5.08mm | SSR+, SSR− |
-| J3 | Encoder header | 5-pin 2.54mm | CLK, DT, SW, 3V3, GND |
-| J4 | Buttons header | 4-pin 2.54mm | BTN1, BTN2, BTN3, GND |
-| J5 | Level probe header | 2-pin 2.54mm | SENSE, GND |
-| J6 | Nextion display | 4-pin 2.54mm | 5V, GND, NX_TX, NX_RX |
-| J7 | SPI display (optional) | 8-pin 2.54mm | VCC, GND, CS, RST, DC, MOSI, SCK, LED |
-| J8 | I2C / RTC (optional) | 4-pin 2.54mm | 3V3, GND, SDA, SCL |
-| J9 | NTC1 (DNF) | 2-pin 2.54mm | NTC1, GND |
-| J10 | NTC2 (DNF) | 2-pin 2.54mm | NTC2, GND |
+| J3 | Encoder | JST XH 5-pin 2.5mm | CLK, DT, SW, 3V3, GND |
+| J4 | Buttons | JST XH 4-pin 2.5mm | BTN1, BTN2, BTN3, GND |
+| J5 | Level probe | JST XH 2-pin 2.5mm | SENSE, GND |
+| J6 | Nextion display | JST XH 4-pin 2.5mm | 5V, GND, NX_TX, NX_RX |
+| J7 | SPI display (optional) | JST XH 8-pin 2.5mm | VCC, GND, CS, RST, DC, MOSI, SCK, LED |
+| J8 | I2C / RTC (optional) | JST XH 4-pin 2.5mm | 3V3, GND, SDA, SCL |
+| J9 | NTC caldeira | JST XH 2-pin 2.5mm | NTC1, GND |
+| J10 | NTC grupo | JST XH 2-pin 2.5mm | NTC2, GND |
 | J11 | Pico left socket | 1×20 female 2.54mm | GP0–GP15 side |
 | J12 | Pico right socket | 1×20 female 2.54mm | GP16–GP28 + power side |
 | J13 | RTD caldeira socket | 1×8 female 2.54mm | SEN-30201 slot 1 |
 | J14 | RTD grupo socket | 1×8 female 2.54mm | SEN-30201 slot 2 |
-| J15 | RTD spare socket | 1×8 female 2.54mm | SEN-30201 slot 3 |
 
 ## 6. Operational requirements
 
@@ -297,7 +299,13 @@ safety valve). A failure of this controller must not create an unsafe condition.
 - **GPIO assignment** in §4 is locked — do not reassign pins
 - **6mm clearance** between AC and DC nets (layout rule)
 - **SEN-30201 pinout** (1×8): Vin, GND, SDO, SDI, SCK, CS, DRDY, 3Vo — verify against actual board before fabrication
-- **Pico 2 W socket**: pin 39 (VSYS) = 5V power input; pin 36 (3V3 OUT) = not connected to carrier 3V3
+- **Pico 2 W socket — pins deliberadamente NC:**
+  - Pin 40 VBUS: não conectar ao +5V (back-feed USB → dano ao computador em debug)
+  - Pin 35 ADC_VREF: conectado ao +3V3 do carrier (AMS1117) — referência ratiométrica para NTC; cancela variações da fonte e isola ruído SMPS/WiFi do regulador interno do Pico. C7 (100nF) de bypass entre ADC_VREF e AGND, posicionado próximo ao J12 pino 15.
+  - Pin 36 3V3(OUT): NC — saída do regulador interno do Pico, não conectar ao +3V3 do carrier
+  - Pin 37 3V3_EN: NC — pull-up interno mantém o regulador ligado
+  - Pin 30 RUN: NC — pull-up interno; conectar apenas se precisar de reset externo por hardware
+  - Pin 33 AGND e todos os pinos GND: conectados ao GND do carrier
 - PCB bare from JLCPCB, all components hand-soldered
 
 ## 9. Deliverables

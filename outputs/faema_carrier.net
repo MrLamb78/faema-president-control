@@ -2,195 +2,10 @@
   (version "D")
   (design
     (source "faema_carrier.py")
-    (date "04/15/2026 07:14 AM")
+    (date "04/16/2026 06:50 AM")
     (tool "SKiDL (2.2.3)")
     (sheet
       (number 1)
-      (name "/block_ntc_option1/")
-      (tstamps "/9604e73e-46fe-5287-bf14-f6b83d35f0e2/")
-      (title_block
-        (title)
-        (company)
-        (rev)
-        (date)
-        (source "../faema_carrier.py")
-        (comment
-          (number "1")
-          (value ""))
-        (comment
-          (number "2")
-          (value ""))
-        (comment
-          (number "3")
-          (value ""))
-        (comment
-          (number "4")
-          (value ""))
-        (comment
-          (number "5")
-          (value ""))
-        (comment
-          (number "6")
-          (value ""))
-        (comment
-          (number "7")
-          (value ""))
-        (comment
-          (number "8")
-          (value ""))
-        (comment
-          (number "9")
-          (value ""))))
-    (sheet
-      (number 2)
-      (name "/block_level_probe1/")
-      (tstamps "/7fc0393f-6be6-5b2f-84c2-f577a312aa14/")
-      (title_block
-        (title)
-        (company)
-        (rev)
-        (date)
-        (source "../faema_carrier.py")
-        (comment
-          (number "1")
-          (value ""))
-        (comment
-          (number "2")
-          (value ""))
-        (comment
-          (number "3")
-          (value ""))
-        (comment
-          (number "4")
-          (value ""))
-        (comment
-          (number "5")
-          (value ""))
-        (comment
-          (number "6")
-          (value ""))
-        (comment
-          (number "7")
-          (value ""))
-        (comment
-          (number "8")
-          (value ""))
-        (comment
-          (number "9")
-          (value ""))))
-    (sheet
-      (number 3)
-      (name "/block_led1/")
-      (tstamps "/0b23167f-8dc4-5765-b6cd-e496cd8d6429/")
-      (title_block
-        (title)
-        (company)
-        (rev)
-        (date)
-        (source "../faema_carrier.py")
-        (comment
-          (number "1")
-          (value ""))
-        (comment
-          (number "2")
-          (value ""))
-        (comment
-          (number "3")
-          (value ""))
-        (comment
-          (number "4")
-          (value ""))
-        (comment
-          (number "5")
-          (value ""))
-        (comment
-          (number "6")
-          (value ""))
-        (comment
-          (number "7")
-          (value ""))
-        (comment
-          (number "8")
-          (value ""))
-        (comment
-          (number "9")
-          (value ""))))
-    (sheet
-      (number 4)
-      (name "/")
-      (tstamps "/")
-      (title_block
-        (title)
-        (company)
-        (rev)
-        (date)
-        (source "../faema_carrier.py")
-        (comment
-          (number "1")
-          (value ""))
-        (comment
-          (number "2")
-          (value ""))
-        (comment
-          (number "3")
-          (value ""))
-        (comment
-          (number "4")
-          (value ""))
-        (comment
-          (number "5")
-          (value ""))
-        (comment
-          (number "6")
-          (value ""))
-        (comment
-          (number "7")
-          (value ""))
-        (comment
-          (number "8")
-          (value ""))
-        (comment
-          (number "9")
-          (value ""))))
-    (sheet
-      (number 5)
-      (name "/block_pullups1/")
-      (tstamps "/8f1dba2a-a1d0-5b77-a87a-2517e95f0ed3/")
-      (title_block
-        (title)
-        (company)
-        (rev)
-        (date)
-        (source "../faema_carrier.py")
-        (comment
-          (number "1")
-          (value ""))
-        (comment
-          (number "2")
-          (value ""))
-        (comment
-          (number "3")
-          (value ""))
-        (comment
-          (number "4")
-          (value ""))
-        (comment
-          (number "5")
-          (value ""))
-        (comment
-          (number "6")
-          (value ""))
-        (comment
-          (number "7")
-          (value ""))
-        (comment
-          (number "8")
-          (value ""))
-        (comment
-          (number "9")
-          (value ""))))
-    (sheet
-      (number 6)
       (name "/block_power1/")
       (tstamps "/5cf4cdf1-4bd6-56f0-b172-b2107ad3f86e/")
       (title_block
@@ -227,7 +42,7 @@
           (number "9")
           (value ""))))
     (sheet
-      (number 7)
+      (number 2)
       (name "/block_connectors1/")
       (tstamps "/98b32057-217c-5c52-a30d-98aa84bc5df1/")
       (title_block
@@ -264,7 +79,44 @@
           (number "9")
           (value ""))))
     (sheet
-      (number 8)
+      (number 3)
+      (name "/block_uart_level_shift1/")
+      (tstamps "/ade676b4-16e5-537d-af6a-e02e06f03396/")
+      (title_block
+        (title)
+        (company)
+        (rev)
+        (date)
+        (source "../faema_carrier.py")
+        (comment
+          (number "1")
+          (value ""))
+        (comment
+          (number "2")
+          (value ""))
+        (comment
+          (number "3")
+          (value ""))
+        (comment
+          (number "4")
+          (value ""))
+        (comment
+          (number "5")
+          (value ""))
+        (comment
+          (number "6")
+          (value ""))
+        (comment
+          (number "7")
+          (value ""))
+        (comment
+          (number "8")
+          (value ""))
+        (comment
+          (number "9")
+          (value ""))))
+    (sheet
+      (number 4)
       (name "/block_ssr_drive1/")
       (tstamps "/2cf831f8-312a-53e9-b06e-a74fe933eab9/")
       (title_block
@@ -301,9 +153,157 @@
           (number "9")
           (value ""))))
     (sheet
+      (number 5)
+      (name "/")
+      (tstamps "/")
+      (title_block
+        (title)
+        (company)
+        (rev)
+        (date)
+        (source "../faema_carrier.py")
+        (comment
+          (number "1")
+          (value ""))
+        (comment
+          (number "2")
+          (value ""))
+        (comment
+          (number "3")
+          (value ""))
+        (comment
+          (number "4")
+          (value ""))
+        (comment
+          (number "5")
+          (value ""))
+        (comment
+          (number "6")
+          (value ""))
+        (comment
+          (number "7")
+          (value ""))
+        (comment
+          (number "8")
+          (value ""))
+        (comment
+          (number "9")
+          (value ""))))
+    (sheet
+      (number 6)
+      (name "/block_ntc1/")
+      (tstamps "/ed132a0c-00d3-5cba-be63-86ba9aaee7d4/")
+      (title_block
+        (title)
+        (company)
+        (rev)
+        (date)
+        (source "../faema_carrier.py")
+        (comment
+          (number "1")
+          (value ""))
+        (comment
+          (number "2")
+          (value ""))
+        (comment
+          (number "3")
+          (value ""))
+        (comment
+          (number "4")
+          (value ""))
+        (comment
+          (number "5")
+          (value ""))
+        (comment
+          (number "6")
+          (value ""))
+        (comment
+          (number "7")
+          (value ""))
+        (comment
+          (number "8")
+          (value ""))
+        (comment
+          (number "9")
+          (value ""))))
+    (sheet
+      (number 7)
+      (name "/block_level_probe1/")
+      (tstamps "/7fc0393f-6be6-5b2f-84c2-f577a312aa14/")
+      (title_block
+        (title)
+        (company)
+        (rev)
+        (date)
+        (source "../faema_carrier.py")
+        (comment
+          (number "1")
+          (value ""))
+        (comment
+          (number "2")
+          (value ""))
+        (comment
+          (number "3")
+          (value ""))
+        (comment
+          (number "4")
+          (value ""))
+        (comment
+          (number "5")
+          (value ""))
+        (comment
+          (number "6")
+          (value ""))
+        (comment
+          (number "7")
+          (value ""))
+        (comment
+          (number "8")
+          (value ""))
+        (comment
+          (number "9")
+          (value ""))))
+    (sheet
+      (number 8)
+      (name "/block_pullups1/")
+      (tstamps "/8f1dba2a-a1d0-5b77-a87a-2517e95f0ed3/")
+      (title_block
+        (title)
+        (company)
+        (rev)
+        (date)
+        (source "../faema_carrier.py")
+        (comment
+          (number "1")
+          (value ""))
+        (comment
+          (number "2")
+          (value ""))
+        (comment
+          (number "3")
+          (value ""))
+        (comment
+          (number "4")
+          (value ""))
+        (comment
+          (number "5")
+          (value ""))
+        (comment
+          (number "6")
+          (value ""))
+        (comment
+          (number "7")
+          (value ""))
+        (comment
+          (number "8")
+          (value ""))
+        (comment
+          (number "9")
+          (value ""))))
+    (sheet
       (number 9)
-      (name "/block_uart_level_shift1/")
-      (tstamps "/ade676b4-16e5-537d-af6a-e02e06f03396/")
+      (name "/block_led1/")
+      (tstamps "/0b23167f-8dc4-5765-b6cd-e496cd8d6429/")
       (title_block
         (title)
         (company)
@@ -341,99 +341,171 @@
     (comp
       (ref "C1")
       (value "10uF_16V")
-      (description "Unpolarized capacitor")
+      (description "")
       (footprint "Capacitor_SMD:C_0805_2012Metric")
       (fields
         (field
-          (name "Description") "Unpolarized capacitor")
+          (name "Description"))
         (field
           (name "Footprint") "Capacitor_SMD:C_0805_2012Metric")
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "HaFDim8P9h")
+          (name "SKiDL Tag") "JWhqNQEeuV")
         (field
-          (name "SKiDL Line") "faema_carrier.py:185"))
+          (name "SKiDL Line") "faema_carrier.py:179"))
       (libsource
-        (lib "Device")
+        (lib "NO_LIB")
         (part "C"))
       (sheetpath
         (names "/block_power1/")
         (tstamps "/5cf4cdf1-4bd6-56f0-b172-b2107ad3f86e/"))
       (component_classes)
-      (tstamps "7bb56c7c-2c7b-507d-9a2f-8198784dae0a"))
+      (tstamps "9815b248-25ae-5f44-9c95-df3d55c7aafd"))
     (comp
       (ref "C2")
       (value "10uF_16V")
-      (description "Unpolarized capacitor")
+      (description "")
       (footprint "Capacitor_SMD:C_0805_2012Metric")
       (fields
         (field
-          (name "Description") "Unpolarized capacitor")
+          (name "Description"))
         (field
           (name "Footprint") "Capacitor_SMD:C_0805_2012Metric")
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "MyPajbG_IC")
+          (name "SKiDL Tag") "UQhIHaHJEv")
         (field
-          (name "SKiDL Line") "faema_carrier.py:211"))
+          (name "SKiDL Line") "faema_carrier.py:202"))
       (libsource
-        (lib "Device")
+        (lib "NO_LIB")
         (part "C"))
       (sheetpath
         (names "/block_power1/")
         (tstamps "/5cf4cdf1-4bd6-56f0-b172-b2107ad3f86e/"))
       (component_classes)
-      (tstamps "9807408b-97fc-5d33-8546-9df0058c4059"))
+      (tstamps "2ad2e4d0-d808-508c-aa05-b21149cca0b3"))
     (comp
       (ref "C3")
       (value "100nF_50V")
-      (description "Unpolarized capacitor")
+      (description "")
       (footprint "Capacitor_SMD:C_0603_1608Metric")
       (fields
         (field
-          (name "Description") "Unpolarized capacitor")
+          (name "Description"))
         (field
           (name "Footprint") "Capacitor_SMD:C_0603_1608Metric")
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "uav1s1VDap")
+          (name "SKiDL Tag") "0ISJ5mM4rV")
         (field
-          (name "SKiDL Line") "faema_carrier.py:192"))
+          (name "SKiDL Line") "faema_carrier.py:185"))
       (libsource
-        (lib "Device")
+        (lib "NO_LIB")
         (part "C"))
       (sheetpath
         (names "/block_power1/")
         (tstamps "/5cf4cdf1-4bd6-56f0-b172-b2107ad3f86e/"))
       (component_classes)
-      (tstamps "dce73bdf-6ebb-5ab9-8b07-2f39f5965a02"))
+      (tstamps "2c651476-2634-52db-aa8c-5f63f13a6e16"))
     (comp
       (ref "C4")
       (value "100nF_50V")
-      (description "Unpolarized capacitor")
+      (description "")
       (footprint "Capacitor_SMD:C_0603_1608Metric")
       (fields
         (field
-          (name "Description") "Unpolarized capacitor")
+          (name "Description"))
         (field
           (name "Footprint") "Capacitor_SMD:C_0603_1608Metric")
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "RdwYNd9aWY")
+          (name "SKiDL Tag") "P_fjFNQV7t")
         (field
-          (name "SKiDL Line") "faema_carrier.py:218"))
+          (name "SKiDL Line") "faema_carrier.py:208"))
       (libsource
-        (lib "Device")
+        (lib "NO_LIB")
         (part "C"))
       (sheetpath
         (names "/block_power1/")
         (tstamps "/5cf4cdf1-4bd6-56f0-b172-b2107ad3f86e/"))
       (component_classes)
-      (tstamps "056c9a32-5ec9-5f5b-99ff-baf1d05a40db"))
+      (tstamps "1c0977d9-fae1-58d5-be7c-c4880db55643"))
+    (comp
+      (ref "C5")
+      (value "100nF_50V")
+      (description "")
+      (footprint "Capacitor_SMD:C_0603_1608Metric")
+      (fields
+        (field
+          (name "Description"))
+        (field
+          (name "Footprint") "Capacitor_SMD:C_0603_1608Metric")
+        (field
+          (name "Datasheet"))
+        (field
+          (name "SKiDL Tag") "TJ6JDqqc2t")
+        (field
+          (name "SKiDL Line") "faema_carrier.py:361"))
+      (libsource
+        (lib "NO_LIB")
+        (part "C"))
+      (sheetpath
+        (names "/block_ntc1/")
+        (tstamps "/ed132a0c-00d3-5cba-be63-86ba9aaee7d4/"))
+      (component_classes)
+      (tstamps "bf3186fc-22cb-5edc-a6ea-78e2cb888caa"))
+    (comp
+      (ref "C6")
+      (value "100nF_50V")
+      (description "")
+      (footprint "Capacitor_SMD:C_0603_1608Metric")
+      (fields
+        (field
+          (name "Description"))
+        (field
+          (name "Footprint") "Capacitor_SMD:C_0603_1608Metric")
+        (field
+          (name "Datasheet"))
+        (field
+          (name "SKiDL Tag") "YoglHAJqkp")
+        (field
+          (name "SKiDL Line") "faema_carrier.py:361"))
+      (libsource
+        (lib "NO_LIB")
+        (part "C"))
+      (sheetpath
+        (names "/block_ntc1/")
+        (tstamps "/ed132a0c-00d3-5cba-be63-86ba9aaee7d4/"))
+      (component_classes)
+      (tstamps "c4c34c6e-018f-534b-af6c-f3cd1443b046"))
+    (comp
+      (ref "C7")
+      (value "100nF_50V")
+      (description "")
+      (footprint "Capacitor_SMD:C_0603_1608Metric")
+      (fields
+        (field
+          (name "Description"))
+        (field
+          (name "Footprint") "Capacitor_SMD:C_0603_1608Metric")
+        (field
+          (name "Datasheet"))
+        (field
+          (name "SKiDL Tag") "4jgNq0VX2b")
+        (field
+          (name "SKiDL Line") "faema_carrier.py:374"))
+      (libsource
+        (lib "NO_LIB")
+        (part "C"))
+      (sheetpath
+        (names "/block_ntc1/")
+        (tstamps "/ed132a0c-00d3-5cba-be63-86ba9aaee7d4/"))
+      (component_classes)
+      (tstamps "c97dcfb7-611f-5328-9e95-bdd686dc6090"))
     (comp
       (ref "D1")
       (value "GREEN")
@@ -447,9 +519,9 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "2tB7NR3bxZ")
+          (name "SKiDL Tag") "oZxu14ZQ2K")
         (field
-          (name "SKiDL Line") "faema_carrier.py:287"))
+          (name "SKiDL Line") "faema_carrier.py:272"))
       (libsource
         (lib "NO_LIB")
         (part "LED"))
@@ -457,7 +529,7 @@
         (names "/block_led1/")
         (tstamps "/0b23167f-8dc4-5765-b6cd-e496cd8d6429/"))
       (component_classes)
-      (tstamps "760dce25-1d93-5a3c-82f5-2fbdeaba232f"))
+      (tstamps "ce9a88ce-fb08-5680-acb8-fccb4ca5952e"))
     (comp
       (ref "J1")
       (value "AC_INPUT_220V")
@@ -471,9 +543,9 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "JBeOlo86CK")
+          (name "SKiDL Tag") "Am9E4FB6c1")
         (field
-          (name "SKiDL Line") "faema_carrier.py:153"))
+          (name "SKiDL Line") "faema_carrier.py:150"))
       (libsource
         (lib "NO_LIB")
         (part "Conn_3"))
@@ -481,31 +553,31 @@
         (names "/block_power1/")
         (tstamps "/5cf4cdf1-4bd6-56f0-b172-b2107ad3f86e/"))
       (component_classes)
-      (tstamps "f508e396-7f1c-5264-b04f-fe5559a35b8b"))
+      (tstamps "f8d21623-19a0-5029-b08f-ba5e6275cf49"))
     (comp
       (ref "J10")
       (value "NTC_GRUPO")
       (description "")
-      (footprint "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical")
+      (footprint "Connector_JST:JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical")
       (fields
         (field
           (name "Description"))
         (field
-          (name "Footprint") "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical")
+          (name "Footprint") "Connector_JST:JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical")
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "i0ipjlYdgS")
+          (name "SKiDL Tag") "9XVtQqjRaE")
         (field
-          (name "SKiDL Line") "faema_carrier.py:370"))
+          (name "SKiDL Line") "faema_carrier.py:367"))
       (libsource
         (lib "NO_LIB")
         (part "Conn_2"))
       (sheetpath
-        (names "/block_ntc_option1/")
-        (tstamps "/9604e73e-46fe-5287-bf14-f6b83d35f0e2/"))
+        (names "/block_ntc1/")
+        (tstamps "/ed132a0c-00d3-5cba-be63-86ba9aaee7d4/"))
       (component_classes)
-      (tstamps "52a5e26f-7fbb-520d-a0aa-b87772a77d05"))
+      (tstamps "c81ced14-f3e5-5c67-8c66-d58b2382d2b3"))
     (comp
       (ref "J11")
       (value "PICO_L")
@@ -519,9 +591,9 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "qt5TPzYpE2")
+          (name "SKiDL Tag") "SbOOxnqw37")
         (field
-          (name "SKiDL Line") "faema_carrier.py:436"))
+          (name "SKiDL Line") "faema_carrier.py:440"))
       (libsource
         (lib "NO_LIB")
         (part "Conn_20"))
@@ -529,7 +601,7 @@
         (names "/block_connectors1/")
         (tstamps "/98b32057-217c-5c52-a30d-98aa84bc5df1/"))
       (component_classes)
-      (tstamps "4091aabf-f1fd-5440-88a3-2694ab60134f"))
+      (tstamps "b88aaf62-a441-5005-96ad-7de3fe7398a8"))
     (comp
       (ref "J12")
       (value "PICO_R")
@@ -543,9 +615,9 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "cvgDDnnZNZ")
+          (name "SKiDL Tag") "eIS7xPZ7JE")
         (field
-          (name "SKiDL Line") "faema_carrier.py:461"))
+          (name "SKiDL Line") "faema_carrier.py:465"))
       (libsource
         (lib "NO_LIB")
         (part "Conn_20"))
@@ -553,7 +625,7 @@
         (names "/block_connectors1/")
         (tstamps "/98b32057-217c-5c52-a30d-98aa84bc5df1/"))
       (component_classes)
-      (tstamps "db1e4c61-c393-593b-969a-ce2ac90f7d86"))
+      (tstamps "206fc972-3a2b-5ea7-95ab-b0b08f1ab880"))
     (comp
       (ref "J13")
       (value "RTD_CALDEIRA")
@@ -567,9 +639,9 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "FmUFEwkLFN")
+          (name "SKiDL Tag") "xt6_Uxo1_a")
         (field
-          (name "SKiDL Line") "faema_carrier.py:494"))
+          (name "SKiDL Line") "faema_carrier.py:495"))
       (libsource
         (lib "NO_LIB")
         (part "Conn_8"))
@@ -577,7 +649,7 @@
         (names "/block_connectors1/")
         (tstamps "/98b32057-217c-5c52-a30d-98aa84bc5df1/"))
       (component_classes)
-      (tstamps "462ccc41-2188-5f0f-a447-7e0e9a5ec9de"))
+      (tstamps "a9f3ef7c-fcd4-5259-8fbc-f363991ef330"))
     (comp
       (ref "J14")
       (value "RTD_GRUPO")
@@ -591,9 +663,9 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "WYpUQJbxBr")
+          (name "SKiDL Tag") "cIWfpgsihf")
         (field
-          (name "SKiDL Line") "faema_carrier.py:494"))
+          (name "SKiDL Line") "faema_carrier.py:495"))
       (libsource
         (lib "NO_LIB")
         (part "Conn_8"))
@@ -601,31 +673,7 @@
         (names "/block_connectors1/")
         (tstamps "/98b32057-217c-5c52-a30d-98aa84bc5df1/"))
       (component_classes)
-      (tstamps "07894169-6215-5873-a9ae-452a8dc0b0bd"))
-    (comp
-      (ref "J15")
-      (value "RTD_SPARE")
-      (description "")
-      (footprint "Connector_PinSocket_2.54mm:PinSocket_1x08_P2.54mm_Vertical")
-      (fields
-        (field
-          (name "Description"))
-        (field
-          (name "Footprint") "Connector_PinSocket_2.54mm:PinSocket_1x08_P2.54mm_Vertical")
-        (field
-          (name "Datasheet"))
-        (field
-          (name "SKiDL Tag") "epPJBdAHuh")
-        (field
-          (name "SKiDL Line") "faema_carrier.py:494"))
-      (libsource
-        (lib "NO_LIB")
-        (part "Conn_8"))
-      (sheetpath
-        (names "/block_connectors1/")
-        (tstamps "/98b32057-217c-5c52-a30d-98aa84bc5df1/"))
-      (component_classes)
-      (tstamps "f082f6e3-a67e-5ba2-b1ca-3896580dbe8c"))
+      (tstamps "6eb7a230-caa9-5a95-8a06-508c2d39a62f"))
     (comp
       (ref "J2")
       (value "SSR_CTRL")
@@ -639,9 +687,9 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "ob383tvMkX")
+          (name "SKiDL Tag") "fXSAh1OPnd")
         (field
-          (name "SKiDL Line") "faema_carrier.py:267"))
+          (name "SKiDL Line") "faema_carrier.py:252"))
       (libsource
         (lib "NO_LIB")
         (part "Conn_2"))
@@ -649,23 +697,23 @@
         (names "/block_ssr_drive1/")
         (tstamps "/2cf831f8-312a-53e9-b06e-a74fe933eab9/"))
       (component_classes)
-      (tstamps "ab7353e2-5729-59d4-bbaf-e394e3079d2b"))
+      (tstamps "831b11c8-142f-5dd8-9326-f7235ace9327"))
     (comp
       (ref "J3")
       (value "ENCODER")
       (description "")
-      (footprint "Connector_PinHeader_2.54mm:PinHeader_1x05_P2.54mm_Vertical")
+      (footprint "Connector_JST:JST_XH_B5B-XH-A_1x05_P2.50mm_Vertical")
       (fields
         (field
           (name "Description"))
         (field
-          (name "Footprint") "Connector_PinHeader_2.54mm:PinHeader_1x05_P2.54mm_Vertical")
+          (name "Footprint") "Connector_JST:JST_XH_B5B-XH-A_1x05_P2.50mm_Vertical")
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "svduKCZtwL")
+          (name "SKiDL Tag") "QEEL7FJsPg")
         (field
-          (name "SKiDL Line") "faema_carrier.py:385"))
+          (name "SKiDL Line") "faema_carrier.py:389"))
       (libsource
         (lib "NO_LIB")
         (part "Conn_5"))
@@ -673,23 +721,23 @@
         (names "/block_connectors1/")
         (tstamps "/98b32057-217c-5c52-a30d-98aa84bc5df1/"))
       (component_classes)
-      (tstamps "21fa178d-3735-59a1-822f-9b34a47debef"))
+      (tstamps "d42c4d46-b44e-5bee-9365-ee6799bb0f6a"))
     (comp
       (ref "J4")
       (value "BUTTONS")
       (description "")
-      (footprint "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical")
+      (footprint "Connector_JST:JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical")
       (fields
         (field
           (name "Description"))
         (field
-          (name "Footprint") "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical")
+          (name "Footprint") "Connector_JST:JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical")
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "66nEV83qnI")
+          (name "SKiDL Tag") "OSVfMjWroS")
         (field
-          (name "SKiDL Line") "faema_carrier.py:395"))
+          (name "SKiDL Line") "faema_carrier.py:399"))
       (libsource
         (lib "NO_LIB")
         (part "Conn_4"))
@@ -697,23 +745,23 @@
         (names "/block_connectors1/")
         (tstamps "/98b32057-217c-5c52-a30d-98aa84bc5df1/"))
       (component_classes)
-      (tstamps "97c2ddde-ac46-544d-a803-823774c3a42c"))
+      (tstamps "5e3490b8-d9e8-5568-a21e-3bdef0616cdf"))
     (comp
       (ref "J5")
       (value "LEVEL_PROBE")
       (description "")
-      (footprint "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical")
+      (footprint "Connector_JST:JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical")
       (fields
         (field
           (name "Description"))
         (field
-          (name "Footprint") "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical")
+          (name "Footprint") "Connector_JST:JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical")
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "ttVF_zTLZp")
+          (name "SKiDL Tag") "mDYggaOPKs")
         (field
-          (name "SKiDL Line") "faema_carrier.py:307"))
+          (name "SKiDL Line") "faema_carrier.py:292"))
       (libsource
         (lib "NO_LIB")
         (part "Conn_2"))
@@ -721,23 +769,23 @@
         (names "/block_level_probe1/")
         (tstamps "/7fc0393f-6be6-5b2f-84c2-f577a312aa14/"))
       (component_classes)
-      (tstamps "380acdcf-dc42-5878-88b5-a3a2171b864a"))
+      (tstamps "6ea6777e-0a8d-5f5b-bbc0-8753e083dca7"))
     (comp
       (ref "J6")
       (value "NEXTION")
       (description "")
-      (footprint "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical")
+      (footprint "Connector_JST:JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical")
       (fields
         (field
           (name "Description"))
         (field
-          (name "Footprint") "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical")
+          (name "Footprint") "Connector_JST:JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical")
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "uyokuOFDYL")
+          (name "SKiDL Tag") "eDHbmZq5F5")
         (field
-          (name "SKiDL Line") "faema_carrier.py:404"))
+          (name "SKiDL Line") "faema_carrier.py:408"))
       (libsource
         (lib "NO_LIB")
         (part "Conn_4"))
@@ -745,23 +793,23 @@
         (names "/block_connectors1/")
         (tstamps "/98b32057-217c-5c52-a30d-98aa84bc5df1/"))
       (component_classes)
-      (tstamps "989e86f1-1677-518b-99e3-9dfdff6bc1c9"))
+      (tstamps "46d44b0b-0f73-5414-a1f5-ca2910674a04"))
     (comp
       (ref "J7")
       (value "SPI_DISPLAY")
       (description "")
-      (footprint "Connector_PinHeader_2.54mm:PinHeader_1x08_P2.54mm_Vertical")
+      (footprint "Connector_JST:JST_XH_B8B-XH-A_1x08_P2.50mm_Vertical")
       (fields
         (field
           (name "Description"))
         (field
-          (name "Footprint") "Connector_PinHeader_2.54mm:PinHeader_1x08_P2.54mm_Vertical")
+          (name "Footprint") "Connector_JST:JST_XH_B8B-XH-A_1x08_P2.50mm_Vertical")
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "ileIKhgJv4")
+          (name "SKiDL Tag") "5MIFW4p9q3")
         (field
-          (name "SKiDL Line") "faema_carrier.py:413"))
+          (name "SKiDL Line") "faema_carrier.py:417"))
       (libsource
         (lib "NO_LIB")
         (part "Conn_8"))
@@ -769,23 +817,23 @@
         (names "/block_connectors1/")
         (tstamps "/98b32057-217c-5c52-a30d-98aa84bc5df1/"))
       (component_classes)
-      (tstamps "1be86912-f88e-5aec-aff6-ca9f19e4c4cc"))
+      (tstamps "9fb09722-77f5-5cf2-9235-2dec58ad896e"))
     (comp
       (ref "J8")
       (value "I2C_RTC")
       (description "")
-      (footprint "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical")
+      (footprint "Connector_JST:JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical")
       (fields
         (field
           (name "Description"))
         (field
-          (name "Footprint") "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical")
+          (name "Footprint") "Connector_JST:JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical")
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "RXBm6X9GWl")
+          (name "SKiDL Tag") "65Xt5awbei")
         (field
-          (name "SKiDL Line") "faema_carrier.py:426"))
+          (name "SKiDL Line") "faema_carrier.py:430"))
       (libsource
         (lib "NO_LIB")
         (part "Conn_4"))
@@ -793,31 +841,31 @@
         (names "/block_connectors1/")
         (tstamps "/98b32057-217c-5c52-a30d-98aa84bc5df1/"))
       (component_classes)
-      (tstamps "60d3911e-6802-52b8-8702-dc0f60c90ed6"))
+      (tstamps "05bdd5cc-2aeb-59a3-91d6-8086616b2764"))
     (comp
       (ref "J9")
       (value "NTC_CALDEIRA")
       (description "")
-      (footprint "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical")
+      (footprint "Connector_JST:JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical")
       (fields
         (field
           (name "Description"))
         (field
-          (name "Footprint") "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical")
+          (name "Footprint") "Connector_JST:JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical")
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "VCDVbbB5Bl")
+          (name "SKiDL Tag") "peQB_7Ee5C")
         (field
-          (name "SKiDL Line") "faema_carrier.py:370"))
+          (name "SKiDL Line") "faema_carrier.py:367"))
       (libsource
         (lib "NO_LIB")
         (part "Conn_2"))
       (sheetpath
-        (names "/block_ntc_option1/")
-        (tstamps "/9604e73e-46fe-5287-bf14-f6b83d35f0e2/"))
+        (names "/block_ntc1/")
+        (tstamps "/ed132a0c-00d3-5cba-be63-86ba9aaee7d4/"))
       (component_classes)
-      (tstamps "8ccc3ab3-c0b5-5196-8446-69d304345cab"))
+      (tstamps "812de588-8e8f-5dc7-bfef-2ca532a11660"))
     (comp
       (ref "Q1")
       (value "2N7002")
@@ -831,9 +879,9 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "n8pi1YcVl4")
+          (name "SKiDL Tag") "zXbx2VqjDv")
         (field
-          (name "SKiDL Line") "faema_carrier.py:255"))
+          (name "SKiDL Line") "faema_carrier.py:241"))
       (libsource
         (lib "NO_LIB")
         (part "2N7002"))
@@ -841,367 +889,367 @@
         (names "/block_ssr_drive1/")
         (tstamps "/2cf831f8-312a-53e9-b06e-a74fe933eab9/"))
       (component_classes)
-      (tstamps "7b3b684c-f373-519b-b66c-6fc5e26aba61"))
+      (tstamps "97e38794-3678-5df0-bb34-f9f58e448cfc"))
     (comp
       (ref "R1")
       (value "220R")
-      (description "Resistor")
+      (description "")
       (footprint "Resistor_SMD:R_0603_1608Metric")
       (fields
         (field
-          (name "Description") "Resistor")
+          (name "Description"))
         (field
           (name "Footprint") "Resistor_SMD:R_0603_1608Metric")
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "wX5BRi6c9I")
+          (name "SKiDL Tag") "Tjl7K_n1sT")
         (field
-          (name "SKiDL Line") "faema_carrier.py:234"))
+          (name "SKiDL Line") "faema_carrier.py:223"))
       (libsource
-        (lib "Device")
+        (lib "NO_LIB")
         (part "R"))
       (sheetpath
         (names "/block_ssr_drive1/")
         (tstamps "/2cf831f8-312a-53e9-b06e-a74fe933eab9/"))
       (component_classes)
-      (tstamps "0698c688-461e-52a8-a69f-f7f6ef691263"))
+      (tstamps "f1668535-4241-5016-8065-6dd2947417dd"))
     (comp
       (ref "R10")
       (value "10k")
-      (description "Resistor")
+      (description "")
       (footprint "Resistor_SMD:R_0603_1608Metric")
       (fields
         (field
-          (name "Description") "Resistor")
+          (name "Description"))
         (field
           (name "Footprint") "Resistor_SMD:R_0603_1608Metric")
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "06UC2490Ru")
+          (name "SKiDL Tag") "0NgwDtXZDi")
         (field
-          (name "SKiDL Line") "faema_carrier.py:345"))
+          (name "SKiDL Line") "faema_carrier.py:330"))
       (libsource
-        (lib "Device")
+        (lib "NO_LIB")
         (part "R"))
       (sheetpath
         (names "/block_pullups1/")
         (tstamps "/8f1dba2a-a1d0-5b77-a87a-2517e95f0ed3/"))
       (component_classes)
-      (tstamps "8ab43b4d-1b3f-5b80-8925-4d5a842b59ac"))
+      (tstamps "6484e699-4581-5160-bd00-65a4be116a41"))
     (comp
       (ref "R11")
       (value "10k")
-      (description "Resistor")
+      (description "")
       (footprint "Resistor_SMD:R_0603_1608Metric")
       (fields
         (field
-          (name "Description") "Resistor")
+          (name "Description"))
         (field
           (name "Footprint") "Resistor_SMD:R_0603_1608Metric")
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "eXL9mgvp45")
+          (name "SKiDL Tag") "HMIO4sgEoI")
         (field
-          (name "SKiDL Line") "faema_carrier.py:345"))
+          (name "SKiDL Line") "faema_carrier.py:330"))
       (libsource
-        (lib "Device")
+        (lib "NO_LIB")
         (part "R"))
       (sheetpath
         (names "/block_pullups1/")
         (tstamps "/8f1dba2a-a1d0-5b77-a87a-2517e95f0ed3/"))
       (component_classes)
-      (tstamps "bdc1099e-803e-5aa7-a4e5-d699a185fe3b"))
+      (tstamps "15147fd8-7d7f-547b-ab71-2d0dbbaf4d25"))
     (comp
       (ref "R12")
       (value "10k")
-      (description "Resistor")
+      (description "")
       (footprint "Resistor_SMD:R_0603_1608Metric")
       (fields
         (field
-          (name "Description") "Resistor")
+          (name "Description"))
         (field
           (name "Footprint") "Resistor_SMD:R_0603_1608Metric")
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "NoL3vK8L6p")
+          (name "SKiDL Tag") "aCGlRlMwVk")
         (field
-          (name "SKiDL Line") "faema_carrier.py:345"))
+          (name "SKiDL Line") "faema_carrier.py:330"))
       (libsource
-        (lib "Device")
+        (lib "NO_LIB")
         (part "R"))
       (sheetpath
         (names "/block_pullups1/")
         (tstamps "/8f1dba2a-a1d0-5b77-a87a-2517e95f0ed3/"))
       (component_classes)
-      (tstamps "d4f22821-600f-5983-930e-79d6a5092419"))
+      (tstamps "d7aefe23-9728-57c7-9932-be9c59297957"))
     (comp
       (ref "R13")
       (value "10k")
-      (description "Resistor")
+      (description "")
       (footprint "Resistor_SMD:R_0603_1608Metric")
       (fields
         (field
-          (name "Description") "Resistor")
+          (name "Description"))
         (field
           (name "Footprint") "Resistor_SMD:R_0603_1608Metric")
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "iVjgQKFshY")
+          (name "SKiDL Tag") "2FWZCITB9G")
         (field
-          (name "SKiDL Line") "faema_carrier.py:345"))
+          (name "SKiDL Line") "faema_carrier.py:330"))
       (libsource
-        (lib "Device")
+        (lib "NO_LIB")
         (part "R"))
       (sheetpath
         (names "/block_pullups1/")
         (tstamps "/8f1dba2a-a1d0-5b77-a87a-2517e95f0ed3/"))
       (component_classes)
-      (tstamps "73327d5a-cd0d-541e-8676-50a20263471f"))
+      (tstamps "ba4c3dc4-7f52-51c5-86b6-2b652985969c"))
     (comp
       (ref "R14")
       (value "10k")
-      (description "Resistor")
+      (description "")
       (footprint "Resistor_SMD:R_0603_1608Metric")
       (fields
         (field
-          (name "Description") "Resistor")
+          (name "Description"))
         (field
           (name "Footprint") "Resistor_SMD:R_0603_1608Metric")
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "Zzwv1NBJky")
+          (name "SKiDL Tag") "euei90CQVd")
         (field
-          (name "SKiDL Line") "faema_carrier.py:345"))
+          (name "SKiDL Line") "faema_carrier.py:330"))
       (libsource
-        (lib "Device")
+        (lib "NO_LIB")
         (part "R"))
       (sheetpath
         (names "/block_pullups1/")
         (tstamps "/8f1dba2a-a1d0-5b77-a87a-2517e95f0ed3/"))
       (component_classes)
-      (tstamps "c3b59568-1004-5439-8953-8efef5749ec8"))
+      (tstamps "10c92224-e27b-5f62-a94c-080292247f19"))
     (comp
       (ref "R15")
       (value "10k")
-      (description "Resistor")
+      (description "")
       (footprint "Resistor_SMD:R_0603_1608Metric")
       (fields
         (field
-          (name "Description") "Resistor")
+          (name "Description"))
         (field
           (name "Footprint") "Resistor_SMD:R_0603_1608Metric")
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "QNNV2G5fwg")
+          (name "SKiDL Tag") "gkznNU7OkJ")
         (field
-          (name "SKiDL Line") "faema_carrier.py:345"))
+          (name "SKiDL Line") "faema_carrier.py:330"))
       (libsource
-        (lib "Device")
+        (lib "NO_LIB")
         (part "R"))
       (sheetpath
         (names "/block_pullups1/")
         (tstamps "/8f1dba2a-a1d0-5b77-a87a-2517e95f0ed3/"))
       (component_classes)
-      (tstamps "e4269f3b-fbb6-5054-9eb8-fcbbf23cb616"))
+      (tstamps "49ffbea0-dd30-5bcf-981f-c27d3b058b65"))
     (comp
       (ref "R2")
       (value "100R")
-      (description "Resistor")
+      (description "")
       (footprint "Resistor_SMD:R_0603_1608Metric")
       (fields
         (field
-          (name "Description") "Resistor")
+          (name "Description"))
         (field
           (name "Footprint") "Resistor_SMD:R_0603_1608Metric")
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "hossZdz1WO")
+          (name "SKiDL Tag") "_X8z2gPdPy")
         (field
-          (name "SKiDL Line") "faema_carrier.py:241"))
+          (name "SKiDL Line") "faema_carrier.py:229"))
       (libsource
-        (lib "Device")
+        (lib "NO_LIB")
         (part "R"))
       (sheetpath
         (names "/block_ssr_drive1/")
         (tstamps "/2cf831f8-312a-53e9-b06e-a74fe933eab9/"))
       (component_classes)
-      (tstamps "cb759430-f0a8-5ea5-ab6b-ace3dfbf6cbc"))
+      (tstamps "93c52360-2e90-5c83-9b8e-82cbfdaab6e4"))
     (comp
       (ref "R3")
       (value "10k")
-      (description "Resistor")
+      (description "")
       (footprint "Resistor_SMD:R_0603_1608Metric")
       (fields
         (field
-          (name "Description") "Resistor")
+          (name "Description"))
         (field
           (name "Footprint") "Resistor_SMD:R_0603_1608Metric")
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "R0Irnp8HLZ")
+          (name "SKiDL Tag") "4OwUE674gy")
         (field
-          (name "SKiDL Line") "faema_carrier.py:248"))
+          (name "SKiDL Line") "faema_carrier.py:235"))
       (libsource
-        (lib "Device")
+        (lib "NO_LIB")
         (part "R"))
       (sheetpath
         (names "/block_ssr_drive1/")
         (tstamps "/2cf831f8-312a-53e9-b06e-a74fe933eab9/"))
       (component_classes)
-      (tstamps "e1f04519-db9c-537a-8bda-83e3fb079843"))
+      (tstamps "506674cc-171a-5349-a9a3-1ebc9d5b415e"))
     (comp
       (ref "R4")
       (value "470R")
-      (description "Resistor")
+      (description "")
       (footprint "Resistor_SMD:R_0603_1608Metric")
       (fields
         (field
-          (name "Description") "Resistor")
+          (name "Description"))
         (field
           (name "Footprint") "Resistor_SMD:R_0603_1608Metric")
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "bZWoncOrie")
+          (name "SKiDL Tag") "VonFm39IX7")
         (field
-          (name "SKiDL Line") "faema_carrier.py:281"))
+          (name "SKiDL Line") "faema_carrier.py:266"))
       (libsource
-        (lib "Device")
+        (lib "NO_LIB")
         (part "R"))
       (sheetpath
         (names "/block_led1/")
         (tstamps "/0b23167f-8dc4-5765-b6cd-e496cd8d6429/"))
       (component_classes)
-      (tstamps "8fa2ccfc-4cdf-532c-9c9f-e49c9590d77a"))
+      (tstamps "0cc8cb35-a856-512c-9f6c-ec1498bdcdb9"))
     (comp
       (ref "R5")
       (value "100k")
-      (description "Resistor")
+      (description "")
       (footprint "Resistor_SMD:R_0603_1608Metric")
       (fields
         (field
-          (name "Description") "Resistor")
+          (name "Description"))
         (field
           (name "Footprint") "Resistor_SMD:R_0603_1608Metric")
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "RsFeytdUyW")
+          (name "SKiDL Tag") "5wOXgS5XxX")
         (field
-          (name "SKiDL Line") "faema_carrier.py:301"))
+          (name "SKiDL Line") "faema_carrier.py:286"))
       (libsource
-        (lib "Device")
+        (lib "NO_LIB")
         (part "R"))
       (sheetpath
         (names "/block_level_probe1/")
         (tstamps "/7fc0393f-6be6-5b2f-84c2-f577a312aa14/"))
       (component_classes)
-      (tstamps "a56c58c6-3dae-5cba-b2d8-512619b9ff8d"))
+      (tstamps "b6b7e278-df43-555a-aa9c-57bf3a6a6bbe"))
     (comp
       (ref "R6")
       (value "10k")
-      (description "Resistor")
+      (description "")
       (footprint "Resistor_SMD:R_0603_1608Metric")
       (fields
         (field
-          (name "Description") "Resistor")
+          (name "Description"))
         (field
           (name "Footprint") "Resistor_SMD:R_0603_1608Metric")
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "vuJSl9tUDq")
+          (name "SKiDL Tag") "OnyIpSkL3M")
         (field
-          (name "SKiDL Line") "faema_carrier.py:323"))
+          (name "SKiDL Line") "faema_carrier.py:308"))
       (libsource
-        (lib "Device")
+        (lib "NO_LIB")
         (part "R"))
       (sheetpath
         (names "/block_uart_level_shift1/")
         (tstamps "/ade676b4-16e5-537d-af6a-e02e06f03396/"))
       (component_classes)
-      (tstamps "4a8ccdec-868f-5eac-9d3f-7c2c29770e52"))
+      (tstamps "0e697f02-e6e9-52c8-b1a0-02c8954cc5f1"))
     (comp
       (ref "R7")
       (value "15k")
-      (description "Resistor")
+      (description "")
       (footprint "Resistor_SMD:R_0603_1608Metric")
       (fields
         (field
-          (name "Description") "Resistor")
+          (name "Description"))
         (field
           (name "Footprint") "Resistor_SMD:R_0603_1608Metric")
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "4ujhIEey3z")
+          (name "SKiDL Tag") "AbDEb_Qhed")
         (field
-          (name "SKiDL Line") "faema_carrier.py:329"))
+          (name "SKiDL Line") "faema_carrier.py:314"))
       (libsource
-        (lib "Device")
+        (lib "NO_LIB")
         (part "R"))
       (sheetpath
         (names "/block_uart_level_shift1/")
         (tstamps "/ade676b4-16e5-537d-af6a-e02e06f03396/"))
       (component_classes)
-      (tstamps "3a68c15f-3b3f-55f9-9567-b5020777da46"))
+      (tstamps "fc240360-7257-5aea-a4dc-cebcea492c41"))
     (comp
       (ref "R8")
-      (value "10k_DNF")
-      (description "Resistor")
+      (value "2k2_0.1%")
+      (description "")
       (footprint "Resistor_SMD:R_0603_1608Metric")
       (fields
         (field
-          (name "Description") "Resistor")
+          (name "Description"))
         (field
           (name "Footprint") "Resistor_SMD:R_0603_1608Metric")
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "HNYTj9JQww")
+          (name "SKiDL Tag") "sgiKqRZBtk")
         (field
-          (name "SKiDL Line") "faema_carrier.py:364"))
+          (name "SKiDL Line") "faema_carrier.py:355"))
       (libsource
-        (lib "Device")
+        (lib "NO_LIB")
         (part "R"))
       (sheetpath
-        (names "/block_ntc_option1/")
-        (tstamps "/9604e73e-46fe-5287-bf14-f6b83d35f0e2/"))
+        (names "/block_ntc1/")
+        (tstamps "/ed132a0c-00d3-5cba-be63-86ba9aaee7d4/"))
       (component_classes)
-      (tstamps "4584d958-3a6a-5c52-8cea-3f39c8341fbd"))
+      (tstamps "b21ace44-49bd-591b-b0e2-25332c18df13"))
     (comp
       (ref "R9")
-      (value "10k_DNF")
-      (description "Resistor")
+      (value "2k2_0.1%")
+      (description "")
       (footprint "Resistor_SMD:R_0603_1608Metric")
       (fields
         (field
-          (name "Description") "Resistor")
+          (name "Description"))
         (field
           (name "Footprint") "Resistor_SMD:R_0603_1608Metric")
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "umeJFLFiTt")
+          (name "SKiDL Tag") "0c_Yrgt2iB")
         (field
-          (name "SKiDL Line") "faema_carrier.py:364"))
+          (name "SKiDL Line") "faema_carrier.py:355"))
       (libsource
-        (lib "Device")
+        (lib "NO_LIB")
         (part "R"))
       (sheetpath
-        (names "/block_ntc_option1/")
-        (tstamps "/9604e73e-46fe-5287-bf14-f6b83d35f0e2/"))
+        (names "/block_ntc1/")
+        (tstamps "/ed132a0c-00d3-5cba-be63-86ba9aaee7d4/"))
       (component_classes)
-      (tstamps "49f4c7b5-be56-5f4a-a779-e72c1be84f32"))
+      (tstamps "5898dd93-eac4-5ddf-870f-7bfa735909f8"))
     (comp
       (ref "RV1")
       (value "S14K275")
@@ -1215,9 +1263,9 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "Xmf0uItwe2")
+          (name "SKiDL Tag") "OcOPdYafvJ")
         (field
-          (name "SKiDL Line") "faema_carrier.py:161"))
+          (name "SKiDL Line") "faema_carrier.py:157"))
       (libsource
         (lib "NO_LIB")
         (part "MOV"))
@@ -1225,7 +1273,7 @@
         (names "/block_power1/")
         (tstamps "/5cf4cdf1-4bd6-56f0-b172-b2107ad3f86e/"))
       (component_classes)
-      (tstamps "a3804818-f4a1-5754-95c6-0e0a85e717e4"))
+      (tstamps "d6d1e896-0f98-55e9-9960-06629ed1d0f4"))
     (comp
       (ref "U1")
       (value "HLK-PM05")
@@ -1239,9 +1287,9 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "GP22b7usxF")
+          (name "SKiDL Tag") "rBbF9_00TF")
         (field
-          (name "SKiDL Line") "faema_carrier.py:171"))
+          (name "SKiDL Line") "faema_carrier.py:166"))
       (libsource
         (lib "NO_LIB")
         (part "HLK_PM05"))
@@ -1249,7 +1297,7 @@
         (names "/block_power1/")
         (tstamps "/5cf4cdf1-4bd6-56f0-b172-b2107ad3f86e/"))
       (component_classes)
-      (tstamps "c522c6c7-ef38-508f-97a9-5628396986aa"))
+      (tstamps "c72b3e5e-e82d-5ef5-924b-7cb0c148ff87"))
     (comp
       (ref "U2")
       (value "AMS1117-3.3")
@@ -1263,9 +1311,9 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "TOtaneX9MO")
+          (name "SKiDL Tag") "zqeYSBiBZA")
         (field
-          (name "SKiDL Line") "faema_carrier.py:199"))
+          (name "SKiDL Line") "faema_carrier.py:191"))
       (libsource
         (lib "NO_LIB")
         (part "AMS1117_3V3"))
@@ -1273,7 +1321,7 @@
         (names "/block_power1/")
         (tstamps "/5cf4cdf1-4bd6-56f0-b172-b2107ad3f86e/"))
       (component_classes)
-      (tstamps "5021d8a6-5ec0-5732-b75f-b2d7fdef4e87")))
+      (tstamps "fb3e3477-db03-5659-9a23-6b1b7897573c")))
   (nets
     (net
       (code 1)
@@ -1286,6 +1334,14 @@
       (node
         (ref "C4")
         (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "C7")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "J12")
+        (pin "15")
         (pintype "PASSIVE"))
       (node
         (ref "J3")
@@ -1361,10 +1417,6 @@
         (pintype "PASSIVE"))
       (node
         (ref "J14")
-        (pin "1")
-        (pintype "PASSIVE"))
-      (node
-        (ref "J15")
         (pin "1")
         (pintype "PASSIVE"))
       (node
@@ -1501,18 +1553,6 @@
         (pintype "PASSIVE")))
     (net
       (code 11)
-      (name "CS_RTD3")
-      (class "Default")
-      (node
-        (ref "J11")
-        (pin "10")
-        (pintype "PASSIVE"))
-      (node
-        (ref "J15")
-        (pin "6")
-        (pintype "PASSIVE")))
-    (net
-      (code 12)
       (name "DC_DISP")
       (class "Default")
       (node
@@ -1524,7 +1564,7 @@
         (pin "5")
         (pintype "PASSIVE")))
     (net
-      (code 13)
+      (code 12)
       (name "DISP_LED")
       (class "Default")
       (node
@@ -1536,7 +1576,7 @@
         (pin "8")
         (pintype "PASSIVE")))
     (net
-      (code 14)
+      (code 13)
       (name "ENC_CLK")
       (class "Default")
       (node
@@ -1552,7 +1592,7 @@
         (pin "2")
         (pintype "PASSIVE")))
     (net
-      (code 15)
+      (code 14)
       (name "ENC_DT")
       (class "Default")
       (node
@@ -1568,7 +1608,7 @@
         (pin "2")
         (pintype "PASSIVE")))
     (net
-      (code 16)
+      (code 15)
       (name "ENC_SW")
       (class "Default")
       (node
@@ -1584,7 +1624,7 @@
         (pin "2")
         (pintype "PASSIVE")))
     (net
-      (code 17)
+      (code 16)
       (name "GATE_DRIVE")
       (class "Default")
       (node
@@ -1600,7 +1640,7 @@
         (pin "1")
         (pintype "PASSIVE")))
     (net
-      (code 18)
+      (code 17)
       (name "GND")
       (class "Default")
       (node
@@ -1620,12 +1660,20 @@
         (pin "2")
         (pintype "PASSIVE"))
       (node
-        (ref "D1")
+        (ref "C5")
         (pin "2")
         (pintype "PASSIVE"))
       (node
-        (ref "J1")
-        (pin "3")
+        (ref "C6")
+        (pin "2")
+        (pintype "PASSIVE"))
+      (node
+        (ref "C7")
+        (pin "2")
+        (pintype "PASSIVE"))
+      (node
+        (ref "D1")
+        (pin "2")
         (pintype "PASSIVE"))
       (node
         (ref "J10")
@@ -1669,10 +1717,6 @@
         (pintype "PASSIVE"))
       (node
         (ref "J14")
-        (pin "2")
-        (pintype "PASSIVE"))
-      (node
-        (ref "J15")
         (pin "2")
         (pintype "PASSIVE"))
       (node
@@ -1724,7 +1768,7 @@
         (pin "1")
         (pintype "POWER-IN")))
     (net
-      (code 19)
+      (code 18)
       (name "I2C_SCL")
       (class "Default")
       (node
@@ -1736,7 +1780,7 @@
         (pin "4")
         (pintype "PASSIVE")))
     (net
-      (code 20)
+      (code 19)
       (name "I2C_SDA")
       (class "Default")
       (node
@@ -1748,7 +1792,7 @@
         (pin "3")
         (pintype "PASSIVE")))
     (net
-      (code 21)
+      (code 20)
       (name "LED_ANODE")
       (class "Default")
       (node
@@ -1760,7 +1804,7 @@
         (pin "2")
         (pintype "PASSIVE")))
     (net
-      (code 22)
+      (code 21)
       (name "LED_STATUS")
       (class "Default")
       (node
@@ -1772,7 +1816,7 @@
         (pin "1")
         (pintype "PASSIVE")))
     (net
-      (code 23)
+      (code 22)
       (name "LEVEL_SENSE")
       (class "Default")
       (node
@@ -1788,9 +1832,13 @@
         (pin "2")
         (pintype "PASSIVE")))
     (net
-      (code 24)
+      (code 23)
       (name "NTC1_ADC")
       (class "Default")
+      (node
+        (ref "C5")
+        (pin "1")
+        (pintype "PASSIVE"))
       (node
         (ref "J12")
         (pin "11")
@@ -1804,9 +1852,13 @@
         (pin "2")
         (pintype "PASSIVE")))
     (net
-      (code 25)
+      (code 24)
       (name "NTC2_ADC")
       (class "Default")
+      (node
+        (ref "C6")
+        (pin "1")
+        (pintype "PASSIVE"))
       (node
         (ref "J10")
         (pin "1")
@@ -1818,6 +1870,14 @@
       (node
         (ref "R9")
         (pin "2")
+        (pintype "PASSIVE")))
+    (net
+      (code 25)
+      (name "PE")
+      (class "Default")
+      (node
+        (ref "J1")
+        (pin "3")
         (pintype "PASSIVE")))
     (net
       (code 26)
@@ -1846,10 +1906,6 @@
       (node
         (ref "J14")
         (pin "3")
-        (pintype "PASSIVE"))
-      (node
-        (ref "J15")
-        (pin "3")
         (pintype "PASSIVE")))
     (net
       (code 28)
@@ -1865,10 +1921,6 @@
         (pintype "PASSIVE"))
       (node
         (ref "J14")
-        (pin "4")
-        (pintype "PASSIVE"))
-      (node
-        (ref "J15")
         (pin "4")
         (pintype "PASSIVE"))
       (node
@@ -1889,10 +1941,6 @@
         (pintype "PASSIVE"))
       (node
         (ref "J14")
-        (pin "5")
-        (pintype "PASSIVE"))
-      (node
-        (ref "J15")
         (pin "5")
         (pintype "PASSIVE"))
       (node
